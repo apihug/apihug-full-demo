@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package com.apihug.demo.external.proto.api.example.request;
+
+import "extend/domain.proto";
+import "swagger/annotations.proto";
+
+option (hope.domain.kind) = BEAN;
+
+message TemplateExampleRequest {
+
+  option (hope.swagger.schema) = {
+      json_schema: {
+          description: "This is a template example request,REMOVE IT";
+      };
+  };
+
+  string name = 1 [(hope.swagger.field) = {
+      description: "user input name";
+      example: "Jake"
+      empty: FALSE;
+  }];
+
+  string email = 3 [(hope.swagger.field) = {
+      description: "user input email";
+      example: "jake@bigger.com"
+      email: TRUE;
+      mock: {
+          nature: EMAIL
+      }
+  }];
+
+}

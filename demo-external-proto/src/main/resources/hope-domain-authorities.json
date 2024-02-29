@@ -1,0 +1,23 @@
+{
+  "domain" : "external",
+  "version" : "0.1.1-RELEASE",
+  "lastBuildTime" : "2024-02-29 17:33:44",
+  "codeOffset" : 0,
+  "name" : "ExternalAuthorityEnum",
+  "javaClass" : "com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum",
+  "deprecated" : false,
+  "description" : "Example Authority Enum for the project, MODIFY IT",
+  "items" : [ {
+    "code" : 1,
+    "name" : "USER_ADD",
+    "expression" : "user:add",
+    "description" : "Authority to remove user(Remove or modify this template sample)",
+    "deprecated" : false
+  }, {
+    "code" : 2,
+    "name" : "USER_DELETE",
+    "expression" : "user:remove",
+    "description" : "Authority to delete user(Remove or modify this template sample)",
+    "deprecated" : false
+  } ]
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.apihug.demo.external.proto.infra.settings.example;
+import "extend/constant.proto";
+import "swagger/annotations.proto";
+import "extend/domain.proto";
+
+option (hope.domain.kind) = ENUM;
+
+enum  TemplateExampleEnum {
+
+    option (hope.swagger.enm) = {
+        description: "Remember to remove this enum this is example from template",
+        example: "REMOVE_ME|RIGHT_NOW"
+    };
+
+    REMOVE_ME = 0 [(hope.constant.field) = {code: 1,message: "remove me", cn_message: "Please remove this example"}];
+    RIGHT_NOW = 1 [(hope.constant.field) = {code: 2,message: "right now", cn_message: "Remove it right now"}];
+
+}

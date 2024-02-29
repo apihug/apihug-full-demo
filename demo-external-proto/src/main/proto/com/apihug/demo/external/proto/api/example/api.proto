@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package com.apihug.demo.external.proto.api.example;
+
+import "extend/domain.proto";
+import "google/protobuf/empty.proto";
+import "swagger/annotations.proto";
+import "com/apihug/demo/external/proto/api/example/request/example.proto";
+import "com/apihug/demo/external/proto/api/example/response/example.proto";
+
+option (hope.domain.kind) = IDL;
+
+service TemplateExampleService {
+
+    option (hope.swagger.svc) = {
+        path: "/demo-all-external";
+        description: "This is a example service remember to remove it";
+    };
+
+    rpc ExamplePost (com.apihug.demo.external.proto.api.example.request.TemplateExampleRequest) returns (com.apihug.demo.external.proto.api.example.response.TemplateExampleResponse) {
+        option (hope.swagger.operation) = {
+            post: "/post-test";
+            description: "post test example";
+            priority: HIGH;
+        };
+    }
+
+    rpc Ping(google.protobuf.Empty) returns(google.protobuf.Empty){
+        option (hope.swagger.operation) = {
+            post: "/ping";
+            description: "ping you like /ping?name=jake";
+            priority: HIGH;
+            parameters: {
+                parameter: {
+                    name: "name";
+                    in: QUERY;
+                    schema: {
+                        format: STRING;
+                    };
+                }
+            }
+        };
+    }
+
+}

@@ -1,0 +1,472 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "demo-external-proto",
+    "description" : "proto lib of  how to wire all the stuff together",
+    "contact" : {
+      "name" : "developer@apihug.com",
+      "url" : "https://github.com/apihug/",
+      "email" : "developer@apihug.com"
+    },
+    "version" : "0.1.1-RELEASE"
+  },
+  "externalDocs" : {
+    "description" : "Hope is the best thing",
+    "url" : "https://github.com/apihug/"
+  },
+  "tags" : [ {
+    "name" : "sample",
+    "description" : "Sample Tag"
+  } ],
+  "paths" : {
+    "/demo-all-external/post-test" : {
+      "post" : {
+        "tags" : [ ],
+        "summary" : "",
+        "description" : "post test example",
+        "operationId" : "TemplateExampleService#ExamplePost",
+        "parameters" : [ ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "$ref" : "#/components/schemas/TemplateExampleRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "post test example",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TemplateExampleResponseResult"
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false,
+        "security" : [ ],
+        "x-hope-operation" : {
+          "deprecated" : false,
+          "wrapper" : true,
+          "inputPlural" : false,
+          "outputPlural" : false,
+          "pageable" : false,
+          "protoFrom" : "com/apihug/demo/external/proto/api/example/api.proto",
+          "empty" : false,
+          "serviceClz" : "com.apihug.demo.external.wire.api.example.TemplateExampleService",
+          "priority" : "HIGH",
+          "group" : "CUSTOMER"
+        }
+      }
+    },
+    "/demo-all-external/ping" : {
+      "post" : {
+        "tags" : [ ],
+        "summary" : "",
+        "description" : "ping you like /ping?name=jake",
+        "operationId" : "TemplateExampleService#Ping",
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "query",
+          "schema" : {
+            "type" : "string",
+            "readOnly" : false
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "ping you like /ping?name=jake",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "description" : "返回码,零成功,非零失败"
+                    },
+                    "message" : {
+                      "type" : "string",
+                      "description" : "返回提示信息"
+                    },
+                    "errors" : {
+                      "type" : "array",
+                      "description" : "错误详情列表",
+                      "items" : {
+                        "$ref" : "#/components/schemas/Error"
+                      },
+                      "title" : "errors"
+                    },
+                    "data" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false,
+        "security" : [ ],
+        "x-hope-operation" : {
+          "deprecated" : false,
+          "wrapper" : true,
+          "inputPlural" : false,
+          "outputPlural" : false,
+          "pageable" : false,
+          "protoFrom" : "com/apihug/demo/external/proto/api/example/api.proto",
+          "empty" : false,
+          "serviceClz" : "com.apihug.demo.external.wire.api.example.TemplateExampleService",
+          "priority" : "HIGH",
+          "group" : "CUSTOMER"
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Error" : {
+        "type" : "object",
+        "description" : "错误对象",
+        "properties" : {
+          "code" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "错误码",
+            "example" : 1000001001
+          },
+          "title" : {
+            "type" : "string",
+            "description" : "错误标题",
+            "example" : "USER_NAME_EMPTY"
+          },
+          "description" : {
+            "type" : "string",
+            "description" : "错误描述",
+            "example" : "user name should not be empty"
+          },
+          "descriptionZhCN" : {
+            "type" : "string",
+            "description" : "错误描述(中)",
+            "example" : "用户名不可以为空"
+          },
+          "field" : {
+            "type" : "string",
+            "description" : "字段",
+            "example" : "name"
+          },
+          "path" : {
+            "type" : "string",
+            "description" : "字段路径",
+            "example" : "user.name"
+          },
+          "rejectedValue" : {
+            "type" : "string",
+            "description" : "输入值",
+            "example" : "Jake.Bush"
+          },
+          "tips" : {
+            "type" : "string",
+            "description" : "使用提示",
+            "example" : "价格必须是正数:1000.12"
+          },
+          "constraint" : {
+            "type" : "string",
+            "description" : "校验规则",
+            "example" : "POSITIVE|NOT_EMPTY|REG_EXP"
+          },
+          "phase" : {
+            "$ref" : "#/components/schemas/ProblemPhase",
+            "description" : "错误阶段",
+            "example" : "DOMAIN:表示在领域层"
+          },
+          "severity" : {
+            "$ref" : "#/components/schemas/ProblemSeverity",
+            "description" : "错误程度",
+            "example" : "ERROR: 表示业务中断"
+          },
+          "domain" : {
+            "type" : "string",
+            "description" : "领域",
+            "example" : "order"
+          },
+          "properties" : {
+            "type" : "object",
+            "description" : "其他属性(KV), flat to normal fields refer to the problem details of hope/spring",
+            "example" : "扩展属性, Key-Value 对"
+          }
+        },
+        "title" : "Error"
+      },
+      "ProblemSeverity" : {
+        "default" : "LOW",
+        "description" : "错误严重程度",
+        "oneOf" : [ {
+          "const" : "LOW",
+          "description" : "Low",
+          "example" : "LOW",
+          "title" : "LOW",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-des-cn" : "低,无影响"
+        }, {
+          "const" : "WARN",
+          "description" : "Warn",
+          "example" : "WARN",
+          "title" : "WARN",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-des-cn" : "警告,业务错误可重试"
+        }, {
+          "const" : "ERROR",
+          "description" : "Error",
+          "example" : "ERROR",
+          "title" : "ERROR",
+          "x-hope-enum-item-code" : 4,
+          "x-hope-enum-item-des-cn" : "错误,业务无法进行"
+        }, {
+          "const" : "FATAL",
+          "description" : "Fatal",
+          "example" : "FATAL",
+          "title" : "FATAL",
+          "x-hope-enum-item-code" : 8,
+          "x-hope-enum-item-des-cn" : "灾难,数据破坏"
+        } ],
+        "title" : "ProblemSeverity",
+        "x-hope-java-class" : "hope.common.wire.constant.ProblemSeverity",
+        "x-hope-enum-type" : "true"
+      },
+      "ProblemPhase" : {
+        "default" : "CONTROLLER",
+        "description" : "错误层次",
+        "oneOf" : [ {
+          "const" : "CONTROLLER",
+          "description" : "Controller",
+          "example" : "CONTROLLER",
+          "title" : "CONTROLLER",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-des-cn" : "表单层"
+        }, {
+          "const" : "SERVICE",
+          "description" : "Service",
+          "example" : "SERVICE",
+          "title" : "SERVICE",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-des-cn" : "服务层"
+        }, {
+          "const" : "DOMAIN",
+          "description" : "Domain",
+          "example" : "DOMAIN",
+          "title" : "DOMAIN",
+          "x-hope-enum-item-code" : 4,
+          "x-hope-enum-item-des-cn" : "领域层"
+        } ],
+        "title" : "ProblemPhase",
+        "x-hope-java-class" : "hope.common.wire.constant.ProblemPhase",
+        "x-hope-enum-type" : "true"
+      },
+      "TemplateExampleEnum" : {
+        "default" : "REMOVE_ME",
+        "description" : "Remember to remove this enum this is example from template",
+        "oneOf" : [ {
+          "const" : "REMOVE_ME",
+          "description" : "remove me",
+          "example" : "REMOVE_ME",
+          "title" : "REMOVE_ME",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-des-cn" : "Please remove this example"
+        }, {
+          "const" : "RIGHT_NOW",
+          "description" : "right now",
+          "example" : "RIGHT_NOW",
+          "title" : "RIGHT_NOW",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-des-cn" : "Remove it right now"
+        } ],
+        "title" : "TemplateExampleEnum",
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.external.wire.infra.settings.example.TemplateExampleEnum",
+          "protoFrom" : "com/apihug/demo/external/proto/infra/settings/example/constant.proto"
+        },
+        "x-hope-enum-type" : "true"
+      },
+      "ExternalAuthorityEnum" : {
+        "default" : "USER_ADD",
+        "description" : "Example Authority Enum for the project, MODIFY IT",
+        "oneOf" : [ {
+          "const" : "USER_ADD",
+          "description" : "user:add",
+          "example" : "USER_ADD",
+          "title" : "USER_ADD",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-des-cn" : "Authority to remove user(Remove or modify this template sample)"
+        }, {
+          "const" : "USER_DELETE",
+          "description" : "user:remove",
+          "example" : "USER_DELETE",
+          "title" : "USER_DELETE",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-des-cn" : "Authority to delete user(Remove or modify this template sample)"
+        } ],
+        "title" : "ExternalAuthorityEnum",
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum",
+          "protoFrom" : "com/apihug/demo/external/proto/infra/settings/authority.proto"
+        },
+        "x-hope-enum-type" : "true"
+      },
+      "TemplateExampleRequest" : {
+        "type" : "object",
+        "description" : "This is a template example request,REMOVE IT",
+        "properties" : {
+          "name" : {
+            "type" : "string",
+            "description" : "user input name",
+            "example" : "Jake",
+            "x-hope-validation-blank" : false
+          },
+          "email" : {
+            "type" : "string",
+            "format" : "email",
+            "description" : "user input email",
+            "example" : "jake@bigger.com",
+            "x-hope-validation" : {
+              "email" : true
+            },
+            "x-hope-mock" : {
+              "nature" : "EMAIL",
+              "name" : "nature"
+            }
+          }
+        },
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.external.wire.api.example.request.TemplateExampleRequest",
+          "protoFrom" : "com/apihug/demo/external/proto/api/example/request/example.proto"
+        }
+      },
+      "TemplateExampleResponse" : {
+        "type" : "object",
+        "description" : "This is a template example response",
+        "properties" : {
+          "name" : {
+            "type" : "string",
+            "description" : "user input name",
+            "example" : "Jake",
+            "x-hope-validation-blank" : true
+          },
+          "hello" : {
+            "type" : "string",
+            "description" : "response hello",
+            "example" : "hello Jake",
+            "x-hope-validation-blank" : false
+          }
+        },
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.external.wire.api.example.response.TemplateExampleResponse",
+          "protoFrom" : "com/apihug/demo/external/proto/api/example/response/example.proto"
+        }
+      },
+      "TemplateExampleResponseResult" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "返回码,零成功,非零失败"
+          },
+          "message" : {
+            "type" : "string",
+            "description" : "返回提示信息"
+          },
+          "errors" : {
+            "type" : "array",
+            "description" : "错误详情列表",
+            "items" : {
+              "$ref" : "#/components/schemas/Error"
+            },
+            "title" : "errors"
+          },
+          "data" : {
+            "$ref" : "#/components/schemas/TemplateExampleResponse"
+          }
+        }
+      }
+    },
+    "responses" : { },
+    "parameters" : {
+      "PageRequest" : {
+        "name" : "pageRequest",
+        "in" : "query",
+        "description" : "Page Request parameter",
+        "schema" : {
+          "type" : "object",
+          "description" : "分页查询Parameter对象",
+          "properties" : {
+            "page" : {
+              "type" : "integer",
+              "format" : "int32",
+              "description" : "Zero-based page index (0..N)",
+              "minimum" : 0,
+              "title" : "page"
+            },
+            "size" : {
+              "type" : "integer",
+              "format" : "int32",
+              "default" : 20,
+              "description" : "The size of the page to be returned",
+              "maximum" : 1024,
+              "minimum" : 1,
+              "title" : "size"
+            },
+            "sort" : {
+              "type" : "array",
+              "description" : "Sorting criteria in the format: property,(asc|desc). \nDefault sort order is ascending. \nMultiple sort criteria are supported.",
+              "items" : {
+                "type" : "string"
+              }
+            }
+          },
+          "title" : "PageRequest"
+        }
+      }
+    },
+    "examples" : { },
+    "requestBodies" : { },
+    "headers" : { },
+    "securitySchemes" : { },
+    "links" : { },
+    "callbacks" : { }
+  },
+  "x-hope-project" : {
+    "artifact" : {
+      "groupId" : "com.apihug",
+      "artifactId" : "demo-external-proto",
+      "version" : "0.1.1-RELEASE"
+    },
+    "name" : "demo-external-proto",
+    "description" : "proto lib of  how to wire all the stuff together",
+    "application" : "demo-external",
+    "packageName" : "com.apihug.demo.external",
+    "type" : "PROTO",
+    "domain" : "external",
+    "identifier" : "demo-external-proto",
+    "module" : "demo-external-proto",
+    "status" : {
+      "deprecated" : false,
+      "createdTimestamp" : "2024-02-29",
+      "createdBy" : "dell"
+    },
+    "persistence" : {
+      "identifyType" : "LONG",
+      "tenantType" : "LONG"
+    },
+    "authority" : {
+      "enumClass" : "com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum",
+      "codePrefix" : 10240000
+    }
+  }
+}

@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package com.apihug.demo.external.proto.infra.settings.example;
+
+import "extend/constant.proto";
+import "swagger/annotations.proto";
+import "extend/domain.proto";
+
+option (hope.domain.kind) = ERROR;
+
+
+enum TemplateExampleErrorsEnum {
+
+    option (hope.swagger.enm) = {
+        description: "Example to define error enum from template";
+    };
+
+    THIS_IS_WRONG = 0  [
+        (hope.constant.field) = {
+            code: 1024, message: "this is wrong example", cn_message: "示范错误",
+            error: {
+                tips: "This always happen when you not remove this template sample",
+                phase: DOMAIN,
+                severity: FATAL,
+            }}];
+
+    THIS_IS_BAD = 1  [
+        (hope.constant.field) = {
+            code: 1025, message: "this is bad", cn_message: "还没有移除呢",
+            error: {
+                tips: "If you see this, meaning you copy the template code here",
+                phase: CONTROLLER,
+                severity: WARN,
+            }}];
+}

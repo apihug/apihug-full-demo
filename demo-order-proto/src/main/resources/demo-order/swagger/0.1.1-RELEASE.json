@@ -318,31 +318,6 @@
         "x-hope-java-class" : "hope.common.wire.constant.ProblemPhase",
         "x-hope-enum-type" : "true"
       },
-      "OrderStatusEnum" : {
-        "default" : "NORMAL",
-        "description" : "Status of the order",
-        "oneOf" : [ {
-          "const" : "NORMAL",
-          "description" : "normal status",
-          "example" : "NORMAL",
-          "title" : "NORMAL",
-          "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "order is ok"
-        }, {
-          "const" : "DELETED",
-          "description" : "deleted status",
-          "example" : "DELETED",
-          "title" : "DELETED",
-          "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "order is gone"
-        } ],
-        "title" : "OrderStatusEnum",
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum",
-          "protoFrom" : "com/apihug/demo/order/proto/infra/settings/admin/constant.proto"
-        },
-        "x-hope-enum-type" : "true"
-      },
       "OrderAuthorityEnum" : {
         "default" : "ORDER_ADD",
         "description" : "Example Authority Enum for the project, MODIFY IT",
@@ -365,6 +340,31 @@
         "x-hope-rt-meta" : {
           "clz" : "com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum",
           "protoFrom" : "com/apihug/demo/order/proto/infra/settings/authority.proto"
+        },
+        "x-hope-enum-type" : "true"
+      },
+      "OrderStatusEnum" : {
+        "default" : "NORMAL",
+        "description" : "Status of the order",
+        "oneOf" : [ {
+          "const" : "NORMAL",
+          "description" : "normal status",
+          "example" : "NORMAL",
+          "title" : "NORMAL",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-des-cn" : "order is ok"
+        }, {
+          "const" : "DELETED",
+          "description" : "deleted status",
+          "example" : "DELETED",
+          "title" : "DELETED",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-des-cn" : "order is gone"
+        } ],
+        "title" : "OrderStatusEnum",
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum",
+          "protoFrom" : "com/apihug/demo/order/proto/infra/settings/admin/constant.proto"
         },
         "x-hope-enum-type" : "true"
       },

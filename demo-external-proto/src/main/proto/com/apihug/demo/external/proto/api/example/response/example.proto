@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package com.apihug.demo.external.proto.api.example.response;
+
+import "extend/domain.proto";
+import "swagger/annotations.proto";
+
+option (hope.domain.kind) = BEAN;
+
+message TemplateExampleResponse {
+
+  option (hope.swagger.schema) = {
+    json_schema: {
+          description: "This is a template example response";
+      };
+  };
+
+  string name = 1 [(hope.swagger.field) = {
+      description: "user input name";
+      example: "Jake"
+      empty: TRUE;
+  }];
+
+  string hello = 3 [(hope.swagger.field) = {
+      description: "response hello";
+      example: "hello Jake"
+      empty: FALSE;
+  }];
+
+}

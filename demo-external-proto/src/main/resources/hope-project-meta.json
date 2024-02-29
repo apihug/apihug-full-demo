@@ -1,0 +1,29 @@
+{
+  "artifact" : {
+    "groupId" : "com.apihug",
+    "artifactId" : "demo-external-proto",
+    "version" : "0.1.1-RELEASE"
+  },
+  "name" : "demo-external-proto",
+  "description" : "proto lib of  how to wire all the stuff together",
+  "application" : "demo-external",
+  "packageName" : "com.apihug.demo.external",
+  "type" : "PROTO",
+  "domain" : "external",
+  "identifier" : "demo-external-proto",
+  "module" : "demo-external-proto",
+  "status" : {
+    "deprecated" : false,
+    "createdTimestamp" : "2024-02-29",
+    "lastBuildTimestamp" : "2024-02-29 17:33:44",
+    "createdBy" : "dell"
+  },
+  "persistence" : {
+    "identifyType" : "LONG",
+    "tenantType" : "LONG"
+  },
+  "authority" : {
+    "enumClass" : "com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum",
+    "codePrefix" : 10240000
+  }
+}

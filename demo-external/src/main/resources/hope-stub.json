@@ -1,0 +1,17 @@
+{
+  "packageName": "com.apihug.demo.external",
+  "name": "demo-external",
+  "domain": "external",
+  "proto": {
+    "artifact": {
+      "groupId": "com.apihug",
+      "artifactId": "demo-external-proto",
+      "version": "0.1.1-SNAPSHOT"
+    },
+    "module": "demo-external-proto",
+    "domain": "external",
+    "applied": true
+  },
+  "dependencies": [
+  ]
+}
