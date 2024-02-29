@@ -1,0 +1,23 @@
+{
+  "domain" : "order",
+  "version" : "0.1.1-SNAPSHOT",
+  "lastBuildTime" : "2024-02-29 15:23:21",
+  "codeOffset" : 0,
+  "name" : "OrderAuthorityEnum",
+  "javaClass" : "com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum",
+  "deprecated" : false,
+  "description" : "Example Authority Enum for the project, MODIFY IT",
+  "items" : [ {
+    "code" : 1,
+    "name" : "ORDER_ADD",
+    "expression" : "order:add",
+    "description" : "Authority to add order by admin",
+    "deprecated" : false
+  }, {
+    "code" : 2,
+    "name" : "ORDER_DELETE",
+    "expression" : "order:remove",
+    "description" : "Authority to delete order by admin",
+    "deprecated" : false
+  } ]
+}

@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+package com.apihug.demo.user.proto.api.admin.request;
+
+import "extend/domain.proto";
+import "swagger/annotations.proto";
+
+option (hope.domain.kind) = BEAN;
+
+
+message RegisterRequest {
+  option (hope.swagger.schema) = {
+    json_schema: {
+      description: "Register a user";
+    };
+  };
+
+  string name = 1 [(hope.swagger.field) = {
+    description: "name of the user";
+    example: "My Lord"
+    empty: FALSE;
+    mock: {
+      nature: NAME
+    }
+    max_length: {
+      value: 32
+    }
+  }];
+
+  string email = 2 [(hope.swagger.field) = {
+    description: "email address of this user";
+    email: TRUE;
+  }];
+
+  string password = 3 [(hope.swagger.field) = {
+    description: "password of this account";
+    blank: FALSE;
+    max_length:{
+      value:32;
+    }
+    min_length:{
+      value:5;
+    }
+  }];
+
+}
+
+message ChangePasswordRequest {
+
+  option (hope.swagger.schema) = {
+    json_schema: {
+      description: "Change my password request";
+    };
+  };
+
+  int64 customer_id = 1 [(hope.swagger.field) = {
+    description: "id of this customer";
+  }];
+
+  string new_password = 2 [(hope.swagger.field) = {
+    description: "new password";
+    blank: FALSE;
+    max_length:{
+      value:32;
+    }
+    min_length:{
+      value:5;
+    }
+  }];
+
+  string reason = 3 [(hope.swagger.field) = {
+    description: "reason of change the password";
+    example: "password stolen";
+    blank: TRUE
+  }];
+
+}

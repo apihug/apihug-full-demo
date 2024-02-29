@@ -1,0 +1,122 @@
+syntax = "proto3";
+
+package com.apihug.demo.inventory.proto.api.admin;
+
+import "extend/domain.proto";
+import "swagger/annotations.proto";
+
+option (hope.domain.kind) = BEAN;
+
+
+message StockInResponse {
+  option (hope.swagger.schema) = {
+    json_schema: {
+      description: "Stock in response";
+    };
+  };
+
+  string sku = 1 [(hope.swagger.field) = {
+    description: "sku of this product";
+    example: "S1JSF0S0FA"
+    empty: FALSE;
+    mock: {
+      nature: NAME
+    }
+    max_length: {
+      value: 32
+    }
+  }];
+  int64 quantity = 2 [(hope.swagger.field) = {
+    description: "quantity of this load";
+    example: "11";
+    default: "1";
+    maximum:{
+      value:1
+    }
+    minimum:{
+      value:9999
+    }
+  }];
+
+  int64 total_quantity = 3 [(hope.swagger.field) = {
+    description: "total left quality";
+    example: "11";
+    default: "1";
+    maximum:{
+      value:1
+    }
+    minimum:{
+      value:9999
+    }
+  }];
+}
+
+
+
+message StockOutResponse {
+  option (hope.swagger.schema) = {
+    json_schema: {
+      description: "Stock out response";
+    };
+  };
+
+  string sku = 1 [(hope.swagger.field) = {
+    description: "sku of this product";
+    example: "S1JSF0S0FA"
+    empty: FALSE;
+    mock: {
+      nature: NAME
+    }
+    max_length: {
+      value: 32
+    }
+  }];
+  int64 quantity = 2 [(hope.swagger.field) = {
+    description: "quantity of this load";
+    example: "11";
+    default: "1";
+    maximum:{
+      value:1
+    }
+    minimum:{
+      value:9999
+    }
+  }];
+
+  int64 order_id = 3 [(hope.swagger.field) = {
+    description: "id of the order";
+    example: "1111";
+    default: "111";
+    maximum:{
+      value:1
+    }
+    minimum:{
+      value:7886
+    }
+  }];
+
+  int64 success_quantity = 4 [(hope.swagger.field) = {
+    description: "success stock out quality";
+    example: "11";
+    default: "1";
+    maximum:{
+      value:1
+    }
+    minimum:{
+      value:9999
+    }
+  }];
+
+  int64 left_quantity = 5 [(hope.swagger.field) = {
+    description: "stock left quality";
+    example: "11";
+    default: "1";
+    maximum:{
+      value:1
+    }
+    minimum:{
+      value:9999
+    }
+  }];
+
+}

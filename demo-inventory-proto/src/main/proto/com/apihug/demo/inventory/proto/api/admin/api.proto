@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package com.apihug.demo.inventory.proto.api.admin;
+
+import "extend/domain.proto";
+import "google/protobuf/empty.proto";
+import "swagger/annotations.proto";
+import "com/apihug/demo/inventory/proto/api/admin/response.proto";
+import "com/apihug/demo/inventory/proto/api/admin/request.proto";
+
+option (hope.domain.kind) = IDL;
+
+service InventoryAdminService {
+  option (hope.swagger.svc) = {
+    path: "/inventory/admin";
+    description: "inventory admin service";
+  };
+
+  rpc SayHello (google.protobuf.Empty) returns (google.protobuf.Empty) {
+    option (hope.swagger.operation) = {
+      get: "/hello-world";
+      description: "hello from the inventory admin";
+      tags: "project";
+      priority: HIGH;
+      authorization:{
+        low_limit_risky_mode: ANONYMOUS
+      }
+    };
+  };
+
+
+
+  rpc StockIn (com.apihug.demo.inventory.proto.api.admin.StockInRequest) returns (com.apihug.demo.inventory.proto.api.admin.StockInResponse) {
+    option (hope.swagger.operation) = {
+      post: "/stock-in";
+      description: "put good to the stock";
+      priority: MIDDLE;
+      authorization:{
+        rbac:{
+          authorities: ["STOCK_IN"];
+        }
+      }
+    };
+  }
+
+
+
+  rpc StockOut (com.apihug.demo.inventory.proto.api.admin.StockOutRequest) returns (com.apihug.demo.inventory.proto.api.admin.StockOutResponse) {
+    option (hope.swagger.operation) = {
+      post: "/stock-out";
+      description: "stock out to delivery the goods to customer";
+      priority: HIGH;
+      authorization:{
+        rbac:{
+          authorities: ["STOCK_OUT"];
+        }
+      }
+    };
+  }
+
+}

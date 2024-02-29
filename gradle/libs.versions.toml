@@ -1,0 +1,95 @@
+[versions]
+# libraries
+apihug = "0.6.0-RELEASE"
+
+# test
+archUnit = "1.1.0"
+assertj = "3.24.2"
+awaitility = "4.2.0"
+mockito = "5.3.1"
+hamcrest = "2.2"
+
+# plugins
+springBoot = "3.2.3"
+springDependency = "1.1.4"
+protobuf = "0.8.19"
+liquibasePluginVersion = "2.2.0"
+gitProperties = "2.4.0"
+spotless = "6.12.0"
+spotbugs = "5.0.13"
+sonarqube = "3.0"
+
+[libraries]
+
+#Apihug Common
+apihugBom = { group = "com.apihug", name = "it-bom", version.ref = "apihug" }
+apihugCommon = { group = "com.apihug", name = "it-common" }
+apihugCommonApi = { group = "com.apihug", name = "it-common-api" }
+apihugCommonMock = { group = "com.apihug", name = "it-common-mock" }
+apihugCommonProto = { group = "com.apihug", name = "it-common-proto" }
+
+#ApiHug Spring plus
+apihugSpring = { group = "com.apihug", name = "it-common-spring" }
+apihugSpringCore = { group = "com.apihug", name = "it-common-spring-core" }
+apihugSpringApi = { group = "com.apihug", name = "it-common-spring-api" }
+apihugSpringCache = { group = "com.apihug", name = "it-common-spring-cache" }
+apihugSpringData = { group = "com.apihug", name = "it-common-spring-data" }
+apihugSpringMock = { group = "com.apihug", name = "it-common-spring-mock" }
+apihugSpringSecurity = { group = "com.apihug", name = "it-common-spring-security" }
+
+#Cache Stuff
+caffeine = { group = "com.github.ben-manes.caffeine", name = "caffeine" }
+redisson = { group = "org.redisson", name = "redisson" }
+redissonSpringData = { group = "org.redisson", name = "redisson-spring-data-30" }
+ehcache = { group = "org.ehcache", name = "ehcache" }
+
+#Swagger
+swaggerModel = { group = "io.swagger", name = "swagger-models" }
+swaggerV3Model = { group = "io.swagger.core.v3", name = "swagger-models" }
+swaggerV3Core = { group = "io.swagger.core.v3", name = "swagger-core" }
+swaggerV3Annotations = { group = "io.swagger.core.v3", name = "swagger-annotations" }
+swaggerV3AnnotationJakartas = { group = "io.swagger.core.v3", name = "swagger-annotations-jakarta" }
+
+#Standard
+jakartaPersistence = { group = "jakarta.persistence", name = "jakarta.persistence-api" }
+jakartaValidation = { group = "jakarta.validation", name = "jakarta.validation-api" }
+javaxCache = { group = "javax.cache", name = "cache-api" }
+javaxAnnotation = { group = "javax.annotation", name = "javax.annotation-api" }
+javaxServlet = { group = "javax.servlet", name = "javax.servlet-api" }
+
+#Others
+commonLang3 = { group = "org.apache.commons", name = "commons-lang3" }
+
+#JWT
+jjwtApi = { group = "io.jsonwebtoken", name = "jjwt-api" }
+jjwtImpl = { group = "io.jsonwebtoken", name = "jjwt-impl" }
+jjwtJackson = { group = "io.jsonwebtoken", name = "jjwt-jackson" }
+
+#OK
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp" }
+okhttpLoggingInterceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor" }
+
+#test
+awaitility = { group = "org.awaitility", name = "awaitility", version.ref = "awaitility" }
+assertjCore = { group = "org.assertj", name = "assertj-core", version.ref = "assertj" }
+archunitApi = { group = "com.tngtech.archunit", name = "archunit-junit5-api", version.ref = "archUnit" }
+archunitEngine = { group = "com.tngtech.archunit", name = "archunit-junit5-engine", version.ref = "archUnit" }
+mockitoCore = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
+hamcrest = { group = "org.hamcrest", name = "hamcrest", version.ref = "hamcrest" }
+
+[plugins]
+#Spring plugin
+springBoot = { id = "org.springframework.boot", version.ref = "springBoot" }
+springDependency = { id = "io.spring.dependency-management", version.ref = "springDependency" }
+#Hug plugin
+hopeWire = { id = "com.apihug.wire", version.ref = "apihug" }
+hopeStub = { id = "com.apihug.stub", version.ref = "apihug" }
+#Protobuf plugin
+protobuf = { id = "com.google.protobuf", version.ref = "protobuf" }
+#Liquibase
+liquibase = { id = "org.liquibase.gradle", version.ref = "liquibasePluginVersion" }
+#Others
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+spotbugs = { id = "com.github.spotbugs", version.ref = "spotbugs" }
+gitProperties = { id = "com.gorylenko.gradle-git-properties", version.ref = "gitProperties" }
+sonarqube = { id = "org.sonarqube", version.ref = "sonarqube" }

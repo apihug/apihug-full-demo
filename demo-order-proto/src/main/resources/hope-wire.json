@@ -1,0 +1,34 @@
+{
+  "packageName": "com.apihug.demo.order",
+  "name": "demo-order-proto",
+  "application": "demo-order",
+  "domain": "order",
+  "persistence" : {
+    "identifyType" : "LONG",
+    "tenantType" : "LONG"
+  },
+  "authority" : {
+    "enumClass" : "com.apihug.demo.order.proto.infra.settings.OrderAuthorityEnum",
+    "codePrefix" : 10240000
+  },
+  "createdAt": "2024-02-29",
+  "createdBy" : "dell",
+  "api": {
+    "openapi" : "3.0.1",
+    "info" : {
+      "contact" : {
+        "name" : "developer@apihug.com",
+        "url" : "https://github.com/apihug/",
+        "email" : "developer@apihug.com"
+      }
+    },
+    "externalDocs" : {
+      "description" : "Hope is the best thing",
+      "url" : "https://github.com/apihug/"
+    },
+    "tags" : [ {
+      "name" : "sample",
+      "description" : "Sample Tag"
+    }]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "artifact" : {
+    "groupId" : "com.apihug",
+    "artifactId" : "demo-user-proto",
+    "version" : "0.1.1-SNAPSHOT"
+  },
+  "name" : "demo-user-proto",
+  "description" : "proto lib of  user management module",
+  "application" : "demo-user",
+  "packageName" : "com.apihug.demo.user",
+  "type" : "PROTO",
+  "domain" : "user",
+  "identifier" : "demo-user-proto",
+  "module" : "demo-user-proto",
+  "status" : {
+    "deprecated" : false,
+    "createdTimestamp" : "2024-02-29",
+    "lastBuildTimestamp" : "2024-02-29 15:23:28",
+    "createdBy" : "dell"
+  },
+  "persistence" : {
+    "identifyType" : "LONG",
+    "tenantType" : "LONG"
+  },
+  "authority" : {
+    "enumClass" : "com.apihug.demo.user.wire.infra.settings.UserAuthorityEnum",
+    "codePrefix" : 10240000
+  }
+}

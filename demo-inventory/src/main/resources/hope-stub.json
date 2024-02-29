@@ -1,0 +1,17 @@
+{
+  "packageName": "com.apihug.demo.inventory",
+  "name": "demo-inventory",
+  "domain": "inventory",
+  "proto": {
+    "artifact": {
+      "groupId": "com.apihug",
+      "artifactId": "demo-inventory-proto",
+      "version": "0.1.1-SNAPSHOT"
+    },
+    "module": "demo-inventory-proto",
+    "domain": "inventory",
+    "applied": true
+  },
+  "dependencies": [
+  ]
+}

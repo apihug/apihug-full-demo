@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package com.apihug.demo.inventory.proto.api.storage;
+
+import "extend/domain.proto";
+import "google/protobuf/empty.proto";
+import "swagger/annotations.proto";
+import "com/apihug/demo/inventory/proto/api/storage/request/request.proto";
+import "com/apihug/demo/inventory/proto/api/storage/response/response.proto";
+
+option (hope.domain.kind) = IDL;
+
+service InventoryStorageService {
+  option (hope.swagger.svc) = {
+    path: "/inventory/storage/admin";
+    description: "Storage admin service";
+  };
+
+
+
+  rpc AddStorageLocation (com.apihug.demo.inventory.proto.api.storage.request.AddStorageLocationRequest) returns (com.apihug.demo.inventory.proto.api.storage.response.StorageLocationAddedResponse) {
+    option (hope.swagger.operation) = {
+      post: "/add-location";
+      description: "add a new location in the storage";
+      priority: CRITICAL;
+      authorization:{
+          rbac:{
+              authorities: ["ADD_STORAGE_LOCATION"];
+          }
+      }
+    };
+  }
+
+
+
+  rpc DeleteStorageLocation (com.apihug.demo.inventory.proto.api.storage.request.DeleteStorageLocationRequest) returns (com.apihug.demo.inventory.proto.api.storage.response.StorageLocationDeletedResponse) {
+    option (hope.swagger.operation) = {
+      post: "/delete-location";
+      description: "delete a old location";
+      priority: FATAL;
+      authorization:{
+          rbac:{
+              authorities: ["DELETE_STORAGE_LOCATION"];
+          }
+      }
+    };
+  }
+
+
+}

@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package com.apihug.demo.user.proto.api.admin;
+
+import "extend/domain.proto";
+import "google/protobuf/empty.proto";
+import "swagger/annotations.proto";
+import "com/apihug/demo/user/proto/api/admin/request/request.proto";
+import "com/apihug/demo/user/proto/api/admin/response/response.proto";
+
+option (hope.domain.kind) = IDL;
+
+service UserAdminService {
+  option (hope.swagger.svc) = {
+    path: "/user/admin";
+    description: "User admin server";
+  };
+
+  rpc SayHello (google.protobuf.Empty) returns (google.protobuf.Empty) {
+    option (hope.swagger.operation) = {
+      get: "/say-hello";
+      description: "Hello from the user admin server";
+      tags: "project";
+      priority: MIDDLE;
+      authorization:{
+        low_limit_risky_mode: ANONYMOUS
+      }
+    };
+  };
+
+
+  rpc RegisterCustomer (com.apihug.demo.user.proto.api.admin.request.RegisterRequest) returns (com.apihug.demo.user.proto.api.admin.response.CustomerRegisteredResponse) {
+    option (hope.swagger.operation) = {
+      post: "/register";
+      description: "admin try to register a new customer";
+      priority: CRITICAL;
+
+      authorization:{
+        rbac:{
+          authorities: ["USER_ADD"];
+        }
+      }
+    };
+  }
+
+
+
+  rpc ChangePassword (com.apihug.demo.user.proto.api.admin.request.ChangePasswordRequest) returns (com.apihug.demo.user.proto.api.admin.response.CustomerPasswordUpdatedResponse) {
+    option (hope.swagger.operation) = {
+      post: "/change-password";
+      description: "use to reset the password after password forgot";
+      priority: HIGH;
+      authorization:{
+        rbac:{
+          authorities: ["USER_ADD", "USER_DELETE"];
+        }
+      }
+    };
+  }
+}

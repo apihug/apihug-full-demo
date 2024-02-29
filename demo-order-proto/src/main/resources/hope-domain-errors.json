@@ -1,0 +1,31 @@
+{
+  "domain" : "order",
+  "version" : "0.1.1-SNAPSHOT",
+  "lastBuildTime" : "2024-02-29 15:23:21",
+  "errors" : [ {
+    "name" : "OrderErrorsEnum",
+    "javaClass" : "com.apihug.demo.order.wire.infra.settings.admin.OrderErrorsEnum",
+    "description" : "An example error",
+    "deprecated" : false,
+    "domain" : "order",
+    "items" : [ {
+      "code" : 1001023,
+      "title" : "NOT_EXIST",
+      "description" : "order gone",
+      "descriptionZhCN" : "just gone",
+      "deprecated" : false,
+      "tips" : "please contract your admin",
+      "phase" : "CONTROLLER",
+      "severity" : "WARN"
+    }, {
+      "code" : 1001024,
+      "title" : "CAN_NOT_DELETE",
+      "description" : "order is stub can's delete",
+      "descriptionZhCN" : "i do not know",
+      "deprecated" : false,
+      "tips" : "please contract your admin, and kill it",
+      "phase" : "DOMAIN",
+      "severity" : "ERROR"
+    } ]
+  } ]
+}

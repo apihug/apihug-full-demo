@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package com.apihug.demo.user.proto.infra.settings.admin;
+
+import "extend/constant.proto";
+import "swagger/annotations.proto";
+import "extend/domain.proto";
+
+option (hope.domain.kind) = ERROR;
+
+enum UserErrorsEnum {
+
+  option (hope.swagger.enm) = {
+    description: "User account management errors";
+  };
+
+  USER_EXIST = 0  [
+    (hope.constant.field) = {
+      code: 1001023, message: "customer already exist", cn_message: "用户存在",
+      error: {
+        tips: "contact your admin",
+        phase: DOMAIN,
+        severity: FATAL,
+      }}];
+
+  USER_BLOCKED = 1  [
+    (hope.constant.field) = {
+      code: 1001024, message: "customer is blocked", cn_message: "用户失效",
+      error: {
+        tips: "possible you do something bad, contact the admin",
+        phase: DOMAIN,
+        severity: WARN,
+      }}];
+}

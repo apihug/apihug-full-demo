@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+package com.apihug.demo.inventory.proto.api.admin;
+
+import "extend/domain.proto";
+import "swagger/annotations.proto";
+
+option (hope.domain.kind) = BEAN;
+
+
+message StockInRequest {
+  option (hope.swagger.schema) = {
+    json_schema: {
+      description: "Stock in request";
+    };
+  };
+
+  string sku = 1 [(hope.swagger.field) = {
+    description: "sku of this product";
+    example: "S1JSF0S0FA"
+    empty: FALSE;
+    mock: {
+      nature: NAME
+    }
+    max_length: {
+      value: 32
+    }
+  }];
+  int64 quantity = 2 [(hope.swagger.field) = {
+    description: "quantity of this load";
+    example: "11";
+    default: "1";
+    maximum:{
+      value:1
+    }
+    minimum:{
+      value:9999
+    }
+  }];
+}
+
+
+
+message StockOutRequest {
+  option (hope.swagger.schema) = {
+    json_schema: {
+      description: "Stock out request";
+    };
+  };
+
+  string sku = 1 [(hope.swagger.field) = {
+    description: "sku of this product";
+    example: "S1JSF0S0FA"
+    empty: FALSE;
+    mock: {
+      nature: NAME
+    }
+    max_length: {
+      value: 32
+    }
+  }];
+  int64 quantity = 2 [(hope.swagger.field) = {
+    description: "quantity of this load";
+    example: "11";
+    default: "1";
+    maximum:{
+      value:1
+    }
+    minimum:{
+      value:9999
+    }
+  }];
+
+  int64 order_id = 3 [(hope.swagger.field) = {
+    description: "id of the order";
+    example: "1111";
+    default: "111";
+    maximum:{
+      value:1
+    }
+    minimum:{
+      value:7886
+    }
+  }];
+
+}

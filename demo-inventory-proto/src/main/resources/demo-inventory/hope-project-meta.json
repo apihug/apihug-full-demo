@@ -1,0 +1,29 @@
+{
+  "artifact" : {
+    "groupId" : "com.apihug",
+    "artifactId" : "demo-inventory-proto",
+    "version" : "0.1.1-SNAPSHOT"
+  },
+  "name" : "demo-inventory-proto",
+  "description" : "proto lib of  inventory control module",
+  "application" : "demo-inventory",
+  "packageName" : "com.apihug.demo.inventory",
+  "type" : "PROTO",
+  "domain" : "inventory",
+  "identifier" : "demo-inventory-proto",
+  "module" : "demo-inventory-proto",
+  "status" : {
+    "deprecated" : false,
+    "createdTimestamp" : "2024-02-29",
+    "lastBuildTimestamp" : "2024-02-29 15:23:15",
+    "createdBy" : "dell"
+  },
+  "persistence" : {
+    "identifyType" : "LONG",
+    "tenantType" : "LONG"
+  },
+  "authority" : {
+    "enumClass" : "com.apihug.demo.inventory.wire.infra.settings.InventoryAuthorityEnum",
+    "codePrefix" : 10240000
+  }
+}

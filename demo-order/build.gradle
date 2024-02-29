@@ -1,0 +1,71 @@
+plugins {
+    id "java"
+
+    alias(libs.plugins.springBoot)
+    alias(libs.plugins.springDependency)
+    alias(libs.plugins.hopeStub)
+    alias(libs.plugins.liquibase)
+
+}
+
+//0. Java
+apply from: "${rootProject.projectDir}/gradle/java.gradle"
+//1. DB Migration
+apply from: "${rootProject.projectDir}/gradle/liquibase.gradle"
+
+hopeStub {
+
+    // please refer to the doc for details usage:
+    // https://github.com/apihug/apihug.com/blob/master/docs/handbook/005_dsl_implement_stub.md#gradle
+
+    debug = false
+}
+
+description("demo for api hug framework and tools")
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+dependencies {
+
+    //Hope START
+    implementation project(':demo-order-proto')
+    implementation(libs.apihugCommonProto)
+    implementation(libs.swaggerV3Core)
+    //Others:
+    
+    implementation(libs.apihugSpringData)
+    implementation(libs.jakartaPersistence)
+
+    //Hope END
+
+    //Spring starter START
+    
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'com.h2database:h2'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    //Spring starter END
+
+    //Extra Test Helper Libs
+    testImplementation(libs.awaitility)
+    testImplementation(libs.archunitApi)
+    testRuntimeOnly(libs.archunitEngine)
+    testRuntimeOnly(libs.assertjCore)
+
+}
+
+
+
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

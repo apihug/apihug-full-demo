@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package com.apihug.demo.order.proto.api.admin;
+
+import "extend/domain.proto";
+import "google/protobuf/empty.proto";
+import "swagger/annotations.proto";
+import "com/apihug/demo/order/proto/api/admin/response/response.proto";
+import "com/apihug/demo/order/proto/api/admin/request/request.proto";
+
+option (hope.domain.kind) = IDL;
+
+service OrderAdminService {
+  option (hope.swagger.svc) = {
+    path: "/order/admin";
+    description: "Admin to control order";
+  };
+
+  rpc SayHello (google.protobuf.Empty) returns (google.protobuf.Empty) {
+    option (hope.swagger.operation) = {
+      get: "/hello-world";
+      description: "hello from the admin server";
+      tags: "project";
+      priority: HIGH;
+      authorization:{
+        low_limit_risky_mode: ANONYMOUS
+      }
+    };
+  };
+
+
+  rpc AddOrder (com.apihug.demo.order.proto.api.admin.request.AddOrderRequest) returns (com.apihug.demo.order.proto.api.admin.response.OrderAddedResponse) {
+    option (hope.swagger.operation) = {
+      post: "/add-order";
+      description: "add order";
+      priority: FATAL;
+      authorization:{
+        rbac:{
+          authorities: ["ORDER_ADD"];
+        }
+      }
+    };
+  }
+
+
+  rpc DeleteOrder (com.apihug.demo.order.proto.api.admin.request.DeleteOrderRequest) returns (com.apihug.demo.order.proto.api.admin.response.OrderDeletedResponse) {
+    option (hope.swagger.operation) = {
+      post: "/delete-order";
+      description: "delete order ";
+      priority: MIDDLE;
+      authorization:{
+        rbac:{
+          authorities: ["ORDER_ADD", "ORDER_DELETE"];
+        }
+      }
+    };
+  }
+}

@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package com.apihug.demo.inventory.proto.infra.settings.admin;
+
+import "extend/constant.proto";
+import "swagger/annotations.proto";
+import "extend/domain.proto";
+
+option (hope.domain.kind) = ERROR;
+
+enum InventoryErrorsEnum {
+
+  option (hope.swagger.enm) = {
+    description: "An example error";
+  };
+
+  STOCK_IN_FULL = 0  [
+    (hope.constant.field) = {
+      code: 1001023, message: "stock in fail as the storage is full", cn_message: "full of goods",
+      error: {
+        tips: "please contract your admin ",
+        phase: DOMAIN,
+        severity: FATAL,
+      }}];
+
+  STOCK_OUT_EMPTY = 1  [
+    (hope.constant.field) = {
+      code: 1001024, message: "stock out fail as the storage is empty", cn_message: "empty of goods",
+      error: {
+        tips: "please contract your admin",
+        phase: DOMAIN,
+        severity: WARN,
+      }}];
+
+  STORAGE_CAN_NOT_DELETE = 1001025 [
+    (hope.constant.field) = {
+      code: 2, message: "Storage still using maybe", cn_message: "can not delete it just",
+      error: {
+        tips: "please ask your boss",
+        phase: DOMAIN,
+        severity: ERROR,
+        http_status: BAD_REQUEST
+      }}];
+
+}

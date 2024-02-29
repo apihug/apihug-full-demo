@@ -1,0 +1,17 @@
+{
+  "packageName": "com.apihug.demo.order",
+  "name": "demo-order",
+  "domain": "order",
+  "proto": {
+    "artifact": {
+      "groupId": "com.apihug",
+      "artifactId": "demo-order-proto",
+      "version": "0.1.1-SNAPSHOT"
+    },
+    "module": "demo-order-proto",
+    "domain": "order",
+    "applied": true
+  },
+  "dependencies": [
+  ]
+}

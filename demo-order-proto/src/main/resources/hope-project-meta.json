@@ -1,0 +1,29 @@
+{
+  "artifact" : {
+    "groupId" : "com.apihug",
+    "artifactId" : "demo-order-proto",
+    "version" : "0.1.1-SNAPSHOT"
+  },
+  "name" : "demo-order-proto",
+  "description" : "proto lib of  demo for api hug framework and tools",
+  "application" : "demo-order",
+  "packageName" : "com.apihug.demo.order",
+  "type" : "PROTO",
+  "domain" : "order",
+  "identifier" : "demo-order-proto",
+  "module" : "demo-order-proto",
+  "status" : {
+    "deprecated" : false,
+    "createdTimestamp" : "2024-02-29",
+    "lastBuildTimestamp" : "2024-02-29 15:23:21",
+    "createdBy" : "dell"
+  },
+  "persistence" : {
+    "identifyType" : "LONG",
+    "tenantType" : "LONG"
+  },
+  "authority" : {
+    "enumClass" : "com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum",
+    "codePrefix" : 10240000
+  }
+}

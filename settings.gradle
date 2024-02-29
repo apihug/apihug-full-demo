@@ -1,0 +1,10 @@
+rootProject.name = 'apihug-full-demo'
+
+// Include
+include('demo-order-proto')
+include('demo-order')
+
+include('demo-user-proto')
+include('demo-user')
+include('demo-inventory-proto')
+include('demo-inventory')

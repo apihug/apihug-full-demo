@@ -1,0 +1,41 @@
+{
+  "domain" : "inventory",
+  "version" : "0.1.1-SNAPSHOT",
+  "lastBuildTime" : "2024-02-29 15:23:15",
+  "errors" : [ {
+    "name" : "InventoryErrorsEnum",
+    "javaClass" : "com.apihug.demo.inventory.wire.infra.settings.admin.InventoryErrorsEnum",
+    "description" : "An example error",
+    "deprecated" : false,
+    "domain" : "inventory",
+    "items" : [ {
+      "code" : 1001023,
+      "title" : "STOCK_IN_FULL",
+      "description" : "stock in fail as the storage is full",
+      "descriptionZhCN" : "full of goods",
+      "deprecated" : false,
+      "tips" : "please contract your admin ",
+      "phase" : "DOMAIN",
+      "severity" : "FATAL"
+    }, {
+      "code" : 1001024,
+      "title" : "STOCK_OUT_EMPTY",
+      "description" : "stock out fail as the storage is empty",
+      "descriptionZhCN" : "empty of goods",
+      "deprecated" : false,
+      "tips" : "please contract your admin",
+      "phase" : "DOMAIN",
+      "severity" : "WARN"
+    }, {
+      "code" : 2,
+      "title" : "STORAGE_CAN_NOT_DELETE",
+      "description" : "Storage still using maybe",
+      "descriptionZhCN" : "can not delete it just",
+      "deprecated" : false,
+      "tips" : "please ask your boss",
+      "phase" : "DOMAIN",
+      "severity" : "ERROR",
+      "httpStatus" : "BAD_REQUEST"
+    } ]
+  } ]
+}

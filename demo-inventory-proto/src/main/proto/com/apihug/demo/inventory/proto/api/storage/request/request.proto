@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package com.apihug.demo.inventory.proto.api.storage.request;
+
+import "extend/domain.proto";
+import "swagger/annotations.proto";
+
+option (hope.domain.kind) = BEAN;
+
+
+message AddStorageLocationRequest {
+  option (hope.swagger.schema) = {
+    json_schema: {
+      description: "Add a new storage location";
+    };
+  };
+
+  string name = 1 [(hope.swagger.field) = {
+    description: "name of the location";
+    example: "A1-112-5B"
+    empty: FALSE;
+    mock: {
+      nature: NAME
+    }
+    max_length: {
+      value: 32
+    }
+  }];
+
+  string remark = 2 [(hope.swagger.field) = {
+    description: "comment of this";
+  }];
+
+}
+
+message DeleteStorageLocationRequest {
+
+  option (hope.swagger.schema) = {
+    json_schema: {
+      description: "delete a storage location";
+    };
+  };
+
+  int64 storage_location_id = 1 [(hope.swagger.field) = {
+    description: "id of this storage location";
+    example: "11";
+    default: "1";
+  }];
+
+  string reason = 2 [(hope.swagger.field) = {
+    description: "reason of delete it";
+    example: "no happy";
+  }];
+
+}

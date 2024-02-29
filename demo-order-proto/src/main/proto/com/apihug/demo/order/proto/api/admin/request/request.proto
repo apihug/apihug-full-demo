@@ -1,0 +1,92 @@
+syntax = "proto3";
+
+package com.apihug.demo.order.proto.api.admin.request;
+
+import "extend/domain.proto";
+import "swagger/annotations.proto";
+
+option (hope.domain.kind) = BEAN;
+
+
+message AddOrderRequest {
+  option (hope.swagger.schema) = {
+    json_schema: {
+      description: "Add order";
+    };
+  };
+
+  string sku_id = 1 [(hope.swagger.field) = {
+    description: "SKU of the product";
+    example: "XSK12MADA"
+    empty: FALSE;
+    mock: {
+      nature: NAME
+    }
+    max_length: {
+      value: 32
+    }
+  }];
+
+  int64 quantity = 2 [(hope.swagger.field) = {
+    description: "quantity of this oder";
+    example: "1";
+    default: "1";
+    maximum:{
+      value:1
+    }
+    minimum:{
+      value:122
+    }
+    mock:{
+      number_rule:{
+        min:{
+          value: 1
+        }
+        max:{
+          value: 122
+        }
+      }
+    }
+  }];
+}
+
+message DeleteOrderRequest {
+
+  option (hope.swagger.schema) = {
+    json_schema: {
+      description: "delete the order by ID";
+    };
+  };
+
+  int64 order_id = 1 [(hope.swagger.field) = {
+    description: "id of this order";
+    example: "111";
+    default: "111";
+    maximum:{
+      value:1
+    }
+    mock:{
+      number_rule:{
+        min:{
+          value: 1
+        }
+        max:{
+          value: 2321313
+        }
+      }
+    }
+  }];
+
+  string reason = 2 [(hope.swagger.field) = {
+    description: "reason why delete this order";
+    example: "wrong placed";
+    blank: FALSE;
+    max_length:{
+      value:122;
+    }
+    min_length:{
+      value:5;
+    }
+  }];
+
+}

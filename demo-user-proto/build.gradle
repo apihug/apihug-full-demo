@@ -1,0 +1,39 @@
+plugins {
+    id "java-library"
+    alias(libs.plugins.hopeWire)
+}
+
+description("proto lib of  user management module")
+apply from: "${rootProject.projectDir}/gradle/java.gradle"
+
+//
+//TODO this depends on your own company's proto library delivery strategy
+//  set it carefully to avoid code leak to public repository
+//  You need set up project root's `gradle.properties` firstly
+//
+//apply from: "${rootProject.projectDir}/gradle/publish-jar.gradle"
+
+hopeWire {
+
+    // please refer to the doc for details usage:
+    //  https://github.com/apihug/apihug.com/blob/master/docs/handbook/004_dsl_implement_wire.md#command
+
+    keepProto = false
+    verbose = false
+}
+
+hopeServer {
+    //
+    //TODO TBD,  Manage your APIs property on ApiHug's SAAS(in-house deploy) platform
+    //  You will has a centralized dashboard to manage and statistic your company's all APIs property
+    //
+    //url = "${System.getenv("HOPE_URL")}?"
+    url = "https://api.hipo.com/system/workspace/open/upload-meta?"
+    //appKey = "${System.getenv("HOPE_APP_KEY")}"
+    appKey = "just";
+    //appSecret = "${System.getenv("HOPE_APP_SECRET")}"
+    appSecret = "just";
+}
+
+dependencies {
+}

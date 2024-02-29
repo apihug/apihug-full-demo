@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.apihug.demo.order.proto.infra.settings;
+import "extend/constant.proto";
+import "swagger/annotations.proto";
+import "extend/domain.proto";
+
+option (hope.domain.kind) = ENUM;
+
+enum  OrderAuthorityEnum {
+
+  option (hope.swagger.enm) = {
+    description: "Example Authority Enum for the project, MODIFY IT"
+  };
+
+  ORDER_ADD = 0 [(hope.constant.field) = {code: 1,message: "order:add", cn_message: "Authority to add order by admin"}];
+  ORDER_DELETE = 1 [(hope.constant.field) = {code: 2,message: "order:remove", cn_message: "Authority to delete order by admin"}];
+
+}

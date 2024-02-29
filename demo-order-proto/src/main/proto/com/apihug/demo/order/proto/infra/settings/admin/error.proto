@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package com.apihug.demo.order.proto.infra.settings.admin;
+
+import "extend/constant.proto";
+import "swagger/annotations.proto";
+import "extend/domain.proto";
+
+option (hope.domain.kind) = ERROR;
+
+enum OrderErrorsEnum {
+
+    option (hope.swagger.enm) = {
+        description: "An example error";
+    };
+
+    NOT_EXIST = 0  [
+        (hope.constant.field) = {
+            code: 1001023, message: "order gone", cn_message: "just gone",
+            error: {
+                tips: "please contract your admin",
+                phase: CONTROLLER,
+                severity: WARN,
+            }}];
+
+    CAN_NOT_DELETE = 1  [
+        (hope.constant.field) = {
+            code: 1001024, message: "order is stub can's delete", cn_message: "i do not know",
+            error: {
+                tips: "please contract your admin, and kill it",
+                phase: DOMAIN,
+                severity: ERROR,
+            }}];
+}

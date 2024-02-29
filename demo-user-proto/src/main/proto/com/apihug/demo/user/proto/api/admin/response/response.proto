@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package com.apihug.demo.user.proto.api.admin.response;
+
+import "extend/domain.proto";
+import "swagger/annotations.proto";
+
+option (hope.domain.kind) = BEAN;
+
+
+message CustomerRegisteredResponse {
+  option (hope.swagger.schema) = {
+    json_schema: {
+      description: "customer registered successfully";
+    };
+  };
+
+  string name = 1 [(hope.swagger.field) = {
+    description: "name of the user";
+    example: "My Lord"
+    empty: FALSE;
+    mock: {
+      nature: NAME
+    }
+    max_length: {
+      value: 32
+    }
+  }];
+
+  int64 customer_id = 2 [(hope.swagger.field) = {
+    description: "id of this customer";
+    example: "1024";
+    blank: FALSE
+  }];
+
+  string register_date = 3 [(hope.swagger.field) = {
+    description: "date of registered";
+    format: DATE_TIME;
+    date_format: YYYY_MM_DD_HH_MM_SS;
+    mock:{
+      date_rule:{
+        time_gap: {
+          value:2
+        }
+        time_unit: MINUTES;
+        dir: PAST;
+      }
+    }
+  }];
+}
+
+message CustomerPasswordUpdatedResponse {
+
+  option (hope.swagger.schema) = {
+    json_schema: {
+      description: "password updated response";
+    };
+  };
+
+  int64 customer_id = 1 [(hope.swagger.field) = {
+    description: "id of this customer";
+    example: "1024";
+    mock:{
+      number_rule:{
+        min:{
+          value: 12
+        }
+        max:{
+          value: 12000
+        }
+      }
+    }
+  }];
+
+  string updated_date = 2 [(hope.swagger.field) = {
+    description: "date of this password updated";
+    format: DATE_TIME;
+    date_format: YYYY_MM_DD_HH_MM_SS;
+    mock:{
+      date_rule:{
+        time_gap: {
+          value:2
+        }
+        time_unit: MINUTES;
+        dir: PAST;
+      }
+    }
+  }];
+
+}

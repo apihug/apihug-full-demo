@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.apihug.demo.inventory.proto.infra.settings;
+import "extend/constant.proto";
+import "swagger/annotations.proto";
+import "extend/domain.proto";
+
+option (hope.domain.kind) = ENUM;
+
+enum  InventoryAuthorityEnum {
+
+  option (hope.swagger.enm) = {
+    description: "Inventory authorities list"
+  };
+
+  STOCK_IN = 0 [(hope.constant.field) = {code: 1,message: "stock:in", cn_message: "Authority to stock in product"}];
+  STOCK_OUT = 1 [(hope.constant.field) = {code: 2,message: "stock:out", cn_message: "Authority to stock out product"}];
+  ADD_STORAGE_LOCATION = 2 [(hope.constant.field) = {code: 1,message: "stock:storage:add", cn_message: "Authority to add a new storage location"}];
+  DELETE_STORAGE_LOCATION = 3 [(hope.constant.field) = {code: 2,message: "stock:storage:delete", cn_message: "Authority to delete a storage location"}];
+
+}

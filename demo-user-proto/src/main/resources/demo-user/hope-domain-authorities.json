@@ -1,0 +1,23 @@
+{
+  "domain" : "user",
+  "version" : "0.1.1-SNAPSHOT",
+  "lastBuildTime" : "2024-02-29 15:23:28",
+  "codeOffset" : 0,
+  "name" : "UserAuthorityEnum",
+  "javaClass" : "com.apihug.demo.user.wire.infra.settings.UserAuthorityEnum",
+  "deprecated" : false,
+  "description" : "User domain's authorities list",
+  "items" : [ {
+    "code" : 1,
+    "name" : "USER_ADD",
+    "expression" : "user:add",
+    "description" : "Authority to remove user",
+    "deprecated" : false
+  }, {
+    "code" : 2,
+    "name" : "USER_DELETE",
+    "expression" : "user:remove",
+    "description" : "Authority to delete user",
+    "deprecated" : false
+  } ]
+}

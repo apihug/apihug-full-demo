@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.apihug.demo.user.proto.infra.settings;
+import "extend/constant.proto";
+import "swagger/annotations.proto";
+import "extend/domain.proto";
+
+option (hope.domain.kind) = ENUM;
+
+enum  UserAuthorityEnum {
+
+  option (hope.swagger.enm) = {
+    description: "User domain's authorities list"
+  };
+
+  USER_ADD = 0 [(hope.constant.field) = {code: 1,message: "user:add", cn_message: "Authority to remove user"}];
+  USER_DELETE = 1 [(hope.constant.field) = {code: 2,message: "user:remove", cn_message: "Authority to delete user"}];
+
+}

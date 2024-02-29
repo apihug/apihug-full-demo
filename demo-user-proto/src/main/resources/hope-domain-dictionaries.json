@@ -1,0 +1,25 @@
+{
+  "domain" : "user",
+  "version" : "0.1.1-SNAPSHOT",
+  "lastBuildTime" : "2024-02-29 15:23:28",
+  "dictionaries" : [ {
+    "name" : "UserStatusEnum",
+    "javaClass" : "com.apihug.demo.user.wire.infra.settings.admin.UserStatusEnum",
+    "description" : "User management status",
+    "deprecated" : false,
+    "domain" : "user",
+    "items" : [ {
+      "code" : 1,
+      "title" : "NORMAL",
+      "description" : "normal",
+      "descriptionZhCN" : "user normal status",
+      "deprecated" : false
+    }, {
+      "code" : 2,
+      "title" : "BLOCKED",
+      "description" : "blocked",
+      "descriptionZhCN" : "user blocked",
+      "deprecated" : false
+    } ]
+  } ]
+}

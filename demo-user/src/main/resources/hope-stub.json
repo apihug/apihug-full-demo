@@ -1,0 +1,17 @@
+{
+  "packageName": "com.apihug.demo.user",
+  "name": "demo-user",
+  "domain": "user",
+  "proto": {
+    "artifact": {
+      "groupId": "com.apihug",
+      "artifactId": "demo-user-proto",
+      "version": "0.1.1-SNAPSHOT"
+    },
+    "module": "demo-user-proto",
+    "domain": "user",
+    "applied": true
+  },
+  "dependencies": [
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "domain" : "user",
+  "version" : "0.1.1-SNAPSHOT",
+  "lastBuildTime" : "2024-02-29 15:23:28",
+  "errors" : [ {
+    "name" : "UserErrorsEnum",
+    "javaClass" : "com.apihug.demo.user.wire.infra.settings.admin.UserErrorsEnum",
+    "description" : "User account management errors",
+    "deprecated" : false,
+    "domain" : "user",
+    "items" : [ {
+      "code" : 1001023,
+      "title" : "USER_EXIST",
+      "description" : "customer already exist",
+      "descriptionZhCN" : "用户存在",
+      "deprecated" : false,
+      "tips" : "contact your admin",
+      "phase" : "DOMAIN",
+      "severity" : "FATAL"
+    }, {
+      "code" : 1001024,
+      "title" : "USER_BLOCKED",
+      "description" : "customer is blocked",
+      "descriptionZhCN" : "用户失效",
+      "deprecated" : false,
+      "tips" : "possible you do something bad, contact the admin",
+      "phase" : "DOMAIN",
+      "severity" : "WARN"
+    } ]
+  } ]
+}

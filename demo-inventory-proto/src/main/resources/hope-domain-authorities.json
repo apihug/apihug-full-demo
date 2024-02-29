@@ -1,0 +1,35 @@
+{
+  "domain" : "inventory",
+  "version" : "0.1.1-SNAPSHOT",
+  "lastBuildTime" : "2024-02-29 15:23:15",
+  "codeOffset" : 0,
+  "name" : "InventoryAuthorityEnum",
+  "javaClass" : "com.apihug.demo.inventory.wire.infra.settings.InventoryAuthorityEnum",
+  "deprecated" : false,
+  "description" : "Inventory authorities list",
+  "items" : [ {
+    "code" : 1,
+    "name" : "STOCK_IN",
+    "expression" : "stock:in",
+    "description" : "Authority to stock in product",
+    "deprecated" : false
+  }, {
+    "code" : 2,
+    "name" : "STOCK_OUT",
+    "expression" : "stock:out",
+    "description" : "Authority to stock out product",
+    "deprecated" : false
+  }, {
+    "code" : 1,
+    "name" : "ADD_STORAGE_LOCATION",
+    "expression" : "stock:storage:add",
+    "description" : "Authority to add a new storage location",
+    "deprecated" : false
+  }, {
+    "code" : 2,
+    "name" : "DELETE_STORAGE_LOCATION",
+    "expression" : "stock:storage:delete",
+    "description" : "Authority to delete a storage location",
+    "deprecated" : false
+  } ]
+}
