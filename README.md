@@ -86,3 +86,6 @@ For further reference, please consider the following sections:
 5. [Apihug FAQ](https://github.com/apihug/apihug.com/blob/master/docs/handbook/999_faq.md)
 6. [Official Gradle documentation](https://docs.gradle.org)
 7. [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.2.0/gradle-plugin/reference/html/)
+8. [ApiHug - API design Copilot IDEA Plugin](https://plugins.jetbrains.com/plugin/23534-apihug--api-design-copilot)
+9. [ApiHug - IDEA FAQ](https://github.com/apihug/apihug.com/blob/master/docs/IDE/999_FAQ.md)
+10. [ApiHug - IDEA Handbook](https://github.com/apihug/apihug.com/blob/master/docs/IDE/README.md)
