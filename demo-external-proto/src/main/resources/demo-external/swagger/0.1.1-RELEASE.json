@@ -269,31 +269,6 @@
         "x-hope-java-class" : "hope.common.wire.constant.ProblemPhase",
         "x-hope-enum-type" : "true"
       },
-      "TemplateExampleEnum" : {
-        "default" : "REMOVE_ME",
-        "description" : "Remember to remove this enum this is example from template",
-        "oneOf" : [ {
-          "const" : "REMOVE_ME",
-          "description" : "remove me",
-          "example" : "REMOVE_ME",
-          "title" : "REMOVE_ME",
-          "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "Please remove this example"
-        }, {
-          "const" : "RIGHT_NOW",
-          "description" : "right now",
-          "example" : "RIGHT_NOW",
-          "title" : "RIGHT_NOW",
-          "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "Remove it right now"
-        } ],
-        "title" : "TemplateExampleEnum",
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.external.wire.infra.settings.example.TemplateExampleEnum",
-          "protoFrom" : "com/apihug/demo/external/proto/infra/settings/example/constant.proto"
-        },
-        "x-hope-enum-type" : "true"
-      },
       "ExternalAuthorityEnum" : {
         "default" : "USER_ADD",
         "description" : "Example Authority Enum for the project, MODIFY IT",
@@ -316,6 +291,31 @@
         "x-hope-rt-meta" : {
           "clz" : "com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum",
           "protoFrom" : "com/apihug/demo/external/proto/infra/settings/authority.proto"
+        },
+        "x-hope-enum-type" : "true"
+      },
+      "TemplateExampleEnum" : {
+        "default" : "REMOVE_ME",
+        "description" : "Remember to remove this enum this is example from template",
+        "oneOf" : [ {
+          "const" : "REMOVE_ME",
+          "description" : "remove me",
+          "example" : "REMOVE_ME",
+          "title" : "REMOVE_ME",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-des-cn" : "Please remove this example"
+        }, {
+          "const" : "RIGHT_NOW",
+          "description" : "right now",
+          "example" : "RIGHT_NOW",
+          "title" : "RIGHT_NOW",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-des-cn" : "Remove it right now"
+        } ],
+        "title" : "TemplateExampleEnum",
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.external.wire.infra.settings.example.TemplateExampleEnum",
+          "protoFrom" : "com/apihug/demo/external/proto/infra/settings/example/constant.proto"
         },
         "x-hope-enum-type" : "true"
       },

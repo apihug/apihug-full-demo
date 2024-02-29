@@ -318,6 +318,31 @@
         "x-hope-java-class" : "hope.common.wire.constant.ProblemPhase",
         "x-hope-enum-type" : "true"
       },
+      "OrderStatusEnum" : {
+        "default" : "NORMAL",
+        "description" : "Status of the order",
+        "oneOf" : [ {
+          "const" : "NORMAL",
+          "description" : "normal status",
+          "example" : "NORMAL",
+          "title" : "NORMAL",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-des-cn" : "order is ok"
+        }, {
+          "const" : "DELETED",
+          "description" : "deleted status",
+          "example" : "DELETED",
+          "title" : "DELETED",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-des-cn" : "order is gone"
+        } ],
+        "title" : "OrderStatusEnum",
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum",
+          "protoFrom" : "com/apihug/demo/order/proto/infra/settings/admin/constant.proto"
+        },
+        "x-hope-enum-type" : "true"
+      },
       "OrderAuthorityEnum" : {
         "default" : "ORDER_ADD",
         "description" : "Example Authority Enum for the project, MODIFY IT",
@@ -343,30 +368,67 @@
         },
         "x-hope-enum-type" : "true"
       },
-      "OrderStatusEnum" : {
-        "default" : "NORMAL",
-        "description" : "Status of the order",
-        "oneOf" : [ {
-          "const" : "NORMAL",
-          "description" : "normal status",
-          "example" : "NORMAL",
-          "title" : "NORMAL",
-          "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "order is ok"
-        }, {
-          "const" : "DELETED",
-          "description" : "deleted status",
-          "example" : "DELETED",
-          "title" : "DELETED",
-          "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "order is gone"
-        } ],
-        "title" : "OrderStatusEnum",
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum",
-          "protoFrom" : "com/apihug/demo/order/proto/infra/settings/admin/constant.proto"
+      "OrderAddedResponse" : {
+        "type" : "object",
+        "description" : "Order placed already",
+        "properties" : {
+          "orderId" : {
+            "type" : "number",
+            "format" : "int64",
+            "description" : "id of this order",
+            "example" : "111"
+          },
+          "skuId" : {
+            "type" : "string",
+            "description" : "SKU of the product",
+            "example" : "XSK12MADA",
+            "maxLength" : 32,
+            "x-hope-validation-blank" : false,
+            "x-hope-mock" : {
+              "nature" : "NAME",
+              "name" : "nature"
+            }
+          },
+          "quantity" : {
+            "type" : "number",
+            "format" : "int64",
+            "default" : "1",
+            "description" : "quantity of this oder",
+            "example" : "1",
+            "maximum" : 1.0,
+            "minimum" : 122.0,
+            "x-hope-mock" : {
+              "max" : 122,
+              "min" : 1,
+              "name" : "number"
+            }
+          }
         },
-        "x-hope-enum-type" : "true"
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.order.wire.api.admin.response.OrderAddedResponse",
+          "protoFrom" : "com/apihug/demo/order/proto/api/admin/response/response.proto"
+        }
+      },
+      "OrderDeletedResponse" : {
+        "type" : "object",
+        "description" : "order deleted response",
+        "properties" : {
+          "orderId" : {
+            "type" : "number",
+            "format" : "int64",
+            "description" : "id of this order",
+            "example" : "1111"
+          },
+          "reason" : {
+            "type" : "string",
+            "description" : "deleted reason",
+            "example" : "wrong"
+          }
+        },
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.order.wire.api.admin.response.OrderDeletedResponse",
+          "protoFrom" : "com/apihug/demo/order/proto/api/admin/response/response.proto"
+        }
       },
       "AddOrderRequest" : {
         "type" : "object",
@@ -431,68 +493,6 @@
         "x-hope-rt-meta" : {
           "clz" : "com.apihug.demo.order.wire.api.admin.request.DeleteOrderRequest",
           "protoFrom" : "com/apihug/demo/order/proto/api/admin/request/request.proto"
-        }
-      },
-      "OrderAddedResponse" : {
-        "type" : "object",
-        "description" : "Order placed already",
-        "properties" : {
-          "orderId" : {
-            "type" : "number",
-            "format" : "int64",
-            "description" : "id of this order",
-            "example" : "111"
-          },
-          "skuId" : {
-            "type" : "string",
-            "description" : "SKU of the product",
-            "example" : "XSK12MADA",
-            "maxLength" : 32,
-            "x-hope-validation-blank" : false,
-            "x-hope-mock" : {
-              "nature" : "NAME",
-              "name" : "nature"
-            }
-          },
-          "quantity" : {
-            "type" : "number",
-            "format" : "int64",
-            "default" : "1",
-            "description" : "quantity of this oder",
-            "example" : "1",
-            "maximum" : 1.0,
-            "minimum" : 122.0,
-            "x-hope-mock" : {
-              "max" : 122,
-              "min" : 1,
-              "name" : "number"
-            }
-          }
-        },
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.order.wire.api.admin.response.OrderAddedResponse",
-          "protoFrom" : "com/apihug/demo/order/proto/api/admin/response/response.proto"
-        }
-      },
-      "OrderDeletedResponse" : {
-        "type" : "object",
-        "description" : "order deleted response",
-        "properties" : {
-          "orderId" : {
-            "type" : "number",
-            "format" : "int64",
-            "description" : "id of this order",
-            "example" : "1111"
-          },
-          "reason" : {
-            "type" : "string",
-            "description" : "deleted reason",
-            "example" : "wrong"
-          }
-        },
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.order.wire.api.admin.response.OrderDeletedResponse",
-          "protoFrom" : "com/apihug/demo/order/proto/api/admin/response/response.proto"
         }
       },
       "OrderAddedResponseResult" : {

@@ -8,3 +8,12 @@
 
 ## Steps
 
+
+
+## Shell
+
+```shell
+
+./gradlew.bat demo-external:clean stub build -x test -x stubTest
+
+```
