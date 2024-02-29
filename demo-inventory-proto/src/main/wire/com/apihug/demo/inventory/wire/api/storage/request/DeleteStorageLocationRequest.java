@@ -15,7 +15,7 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/inventory/proto/api/storage/request/request.proto",
-    pluginVersion = "0.6.0-RELEASE",
+    pluginVersion = "0.6.1-RELEASE",
     entity = "DeleteStorageLocationRequest",
     kind = Kind.MESSAGE
 )
@@ -25,7 +25,7 @@ public class DeleteStorageLocationRequest {
   @Schema(
       description = "id of this storage location",
       example = "11",
-      defaultValue = 1
+      defaultValue = "1"
   )
   protected Long storageLocationId;
 

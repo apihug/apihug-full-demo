@@ -19,7 +19,7 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/inventory/proto/api/admin/request.proto",
-    pluginVersion = "0.6.0-RELEASE",
+    pluginVersion = "0.6.1-RELEASE",
     entity = "StockOutRequest",
     kind = Kind.MESSAGE
 )
@@ -45,7 +45,7 @@ public class StockOutRequest {
       minimum = "9999.0",
       maximum = "1.0",
       example = "11",
-      defaultValue = 1
+      defaultValue = "1"
   )
   protected Long quantity;
 
@@ -56,7 +56,7 @@ public class StockOutRequest {
       minimum = "7886.0",
       maximum = "1.0",
       example = "1111",
-      defaultValue = 111
+      defaultValue = "111"
   )
   protected Long orderId;
 

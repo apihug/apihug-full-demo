@@ -2,6 +2,15 @@
 
 [English](./README.md) | [简体中文](./README_cn.md)
 
+## 完整示范
+
+1. ApiHug 如何运作
+2. 开发模型(单例-微服务)
+
+本项目的 proto 包已发行到maven 库: <a target="_blank" href="https://search.maven.org/artifact/com.apihug/demo-user-proto"><img src="https://img.shields.io/maven-central/v/com.apihug/demo-user-proto.svg?label=Maven%20Central" /></a>
+
+
+
 ## 快速构建
 
 ### 0. 整体构建项目

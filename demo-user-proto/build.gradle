@@ -11,7 +11,7 @@ apply from: "${rootProject.projectDir}/gradle/java.gradle"
 //  set it carefully to avoid code leak to public repository
 //  You need set up project root's `gradle.properties` firstly
 //
-//apply from: "${rootProject.projectDir}/gradle/publish-jar.gradle"
+apply from: "${rootProject.projectDir}/gradle/publish-jar.gradle"
 
 hopeWire {
 

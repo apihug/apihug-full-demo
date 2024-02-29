@@ -27,7 +27,7 @@ public class InventoryApiModule implements Module<InventoryApiCollector> {
     project.setArtifact(artifact);
     artifact.setArtifactId("demo-inventory-proto");
     artifact.setGroupId("com.apihug");
-    artifact.setVersion("0.1.1-SNAPSHOT");
+    artifact.setVersion("0.1.1-RELEASE");
     ProjectStatus status = new ProjectStatus();
     project.setStatus(status);
     status.setCreatedTimestamp("2024-02-29");
@@ -46,6 +46,6 @@ public class InventoryApiModule implements Module<InventoryApiCollector> {
 
   @Override
   public String version() {
-    return "0.1.1-SNAPSHOT";
+    return "0.1.1-RELEASE";
   }
 }

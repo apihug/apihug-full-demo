@@ -193,29 +193,6 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
     clzPathMap.computeIfAbsent(clz, s -> new LinkedHashSet<>()).add(path);
   }
 
-  private final void _build_component_com_apihug_demo_order_wire_infra_settings_OrderAuthorityEnum(
-      ) {
-    //  Build of the component: OrderAuthorityEnum proto: com/apihug/demo/order/proto/infra/settings/authority.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum", res);
-    res.setClzName("com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum");
-    res.setEnumClz(true);
-    res.setName("OrderAuthorityEnum");
-    res.setPayload(new Builder<Schema<OrderAuthorityEnum>>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("Example Authority Enum for the project, MODIFY IT");
-        List<OrderAuthorityEnum> values  = new ArrayList();
-        values.add(OrderAuthorityEnum.ORDER_ADD);
-        values.add(OrderAuthorityEnum.ORDER_DELETE);
-        res.setDefault(OrderAuthorityEnum.ORDER_ADD);
-        res.setEnum(values);
-        return res;
-      }
-    }.build());
-  }
-
   private final void _build_component_com_apihug_demo_order_wire_infra_settings_admin_OrderStatusEnum(
       ) {
     //  Build of the component: OrderStatusEnum proto: com/apihug/demo/order/proto/infra/settings/admin/constant.proto
@@ -233,6 +210,29 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
         values.add(OrderStatusEnum.NORMAL);
         values.add(OrderStatusEnum.DELETED);
         res.setDefault(OrderStatusEnum.NORMAL);
+        res.setEnum(values);
+        return res;
+      }
+    }.build());
+  }
+
+  private final void _build_component_com_apihug_demo_order_wire_infra_settings_OrderAuthorityEnum(
+      ) {
+    //  Build of the component: OrderAuthorityEnum proto: com/apihug/demo/order/proto/infra/settings/authority.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum", res);
+    res.setClzName("com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum");
+    res.setEnumClz(true);
+    res.setName("OrderAuthorityEnum");
+    res.setPayload(new Builder<Schema<OrderAuthorityEnum>>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("Example Authority Enum for the project, MODIFY IT");
+        List<OrderAuthorityEnum> values  = new ArrayList();
+        values.add(OrderAuthorityEnum.ORDER_ADD);
+        values.add(OrderAuthorityEnum.ORDER_DELETE);
+        res.setDefault(OrderAuthorityEnum.ORDER_ADD);
         res.setEnum(values);
         return res;
       }
@@ -748,7 +748,7 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
       public String build() {
         _info.setTitle("demo-order-proto");
         _info.setDescription("proto lib of  demo for api hug framework and tools");
-        _info.setVersion("0.1.1-SNAPSHOT");
+        _info.setVersion("0.1.1-RELEASE");
         _contact.setName("developer@apihug.com");
         _contact.setUrl("https://github.com/apihug/");
         _contact.setEmail("developer@apihug.com");
@@ -769,10 +769,10 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
   }
 
   private void _init() {
-    // Build for Enum :com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum
-    _build_component_com_apihug_demo_order_wire_infra_settings_OrderAuthorityEnum();
     // Build for Enum :com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum
     _build_component_com_apihug_demo_order_wire_infra_settings_admin_OrderStatusEnum();
+    // Build for Enum :com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum
+    _build_component_com_apihug_demo_order_wire_infra_settings_OrderAuthorityEnum();
     // Build for Component : com.apihug.demo.order.wire.api.admin.request.AddOrderRequest
     _build_component_com_apihug_demo_order_wire_api_admin_request_AddOrderRequest();
     // Build for Component : com.apihug.demo.order.wire.api.admin.request.DeleteOrderRequest

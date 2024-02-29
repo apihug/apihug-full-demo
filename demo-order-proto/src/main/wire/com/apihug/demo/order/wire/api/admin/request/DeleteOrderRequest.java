@@ -20,7 +20,7 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/order/proto/api/admin/request/request.proto",
-    pluginVersion = "0.6.0-RELEASE",
+    pluginVersion = "0.6.1-RELEASE",
     entity = "DeleteOrderRequest",
     kind = Kind.MESSAGE
 )
@@ -32,7 +32,7 @@ public class DeleteOrderRequest {
       description = "id of this order",
       maximum = "1.0",
       example = "111",
-      defaultValue = 111
+      defaultValue = "111"
   )
   protected Long orderId;
 

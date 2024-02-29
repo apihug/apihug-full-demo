@@ -19,7 +19,7 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/inventory/proto/api/admin/response.proto",
-    pluginVersion = "0.6.0-RELEASE",
+    pluginVersion = "0.6.1-RELEASE",
     entity = "StockInResponse",
     kind = Kind.MESSAGE
 )
@@ -45,7 +45,7 @@ public class StockInResponse {
       minimum = "9999.0",
       maximum = "1.0",
       example = "11",
-      defaultValue = 1
+      defaultValue = "1"
   )
   protected Long quantity;
 
@@ -56,7 +56,7 @@ public class StockInResponse {
       minimum = "9999.0",
       maximum = "1.0",
       example = "11",
-      defaultValue = 1
+      defaultValue = "1"
   )
   protected Long totalQuantity;
 

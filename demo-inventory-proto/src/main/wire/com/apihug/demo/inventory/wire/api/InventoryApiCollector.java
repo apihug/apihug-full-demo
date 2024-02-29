@@ -265,194 +265,6 @@ public final class InventoryApiCollector implements Collector<OpenAPI, Schema, A
     }.build());
   }
 
-  private final void _build_component_com_apihug_demo_inventory_wire_api_admin_StockInRequest() {
-    //  Build of the component: StockInRequest proto: com/apihug/demo/inventory/proto/api/admin/request.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.inventory.wire.api.admin.StockInRequest", res);
-    res.setClzName("com.apihug.demo.inventory.wire.api.admin.StockInRequest");
-    res.setName("StockInRequest");
-    res.setProtoFrom("com/apihug/demo/inventory/proto/api/admin/request.proto");
-    res.setProtoEntity("StockInRequest");
-    res.setDescription("Stock in request");
-    res.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("Stock in request");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
-        return res;
-      }
-    }.build());
-    // Add field 0 sku
-    ComponentItem<Schema> _0 = new ComponentItem();
-    _0.setClz("java.lang.String");
-    _0.setName("sku");
-    _0.setFieldName("sku");
-    _0.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("sku of this product");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setMaxLength(32);
-        res.setNullable(false);
-        res.setExample("S1JSF0S0FA");
-        return res;
-      }
-    }.build());
-    _0.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    _0.setRule(new Builder<Map>() {
-      @Override
-      public Map build() {
-        Map res = new LinkedHashMap();
-        res.put("nature", "NAME");
-        res.put("name", "nature");
-        return res;
-      }
-    }.build());
-    res.addItem(_0);
-    // Add field 1 quantity
-    ComponentItem<Schema> _1 = new ComponentItem();
-    _1.setClz("java.lang.Long");
-    _1.setName("quantity");
-    _1.setFieldName("quantity");
-    _1.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("quantity of this load");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setMaximum(BigDecimal.valueOf(1L, 1));
-        res.setMinimum(BigDecimal.valueOf(9999L, 1));
-        res.setNullable(false);
-        res.setExample("11");
-        return res;
-      }
-    }.build());
-    _1.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_1);
-  }
-
-  private final void _build_component_com_apihug_demo_inventory_wire_api_admin_StockOutRequest() {
-    //  Build of the component: StockOutRequest proto: com/apihug/demo/inventory/proto/api/admin/request.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.inventory.wire.api.admin.StockOutRequest", res);
-    res.setClzName("com.apihug.demo.inventory.wire.api.admin.StockOutRequest");
-    res.setName("StockOutRequest");
-    res.setProtoFrom("com/apihug/demo/inventory/proto/api/admin/request.proto");
-    res.setProtoEntity("StockOutRequest");
-    res.setDescription("Stock out request");
-    res.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("Stock out request");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
-        return res;
-      }
-    }.build());
-    // Add field 0 sku
-    ComponentItem<Schema> _0 = new ComponentItem();
-    _0.setClz("java.lang.String");
-    _0.setName("sku");
-    _0.setFieldName("sku");
-    _0.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("sku of this product");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setMaxLength(32);
-        res.setNullable(false);
-        res.setExample("S1JSF0S0FA");
-        return res;
-      }
-    }.build());
-    _0.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    _0.setRule(new Builder<Map>() {
-      @Override
-      public Map build() {
-        Map res = new LinkedHashMap();
-        res.put("nature", "NAME");
-        res.put("name", "nature");
-        return res;
-      }
-    }.build());
-    res.addItem(_0);
-    // Add field 1 quantity
-    ComponentItem<Schema> _1 = new ComponentItem();
-    _1.setClz("java.lang.Long");
-    _1.setName("quantity");
-    _1.setFieldName("quantity");
-    _1.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("quantity of this load");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setMaximum(BigDecimal.valueOf(1L, 1));
-        res.setMinimum(BigDecimal.valueOf(9999L, 1));
-        res.setNullable(false);
-        res.setExample("11");
-        return res;
-      }
-    }.build());
-    _1.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_1);
-    // Add field 2 order_id
-    ComponentItem<Schema> _2 = new ComponentItem();
-    _2.setClz("java.lang.Long");
-    _2.setName("order_id");
-    _2.setFieldName("orderId");
-    _2.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("id of the order");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setMaximum(BigDecimal.valueOf(1L, 1));
-        res.setMinimum(BigDecimal.valueOf(7886L, 1));
-        res.setNullable(false);
-        res.setExample("1111");
-        return res;
-      }
-    }.build());
-    _2.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_2);
-  }
-
   private final void _build_component_com_apihug_demo_inventory_wire_api_storage_response_StorageLocationAddedResponse(
       ) {
     //  Build of the component: StorageLocationAddedResponse proto: com/apihug/demo/inventory/proto/api/storage/response/response.proto
@@ -775,6 +587,194 @@ public final class InventoryApiCollector implements Collector<OpenAPI, Schema, A
     res.addItem(_1);
   }
 
+  private final void _build_component_com_apihug_demo_inventory_wire_api_admin_StockInRequest() {
+    //  Build of the component: StockInRequest proto: com/apihug/demo/inventory/proto/api/admin/request.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.inventory.wire.api.admin.StockInRequest", res);
+    res.setClzName("com.apihug.demo.inventory.wire.api.admin.StockInRequest");
+    res.setName("StockInRequest");
+    res.setProtoFrom("com/apihug/demo/inventory/proto/api/admin/request.proto");
+    res.setProtoEntity("StockInRequest");
+    res.setDescription("Stock in request");
+    res.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("Stock in request");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setNullable(false);
+        return res;
+      }
+    }.build());
+    // Add field 0 sku
+    ComponentItem<Schema> _0 = new ComponentItem();
+    _0.setClz("java.lang.String");
+    _0.setName("sku");
+    _0.setFieldName("sku");
+    _0.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("sku of this product");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setMaxLength(32);
+        res.setNullable(false);
+        res.setExample("S1JSF0S0FA");
+        return res;
+      }
+    }.build());
+    _0.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    _0.setRule(new Builder<Map>() {
+      @Override
+      public Map build() {
+        Map res = new LinkedHashMap();
+        res.put("nature", "NAME");
+        res.put("name", "nature");
+        return res;
+      }
+    }.build());
+    res.addItem(_0);
+    // Add field 1 quantity
+    ComponentItem<Schema> _1 = new ComponentItem();
+    _1.setClz("java.lang.Long");
+    _1.setName("quantity");
+    _1.setFieldName("quantity");
+    _1.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("quantity of this load");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setMaximum(BigDecimal.valueOf(1L, 1));
+        res.setMinimum(BigDecimal.valueOf(9999L, 1));
+        res.setNullable(false);
+        res.setExample("11");
+        return res;
+      }
+    }.build());
+    _1.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_1);
+  }
+
+  private final void _build_component_com_apihug_demo_inventory_wire_api_admin_StockOutRequest() {
+    //  Build of the component: StockOutRequest proto: com/apihug/demo/inventory/proto/api/admin/request.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.inventory.wire.api.admin.StockOutRequest", res);
+    res.setClzName("com.apihug.demo.inventory.wire.api.admin.StockOutRequest");
+    res.setName("StockOutRequest");
+    res.setProtoFrom("com/apihug/demo/inventory/proto/api/admin/request.proto");
+    res.setProtoEntity("StockOutRequest");
+    res.setDescription("Stock out request");
+    res.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("Stock out request");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setNullable(false);
+        return res;
+      }
+    }.build());
+    // Add field 0 sku
+    ComponentItem<Schema> _0 = new ComponentItem();
+    _0.setClz("java.lang.String");
+    _0.setName("sku");
+    _0.setFieldName("sku");
+    _0.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("sku of this product");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setMaxLength(32);
+        res.setNullable(false);
+        res.setExample("S1JSF0S0FA");
+        return res;
+      }
+    }.build());
+    _0.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    _0.setRule(new Builder<Map>() {
+      @Override
+      public Map build() {
+        Map res = new LinkedHashMap();
+        res.put("nature", "NAME");
+        res.put("name", "nature");
+        return res;
+      }
+    }.build());
+    res.addItem(_0);
+    // Add field 1 quantity
+    ComponentItem<Schema> _1 = new ComponentItem();
+    _1.setClz("java.lang.Long");
+    _1.setName("quantity");
+    _1.setFieldName("quantity");
+    _1.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("quantity of this load");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setMaximum(BigDecimal.valueOf(1L, 1));
+        res.setMinimum(BigDecimal.valueOf(9999L, 1));
+        res.setNullable(false);
+        res.setExample("11");
+        return res;
+      }
+    }.build());
+    _1.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_1);
+    // Add field 2 order_id
+    ComponentItem<Schema> _2 = new ComponentItem();
+    _2.setClz("java.lang.Long");
+    _2.setName("order_id");
+    _2.setFieldName("orderId");
+    _2.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("id of the order");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setMaximum(BigDecimal.valueOf(1L, 1));
+        res.setMinimum(BigDecimal.valueOf(7886L, 1));
+        res.setNullable(false);
+        res.setExample("1111");
+        return res;
+      }
+    }.build());
+    _2.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_2);
+  }
+
   private final void _build_component_com_apihug_demo_inventory_wire_api_admin_StockInResponse() {
     //  Build of the component: StockInResponse proto: com/apihug/demo/inventory/proto/api/admin/response.proto
     Component<Schema, Schema> res = new Component();
@@ -1041,6 +1041,91 @@ public final class InventoryApiCollector implements Collector<OpenAPI, Schema, A
     res.addItem(_4);
   }
 
+  private final void _build_service_com_apihug_demo_inventory_wire_api_storage_InventoryStorageService(
+      ) {
+    // ----------------------------------------------------
+    // START-[Service Context] com.apihug.demo.inventory.wire.api.storage.InventoryStorageService
+    Map sc = servicesContext.computeIfAbsent("com.apihug.demo.inventory.wire.api.storage.InventoryStorageService", s-> new LinkedHashMap());
+    sc.put("description", "Storage admin service");
+    sc.put("protoFrom", "com/apihug/demo/inventory/proto/api/storage/api.proto");
+    sc.put("protoEntity", "InventoryStorageService");
+    sc.put("basePath", "/inventory/storage/admin");
+    List<String> sc_paths = new ArrayList();
+    sc.put("paths", sc_paths);
+    // --------------------------
+    // Register Path of this Service: [1] "/inventory/storage/admin/add-location"
+    sc_paths.add("/inventory/storage/admin/add-location");
+    Map _sc_paths_item_1 = pathsContext.computeIfAbsent("/inventory/storage/admin/add-location", s-> new LinkedHashMap());
+    _sc_paths_item_1.put("action", "POST");
+    _sc_paths_item_1.put("method", "AddStorageLocation");
+    _sc_paths_item_1.put("wrapper", true);
+    _sc_paths_item_1.put("pageable", false);
+    _sc_paths_item_1.put("request", false);
+    _sc_paths_item_1.put("response", false);
+    _sc_paths_item_1.put("session", false);
+    _sc_paths_item_1.put("inputPlural", false);
+    _sc_paths_item_1.put("outputPlural", false);
+    _sc_paths_item_1.put("priority", "CRITICAL");
+    _sc_paths_item_1.put("requestRef", "com.apihug.demo.inventory.wire.api.storage.request.AddStorageLocationRequest");
+    _sc_paths_item_1.put("responseRef", "com.apihug.demo.inventory.wire.api.storage.response.StorageLocationAddedResponse");
+    _sc_paths_item_1.put("operation", new Builder<Operation>() {
+      @Override
+      public Operation build() {
+        final Operation operation =  new Operation();
+        operation.setDescription("add a new location in the storage");
+        return operation;
+      }
+    }.build());
+    _sc_paths_item_1.put("authorization", new Builder<Authorization>() {
+      @Override
+      public Authorization build() {
+        Authorization res = new Authorization();
+        res.addAuthority(InventoryAuthorityEnum.ADD_STORAGE_LOCATION);
+        res.setCombinator(Authorization.Combinator.AND);
+        return res;
+      }
+    }.build());
+    _sc_paths_item_1.put("group", "CUSTOMER");
+    _sc_paths_item_1.put("empty", false);
+    // --------------------------
+    // Register Path of this Service: [2] "/inventory/storage/admin/delete-location"
+    sc_paths.add("/inventory/storage/admin/delete-location");
+    Map _sc_paths_item_2 = pathsContext.computeIfAbsent("/inventory/storage/admin/delete-location", s-> new LinkedHashMap());
+    _sc_paths_item_2.put("action", "POST");
+    _sc_paths_item_2.put("method", "DeleteStorageLocation");
+    _sc_paths_item_2.put("wrapper", true);
+    _sc_paths_item_2.put("pageable", false);
+    _sc_paths_item_2.put("request", false);
+    _sc_paths_item_2.put("response", false);
+    _sc_paths_item_2.put("session", false);
+    _sc_paths_item_2.put("inputPlural", false);
+    _sc_paths_item_2.put("outputPlural", false);
+    _sc_paths_item_2.put("priority", "FATAL");
+    _sc_paths_item_2.put("requestRef", "com.apihug.demo.inventory.wire.api.storage.request.DeleteStorageLocationRequest");
+    _sc_paths_item_2.put("responseRef", "com.apihug.demo.inventory.wire.api.storage.response.StorageLocationDeletedResponse");
+    _sc_paths_item_2.put("operation", new Builder<Operation>() {
+      @Override
+      public Operation build() {
+        final Operation operation =  new Operation();
+        operation.setDescription("delete a old location");
+        return operation;
+      }
+    }.build());
+    _sc_paths_item_2.put("authorization", new Builder<Authorization>() {
+      @Override
+      public Authorization build() {
+        Authorization res = new Authorization();
+        res.addAuthority(InventoryAuthorityEnum.DELETE_STORAGE_LOCATION);
+        res.setCombinator(Authorization.Combinator.AND);
+        return res;
+      }
+    }.build());
+    _sc_paths_item_2.put("group", "CUSTOMER");
+    _sc_paths_item_2.put("empty", false);
+    // END-[Service Context] com.apihug.demo.inventory.wire.api.storage.InventoryStorageService
+    // ----------------------------------------------------
+  }
+
   private final void _build_service_com_apihug_demo_inventory_wire_api_admin_InventoryAdminService(
       ) {
     // ----------------------------------------------------
@@ -1162,91 +1247,6 @@ public final class InventoryApiCollector implements Collector<OpenAPI, Schema, A
     // ----------------------------------------------------
   }
 
-  private final void _build_service_com_apihug_demo_inventory_wire_api_storage_InventoryStorageService(
-      ) {
-    // ----------------------------------------------------
-    // START-[Service Context] com.apihug.demo.inventory.wire.api.storage.InventoryStorageService
-    Map sc = servicesContext.computeIfAbsent("com.apihug.demo.inventory.wire.api.storage.InventoryStorageService", s-> new LinkedHashMap());
-    sc.put("description", "Storage admin service");
-    sc.put("protoFrom", "com/apihug/demo/inventory/proto/api/storage/api.proto");
-    sc.put("protoEntity", "InventoryStorageService");
-    sc.put("basePath", "/inventory/storage/admin");
-    List<String> sc_paths = new ArrayList();
-    sc.put("paths", sc_paths);
-    // --------------------------
-    // Register Path of this Service: [1] "/inventory/storage/admin/add-location"
-    sc_paths.add("/inventory/storage/admin/add-location");
-    Map _sc_paths_item_1 = pathsContext.computeIfAbsent("/inventory/storage/admin/add-location", s-> new LinkedHashMap());
-    _sc_paths_item_1.put("action", "POST");
-    _sc_paths_item_1.put("method", "AddStorageLocation");
-    _sc_paths_item_1.put("wrapper", true);
-    _sc_paths_item_1.put("pageable", false);
-    _sc_paths_item_1.put("request", false);
-    _sc_paths_item_1.put("response", false);
-    _sc_paths_item_1.put("session", false);
-    _sc_paths_item_1.put("inputPlural", false);
-    _sc_paths_item_1.put("outputPlural", false);
-    _sc_paths_item_1.put("priority", "CRITICAL");
-    _sc_paths_item_1.put("requestRef", "com.apihug.demo.inventory.wire.api.storage.request.AddStorageLocationRequest");
-    _sc_paths_item_1.put("responseRef", "com.apihug.demo.inventory.wire.api.storage.response.StorageLocationAddedResponse");
-    _sc_paths_item_1.put("operation", new Builder<Operation>() {
-      @Override
-      public Operation build() {
-        final Operation operation =  new Operation();
-        operation.setDescription("add a new location in the storage");
-        return operation;
-      }
-    }.build());
-    _sc_paths_item_1.put("authorization", new Builder<Authorization>() {
-      @Override
-      public Authorization build() {
-        Authorization res = new Authorization();
-        res.addAuthority(InventoryAuthorityEnum.ADD_STORAGE_LOCATION);
-        res.setCombinator(Authorization.Combinator.AND);
-        return res;
-      }
-    }.build());
-    _sc_paths_item_1.put("group", "CUSTOMER");
-    _sc_paths_item_1.put("empty", false);
-    // --------------------------
-    // Register Path of this Service: [2] "/inventory/storage/admin/delete-location"
-    sc_paths.add("/inventory/storage/admin/delete-location");
-    Map _sc_paths_item_2 = pathsContext.computeIfAbsent("/inventory/storage/admin/delete-location", s-> new LinkedHashMap());
-    _sc_paths_item_2.put("action", "POST");
-    _sc_paths_item_2.put("method", "DeleteStorageLocation");
-    _sc_paths_item_2.put("wrapper", true);
-    _sc_paths_item_2.put("pageable", false);
-    _sc_paths_item_2.put("request", false);
-    _sc_paths_item_2.put("response", false);
-    _sc_paths_item_2.put("session", false);
-    _sc_paths_item_2.put("inputPlural", false);
-    _sc_paths_item_2.put("outputPlural", false);
-    _sc_paths_item_2.put("priority", "FATAL");
-    _sc_paths_item_2.put("requestRef", "com.apihug.demo.inventory.wire.api.storage.request.DeleteStorageLocationRequest");
-    _sc_paths_item_2.put("responseRef", "com.apihug.demo.inventory.wire.api.storage.response.StorageLocationDeletedResponse");
-    _sc_paths_item_2.put("operation", new Builder<Operation>() {
-      @Override
-      public Operation build() {
-        final Operation operation =  new Operation();
-        operation.setDescription("delete a old location");
-        return operation;
-      }
-    }.build());
-    _sc_paths_item_2.put("authorization", new Builder<Authorization>() {
-      @Override
-      public Authorization build() {
-        Authorization res = new Authorization();
-        res.addAuthority(InventoryAuthorityEnum.DELETE_STORAGE_LOCATION);
-        res.setCombinator(Authorization.Combinator.AND);
-        return res;
-      }
-    }.build());
-    _sc_paths_item_2.put("group", "CUSTOMER");
-    _sc_paths_item_2.put("empty", false);
-    // END-[Service Context] com.apihug.demo.inventory.wire.api.storage.InventoryStorageService
-    // ----------------------------------------------------
-  }
-
   private final void _merger_api() {
     Info _info =  new Info();
     Contact _contact =  new Contact();
@@ -1271,7 +1271,7 @@ public final class InventoryApiCollector implements Collector<OpenAPI, Schema, A
       public String build() {
         _info.setTitle("demo-inventory-proto");
         _info.setDescription("proto lib of  inventory control module");
-        _info.setVersion("0.1.1-SNAPSHOT");
+        _info.setVersion("0.1.1-RELEASE");
         _contact.setName("developer@apihug.com");
         _contact.setUrl("https://github.com/apihug/");
         _contact.setEmail("developer@apihug.com");
@@ -1298,10 +1298,6 @@ public final class InventoryApiCollector implements Collector<OpenAPI, Schema, A
     _build_component_com_apihug_demo_inventory_wire_infra_settings_admin_StockStatusEnum();
     // Build for Enum :com.apihug.demo.inventory.wire.infra.settings.InventoryAuthorityEnum
     _build_component_com_apihug_demo_inventory_wire_infra_settings_InventoryAuthorityEnum();
-    // Build for Component : com.apihug.demo.inventory.wire.api.admin.StockInRequest
-    _build_component_com_apihug_demo_inventory_wire_api_admin_StockInRequest();
-    // Build for Component : com.apihug.demo.inventory.wire.api.admin.StockOutRequest
-    _build_component_com_apihug_demo_inventory_wire_api_admin_StockOutRequest();
     // Build for Component : com.apihug.demo.inventory.wire.api.storage.response.StorageLocationAddedResponse
     _build_component_com_apihug_demo_inventory_wire_api_storage_response_StorageLocationAddedResponse();
     // Build for Component : com.apihug.demo.inventory.wire.api.storage.response.StorageLocationDeletedResponse
@@ -1310,14 +1306,18 @@ public final class InventoryApiCollector implements Collector<OpenAPI, Schema, A
     _build_component_com_apihug_demo_inventory_wire_api_storage_request_AddStorageLocationRequest();
     // Build for Component : com.apihug.demo.inventory.wire.api.storage.request.DeleteStorageLocationRequest
     _build_component_com_apihug_demo_inventory_wire_api_storage_request_DeleteStorageLocationRequest();
+    // Build for Component : com.apihug.demo.inventory.wire.api.admin.StockInRequest
+    _build_component_com_apihug_demo_inventory_wire_api_admin_StockInRequest();
+    // Build for Component : com.apihug.demo.inventory.wire.api.admin.StockOutRequest
+    _build_component_com_apihug_demo_inventory_wire_api_admin_StockOutRequest();
     // Build for Component : com.apihug.demo.inventory.wire.api.admin.StockInResponse
     _build_component_com_apihug_demo_inventory_wire_api_admin_StockInResponse();
     // Build for Component : com.apihug.demo.inventory.wire.api.admin.StockOutResponse
     _build_component_com_apihug_demo_inventory_wire_api_admin_StockOutResponse();
-    // Build For Service com.apihug.demo.inventory.wire.api.admin.InventoryAdminService
-    _build_service_com_apihug_demo_inventory_wire_api_admin_InventoryAdminService();
     // Build For Service com.apihug.demo.inventory.wire.api.storage.InventoryStorageService
     _build_service_com_apihug_demo_inventory_wire_api_storage_InventoryStorageService();
+    // Build For Service com.apihug.demo.inventory.wire.api.admin.InventoryAdminService
+    _build_service_com_apihug_demo_inventory_wire_api_admin_InventoryAdminService();
     // Build OpenAPI information
     _merger_api();
     api.tags(new ArrayList<>(tags.values()));

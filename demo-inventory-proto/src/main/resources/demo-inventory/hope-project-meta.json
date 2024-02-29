@@ -2,7 +2,7 @@
   "artifact" : {
     "groupId" : "com.apihug",
     "artifactId" : "demo-inventory-proto",
-    "version" : "0.1.1-SNAPSHOT"
+    "version" : "0.1.1-RELEASE"
   },
   "name" : "demo-inventory-proto",
   "description" : "proto lib of  inventory control module",
@@ -15,7 +15,7 @@
   "status" : {
     "deprecated" : false,
     "createdTimestamp" : "2024-02-29",
-    "lastBuildTimestamp" : "2024-02-29 15:23:15",
+    "lastBuildTimestamp" : "2024-02-29 17:03:40",
     "createdBy" : "dell"
   },
   "persistence" : {

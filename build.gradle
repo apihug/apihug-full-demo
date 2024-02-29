@@ -12,14 +12,14 @@ logger.quiet "Current dir: $rootDir"
 
 logger.quiet "All Modules: $subprojects"
 
-
+//TODO publish go here
 
 
 configure(subprojects) {
 
     // Change this carefully
     group = 'com.apihug'
-    version = '0.1.1-SNAPSHOT'
+    version = '0.1.1-RELEASE'
 
     repositories {
         mavenLocal()
@@ -32,4 +32,21 @@ configure(subprojects) {
 gitProperties {
     failOnNoGitDirectory = false
     keys = ["git.branch", "git.commit.id.abbrev", "git.commit.id.describe"]
+}
+
+
+/**
+ * get the the nexus oss user name, if any passed from env
+ * @return
+ */
+def getRepositoryUsername() {
+    return System.getenv('NEXUS_OSS_USER_NAME') ?: NEXUS_OSS_USER_NAME
+}
+
+/**
+ * get the nexus user password, if any passed from env
+ * @return
+ */
+def getRepositoryPassword() {
+    return System.getenv('NEXUS_OSS_PASS_WORD') ?: NEXUS_OSS_PASS_WORD
 }

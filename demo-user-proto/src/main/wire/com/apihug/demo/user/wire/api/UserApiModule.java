@@ -27,7 +27,7 @@ public class UserApiModule implements Module<UserApiCollector> {
     project.setArtifact(artifact);
     artifact.setArtifactId("demo-user-proto");
     artifact.setGroupId("com.apihug");
-    artifact.setVersion("0.1.1-SNAPSHOT");
+    artifact.setVersion("0.1.1-RELEASE");
     ProjectStatus status = new ProjectStatus();
     project.setStatus(status);
     status.setCreatedTimestamp("2024-02-29");
@@ -46,6 +46,6 @@ public class UserApiModule implements Module<UserApiCollector> {
 
   @Override
   public String version() {
-    return "0.1.1-SNAPSHOT";
+    return "0.1.1-RELEASE";
   }
 }

@@ -19,7 +19,7 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/order/proto/api/admin/request/request.proto",
-    pluginVersion = "0.6.0-RELEASE",
+    pluginVersion = "0.6.1-RELEASE",
     entity = "AddOrderRequest",
     kind = Kind.MESSAGE
 )
@@ -45,7 +45,7 @@ public class AddOrderRequest {
       minimum = "122.0",
       maximum = "1.0",
       example = "1",
-      defaultValue = 1
+      defaultValue = "1"
   )
   protected Long quantity;
 

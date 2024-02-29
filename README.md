@@ -2,6 +2,14 @@
 
 [English](./README.md) | [简体中文](./README_cn.md)
 
+## Full Demo
+
+1. show how the apihug work
+2. how development model
+
+The libs of this project will be published to : <a target="_blank" href="https://search.maven.org/artifact/com.apihug/demo-user-proto"><img src="https://img.shields.io/maven-central/v/com.apihug/demo-user-proto.svg?label=Maven%20Central" /></a>
+
+
 ## Quick Build
 
 ### 0. Build All

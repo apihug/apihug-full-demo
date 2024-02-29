@@ -2,7 +2,7 @@
   "artifact" : {
     "groupId" : "com.apihug",
     "artifactId" : "demo-user-proto",
-    "version" : "0.1.1-SNAPSHOT"
+    "version" : "0.1.1-RELEASE"
   },
   "name" : "demo-user-proto",
   "description" : "proto lib of  user management module",
@@ -15,7 +15,7 @@
   "status" : {
     "deprecated" : false,
     "createdTimestamp" : "2024-02-29",
-    "lastBuildTimestamp" : "2024-02-29 15:23:28",
+    "lastBuildTimestamp" : "2024-02-29 17:03:51",
     "createdBy" : "dell"
   },
   "persistence" : {
