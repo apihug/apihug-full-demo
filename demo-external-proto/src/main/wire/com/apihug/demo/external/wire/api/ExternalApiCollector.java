@@ -191,29 +191,6 @@ public final class ExternalApiCollector implements Collector<OpenAPI, Schema, Ap
     clzPathMap.computeIfAbsent(clz, s -> new LinkedHashSet<>()).add(path);
   }
 
-  private final void _build_component_com_apihug_demo_external_wire_infra_settings_ExternalAuthorityEnum(
-      ) {
-    //  Build of the component: ExternalAuthorityEnum proto: com/apihug/demo/external/proto/infra/settings/authority.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum", res);
-    res.setClzName("com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum");
-    res.setEnumClz(true);
-    res.setName("ExternalAuthorityEnum");
-    res.setPayload(new Builder<Schema<ExternalAuthorityEnum>>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("Example Authority Enum for the project, MODIFY IT");
-        List<ExternalAuthorityEnum> values  = new ArrayList();
-        values.add(ExternalAuthorityEnum.USER_ADD);
-        values.add(ExternalAuthorityEnum.USER_DELETE);
-        res.setDefault(ExternalAuthorityEnum.USER_ADD);
-        res.setEnum(values);
-        return res;
-      }
-    }.build());
-  }
-
   private final void _build_component_com_apihug_demo_external_wire_infra_settings_example_TemplateExampleEnum(
       ) {
     //  Build of the component: TemplateExampleEnum proto: com/apihug/demo/external/proto/infra/settings/example/constant.proto
@@ -231,6 +208,29 @@ public final class ExternalApiCollector implements Collector<OpenAPI, Schema, Ap
         values.add(TemplateExampleEnum.REMOVE_ME);
         values.add(TemplateExampleEnum.RIGHT_NOW);
         res.setDefault(TemplateExampleEnum.REMOVE_ME);
+        res.setEnum(values);
+        return res;
+      }
+    }.build());
+  }
+
+  private final void _build_component_com_apihug_demo_external_wire_infra_settings_ExternalAuthorityEnum(
+      ) {
+    //  Build of the component: ExternalAuthorityEnum proto: com/apihug/demo/external/proto/infra/settings/authority.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum", res);
+    res.setClzName("com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum");
+    res.setEnumClz(true);
+    res.setName("ExternalAuthorityEnum");
+    res.setPayload(new Builder<Schema<ExternalAuthorityEnum>>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("Example Authority Enum for the project, MODIFY IT");
+        List<ExternalAuthorityEnum> values  = new ArrayList();
+        values.add(ExternalAuthorityEnum.USER_ADD);
+        values.add(ExternalAuthorityEnum.USER_DELETE);
+        res.setDefault(ExternalAuthorityEnum.USER_ADD);
         res.setEnum(values);
         return res;
       }
@@ -531,10 +531,10 @@ public final class ExternalApiCollector implements Collector<OpenAPI, Schema, Ap
   }
 
   private void _init() {
-    // Build for Enum :com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum
-    _build_component_com_apihug_demo_external_wire_infra_settings_ExternalAuthorityEnum();
     // Build for Enum :com.apihug.demo.external.wire.infra.settings.example.TemplateExampleEnum
     _build_component_com_apihug_demo_external_wire_infra_settings_example_TemplateExampleEnum();
+    // Build for Enum :com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum
+    _build_component_com_apihug_demo_external_wire_infra_settings_ExternalAuthorityEnum();
     // Build for Component : com.apihug.demo.external.wire.api.example.request.TemplateExampleRequest
     _build_component_com_apihug_demo_external_wire_api_example_request_TemplateExampleRequest();
     // Build for Component : com.apihug.demo.external.wire.api.example.response.TemplateExampleResponse

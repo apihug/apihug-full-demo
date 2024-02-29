@@ -19,104 +19,6 @@
     "description" : "Sample Tag"
   } ],
   "paths" : {
-    "/inventory/storage/admin/add-location" : {
-      "post" : {
-        "tags" : [ ],
-        "summary" : "",
-        "description" : "add a new location in the storage",
-        "operationId" : "InventoryStorageService#AddStorageLocation",
-        "parameters" : [ ],
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "$ref" : "#/components/schemas/AddStorageLocationRequest"
-              }
-            }
-          }
-        },
-        "responses" : {
-          "200" : {
-            "description" : "add a new location in the storage",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/StorageLocationAddedResponseResult"
-                }
-              }
-            }
-          }
-        },
-        "deprecated" : false,
-        "security" : [ ],
-        "x-hope-operation" : {
-          "deprecated" : false,
-          "wrapper" : true,
-          "inputPlural" : false,
-          "outputPlural" : false,
-          "pageable" : false,
-          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/api.proto",
-          "empty" : false,
-          "serviceClz" : "com.apihug.demo.inventory.wire.api.storage.InventoryStorageService",
-          "priority" : "CRITICAL",
-          "group" : "CUSTOMER",
-          "security" : {
-            "authorities" : [ "ADD_STORAGE_LOCATION" ],
-            "combinator" : "AND"
-          }
-        }
-      }
-    },
-    "/inventory/storage/admin/delete-location" : {
-      "post" : {
-        "tags" : [ ],
-        "summary" : "",
-        "description" : "delete a old location",
-        "operationId" : "InventoryStorageService#DeleteStorageLocation",
-        "parameters" : [ ],
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "$ref" : "#/components/schemas/DeleteStorageLocationRequest"
-              }
-            }
-          }
-        },
-        "responses" : {
-          "200" : {
-            "description" : "delete a old location",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/StorageLocationDeletedResponseResult"
-                }
-              }
-            }
-          }
-        },
-        "deprecated" : false,
-        "security" : [ ],
-        "x-hope-operation" : {
-          "deprecated" : false,
-          "wrapper" : true,
-          "inputPlural" : false,
-          "outputPlural" : false,
-          "pageable" : false,
-          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/api.proto",
-          "empty" : false,
-          "serviceClz" : "com.apihug.demo.inventory.wire.api.storage.InventoryStorageService",
-          "priority" : "FATAL",
-          "group" : "CUSTOMER",
-          "security" : {
-            "authorities" : [ "DELETE_STORAGE_LOCATION" ],
-            "combinator" : "AND"
-          }
-        }
-      }
-    },
     "/inventory/admin/hello-world" : {
       "get" : {
         "tags" : [ "project" ],
@@ -270,6 +172,104 @@
           "group" : "CUSTOMER",
           "security" : {
             "authorities" : [ "STOCK_OUT" ],
+            "combinator" : "AND"
+          }
+        }
+      }
+    },
+    "/inventory/storage/admin/add-location" : {
+      "post" : {
+        "tags" : [ ],
+        "summary" : "",
+        "description" : "add a new location in the storage",
+        "operationId" : "InventoryStorageService#AddStorageLocation",
+        "parameters" : [ ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "$ref" : "#/components/schemas/AddStorageLocationRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "add a new location in the storage",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/StorageLocationAddedResponseResult"
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false,
+        "security" : [ ],
+        "x-hope-operation" : {
+          "deprecated" : false,
+          "wrapper" : true,
+          "inputPlural" : false,
+          "outputPlural" : false,
+          "pageable" : false,
+          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/api.proto",
+          "empty" : false,
+          "serviceClz" : "com.apihug.demo.inventory.wire.api.storage.InventoryStorageService",
+          "priority" : "CRITICAL",
+          "group" : "CUSTOMER",
+          "security" : {
+            "authorities" : [ "ADD_STORAGE_LOCATION" ],
+            "combinator" : "AND"
+          }
+        }
+      }
+    },
+    "/inventory/storage/admin/delete-location" : {
+      "post" : {
+        "tags" : [ ],
+        "summary" : "",
+        "description" : "delete a old location",
+        "operationId" : "InventoryStorageService#DeleteStorageLocation",
+        "parameters" : [ ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "$ref" : "#/components/schemas/DeleteStorageLocationRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "delete a old location",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/StorageLocationDeletedResponseResult"
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false,
+        "security" : [ ],
+        "x-hope-operation" : {
+          "deprecated" : false,
+          "wrapper" : true,
+          "inputPlural" : false,
+          "outputPlural" : false,
+          "pageable" : false,
+          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/api.proto",
+          "empty" : false,
+          "serviceClz" : "com.apihug.demo.inventory.wire.api.storage.InventoryStorageService",
+          "priority" : "FATAL",
+          "group" : "CUSTOMER",
+          "security" : {
+            "authorities" : [ "DELETE_STORAGE_LOCATION" ],
             "combinator" : "AND"
           }
         }
@@ -505,107 +505,6 @@
         },
         "x-hope-enum-type" : "true"
       },
-      "StorageLocationAddedResponse" : {
-        "type" : "object",
-        "description" : "storage location added",
-        "properties" : {
-          "storageLocationId" : {
-            "type" : "number",
-            "format" : "int64",
-            "description" : "id of this storage location",
-            "example" : "11",
-            "x-hope-validation-blank" : false
-          },
-          "name" : {
-            "type" : "string",
-            "description" : "name of the location",
-            "example" : "A1-112-5B",
-            "maxLength" : 32,
-            "x-hope-validation-blank" : false,
-            "x-hope-mock" : {
-              "nature" : "NAME",
-              "name" : "nature"
-            }
-          },
-          "remark" : {
-            "type" : "string",
-            "description" : "comment of this"
-          }
-        },
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.inventory.wire.api.storage.response.StorageLocationAddedResponse",
-          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/response/response.proto"
-        }
-      },
-      "StorageLocationDeletedResponse" : {
-        "type" : "object",
-        "description" : "Storage location deleted",
-        "properties" : {
-          "storageLocationId" : {
-            "type" : "number",
-            "format" : "int64",
-            "default" : "1",
-            "description" : "id of this storage location",
-            "example" : "11"
-          },
-          "reason" : {
-            "type" : "string",
-            "description" : "reason of delete it",
-            "example" : "no happy"
-          }
-        },
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.inventory.wire.api.storage.response.StorageLocationDeletedResponse",
-          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/response/response.proto"
-        }
-      },
-      "AddStorageLocationRequest" : {
-        "type" : "object",
-        "description" : "Add a new storage location",
-        "properties" : {
-          "name" : {
-            "type" : "string",
-            "description" : "name of the location",
-            "example" : "A1-112-5B",
-            "maxLength" : 32,
-            "x-hope-validation-blank" : false,
-            "x-hope-mock" : {
-              "nature" : "NAME",
-              "name" : "nature"
-            }
-          },
-          "remark" : {
-            "type" : "string",
-            "description" : "comment of this"
-          }
-        },
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.inventory.wire.api.storage.request.AddStorageLocationRequest",
-          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/request/request.proto"
-        }
-      },
-      "DeleteStorageLocationRequest" : {
-        "type" : "object",
-        "description" : "delete a storage location",
-        "properties" : {
-          "storageLocationId" : {
-            "type" : "number",
-            "format" : "int64",
-            "default" : "1",
-            "description" : "id of this storage location",
-            "example" : "11"
-          },
-          "reason" : {
-            "type" : "string",
-            "description" : "reason of delete it",
-            "example" : "no happy"
-          }
-        },
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.inventory.wire.api.storage.request.DeleteStorageLocationRequest",
-          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/request/request.proto"
-        }
-      },
       "StockInRequest" : {
         "type" : "object",
         "description" : "Stock in request",
@@ -673,6 +572,53 @@
         "x-hope-rt-meta" : {
           "clz" : "com.apihug.demo.inventory.wire.api.admin.StockOutRequest",
           "protoFrom" : "com/apihug/demo/inventory/proto/api/admin/request.proto"
+        }
+      },
+      "AddStorageLocationRequest" : {
+        "type" : "object",
+        "description" : "Add a new storage location",
+        "properties" : {
+          "name" : {
+            "type" : "string",
+            "description" : "name of the location",
+            "example" : "A1-112-5B",
+            "maxLength" : 32,
+            "x-hope-validation-blank" : false,
+            "x-hope-mock" : {
+              "nature" : "NAME",
+              "name" : "nature"
+            }
+          },
+          "remark" : {
+            "type" : "string",
+            "description" : "comment of this"
+          }
+        },
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.inventory.wire.api.storage.request.AddStorageLocationRequest",
+          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/request/request.proto"
+        }
+      },
+      "DeleteStorageLocationRequest" : {
+        "type" : "object",
+        "description" : "delete a storage location",
+        "properties" : {
+          "storageLocationId" : {
+            "type" : "number",
+            "format" : "int64",
+            "default" : "1",
+            "description" : "id of this storage location",
+            "example" : "11"
+          },
+          "reason" : {
+            "type" : "string",
+            "description" : "reason of delete it",
+            "example" : "no happy"
+          }
+        },
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.inventory.wire.api.storage.request.DeleteStorageLocationRequest",
+          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/request/request.proto"
         }
       },
       "StockInResponse" : {
@@ -771,54 +717,58 @@
           "protoFrom" : "com/apihug/demo/inventory/proto/api/admin/response.proto"
         }
       },
-      "StorageLocationAddedResponseResult" : {
+      "StorageLocationAddedResponse" : {
         "type" : "object",
+        "description" : "storage location added",
         "properties" : {
-          "code" : {
-            "type" : "integer",
-            "format" : "int32",
-            "description" : "返回码,零成功,非零失败"
+          "storageLocationId" : {
+            "type" : "number",
+            "format" : "int64",
+            "description" : "id of this storage location",
+            "example" : "11",
+            "x-hope-validation-blank" : false
           },
-          "message" : {
+          "name" : {
             "type" : "string",
-            "description" : "返回提示信息"
+            "description" : "name of the location",
+            "example" : "A1-112-5B",
+            "maxLength" : 32,
+            "x-hope-validation-blank" : false,
+            "x-hope-mock" : {
+              "nature" : "NAME",
+              "name" : "nature"
+            }
           },
-          "errors" : {
-            "type" : "array",
-            "description" : "错误详情列表",
-            "items" : {
-              "$ref" : "#/components/schemas/Error"
-            },
-            "title" : "errors"
-          },
-          "data" : {
-            "$ref" : "#/components/schemas/StorageLocationAddedResponse"
+          "remark" : {
+            "type" : "string",
+            "description" : "comment of this"
           }
+        },
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.inventory.wire.api.storage.response.StorageLocationAddedResponse",
+          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/response/response.proto"
         }
       },
-      "StorageLocationDeletedResponseResult" : {
+      "StorageLocationDeletedResponse" : {
         "type" : "object",
+        "description" : "Storage location deleted",
         "properties" : {
-          "code" : {
-            "type" : "integer",
-            "format" : "int32",
-            "description" : "返回码,零成功,非零失败"
+          "storageLocationId" : {
+            "type" : "number",
+            "format" : "int64",
+            "default" : "1",
+            "description" : "id of this storage location",
+            "example" : "11"
           },
-          "message" : {
+          "reason" : {
             "type" : "string",
-            "description" : "返回提示信息"
-          },
-          "errors" : {
-            "type" : "array",
-            "description" : "错误详情列表",
-            "items" : {
-              "$ref" : "#/components/schemas/Error"
-            },
-            "title" : "errors"
-          },
-          "data" : {
-            "$ref" : "#/components/schemas/StorageLocationDeletedResponse"
+            "description" : "reason of delete it",
+            "example" : "no happy"
           }
+        },
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.inventory.wire.api.storage.response.StorageLocationDeletedResponse",
+          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/response/response.proto"
         }
       },
       "StockInResponseResult" : {
@@ -868,6 +818,56 @@
           },
           "data" : {
             "$ref" : "#/components/schemas/StockOutResponse"
+          }
+        }
+      },
+      "StorageLocationAddedResponseResult" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "返回码,零成功,非零失败"
+          },
+          "message" : {
+            "type" : "string",
+            "description" : "返回提示信息"
+          },
+          "errors" : {
+            "type" : "array",
+            "description" : "错误详情列表",
+            "items" : {
+              "$ref" : "#/components/schemas/Error"
+            },
+            "title" : "errors"
+          },
+          "data" : {
+            "$ref" : "#/components/schemas/StorageLocationAddedResponse"
+          }
+        }
+      },
+      "StorageLocationDeletedResponseResult" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "返回码,零成功,非零失败"
+          },
+          "message" : {
+            "type" : "string",
+            "description" : "返回提示信息"
+          },
+          "errors" : {
+            "type" : "array",
+            "description" : "错误详情列表",
+            "items" : {
+              "$ref" : "#/components/schemas/Error"
+            },
+            "title" : "errors"
+          },
+          "data" : {
+            "$ref" : "#/components/schemas/StorageLocationDeletedResponse"
           }
         }
       }

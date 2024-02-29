@@ -54,6 +54,6 @@ public class UserRuntimeContextInitializer extends RuntimeContextInitializer {
         return res;
       }
     }.build());
-    runTimeCtx.setStubBuildTime("2024-02-29 17:40:23");
+    runTimeCtx.setStubBuildTime("2024-02-29 17:43:10");
   }
 }

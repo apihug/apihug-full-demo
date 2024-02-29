@@ -35,7 +35,8 @@ dependencies {
     implementation project(':demo-external-proto')
     implementation project(':demo-user-proto')
 
-    //implementation 'com.apihug:demo-user-proto:0.1.1-RELEASE'
+    //By external lib
+    implementation 'com.apihug:demo-order-proto:0.1.1-RELEASE'
 
 
     implementation(libs.apihugCommonProto)

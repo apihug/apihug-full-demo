@@ -269,31 +269,6 @@
         "x-hope-java-class" : "hope.common.wire.constant.ProblemPhase",
         "x-hope-enum-type" : "true"
       },
-      "ExternalAuthorityEnum" : {
-        "default" : "USER_ADD",
-        "description" : "Example Authority Enum for the project, MODIFY IT",
-        "oneOf" : [ {
-          "const" : "USER_ADD",
-          "description" : "user:add",
-          "example" : "USER_ADD",
-          "title" : "USER_ADD",
-          "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "Authority to remove user(Remove or modify this template sample)"
-        }, {
-          "const" : "USER_DELETE",
-          "description" : "user:remove",
-          "example" : "USER_DELETE",
-          "title" : "USER_DELETE",
-          "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "Authority to delete user(Remove or modify this template sample)"
-        } ],
-        "title" : "ExternalAuthorityEnum",
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum",
-          "protoFrom" : "com/apihug/demo/external/proto/infra/settings/authority.proto"
-        },
-        "x-hope-enum-type" : "true"
-      },
       "TemplateExampleEnum" : {
         "default" : "REMOVE_ME",
         "description" : "Remember to remove this enum this is example from template",
@@ -316,6 +291,31 @@
         "x-hope-rt-meta" : {
           "clz" : "com.apihug.demo.external.wire.infra.settings.example.TemplateExampleEnum",
           "protoFrom" : "com/apihug/demo/external/proto/infra/settings/example/constant.proto"
+        },
+        "x-hope-enum-type" : "true"
+      },
+      "ExternalAuthorityEnum" : {
+        "default" : "USER_ADD",
+        "description" : "Example Authority Enum for the project, MODIFY IT",
+        "oneOf" : [ {
+          "const" : "USER_ADD",
+          "description" : "user:add",
+          "example" : "USER_ADD",
+          "title" : "USER_ADD",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-des-cn" : "Authority to remove user(Remove or modify this template sample)"
+        }, {
+          "const" : "USER_DELETE",
+          "description" : "user:remove",
+          "example" : "USER_DELETE",
+          "title" : "USER_DELETE",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-des-cn" : "Authority to delete user(Remove or modify this template sample)"
+        } ],
+        "title" : "ExternalAuthorityEnum",
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum",
+          "protoFrom" : "com/apihug/demo/external/proto/infra/settings/authority.proto"
         },
         "x-hope-enum-type" : "true"
       },

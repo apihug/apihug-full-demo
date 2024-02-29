@@ -54,6 +54,6 @@ public class InventoryRuntimeContextInitializer extends RuntimeContextInitialize
         return res;
       }
     }.build());
-    runTimeCtx.setStubBuildTime("2024-02-29 17:40:18");
+    runTimeCtx.setStubBuildTime("2024-02-29 17:43:04");
   }
 }

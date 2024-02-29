@@ -318,31 +318,6 @@
         "x-hope-java-class" : "hope.common.wire.constant.ProblemPhase",
         "x-hope-enum-type" : "true"
       },
-      "UserAuthorityEnum" : {
-        "default" : "USER_ADD",
-        "description" : "User domain's authorities list",
-        "oneOf" : [ {
-          "const" : "USER_ADD",
-          "description" : "user:add",
-          "example" : "USER_ADD",
-          "title" : "USER_ADD",
-          "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "Authority to remove user"
-        }, {
-          "const" : "USER_DELETE",
-          "description" : "user:remove",
-          "example" : "USER_DELETE",
-          "title" : "USER_DELETE",
-          "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "Authority to delete user"
-        } ],
-        "title" : "UserAuthorityEnum",
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.user.wire.infra.settings.UserAuthorityEnum",
-          "protoFrom" : "com/apihug/demo/user/proto/infra/settings/authority.proto"
-        },
-        "x-hope-enum-type" : "true"
-      },
       "UserStatusEnum" : {
         "default" : "NORMAL",
         "description" : "User management status",
@@ -365,6 +340,31 @@
         "x-hope-rt-meta" : {
           "clz" : "com.apihug.demo.user.wire.infra.settings.admin.UserStatusEnum",
           "protoFrom" : "com/apihug/demo/user/proto/infra/settings/admin/constant.proto"
+        },
+        "x-hope-enum-type" : "true"
+      },
+      "UserAuthorityEnum" : {
+        "default" : "USER_ADD",
+        "description" : "User domain's authorities list",
+        "oneOf" : [ {
+          "const" : "USER_ADD",
+          "description" : "user:add",
+          "example" : "USER_ADD",
+          "title" : "USER_ADD",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-des-cn" : "Authority to remove user"
+        }, {
+          "const" : "USER_DELETE",
+          "description" : "user:remove",
+          "example" : "USER_DELETE",
+          "title" : "USER_DELETE",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-des-cn" : "Authority to delete user"
+        } ],
+        "title" : "UserAuthorityEnum",
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.user.wire.infra.settings.UserAuthorityEnum",
+          "protoFrom" : "com/apihug/demo/user/proto/infra/settings/authority.proto"
         },
         "x-hope-enum-type" : "true"
       },

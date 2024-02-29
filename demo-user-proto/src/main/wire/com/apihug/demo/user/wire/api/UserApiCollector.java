@@ -192,28 +192,6 @@ public final class UserApiCollector implements Collector<OpenAPI, Schema, ApiRes
     clzPathMap.computeIfAbsent(clz, s -> new LinkedHashSet<>()).add(path);
   }
 
-  private final void _build_component_com_apihug_demo_user_wire_infra_settings_UserAuthorityEnum() {
-    //  Build of the component: UserAuthorityEnum proto: com/apihug/demo/user/proto/infra/settings/authority.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.user.wire.infra.settings.UserAuthorityEnum", res);
-    res.setClzName("com.apihug.demo.user.wire.infra.settings.UserAuthorityEnum");
-    res.setEnumClz(true);
-    res.setName("UserAuthorityEnum");
-    res.setPayload(new Builder<Schema<UserAuthorityEnum>>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("User domain's authorities list");
-        List<UserAuthorityEnum> values  = new ArrayList();
-        values.add(UserAuthorityEnum.USER_ADD);
-        values.add(UserAuthorityEnum.USER_DELETE);
-        res.setDefault(UserAuthorityEnum.USER_ADD);
-        res.setEnum(values);
-        return res;
-      }
-    }.build());
-  }
-
   private final void _build_component_com_apihug_demo_user_wire_infra_settings_admin_UserStatusEnum(
       ) {
     //  Build of the component: UserStatusEnum proto: com/apihug/demo/user/proto/infra/settings/admin/constant.proto
@@ -231,6 +209,28 @@ public final class UserApiCollector implements Collector<OpenAPI, Schema, ApiRes
         values.add(UserStatusEnum.NORMAL);
         values.add(UserStatusEnum.BLOCKED);
         res.setDefault(UserStatusEnum.NORMAL);
+        res.setEnum(values);
+        return res;
+      }
+    }.build());
+  }
+
+  private final void _build_component_com_apihug_demo_user_wire_infra_settings_UserAuthorityEnum() {
+    //  Build of the component: UserAuthorityEnum proto: com/apihug/demo/user/proto/infra/settings/authority.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.user.wire.infra.settings.UserAuthorityEnum", res);
+    res.setClzName("com.apihug.demo.user.wire.infra.settings.UserAuthorityEnum");
+    res.setEnumClz(true);
+    res.setName("UserAuthorityEnum");
+    res.setPayload(new Builder<Schema<UserAuthorityEnum>>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("User domain's authorities list");
+        List<UserAuthorityEnum> values  = new ArrayList();
+        values.add(UserAuthorityEnum.USER_ADD);
+        values.add(UserAuthorityEnum.USER_DELETE);
+        res.setDefault(UserAuthorityEnum.USER_ADD);
         res.setEnum(values);
         return res;
       }
@@ -826,10 +826,10 @@ public final class UserApiCollector implements Collector<OpenAPI, Schema, ApiRes
   }
 
   private void _init() {
-    // Build for Enum :com.apihug.demo.user.wire.infra.settings.UserAuthorityEnum
-    _build_component_com_apihug_demo_user_wire_infra_settings_UserAuthorityEnum();
     // Build for Enum :com.apihug.demo.user.wire.infra.settings.admin.UserStatusEnum
     _build_component_com_apihug_demo_user_wire_infra_settings_admin_UserStatusEnum();
+    // Build for Enum :com.apihug.demo.user.wire.infra.settings.UserAuthorityEnum
+    _build_component_com_apihug_demo_user_wire_infra_settings_UserAuthorityEnum();
     // Build for Component : com.apihug.demo.user.wire.api.admin.request.RegisterRequest
     _build_component_com_apihug_demo_user_wire_api_admin_request_RegisterRequest();
     // Build for Component : com.apihug.demo.user.wire.api.admin.request.ChangePasswordRequest
