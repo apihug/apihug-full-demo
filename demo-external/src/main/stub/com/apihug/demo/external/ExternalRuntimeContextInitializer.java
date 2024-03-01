@@ -54,6 +54,6 @@ public class ExternalRuntimeContextInitializer extends RuntimeContextInitializer
         return res;
       }
     }.build());
-    runTimeCtx.setStubBuildTime("2024-02-29 17:43:01");
+    runTimeCtx.setStubBuildTime("2024-02-29 18:00:27");
   }
 }

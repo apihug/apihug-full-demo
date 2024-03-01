@@ -16,4 +16,8 @@
 
 ./gradlew.bat demo-external:clean stub build -x test -x stubTest
 
+
+
+./gradlew.bat demo-external:clean stub build -x test -x stubTest -DextractMeta=true
+
 ```

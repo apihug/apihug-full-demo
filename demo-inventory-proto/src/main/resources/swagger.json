@@ -416,6 +416,45 @@
         "x-hope-java-class" : "hope.common.wire.constant.ProblemPhase",
         "x-hope-enum-type" : "true"
       },
+      "InventoryAuthorityEnum" : {
+        "default" : "STOCK_IN",
+        "description" : "Inventory authorities list",
+        "oneOf" : [ {
+          "const" : "STOCK_IN",
+          "description" : "stock:in",
+          "example" : "STOCK_IN",
+          "title" : "STOCK_IN",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-des-cn" : "Authority to stock in product"
+        }, {
+          "const" : "STOCK_OUT",
+          "description" : "stock:out",
+          "example" : "STOCK_OUT",
+          "title" : "STOCK_OUT",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-des-cn" : "Authority to stock out product"
+        }, {
+          "const" : "ADD_STORAGE_LOCATION",
+          "description" : "stock:storage:add",
+          "example" : "ADD_STORAGE_LOCATION",
+          "title" : "ADD_STORAGE_LOCATION",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-des-cn" : "Authority to add a new storage location"
+        }, {
+          "const" : "DELETE_STORAGE_LOCATION",
+          "description" : "stock:storage:delete",
+          "example" : "DELETE_STORAGE_LOCATION",
+          "title" : "DELETE_STORAGE_LOCATION",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-des-cn" : "Authority to delete a storage location"
+        } ],
+        "title" : "InventoryAuthorityEnum",
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.inventory.wire.infra.settings.InventoryAuthorityEnum",
+          "protoFrom" : "com/apihug/demo/inventory/proto/infra/settings/authority.proto"
+        },
+        "x-hope-enum-type" : "true"
+      },
       "StorageStatusEnum" : {
         "default" : "NORMAL",
         "description" : "status of a storage location status",
@@ -466,53 +505,21 @@
         },
         "x-hope-enum-type" : "true"
       },
-      "InventoryAuthorityEnum" : {
-        "default" : "STOCK_IN",
-        "description" : "Inventory authorities list",
-        "oneOf" : [ {
-          "const" : "STOCK_IN",
-          "description" : "stock:in",
-          "example" : "STOCK_IN",
-          "title" : "STOCK_IN",
-          "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "Authority to stock in product"
-        }, {
-          "const" : "STOCK_OUT",
-          "description" : "stock:out",
-          "example" : "STOCK_OUT",
-          "title" : "STOCK_OUT",
-          "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "Authority to stock out product"
-        }, {
-          "const" : "ADD_STORAGE_LOCATION",
-          "description" : "stock:storage:add",
-          "example" : "ADD_STORAGE_LOCATION",
-          "title" : "ADD_STORAGE_LOCATION",
-          "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "Authority to add a new storage location"
-        }, {
-          "const" : "DELETE_STORAGE_LOCATION",
-          "description" : "stock:storage:delete",
-          "example" : "DELETE_STORAGE_LOCATION",
-          "title" : "DELETE_STORAGE_LOCATION",
-          "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "Authority to delete a storage location"
-        } ],
-        "title" : "InventoryAuthorityEnum",
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.inventory.wire.infra.settings.InventoryAuthorityEnum",
-          "protoFrom" : "com/apihug/demo/inventory/proto/infra/settings/authority.proto"
-        },
-        "x-hope-enum-type" : "true"
-      },
-      "StockInRequest" : {
+      "StorageLocationAddedResponse" : {
         "type" : "object",
-        "description" : "Stock in request",
+        "description" : "storage location added",
         "properties" : {
-          "sku" : {
+          "storageLocationId" : {
+            "type" : "number",
+            "format" : "int64",
+            "description" : "id of this storage location",
+            "example" : "11",
+            "x-hope-validation-blank" : false
+          },
+          "name" : {
             "type" : "string",
-            "description" : "sku of this product",
-            "example" : "S1JSF0S0FA",
+            "description" : "name of the location",
+            "example" : "A1-112-5B",
             "maxLength" : 32,
             "x-hope-validation-blank" : false,
             "x-hope-mock" : {
@@ -520,58 +527,36 @@
               "name" : "nature"
             }
           },
-          "quantity" : {
-            "type" : "number",
-            "format" : "int64",
-            "default" : "1",
-            "description" : "quantity of this load",
-            "example" : "11",
-            "maximum" : 1.0,
-            "minimum" : 9999.0
+          "remark" : {
+            "type" : "string",
+            "description" : "comment of this"
           }
         },
         "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.inventory.wire.api.admin.StockInRequest",
-          "protoFrom" : "com/apihug/demo/inventory/proto/api/admin/request.proto"
+          "clz" : "com.apihug.demo.inventory.wire.api.storage.response.StorageLocationAddedResponse",
+          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/response/response.proto"
         }
       },
-      "StockOutRequest" : {
+      "StorageLocationDeletedResponse" : {
         "type" : "object",
-        "description" : "Stock out request",
+        "description" : "Storage location deleted",
         "properties" : {
-          "sku" : {
-            "type" : "string",
-            "description" : "sku of this product",
-            "example" : "S1JSF0S0FA",
-            "maxLength" : 32,
-            "x-hope-validation-blank" : false,
-            "x-hope-mock" : {
-              "nature" : "NAME",
-              "name" : "nature"
-            }
-          },
-          "quantity" : {
+          "storageLocationId" : {
             "type" : "number",
             "format" : "int64",
             "default" : "1",
-            "description" : "quantity of this load",
-            "example" : "11",
-            "maximum" : 1.0,
-            "minimum" : 9999.0
+            "description" : "id of this storage location",
+            "example" : "11"
           },
-          "orderId" : {
-            "type" : "number",
-            "format" : "int64",
-            "default" : "111",
-            "description" : "id of the order",
-            "example" : "1111",
-            "maximum" : 1.0,
-            "minimum" : 7886.0
+          "reason" : {
+            "type" : "string",
+            "description" : "reason of delete it",
+            "example" : "no happy"
           }
         },
         "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.inventory.wire.api.admin.StockOutRequest",
-          "protoFrom" : "com/apihug/demo/inventory/proto/api/admin/request.proto"
+          "clz" : "com.apihug.demo.inventory.wire.api.storage.response.StorageLocationDeletedResponse",
+          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/response/response.proto"
         }
       },
       "AddStorageLocationRequest" : {
@@ -717,21 +702,14 @@
           "protoFrom" : "com/apihug/demo/inventory/proto/api/admin/response.proto"
         }
       },
-      "StorageLocationAddedResponse" : {
+      "StockInRequest" : {
         "type" : "object",
-        "description" : "storage location added",
+        "description" : "Stock in request",
         "properties" : {
-          "storageLocationId" : {
-            "type" : "number",
-            "format" : "int64",
-            "description" : "id of this storage location",
-            "example" : "11",
-            "x-hope-validation-blank" : false
-          },
-          "name" : {
+          "sku" : {
             "type" : "string",
-            "description" : "name of the location",
-            "example" : "A1-112-5B",
+            "description" : "sku of this product",
+            "example" : "S1JSF0S0FA",
             "maxLength" : 32,
             "x-hope-validation-blank" : false,
             "x-hope-mock" : {
@@ -739,36 +717,58 @@
               "name" : "nature"
             }
           },
-          "remark" : {
-            "type" : "string",
-            "description" : "comment of this"
-          }
-        },
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.inventory.wire.api.storage.response.StorageLocationAddedResponse",
-          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/response/response.proto"
-        }
-      },
-      "StorageLocationDeletedResponse" : {
-        "type" : "object",
-        "description" : "Storage location deleted",
-        "properties" : {
-          "storageLocationId" : {
+          "quantity" : {
             "type" : "number",
             "format" : "int64",
             "default" : "1",
-            "description" : "id of this storage location",
-            "example" : "11"
-          },
-          "reason" : {
-            "type" : "string",
-            "description" : "reason of delete it",
-            "example" : "no happy"
+            "description" : "quantity of this load",
+            "example" : "11",
+            "maximum" : 1.0,
+            "minimum" : 9999.0
           }
         },
         "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.inventory.wire.api.storage.response.StorageLocationDeletedResponse",
-          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/response/response.proto"
+          "clz" : "com.apihug.demo.inventory.wire.api.admin.StockInRequest",
+          "protoFrom" : "com/apihug/demo/inventory/proto/api/admin/request.proto"
+        }
+      },
+      "StockOutRequest" : {
+        "type" : "object",
+        "description" : "Stock out request",
+        "properties" : {
+          "sku" : {
+            "type" : "string",
+            "description" : "sku of this product",
+            "example" : "S1JSF0S0FA",
+            "maxLength" : 32,
+            "x-hope-validation-blank" : false,
+            "x-hope-mock" : {
+              "nature" : "NAME",
+              "name" : "nature"
+            }
+          },
+          "quantity" : {
+            "type" : "number",
+            "format" : "int64",
+            "default" : "1",
+            "description" : "quantity of this load",
+            "example" : "11",
+            "maximum" : 1.0,
+            "minimum" : 9999.0
+          },
+          "orderId" : {
+            "type" : "number",
+            "format" : "int64",
+            "default" : "111",
+            "description" : "id of the order",
+            "example" : "1111",
+            "maximum" : 1.0,
+            "minimum" : 7886.0
+          }
+        },
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.inventory.wire.api.admin.StockOutRequest",
+          "protoFrom" : "com/apihug/demo/inventory/proto/api/admin/request.proto"
         }
       },
       "StockInResponseResult" : {

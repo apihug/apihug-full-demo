@@ -193,6 +193,29 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
     clzPathMap.computeIfAbsent(clz, s -> new LinkedHashSet<>()).add(path);
   }
 
+  private final void _build_component_com_apihug_demo_order_wire_infra_settings_OrderAuthorityEnum(
+      ) {
+    //  Build of the component: OrderAuthorityEnum proto: com/apihug/demo/order/proto/infra/settings/authority.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum", res);
+    res.setClzName("com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum");
+    res.setEnumClz(true);
+    res.setName("OrderAuthorityEnum");
+    res.setPayload(new Builder<Schema<OrderAuthorityEnum>>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("Example Authority Enum for the project, MODIFY IT");
+        List<OrderAuthorityEnum> values  = new ArrayList();
+        values.add(OrderAuthorityEnum.ORDER_ADD);
+        values.add(OrderAuthorityEnum.ORDER_DELETE);
+        res.setDefault(OrderAuthorityEnum.ORDER_ADD);
+        res.setEnum(values);
+        return res;
+      }
+    }.build());
+  }
+
   private final void _build_component_com_apihug_demo_order_wire_infra_settings_admin_OrderStatusEnum(
       ) {
     //  Build of the component: OrderStatusEnum proto: com/apihug/demo/order/proto/infra/settings/admin/constant.proto
@@ -216,27 +239,182 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
     }.build());
   }
 
-  private final void _build_component_com_apihug_demo_order_wire_infra_settings_OrderAuthorityEnum(
+  private final void _build_component_com_apihug_demo_order_wire_api_admin_request_AddOrderRequest(
       ) {
-    //  Build of the component: OrderAuthorityEnum proto: com/apihug/demo/order/proto/infra/settings/authority.proto
+    //  Build of the component: AddOrderRequest proto: com/apihug/demo/order/proto/api/admin/request/request.proto
     Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum", res);
-    res.setClzName("com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum");
-    res.setEnumClz(true);
-    res.setName("OrderAuthorityEnum");
-    res.setPayload(new Builder<Schema<OrderAuthorityEnum>>() {
+    componentMap.put("com.apihug.demo.order.wire.api.admin.request.AddOrderRequest", res);
+    res.setClzName("com.apihug.demo.order.wire.api.admin.request.AddOrderRequest");
+    res.setName("AddOrderRequest");
+    res.setProtoFrom("com/apihug/demo/order/proto/api/admin/request/request.proto");
+    res.setProtoEntity("AddOrderRequest");
+    res.setDescription("Add order");
+    res.setPayload(new Builder<Schema>() {
       @Override
       public Schema build() {
         Schema res  = new Schema();
-        res.setDescription("Example Authority Enum for the project, MODIFY IT");
-        List<OrderAuthorityEnum> values  = new ArrayList();
-        values.add(OrderAuthorityEnum.ORDER_ADD);
-        values.add(OrderAuthorityEnum.ORDER_DELETE);
-        res.setDefault(OrderAuthorityEnum.ORDER_ADD);
-        res.setEnum(values);
+        res.setDescription("Add order");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setNullable(false);
         return res;
       }
     }.build());
+    // Add field 0 sku_id
+    ComponentItem<Schema> _0 = new ComponentItem();
+    _0.setClz("java.lang.String");
+    _0.setName("sku_id");
+    _0.setFieldName("skuId");
+    _0.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("SKU of the product");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setMaxLength(32);
+        res.setNullable(false);
+        res.setExample("XSK12MADA");
+        return res;
+      }
+    }.build());
+    _0.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    _0.setRule(new Builder<Map>() {
+      @Override
+      public Map build() {
+        Map res = new LinkedHashMap();
+        res.put("nature", "NAME");
+        res.put("name", "nature");
+        return res;
+      }
+    }.build());
+    res.addItem(_0);
+    // Add field 1 quantity
+    ComponentItem<Schema> _1 = new ComponentItem();
+    _1.setClz("java.lang.Long");
+    _1.setName("quantity");
+    _1.setFieldName("quantity");
+    _1.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("quantity of this oder");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setMaximum(BigDecimal.valueOf(1L, 1));
+        res.setMinimum(BigDecimal.valueOf(122L, 1));
+        res.setNullable(false);
+        res.setExample("1");
+        return res;
+      }
+    }.build());
+    _1.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    _1.setRule(new Builder<Map>() {
+      @Override
+      public Map build() {
+        Map res = new LinkedHashMap();
+        res.put("max", 122l);
+        res.put("min", 1l);
+        res.put("name", "number");
+        return res;
+      }
+    }.build());
+    res.addItem(_1);
+  }
+
+  private final void _build_component_com_apihug_demo_order_wire_api_admin_request_DeleteOrderRequest(
+      ) {
+    //  Build of the component: DeleteOrderRequest proto: com/apihug/demo/order/proto/api/admin/request/request.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.order.wire.api.admin.request.DeleteOrderRequest", res);
+    res.setClzName("com.apihug.demo.order.wire.api.admin.request.DeleteOrderRequest");
+    res.setName("DeleteOrderRequest");
+    res.setProtoFrom("com/apihug/demo/order/proto/api/admin/request/request.proto");
+    res.setProtoEntity("DeleteOrderRequest");
+    res.setDescription("delete the order by ID");
+    res.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("delete the order by ID");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setNullable(false);
+        return res;
+      }
+    }.build());
+    // Add field 0 order_id
+    ComponentItem<Schema> _0 = new ComponentItem();
+    _0.setClz("java.lang.Long");
+    _0.setName("order_id");
+    _0.setFieldName("orderId");
+    _0.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("id of this order");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setMaximum(BigDecimal.valueOf(1L, 1));
+        res.setNullable(false);
+        res.setExample("111");
+        return res;
+      }
+    }.build());
+    _0.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    _0.setRule(new Builder<Map>() {
+      @Override
+      public Map build() {
+        Map res = new LinkedHashMap();
+        res.put("max", 2321313l);
+        res.put("min", 1l);
+        res.put("name", "number");
+        return res;
+      }
+    }.build());
+    res.addItem(_0);
+    // Add field 1 reason
+    ComponentItem<Schema> _1 = new ComponentItem();
+    _1.setClz("java.lang.String");
+    _1.setName("reason");
+    _1.setFieldName("reason");
+    _1.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("reason why delete this order");
+        res.setSpecVersion(SpecVersion.V30);
+        Map<String,String> _extensions = new LinkedHashMap();
+        _extensions.put("x-hope-validation-blank", "false");
+        res.setExtensions(_extensions);
+        res.setMaxLength(122);
+        res.setMinLength(5);
+        res.setNullable(false);
+        res.setExample("wrong placed");
+        return res;
+      }
+    }.build());
+    _1.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_1);
   }
 
   private final void _build_component_com_apihug_demo_order_wire_api_admin_response_OrderAddedResponse(
@@ -425,184 +603,6 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
     res.addItem(_1);
   }
 
-  private final void _build_component_com_apihug_demo_order_wire_api_admin_request_AddOrderRequest(
-      ) {
-    //  Build of the component: AddOrderRequest proto: com/apihug/demo/order/proto/api/admin/request/request.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.order.wire.api.admin.request.AddOrderRequest", res);
-    res.setClzName("com.apihug.demo.order.wire.api.admin.request.AddOrderRequest");
-    res.setName("AddOrderRequest");
-    res.setProtoFrom("com/apihug/demo/order/proto/api/admin/request/request.proto");
-    res.setProtoEntity("AddOrderRequest");
-    res.setDescription("Add order");
-    res.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("Add order");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
-        return res;
-      }
-    }.build());
-    // Add field 0 sku_id
-    ComponentItem<Schema> _0 = new ComponentItem();
-    _0.setClz("java.lang.String");
-    _0.setName("sku_id");
-    _0.setFieldName("skuId");
-    _0.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("SKU of the product");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setMaxLength(32);
-        res.setNullable(false);
-        res.setExample("XSK12MADA");
-        return res;
-      }
-    }.build());
-    _0.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    _0.setRule(new Builder<Map>() {
-      @Override
-      public Map build() {
-        Map res = new LinkedHashMap();
-        res.put("nature", "NAME");
-        res.put("name", "nature");
-        return res;
-      }
-    }.build());
-    res.addItem(_0);
-    // Add field 1 quantity
-    ComponentItem<Schema> _1 = new ComponentItem();
-    _1.setClz("java.lang.Long");
-    _1.setName("quantity");
-    _1.setFieldName("quantity");
-    _1.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("quantity of this oder");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setMaximum(BigDecimal.valueOf(1L, 1));
-        res.setMinimum(BigDecimal.valueOf(122L, 1));
-        res.setNullable(false);
-        res.setExample("1");
-        return res;
-      }
-    }.build());
-    _1.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    _1.setRule(new Builder<Map>() {
-      @Override
-      public Map build() {
-        Map res = new LinkedHashMap();
-        res.put("max", 122l);
-        res.put("min", 1l);
-        res.put("name", "number");
-        return res;
-      }
-    }.build());
-    res.addItem(_1);
-  }
-
-  private final void _build_component_com_apihug_demo_order_wire_api_admin_request_DeleteOrderRequest(
-      ) {
-    //  Build of the component: DeleteOrderRequest proto: com/apihug/demo/order/proto/api/admin/request/request.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.order.wire.api.admin.request.DeleteOrderRequest", res);
-    res.setClzName("com.apihug.demo.order.wire.api.admin.request.DeleteOrderRequest");
-    res.setName("DeleteOrderRequest");
-    res.setProtoFrom("com/apihug/demo/order/proto/api/admin/request/request.proto");
-    res.setProtoEntity("DeleteOrderRequest");
-    res.setDescription("delete the order by ID");
-    res.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("delete the order by ID");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
-        return res;
-      }
-    }.build());
-    // Add field 0 order_id
-    ComponentItem<Schema> _0 = new ComponentItem();
-    _0.setClz("java.lang.Long");
-    _0.setName("order_id");
-    _0.setFieldName("orderId");
-    _0.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("id of this order");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setMaximum(BigDecimal.valueOf(1L, 1));
-        res.setNullable(false);
-        res.setExample("111");
-        return res;
-      }
-    }.build());
-    _0.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    _0.setRule(new Builder<Map>() {
-      @Override
-      public Map build() {
-        Map res = new LinkedHashMap();
-        res.put("max", 2321313l);
-        res.put("min", 1l);
-        res.put("name", "number");
-        return res;
-      }
-    }.build());
-    res.addItem(_0);
-    // Add field 1 reason
-    ComponentItem<Schema> _1 = new ComponentItem();
-    _1.setClz("java.lang.String");
-    _1.setName("reason");
-    _1.setFieldName("reason");
-    _1.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("reason why delete this order");
-        res.setSpecVersion(SpecVersion.V30);
-        Map<String,String> _extensions = new LinkedHashMap();
-        _extensions.put("x-hope-validation-blank", "false");
-        res.setExtensions(_extensions);
-        res.setMaxLength(122);
-        res.setMinLength(5);
-        res.setNullable(false);
-        res.setExample("wrong placed");
-        return res;
-      }
-    }.build());
-    _1.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_1);
-  }
-
   private final void _build_service_com_apihug_demo_order_wire_api_admin_OrderAdminService() {
     // ----------------------------------------------------
     // START-[Service Context] com.apihug.demo.order.wire.api.admin.OrderAdminService
@@ -769,18 +769,18 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
   }
 
   private void _init() {
-    // Build for Enum :com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum
-    _build_component_com_apihug_demo_order_wire_infra_settings_admin_OrderStatusEnum();
     // Build for Enum :com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum
     _build_component_com_apihug_demo_order_wire_infra_settings_OrderAuthorityEnum();
-    // Build for Component : com.apihug.demo.order.wire.api.admin.response.OrderAddedResponse
-    _build_component_com_apihug_demo_order_wire_api_admin_response_OrderAddedResponse();
-    // Build for Component : com.apihug.demo.order.wire.api.admin.response.OrderDeletedResponse
-    _build_component_com_apihug_demo_order_wire_api_admin_response_OrderDeletedResponse();
+    // Build for Enum :com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum
+    _build_component_com_apihug_demo_order_wire_infra_settings_admin_OrderStatusEnum();
     // Build for Component : com.apihug.demo.order.wire.api.admin.request.AddOrderRequest
     _build_component_com_apihug_demo_order_wire_api_admin_request_AddOrderRequest();
     // Build for Component : com.apihug.demo.order.wire.api.admin.request.DeleteOrderRequest
     _build_component_com_apihug_demo_order_wire_api_admin_request_DeleteOrderRequest();
+    // Build for Component : com.apihug.demo.order.wire.api.admin.response.OrderAddedResponse
+    _build_component_com_apihug_demo_order_wire_api_admin_response_OrderAddedResponse();
+    // Build for Component : com.apihug.demo.order.wire.api.admin.response.OrderDeletedResponse
+    _build_component_com_apihug_demo_order_wire_api_admin_response_OrderDeletedResponse();
     // Build For Service com.apihug.demo.order.wire.api.admin.OrderAdminService
     _build_service_com_apihug_demo_order_wire_api_admin_OrderAdminService();
     // Build OpenAPI information
