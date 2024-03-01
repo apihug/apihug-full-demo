@@ -1,17 +1,26 @@
 {
-  "packageName": "com.apihug.demo.external",
-  "name": "demo-external",
-  "domain": "external",
-  "proto": {
-    "artifact": {
-      "groupId": "com.apihug",
-      "artifactId": "demo-external-proto",
-      "version": "0.1.1-SNAPSHOT"
+  "packageName" : "com.apihug.demo.external",
+  "name" : "demo-external",
+  "domain" : "external",
+  "proto" : {
+    "artifact" : {
+      "groupId" : "com.apihug",
+      "artifactId" : "demo-external-proto",
+      "version" : "0.1.1-SNAPSHOT"
     },
-    "module": "demo-external-proto",
-    "domain": "external",
-    "applied": true
+    "module" : "demo-external-proto",
+    "domain" : "external",
+    "applied" : true
   },
-  "dependencies": [
-  ]
+  "dependencies" : [ {
+    "artifact" : {
+      "groupId" : "com.apihug",
+      "artifactId" : "demo-order-proto",
+      "version" : "0.1.1-RELEASE"
+    },
+    "module" : "demo-order-proto",
+    "domain" : "order",
+    "applied" : true,
+    "serviceIncludeOperations" : { }
+  } ]
 }
