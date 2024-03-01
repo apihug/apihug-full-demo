@@ -368,6 +368,67 @@
         },
         "x-hope-enum-type" : "true"
       },
+      "RegisterRequest" : {
+        "type" : "object",
+        "description" : "Register a user",
+        "properties" : {
+          "name" : {
+            "type" : "string",
+            "description" : "name of the user",
+            "example" : "My Lord",
+            "maxLength" : 32,
+            "x-hope-validation-blank" : false,
+            "x-hope-mock" : {
+              "nature" : "NAME",
+              "name" : "nature"
+            }
+          },
+          "email" : {
+            "type" : "string",
+            "format" : "email",
+            "description" : "email address of this user",
+            "x-hope-validation" : {
+              "email" : true
+            }
+          },
+          "password" : {
+            "type" : "string",
+            "description" : "password of this account",
+            "maxLength" : 32,
+            "minLength" : 5
+          }
+        },
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.user.wire.api.admin.request.RegisterRequest",
+          "protoFrom" : "com/apihug/demo/user/proto/api/admin/request/request.proto"
+        }
+      },
+      "ChangePasswordRequest" : {
+        "type" : "object",
+        "description" : "Change my password request",
+        "properties" : {
+          "customerId" : {
+            "type" : "number",
+            "format" : "int64",
+            "description" : "id of this customer"
+          },
+          "newPassword" : {
+            "type" : "string",
+            "description" : "new password",
+            "maxLength" : 32,
+            "minLength" : 5
+          },
+          "reason" : {
+            "type" : "string",
+            "description" : "reason of change the password",
+            "example" : "password stolen"
+          }
+        },
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.user.wire.api.admin.request.ChangePasswordRequest",
+          "protoFrom" : "com/apihug/demo/user/proto/api/admin/request/request.proto"
+        }
+      },
       "CustomerRegisteredResponse" : {
         "type" : "object",
         "description" : "customer registered successfully",
@@ -442,67 +503,6 @@
         "x-hope-rt-meta" : {
           "clz" : "com.apihug.demo.user.wire.api.admin.response.CustomerPasswordUpdatedResponse",
           "protoFrom" : "com/apihug/demo/user/proto/api/admin/response/response.proto"
-        }
-      },
-      "RegisterRequest" : {
-        "type" : "object",
-        "description" : "Register a user",
-        "properties" : {
-          "name" : {
-            "type" : "string",
-            "description" : "name of the user",
-            "example" : "My Lord",
-            "maxLength" : 32,
-            "x-hope-validation-blank" : false,
-            "x-hope-mock" : {
-              "nature" : "NAME",
-              "name" : "nature"
-            }
-          },
-          "email" : {
-            "type" : "string",
-            "format" : "email",
-            "description" : "email address of this user",
-            "x-hope-validation" : {
-              "email" : true
-            }
-          },
-          "password" : {
-            "type" : "string",
-            "description" : "password of this account",
-            "maxLength" : 32,
-            "minLength" : 5
-          }
-        },
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.user.wire.api.admin.request.RegisterRequest",
-          "protoFrom" : "com/apihug/demo/user/proto/api/admin/request/request.proto"
-        }
-      },
-      "ChangePasswordRequest" : {
-        "type" : "object",
-        "description" : "Change my password request",
-        "properties" : {
-          "customerId" : {
-            "type" : "number",
-            "format" : "int64",
-            "description" : "id of this customer"
-          },
-          "newPassword" : {
-            "type" : "string",
-            "description" : "new password",
-            "maxLength" : 32,
-            "minLength" : 5
-          },
-          "reason" : {
-            "type" : "string",
-            "description" : "reason of change the password",
-            "example" : "password stolen"
-          }
-        },
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.user.wire.api.admin.request.ChangePasswordRequest",
-          "protoFrom" : "com/apihug/demo/user/proto/api/admin/request/request.proto"
         }
       },
       "CustomerRegisteredResponseResult" : {

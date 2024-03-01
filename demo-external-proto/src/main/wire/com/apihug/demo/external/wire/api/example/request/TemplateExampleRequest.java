@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/external/proto/api/example/request/example.proto",
-    pluginVersion = "0.6.1-RELEASE",
+    pluginVersion = "0.6.3-RELEASE",
     entity = "TemplateExampleRequest",
     kind = Kind.MESSAGE
 )

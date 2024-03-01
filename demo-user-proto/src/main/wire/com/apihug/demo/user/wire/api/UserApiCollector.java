@@ -237,6 +237,216 @@ public final class UserApiCollector implements Collector<OpenAPI, Schema, ApiRes
     }.build());
   }
 
+  private final void _build_component_com_apihug_demo_user_wire_api_admin_request_RegisterRequest(
+      ) {
+    //  Build of the component: RegisterRequest proto: com/apihug/demo/user/proto/api/admin/request/request.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.user.wire.api.admin.request.RegisterRequest", res);
+    res.setClzName("com.apihug.demo.user.wire.api.admin.request.RegisterRequest");
+    res.setName("RegisterRequest");
+    res.setProtoFrom("com/apihug/demo/user/proto/api/admin/request/request.proto");
+    res.setProtoEntity("RegisterRequest");
+    res.setDescription("Register a user");
+    res.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("Register a user");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setNullable(false);
+        return res;
+      }
+    }.build());
+    // Add field 0 name
+    ComponentItem<Schema> _0 = new ComponentItem();
+    _0.setClz("java.lang.String");
+    _0.setName("name");
+    _0.setFieldName("name");
+    _0.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("name of the user");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setMaxLength(32);
+        res.setNullable(false);
+        res.setExample("My Lord");
+        return res;
+      }
+    }.build());
+    _0.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    _0.setRule(new Builder<Map>() {
+      @Override
+      public Map build() {
+        Map res = new LinkedHashMap();
+        res.put("nature", "NAME");
+        res.put("name", "nature");
+        return res;
+      }
+    }.build());
+    res.addItem(_0);
+    // Add field 1 email
+    ComponentItem<Schema> _1 = new ComponentItem();
+    _1.setClz("java.lang.String");
+    _1.setName("email");
+    _1.setFieldName("email");
+    _1.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("email address of this user");
+        res.setFormat("email");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setNullable(false);
+        res.setTypes(Set.of("string"));
+        return res;
+      }
+    }.build());
+    _1.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        res.setEmail(true);
+        return res;
+      }
+    }.build());
+    res.addItem(_1);
+    // Add field 2 password
+    ComponentItem<Schema> _2 = new ComponentItem();
+    _2.setClz("java.lang.String");
+    _2.setName("password");
+    _2.setFieldName("password");
+    _2.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("password of this account");
+        res.setSpecVersion(SpecVersion.V30);
+        Map<String,String> _extensions = new LinkedHashMap();
+        _extensions.put("x-hope-validation-blank", "false");
+        res.setExtensions(_extensions);
+        res.setMaxLength(32);
+        res.setMinLength(5);
+        res.setNullable(false);
+        return res;
+      }
+    }.build());
+    _2.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_2);
+  }
+
+  private final void _build_component_com_apihug_demo_user_wire_api_admin_request_ChangePasswordRequest(
+      ) {
+    //  Build of the component: ChangePasswordRequest proto: com/apihug/demo/user/proto/api/admin/request/request.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.user.wire.api.admin.request.ChangePasswordRequest", res);
+    res.setClzName("com.apihug.demo.user.wire.api.admin.request.ChangePasswordRequest");
+    res.setName("ChangePasswordRequest");
+    res.setProtoFrom("com/apihug/demo/user/proto/api/admin/request/request.proto");
+    res.setProtoEntity("ChangePasswordRequest");
+    res.setDescription("Change my password request");
+    res.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("Change my password request");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setNullable(false);
+        return res;
+      }
+    }.build());
+    // Add field 0 customer_id
+    ComponentItem<Schema> _0 = new ComponentItem();
+    _0.setClz("java.lang.Long");
+    _0.setName("customer_id");
+    _0.setFieldName("customerId");
+    _0.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("id of this customer");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setNullable(false);
+        return res;
+      }
+    }.build());
+    _0.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_0);
+    // Add field 1 new_password
+    ComponentItem<Schema> _1 = new ComponentItem();
+    _1.setClz("java.lang.String");
+    _1.setName("new_password");
+    _1.setFieldName("newPassword");
+    _1.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("new password");
+        res.setSpecVersion(SpecVersion.V30);
+        Map<String,String> _extensions = new LinkedHashMap();
+        _extensions.put("x-hope-validation-blank", "false");
+        res.setExtensions(_extensions);
+        res.setMaxLength(32);
+        res.setMinLength(5);
+        res.setNullable(false);
+        return res;
+      }
+    }.build());
+    _1.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_1);
+    // Add field 2 reason
+    ComponentItem<Schema> _2 = new ComponentItem();
+    _2.setClz("java.lang.String");
+    _2.setName("reason");
+    _2.setFieldName("reason");
+    _2.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("reason of change the password");
+        res.setSpecVersion(SpecVersion.V30);
+        Map<String,String> _extensions = new LinkedHashMap();
+        _extensions.put("x-hope-validation-blank", "true");
+        res.setExtensions(_extensions);
+        res.setNullable(false);
+        res.setExample("password stolen");
+        return res;
+      }
+    }.build());
+    _2.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_2);
+  }
+
   private final void _build_component_com_apihug_demo_user_wire_api_admin_response_CustomerRegisteredResponse(
       ) {
     //  Build of the component: CustomerRegisteredResponse proto: com/apihug/demo/user/proto/api/admin/response/response.proto
@@ -450,216 +660,6 @@ public final class UserApiCollector implements Collector<OpenAPI, Schema, ApiRes
     res.addItem(_1);
   }
 
-  private final void _build_component_com_apihug_demo_user_wire_api_admin_request_RegisterRequest(
-      ) {
-    //  Build of the component: RegisterRequest proto: com/apihug/demo/user/proto/api/admin/request/request.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.user.wire.api.admin.request.RegisterRequest", res);
-    res.setClzName("com.apihug.demo.user.wire.api.admin.request.RegisterRequest");
-    res.setName("RegisterRequest");
-    res.setProtoFrom("com/apihug/demo/user/proto/api/admin/request/request.proto");
-    res.setProtoEntity("RegisterRequest");
-    res.setDescription("Register a user");
-    res.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("Register a user");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
-        return res;
-      }
-    }.build());
-    // Add field 0 name
-    ComponentItem<Schema> _0 = new ComponentItem();
-    _0.setClz("java.lang.String");
-    _0.setName("name");
-    _0.setFieldName("name");
-    _0.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("name of the user");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setMaxLength(32);
-        res.setNullable(false);
-        res.setExample("My Lord");
-        return res;
-      }
-    }.build());
-    _0.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    _0.setRule(new Builder<Map>() {
-      @Override
-      public Map build() {
-        Map res = new LinkedHashMap();
-        res.put("nature", "NAME");
-        res.put("name", "nature");
-        return res;
-      }
-    }.build());
-    res.addItem(_0);
-    // Add field 1 email
-    ComponentItem<Schema> _1 = new ComponentItem();
-    _1.setClz("java.lang.String");
-    _1.setName("email");
-    _1.setFieldName("email");
-    _1.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("email address of this user");
-        res.setFormat("email");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
-        res.setTypes(Set.of("string"));
-        return res;
-      }
-    }.build());
-    _1.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        res.setEmail(true);
-        return res;
-      }
-    }.build());
-    res.addItem(_1);
-    // Add field 2 password
-    ComponentItem<Schema> _2 = new ComponentItem();
-    _2.setClz("java.lang.String");
-    _2.setName("password");
-    _2.setFieldName("password");
-    _2.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("password of this account");
-        res.setSpecVersion(SpecVersion.V30);
-        Map<String,String> _extensions = new LinkedHashMap();
-        _extensions.put("x-hope-validation-blank", "false");
-        res.setExtensions(_extensions);
-        res.setMaxLength(32);
-        res.setMinLength(5);
-        res.setNullable(false);
-        return res;
-      }
-    }.build());
-    _2.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_2);
-  }
-
-  private final void _build_component_com_apihug_demo_user_wire_api_admin_request_ChangePasswordRequest(
-      ) {
-    //  Build of the component: ChangePasswordRequest proto: com/apihug/demo/user/proto/api/admin/request/request.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.user.wire.api.admin.request.ChangePasswordRequest", res);
-    res.setClzName("com.apihug.demo.user.wire.api.admin.request.ChangePasswordRequest");
-    res.setName("ChangePasswordRequest");
-    res.setProtoFrom("com/apihug/demo/user/proto/api/admin/request/request.proto");
-    res.setProtoEntity("ChangePasswordRequest");
-    res.setDescription("Change my password request");
-    res.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("Change my password request");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
-        return res;
-      }
-    }.build());
-    // Add field 0 customer_id
-    ComponentItem<Schema> _0 = new ComponentItem();
-    _0.setClz("java.lang.Long");
-    _0.setName("customer_id");
-    _0.setFieldName("customerId");
-    _0.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("id of this customer");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
-        return res;
-      }
-    }.build());
-    _0.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_0);
-    // Add field 1 new_password
-    ComponentItem<Schema> _1 = new ComponentItem();
-    _1.setClz("java.lang.String");
-    _1.setName("new_password");
-    _1.setFieldName("newPassword");
-    _1.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("new password");
-        res.setSpecVersion(SpecVersion.V30);
-        Map<String,String> _extensions = new LinkedHashMap();
-        _extensions.put("x-hope-validation-blank", "false");
-        res.setExtensions(_extensions);
-        res.setMaxLength(32);
-        res.setMinLength(5);
-        res.setNullable(false);
-        return res;
-      }
-    }.build());
-    _1.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_1);
-    // Add field 2 reason
-    ComponentItem<Schema> _2 = new ComponentItem();
-    _2.setClz("java.lang.String");
-    _2.setName("reason");
-    _2.setFieldName("reason");
-    _2.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("reason of change the password");
-        res.setSpecVersion(SpecVersion.V30);
-        Map<String,String> _extensions = new LinkedHashMap();
-        _extensions.put("x-hope-validation-blank", "true");
-        res.setExtensions(_extensions);
-        res.setNullable(false);
-        res.setExample("password stolen");
-        return res;
-      }
-    }.build());
-    _2.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_2);
-  }
-
   private final void _build_service_com_apihug_demo_user_wire_api_admin_UserAdminService() {
     // ----------------------------------------------------
     // START-[Service Context] com.apihug.demo.user.wire.api.admin.UserAdminService
@@ -830,14 +830,14 @@ public final class UserApiCollector implements Collector<OpenAPI, Schema, ApiRes
     _build_component_com_apihug_demo_user_wire_infra_settings_UserAuthorityEnum();
     // Build for Enum :com.apihug.demo.user.wire.infra.settings.admin.UserStatusEnum
     _build_component_com_apihug_demo_user_wire_infra_settings_admin_UserStatusEnum();
-    // Build for Component : com.apihug.demo.user.wire.api.admin.response.CustomerRegisteredResponse
-    _build_component_com_apihug_demo_user_wire_api_admin_response_CustomerRegisteredResponse();
-    // Build for Component : com.apihug.demo.user.wire.api.admin.response.CustomerPasswordUpdatedResponse
-    _build_component_com_apihug_demo_user_wire_api_admin_response_CustomerPasswordUpdatedResponse();
     // Build for Component : com.apihug.demo.user.wire.api.admin.request.RegisterRequest
     _build_component_com_apihug_demo_user_wire_api_admin_request_RegisterRequest();
     // Build for Component : com.apihug.demo.user.wire.api.admin.request.ChangePasswordRequest
     _build_component_com_apihug_demo_user_wire_api_admin_request_ChangePasswordRequest();
+    // Build for Component : com.apihug.demo.user.wire.api.admin.response.CustomerRegisteredResponse
+    _build_component_com_apihug_demo_user_wire_api_admin_response_CustomerRegisteredResponse();
+    // Build for Component : com.apihug.demo.user.wire.api.admin.response.CustomerPasswordUpdatedResponse
+    _build_component_com_apihug_demo_user_wire_api_admin_response_CustomerPasswordUpdatedResponse();
     // Build For Service com.apihug.demo.user.wire.api.admin.UserAdminService
     _build_service_com_apihug_demo_user_wire_api_admin_UserAdminService();
     // Build OpenAPI information
