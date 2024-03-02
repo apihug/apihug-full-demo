@@ -21,6 +21,8 @@
     "module" : "demo-order-proto",
     "domain" : "order",
     "applied" : true,
-    "serviceIncludeOperations" : { }
+    "serviceIncludeOperations" : {
+      "com.apihug.demo.order.wire.api.admin.OrderAdminService" : [ "/order/admin/hello-world", "/order/admin/delete-order" ]
+    }
   } ]
 }
