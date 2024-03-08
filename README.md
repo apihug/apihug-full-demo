@@ -9,6 +9,10 @@
 
 The libs of this project will be published to : <a target="_blank" href="https://search.maven.org/artifact/com.apihug/demo-user-proto"><img src="https://img.shields.io/maven-central/v/com.apihug/demo-user-proto.svg?label=Maven%20Central" /></a>
 
+😆 Guide：
+
+1. [ApiHug101-Bilibili](https://www.bilibili.com/video/BV1KK421k7J8/)
+2. [ApiHug101 Youtube](https://youtube.com/@ApiHug?si=C1yw0poHA01zbmyj)
 
 ## Quick Build
 
