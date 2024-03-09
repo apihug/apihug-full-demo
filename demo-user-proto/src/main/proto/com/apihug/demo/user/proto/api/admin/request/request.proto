@@ -55,6 +55,7 @@ message ChangePasswordRequest {
 
   int64 customer_id = 1 [(hope.swagger.field) = {
     description: "id of this customer";
+    empty: FALSE
   }];
 
   string new_password = 2 [(hope.swagger.field) = {

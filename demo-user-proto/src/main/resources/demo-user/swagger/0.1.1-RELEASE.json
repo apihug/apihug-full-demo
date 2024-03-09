@@ -19,6 +19,104 @@
     "description" : "Sample Tag"
   } ],
   "paths" : {
+    "/user/admin/change-password" : {
+      "post" : {
+        "tags" : [ ],
+        "summary" : "",
+        "description" : "use to reset the password after password forgot",
+        "operationId" : "UserAdminService#ChangePassword",
+        "parameters" : [ ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "$ref" : "#/components/schemas/ChangePasswordRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "use to reset the password after password forgot",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CustomerPasswordUpdatedResponseResult"
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false,
+        "security" : [ ],
+        "x-hope-operation" : {
+          "deprecated" : false,
+          "wrapper" : true,
+          "inputPlural" : false,
+          "outputPlural" : false,
+          "pageable" : false,
+          "protoFrom" : "com/apihug/demo/user/proto/api/admin/api.proto",
+          "empty" : false,
+          "serviceClz" : "com.apihug.demo.user.wire.api.admin.UserAdminService",
+          "priority" : "HIGH",
+          "group" : "CUSTOMER",
+          "security" : {
+            "authorities" : [ "USER_ADD", "USER_DELETE" ],
+            "combinator" : "AND"
+          }
+        }
+      }
+    },
+    "/user/admin/register" : {
+      "post" : {
+        "tags" : [ ],
+        "summary" : "",
+        "description" : "admin try to register a new customer",
+        "operationId" : "UserAdminService#RegisterCustomer",
+        "parameters" : [ ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "$ref" : "#/components/schemas/RegisterRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "admin try to register a new customer",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CustomerRegisteredResponseResult"
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false,
+        "security" : [ ],
+        "x-hope-operation" : {
+          "deprecated" : false,
+          "wrapper" : true,
+          "inputPlural" : false,
+          "outputPlural" : false,
+          "pageable" : false,
+          "protoFrom" : "com/apihug/demo/user/proto/api/admin/api.proto",
+          "empty" : false,
+          "serviceClz" : "com.apihug.demo.user.wire.api.admin.UserAdminService",
+          "priority" : "CRITICAL",
+          "group" : "CUSTOMER",
+          "security" : {
+            "authorities" : [ "USER_ADD" ],
+            "combinator" : "AND"
+          }
+        }
+      }
+    },
     "/user/admin/say-hello" : {
       "get" : {
         "tags" : [ "project" ],
@@ -78,108 +176,165 @@
           }
         }
       }
-    },
-    "/user/admin/register" : {
-      "post" : {
-        "tags" : [ ],
-        "summary" : "",
-        "description" : "admin try to register a new customer",
-        "operationId" : "UserAdminService#RegisterCustomer",
-        "parameters" : [ ],
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "$ref" : "#/components/schemas/RegisterRequest"
-              }
-            }
-          }
-        },
-        "responses" : {
-          "200" : {
-            "description" : "admin try to register a new customer",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/CustomerRegisteredResponseResult"
-                }
-              }
-            }
-          }
-        },
-        "deprecated" : false,
-        "security" : [ ],
-        "x-hope-operation" : {
-          "deprecated" : false,
-          "wrapper" : true,
-          "inputPlural" : false,
-          "outputPlural" : false,
-          "pageable" : false,
-          "protoFrom" : "com/apihug/demo/user/proto/api/admin/api.proto",
-          "empty" : false,
-          "serviceClz" : "com.apihug.demo.user.wire.api.admin.UserAdminService",
-          "priority" : "CRITICAL",
-          "group" : "CUSTOMER",
-          "security" : {
-            "authorities" : [ "USER_ADD" ],
-            "combinator" : "AND"
-          }
-        }
-      }
-    },
-    "/user/admin/change-password" : {
-      "post" : {
-        "tags" : [ ],
-        "summary" : "",
-        "description" : "use to reset the password after password forgot",
-        "operationId" : "UserAdminService#ChangePassword",
-        "parameters" : [ ],
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "$ref" : "#/components/schemas/ChangePasswordRequest"
-              }
-            }
-          }
-        },
-        "responses" : {
-          "200" : {
-            "description" : "use to reset the password after password forgot",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/CustomerPasswordUpdatedResponseResult"
-                }
-              }
-            }
-          }
-        },
-        "deprecated" : false,
-        "security" : [ ],
-        "x-hope-operation" : {
-          "deprecated" : false,
-          "wrapper" : true,
-          "inputPlural" : false,
-          "outputPlural" : false,
-          "pageable" : false,
-          "protoFrom" : "com/apihug/demo/user/proto/api/admin/api.proto",
-          "empty" : false,
-          "serviceClz" : "com.apihug.demo.user.wire.api.admin.UserAdminService",
-          "priority" : "HIGH",
-          "group" : "CUSTOMER",
-          "security" : {
-            "authorities" : [ "USER_ADD", "USER_DELETE" ],
-            "combinator" : "AND"
-          }
-        }
-      }
     }
   },
   "components" : {
     "schemas" : {
+      "ChangePasswordRequest" : {
+        "type" : "object",
+        "description" : "Change my password request",
+        "properties" : {
+          "customerId" : {
+            "type" : "number",
+            "format" : "int64",
+            "description" : "id of this customer"
+          },
+          "newPassword" : {
+            "type" : "string",
+            "description" : "new password",
+            "maxLength" : 32,
+            "minLength" : 5,
+            "x-hope-validation-blank" : false
+          },
+          "reason" : {
+            "type" : "string",
+            "description" : "reason of change the password",
+            "example" : "password stolen"
+          }
+        },
+        "required" : [ "customerId", "newPassword" ],
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.user.wire.api.admin.request.ChangePasswordRequest",
+          "protoFrom" : "com/apihug/demo/user/proto/api/admin/request/request.proto"
+        }
+      },
+      "CustomerPasswordUpdatedResponse" : {
+        "type" : "object",
+        "description" : "password updated response",
+        "properties" : {
+          "customerId" : {
+            "type" : "number",
+            "format" : "int64",
+            "description" : "id of this customer",
+            "example" : "1024",
+            "x-hope-mock" : {
+              "max" : 12000,
+              "min" : 12,
+              "name" : "number"
+            }
+          },
+          "updatedDate" : {
+            "type" : "string",
+            "format" : "date-time",
+            "description" : "date of this password updated",
+            "x-hope-field-alias" : {
+              "predefinedDateFormat" : "YYYY_MM_DD_HH_MM_SS"
+            },
+            "x-hope-mock" : {
+              "timeGap" : 2,
+              "dir" : "PAST",
+              "timeUnit" : "MINUTES",
+              "name" : "date"
+            }
+          }
+        },
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.user.wire.api.admin.response.CustomerPasswordUpdatedResponse",
+          "protoFrom" : "com/apihug/demo/user/proto/api/admin/response/response.proto"
+        }
+      },
+      "CustomerPasswordUpdatedResponseResult" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "返回码,零成功,非零失败"
+          },
+          "message" : {
+            "type" : "string",
+            "description" : "返回提示信息"
+          },
+          "errors" : {
+            "type" : "array",
+            "description" : "错误详情列表",
+            "items" : {
+              "$ref" : "#/components/schemas/Error"
+            },
+            "title" : "errors"
+          },
+          "data" : {
+            "$ref" : "#/components/schemas/CustomerPasswordUpdatedResponse"
+          }
+        }
+      },
+      "CustomerRegisteredResponse" : {
+        "type" : "object",
+        "description" : "customer registered successfully",
+        "properties" : {
+          "name" : {
+            "type" : "string",
+            "description" : "name of the user",
+            "example" : "My Lord",
+            "maxLength" : 32,
+            "x-hope-mock" : {
+              "nature" : "NAME",
+              "name" : "nature"
+            }
+          },
+          "customerId" : {
+            "type" : "number",
+            "format" : "int64",
+            "description" : "id of this customer",
+            "example" : "1024",
+            "x-hope-validation-blank" : false
+          },
+          "registerDate" : {
+            "type" : "string",
+            "format" : "date-time",
+            "description" : "date of registered",
+            "x-hope-field-alias" : {
+              "predefinedDateFormat" : "YYYY_MM_DD_HH_MM_SS"
+            },
+            "x-hope-mock" : {
+              "timeGap" : 2,
+              "dir" : "PAST",
+              "timeUnit" : "MINUTES",
+              "name" : "date"
+            }
+          }
+        },
+        "required" : [ "customerId", "name" ],
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.user.wire.api.admin.response.CustomerRegisteredResponse",
+          "protoFrom" : "com/apihug/demo/user/proto/api/admin/response/response.proto"
+        }
+      },
+      "CustomerRegisteredResponseResult" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "返回码,零成功,非零失败"
+          },
+          "message" : {
+            "type" : "string",
+            "description" : "返回提示信息"
+          },
+          "errors" : {
+            "type" : "array",
+            "description" : "错误详情列表",
+            "items" : {
+              "$ref" : "#/components/schemas/Error"
+            },
+            "title" : "errors"
+          },
+          "data" : {
+            "$ref" : "#/components/schemas/CustomerRegisteredResponse"
+          }
+        }
+      },
       "Error" : {
         "type" : "object",
         "description" : "错误对象",
@@ -253,6 +408,35 @@
         },
         "title" : "Error"
       },
+      "ProblemPhase" : {
+        "default" : "CONTROLLER",
+        "description" : "错误层次",
+        "oneOf" : [ {
+          "const" : "CONTROLLER",
+          "description" : "Controller",
+          "example" : "CONTROLLER",
+          "title" : "CONTROLLER",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-des-cn" : "表单层"
+        }, {
+          "const" : "SERVICE",
+          "description" : "Service",
+          "example" : "SERVICE",
+          "title" : "SERVICE",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-des-cn" : "服务层"
+        }, {
+          "const" : "DOMAIN",
+          "description" : "Domain",
+          "example" : "DOMAIN",
+          "title" : "DOMAIN",
+          "x-hope-enum-item-code" : 4,
+          "x-hope-enum-item-des-cn" : "领域层"
+        } ],
+        "title" : "ProblemPhase",
+        "x-hope-java-class" : "hope.common.wire.constant.ProblemPhase",
+        "x-hope-enum-type" : "true"
+      },
       "ProblemSeverity" : {
         "default" : "LOW",
         "description" : "错误严重程度",
@@ -289,34 +473,41 @@
         "x-hope-java-class" : "hope.common.wire.constant.ProblemSeverity",
         "x-hope-enum-type" : "true"
       },
-      "ProblemPhase" : {
-        "default" : "CONTROLLER",
-        "description" : "错误层次",
-        "oneOf" : [ {
-          "const" : "CONTROLLER",
-          "description" : "Controller",
-          "example" : "CONTROLLER",
-          "title" : "CONTROLLER",
-          "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "表单层"
-        }, {
-          "const" : "SERVICE",
-          "description" : "Service",
-          "example" : "SERVICE",
-          "title" : "SERVICE",
-          "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "服务层"
-        }, {
-          "const" : "DOMAIN",
-          "description" : "Domain",
-          "example" : "DOMAIN",
-          "title" : "DOMAIN",
-          "x-hope-enum-item-code" : 4,
-          "x-hope-enum-item-des-cn" : "领域层"
-        } ],
-        "title" : "ProblemPhase",
-        "x-hope-java-class" : "hope.common.wire.constant.ProblemPhase",
-        "x-hope-enum-type" : "true"
+      "RegisterRequest" : {
+        "type" : "object",
+        "description" : "Register a user",
+        "properties" : {
+          "name" : {
+            "type" : "string",
+            "description" : "name of the user",
+            "example" : "My Lord",
+            "maxLength" : 32,
+            "x-hope-mock" : {
+              "nature" : "NAME",
+              "name" : "nature"
+            }
+          },
+          "email" : {
+            "type" : "string",
+            "format" : "email",
+            "description" : "email address of this user",
+            "x-hope-validation" : {
+              "email" : true
+            }
+          },
+          "password" : {
+            "type" : "string",
+            "description" : "password of this account",
+            "maxLength" : 32,
+            "minLength" : 5,
+            "x-hope-validation-blank" : false
+          }
+        },
+        "required" : [ "name", "password" ],
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.user.wire.api.admin.request.RegisterRequest",
+          "protoFrom" : "com/apihug/demo/user/proto/api/admin/request/request.proto"
+        }
       },
       "UserAuthorityEnum" : {
         "default" : "USER_ADD",
@@ -367,193 +558,6 @@
           "protoFrom" : "com/apihug/demo/user/proto/infra/settings/admin/constant.proto"
         },
         "x-hope-enum-type" : "true"
-      },
-      "RegisterRequest" : {
-        "type" : "object",
-        "description" : "Register a user",
-        "properties" : {
-          "name" : {
-            "type" : "string",
-            "description" : "name of the user",
-            "example" : "My Lord",
-            "maxLength" : 32,
-            "x-hope-validation-blank" : false,
-            "x-hope-mock" : {
-              "nature" : "NAME",
-              "name" : "nature"
-            }
-          },
-          "email" : {
-            "type" : "string",
-            "format" : "email",
-            "description" : "email address of this user",
-            "x-hope-validation" : {
-              "email" : true
-            }
-          },
-          "password" : {
-            "type" : "string",
-            "description" : "password of this account",
-            "maxLength" : 32,
-            "minLength" : 5
-          }
-        },
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.user.wire.api.admin.request.RegisterRequest",
-          "protoFrom" : "com/apihug/demo/user/proto/api/admin/request/request.proto"
-        }
-      },
-      "ChangePasswordRequest" : {
-        "type" : "object",
-        "description" : "Change my password request",
-        "properties" : {
-          "customerId" : {
-            "type" : "number",
-            "format" : "int64",
-            "description" : "id of this customer"
-          },
-          "newPassword" : {
-            "type" : "string",
-            "description" : "new password",
-            "maxLength" : 32,
-            "minLength" : 5
-          },
-          "reason" : {
-            "type" : "string",
-            "description" : "reason of change the password",
-            "example" : "password stolen"
-          }
-        },
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.user.wire.api.admin.request.ChangePasswordRequest",
-          "protoFrom" : "com/apihug/demo/user/proto/api/admin/request/request.proto"
-        }
-      },
-      "CustomerRegisteredResponse" : {
-        "type" : "object",
-        "description" : "customer registered successfully",
-        "properties" : {
-          "name" : {
-            "type" : "string",
-            "description" : "name of the user",
-            "example" : "My Lord",
-            "maxLength" : 32,
-            "x-hope-validation-blank" : false,
-            "x-hope-mock" : {
-              "nature" : "NAME",
-              "name" : "nature"
-            }
-          },
-          "customerId" : {
-            "type" : "number",
-            "format" : "int64",
-            "description" : "id of this customer",
-            "example" : "1024"
-          },
-          "registerDate" : {
-            "type" : "string",
-            "format" : "date-time",
-            "description" : "date of registered",
-            "x-hope-field-alias" : {
-              "predefinedDateFormat" : "YYYY_MM_DD_HH_MM_SS"
-            },
-            "x-hope-mock" : {
-              "timeGap" : 2,
-              "dir" : "PAST",
-              "timeUnit" : "MINUTES",
-              "name" : "date"
-            }
-          }
-        },
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.user.wire.api.admin.response.CustomerRegisteredResponse",
-          "protoFrom" : "com/apihug/demo/user/proto/api/admin/response/response.proto"
-        }
-      },
-      "CustomerPasswordUpdatedResponse" : {
-        "type" : "object",
-        "description" : "password updated response",
-        "properties" : {
-          "customerId" : {
-            "type" : "number",
-            "format" : "int64",
-            "description" : "id of this customer",
-            "example" : "1024",
-            "x-hope-mock" : {
-              "max" : 12000,
-              "min" : 12,
-              "name" : "number"
-            }
-          },
-          "updatedDate" : {
-            "type" : "string",
-            "format" : "date-time",
-            "description" : "date of this password updated",
-            "x-hope-field-alias" : {
-              "predefinedDateFormat" : "YYYY_MM_DD_HH_MM_SS"
-            },
-            "x-hope-mock" : {
-              "timeGap" : 2,
-              "dir" : "PAST",
-              "timeUnit" : "MINUTES",
-              "name" : "date"
-            }
-          }
-        },
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.user.wire.api.admin.response.CustomerPasswordUpdatedResponse",
-          "protoFrom" : "com/apihug/demo/user/proto/api/admin/response/response.proto"
-        }
-      },
-      "CustomerRegisteredResponseResult" : {
-        "type" : "object",
-        "properties" : {
-          "code" : {
-            "type" : "integer",
-            "format" : "int32",
-            "description" : "返回码,零成功,非零失败"
-          },
-          "message" : {
-            "type" : "string",
-            "description" : "返回提示信息"
-          },
-          "errors" : {
-            "type" : "array",
-            "description" : "错误详情列表",
-            "items" : {
-              "$ref" : "#/components/schemas/Error"
-            },
-            "title" : "errors"
-          },
-          "data" : {
-            "$ref" : "#/components/schemas/CustomerRegisteredResponse"
-          }
-        }
-      },
-      "CustomerPasswordUpdatedResponseResult" : {
-        "type" : "object",
-        "properties" : {
-          "code" : {
-            "type" : "integer",
-            "format" : "int32",
-            "description" : "返回码,零成功,非零失败"
-          },
-          "message" : {
-            "type" : "string",
-            "description" : "返回提示信息"
-          },
-          "errors" : {
-            "type" : "array",
-            "description" : "错误详情列表",
-            "items" : {
-              "$ref" : "#/components/schemas/Error"
-            },
-            "title" : "errors"
-          },
-          "data" : {
-            "$ref" : "#/components/schemas/CustomerPasswordUpdatedResponse"
-          }
-        }
       }
     },
     "responses" : { },

@@ -22,7 +22,7 @@
     "domain" : "order",
     "applied" : true,
     "serviceIncludeOperations" : {
-      "com.apihug.demo.order.wire.api.admin.OrderAdminService" : [ "/order/admin/hello-world", "/order/admin/delete-order" ]
+      "com.apihug.demo.order.wire.api.admin.OrderAdminService" : [ ]
     }
   } ]
 }

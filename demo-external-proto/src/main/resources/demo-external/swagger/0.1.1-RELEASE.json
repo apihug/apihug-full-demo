@@ -19,51 +19,6 @@
     "description" : "Sample Tag"
   } ],
   "paths" : {
-    "/demo-all-external/post-test" : {
-      "post" : {
-        "tags" : [ ],
-        "summary" : "",
-        "description" : "post test example",
-        "operationId" : "TemplateExampleService#ExamplePost",
-        "parameters" : [ ],
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "$ref" : "#/components/schemas/TemplateExampleRequest"
-              }
-            }
-          }
-        },
-        "responses" : {
-          "200" : {
-            "description" : "post test example",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/TemplateExampleResponseResult"
-                }
-              }
-            }
-          }
-        },
-        "deprecated" : false,
-        "security" : [ ],
-        "x-hope-operation" : {
-          "deprecated" : false,
-          "wrapper" : true,
-          "inputPlural" : false,
-          "outputPlural" : false,
-          "pageable" : false,
-          "protoFrom" : "com/apihug/demo/external/proto/api/example/api.proto",
-          "empty" : false,
-          "serviceClz" : "com.apihug.demo.external.wire.api.example.TemplateExampleService",
-          "priority" : "HIGH",
-          "group" : "CUSTOMER"
-        }
-      }
-    },
     "/demo-all-external/ping" : {
       "post" : {
         "tags" : [ ],
@@ -107,6 +62,51 @@
                       "type" : "string"
                     }
                   }
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false,
+        "security" : [ ],
+        "x-hope-operation" : {
+          "deprecated" : false,
+          "wrapper" : true,
+          "inputPlural" : false,
+          "outputPlural" : false,
+          "pageable" : false,
+          "protoFrom" : "com/apihug/demo/external/proto/api/example/api.proto",
+          "empty" : false,
+          "serviceClz" : "com.apihug.demo.external.wire.api.example.TemplateExampleService",
+          "priority" : "HIGH",
+          "group" : "CUSTOMER"
+        }
+      }
+    },
+    "/demo-all-external/post-test" : {
+      "post" : {
+        "tags" : [ ],
+        "summary" : "",
+        "description" : "post test example",
+        "operationId" : "TemplateExampleService#ExamplePost",
+        "parameters" : [ ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "$ref" : "#/components/schemas/TemplateExampleRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "post test example",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TemplateExampleResponseResult"
                 }
               }
             }
@@ -204,6 +204,60 @@
         },
         "title" : "Error"
       },
+      "ExternalAuthorityEnum" : {
+        "default" : "USER_ADD",
+        "description" : "Example Authority Enum for the project, MODIFY IT",
+        "oneOf" : [ {
+          "const" : "USER_ADD",
+          "description" : "user:add",
+          "example" : "USER_ADD",
+          "title" : "USER_ADD",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-des-cn" : "Authority to remove user(Remove or modify this template sample)"
+        }, {
+          "const" : "USER_DELETE",
+          "description" : "user:remove",
+          "example" : "USER_DELETE",
+          "title" : "USER_DELETE",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-des-cn" : "Authority to delete user(Remove or modify this template sample)"
+        } ],
+        "title" : "ExternalAuthorityEnum",
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum",
+          "protoFrom" : "com/apihug/demo/external/proto/infra/settings/authority.proto"
+        },
+        "x-hope-enum-type" : "true"
+      },
+      "ProblemPhase" : {
+        "default" : "CONTROLLER",
+        "description" : "错误层次",
+        "oneOf" : [ {
+          "const" : "CONTROLLER",
+          "description" : "Controller",
+          "example" : "CONTROLLER",
+          "title" : "CONTROLLER",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-des-cn" : "表单层"
+        }, {
+          "const" : "SERVICE",
+          "description" : "Service",
+          "example" : "SERVICE",
+          "title" : "SERVICE",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-des-cn" : "服务层"
+        }, {
+          "const" : "DOMAIN",
+          "description" : "Domain",
+          "example" : "DOMAIN",
+          "title" : "DOMAIN",
+          "x-hope-enum-item-code" : 4,
+          "x-hope-enum-item-des-cn" : "领域层"
+        } ],
+        "title" : "ProblemPhase",
+        "x-hope-java-class" : "hope.common.wire.constant.ProblemPhase",
+        "x-hope-enum-type" : "true"
+      },
       "ProblemSeverity" : {
         "default" : "LOW",
         "description" : "错误严重程度",
@@ -240,35 +294,6 @@
         "x-hope-java-class" : "hope.common.wire.constant.ProblemSeverity",
         "x-hope-enum-type" : "true"
       },
-      "ProblemPhase" : {
-        "default" : "CONTROLLER",
-        "description" : "错误层次",
-        "oneOf" : [ {
-          "const" : "CONTROLLER",
-          "description" : "Controller",
-          "example" : "CONTROLLER",
-          "title" : "CONTROLLER",
-          "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "表单层"
-        }, {
-          "const" : "SERVICE",
-          "description" : "Service",
-          "example" : "SERVICE",
-          "title" : "SERVICE",
-          "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "服务层"
-        }, {
-          "const" : "DOMAIN",
-          "description" : "Domain",
-          "example" : "DOMAIN",
-          "title" : "DOMAIN",
-          "x-hope-enum-item-code" : 4,
-          "x-hope-enum-item-des-cn" : "领域层"
-        } ],
-        "title" : "ProblemPhase",
-        "x-hope-java-class" : "hope.common.wire.constant.ProblemPhase",
-        "x-hope-enum-type" : "true"
-      },
       "TemplateExampleEnum" : {
         "default" : "REMOVE_ME",
         "description" : "Remember to remove this enum this is example from template",
@@ -294,31 +319,6 @@
         },
         "x-hope-enum-type" : "true"
       },
-      "ExternalAuthorityEnum" : {
-        "default" : "USER_ADD",
-        "description" : "Example Authority Enum for the project, MODIFY IT",
-        "oneOf" : [ {
-          "const" : "USER_ADD",
-          "description" : "user:add",
-          "example" : "USER_ADD",
-          "title" : "USER_ADD",
-          "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "Authority to remove user(Remove or modify this template sample)"
-        }, {
-          "const" : "USER_DELETE",
-          "description" : "user:remove",
-          "example" : "USER_DELETE",
-          "title" : "USER_DELETE",
-          "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "Authority to delete user(Remove or modify this template sample)"
-        } ],
-        "title" : "ExternalAuthorityEnum",
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum",
-          "protoFrom" : "com/apihug/demo/external/proto/infra/settings/authority.proto"
-        },
-        "x-hope-enum-type" : "true"
-      },
       "TemplateExampleRequest" : {
         "type" : "object",
         "description" : "This is a template example request,REMOVE IT",
@@ -326,8 +326,7 @@
           "name" : {
             "type" : "string",
             "description" : "user input name",
-            "example" : "Jake",
-            "x-hope-validation-blank" : false
+            "example" : "Jake"
           },
           "email" : {
             "type" : "string",
@@ -343,6 +342,7 @@
             }
           }
         },
+        "required" : [ "name" ],
         "x-hope-rt-meta" : {
           "clz" : "com.apihug.demo.external.wire.api.example.request.TemplateExampleRequest",
           "protoFrom" : "com/apihug/demo/external/proto/api/example/request/example.proto"
@@ -355,16 +355,15 @@
           "name" : {
             "type" : "string",
             "description" : "user input name",
-            "example" : "Jake",
-            "x-hope-validation-blank" : true
+            "example" : "Jake"
           },
           "hello" : {
             "type" : "string",
             "description" : "response hello",
-            "example" : "hello Jake",
-            "x-hope-validation-blank" : false
+            "example" : "hello Jake"
           }
         },
+        "required" : [ "hello" ],
         "x-hope-rt-meta" : {
           "clz" : "com.apihug.demo.external.wire.api.example.response.TemplateExampleResponse",
           "protoFrom" : "com/apihug/demo/external/proto/api/example/response/example.proto"

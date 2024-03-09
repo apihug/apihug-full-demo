@@ -19,7 +19,7 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/inventory/proto/api/admin/response.proto",
-    pluginVersion = "0.6.3-RELEASE",
+    pluginVersion = "0.6.5-RELEASE",
     entity = "StockInResponse",
     kind = Kind.MESSAGE
 )
@@ -33,7 +33,7 @@ public class StockInResponse {
   @Schema(
       description = "sku of this product",
       maxLength = 32,
-      required = true,
+      requiredMode = Schema.RequiredMode.REQUIRED,
       example = "S1JSF0S0FA"
   )
   protected String sku;

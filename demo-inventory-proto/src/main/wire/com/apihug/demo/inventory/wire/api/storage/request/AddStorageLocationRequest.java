@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/inventory/proto/api/storage/request/request.proto",
-    pluginVersion = "0.6.3-RELEASE",
+    pluginVersion = "0.6.5-RELEASE",
     entity = "AddStorageLocationRequest",
     kind = Kind.MESSAGE
 )
@@ -30,7 +30,7 @@ public class AddStorageLocationRequest {
   @Schema(
       description = "name of the location",
       maxLength = 32,
-      required = true,
+      requiredMode = Schema.RequiredMode.REQUIRED,
       example = "A1-112-5B"
   )
   protected String name;

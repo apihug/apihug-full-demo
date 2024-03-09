@@ -278,6 +278,53 @@
   },
   "components" : {
     "schemas" : {
+      "AddStorageLocationRequest" : {
+        "type" : "object",
+        "description" : "Add a new storage location",
+        "properties" : {
+          "name" : {
+            "type" : "string",
+            "description" : "name of the location",
+            "example" : "A1-112-5B",
+            "maxLength" : 32,
+            "x-hope-mock" : {
+              "nature" : "NAME",
+              "name" : "nature"
+            }
+          },
+          "remark" : {
+            "type" : "string",
+            "description" : "comment of this"
+          }
+        },
+        "required" : [ "name" ],
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.inventory.wire.api.storage.request.AddStorageLocationRequest",
+          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/request/request.proto"
+        }
+      },
+      "DeleteStorageLocationRequest" : {
+        "type" : "object",
+        "description" : "delete a storage location",
+        "properties" : {
+          "storageLocationId" : {
+            "type" : "number",
+            "format" : "int64",
+            "default" : "1",
+            "description" : "id of this storage location",
+            "example" : "11"
+          },
+          "reason" : {
+            "type" : "string",
+            "description" : "reason of delete it",
+            "example" : "no happy"
+          }
+        },
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.inventory.wire.api.storage.request.DeleteStorageLocationRequest",
+          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/request/request.proto"
+        }
+      },
       "Error" : {
         "type" : "object",
         "description" : "错误对象",
@@ -351,71 +398,6 @@
         },
         "title" : "Error"
       },
-      "ProblemSeverity" : {
-        "default" : "LOW",
-        "description" : "错误严重程度",
-        "oneOf" : [ {
-          "const" : "LOW",
-          "description" : "Low",
-          "example" : "LOW",
-          "title" : "LOW",
-          "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "低,无影响"
-        }, {
-          "const" : "WARN",
-          "description" : "Warn",
-          "example" : "WARN",
-          "title" : "WARN",
-          "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "警告,业务错误可重试"
-        }, {
-          "const" : "ERROR",
-          "description" : "Error",
-          "example" : "ERROR",
-          "title" : "ERROR",
-          "x-hope-enum-item-code" : 4,
-          "x-hope-enum-item-des-cn" : "错误,业务无法进行"
-        }, {
-          "const" : "FATAL",
-          "description" : "Fatal",
-          "example" : "FATAL",
-          "title" : "FATAL",
-          "x-hope-enum-item-code" : 8,
-          "x-hope-enum-item-des-cn" : "灾难,数据破坏"
-        } ],
-        "title" : "ProblemSeverity",
-        "x-hope-java-class" : "hope.common.wire.constant.ProblemSeverity",
-        "x-hope-enum-type" : "true"
-      },
-      "ProblemPhase" : {
-        "default" : "CONTROLLER",
-        "description" : "错误层次",
-        "oneOf" : [ {
-          "const" : "CONTROLLER",
-          "description" : "Controller",
-          "example" : "CONTROLLER",
-          "title" : "CONTROLLER",
-          "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "表单层"
-        }, {
-          "const" : "SERVICE",
-          "description" : "Service",
-          "example" : "SERVICE",
-          "title" : "SERVICE",
-          "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "服务层"
-        }, {
-          "const" : "DOMAIN",
-          "description" : "Domain",
-          "example" : "DOMAIN",
-          "title" : "DOMAIN",
-          "x-hope-enum-item-code" : 4,
-          "x-hope-enum-item-des-cn" : "领域层"
-        } ],
-        "title" : "ProblemPhase",
-        "x-hope-java-class" : "hope.common.wire.constant.ProblemPhase",
-        "x-hope-enum-type" : "true"
-      },
       "InventoryAuthorityEnum" : {
         "default" : "STOCK_IN",
         "description" : "Inventory authorities list",
@@ -455,55 +437,100 @@
         },
         "x-hope-enum-type" : "true"
       },
-      "StorageStatusEnum" : {
-        "default" : "NORMAL",
-        "description" : "status of a storage location status",
+      "ProblemPhase" : {
+        "default" : "CONTROLLER",
+        "description" : "错误层次",
         "oneOf" : [ {
-          "const" : "NORMAL",
-          "description" : "normal",
-          "example" : "NORMAL",
-          "title" : "NORMAL",
+          "const" : "CONTROLLER",
+          "description" : "Controller",
+          "example" : "CONTROLLER",
+          "title" : "CONTROLLER",
           "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "this storage is normal"
+          "x-hope-enum-item-des-cn" : "表单层"
         }, {
-          "const" : "BLOCKED",
-          "description" : "blocked",
-          "example" : "BLOCKED",
-          "title" : "BLOCKED",
+          "const" : "SERVICE",
+          "description" : "Service",
+          "example" : "SERVICE",
+          "title" : "SERVICE",
           "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "this storage is blocked"
+          "x-hope-enum-item-des-cn" : "服务层"
+        }, {
+          "const" : "DOMAIN",
+          "description" : "Domain",
+          "example" : "DOMAIN",
+          "title" : "DOMAIN",
+          "x-hope-enum-item-code" : 4,
+          "x-hope-enum-item-des-cn" : "领域层"
         } ],
-        "title" : "StorageStatusEnum",
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.inventory.wire.infra.settings.admin.StorageStatusEnum",
-          "protoFrom" : "com/apihug/demo/inventory/proto/infra/settings/admin/constant.proto"
-        },
+        "title" : "ProblemPhase",
+        "x-hope-java-class" : "hope.common.wire.constant.ProblemPhase",
         "x-hope-enum-type" : "true"
       },
-      "StockStatusEnum" : {
-        "default" : "FAIL",
-        "description" : "enum of the stock operation",
+      "ProblemSeverity" : {
+        "default" : "LOW",
+        "description" : "错误严重程度",
         "oneOf" : [ {
-          "const" : "FAIL",
-          "description" : "fail of stock operation",
-          "example" : "FAIL",
-          "title" : "FAIL",
+          "const" : "LOW",
+          "description" : "Low",
+          "example" : "LOW",
+          "title" : "LOW",
           "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "stock illegal"
+          "x-hope-enum-item-des-cn" : "低,无影响"
         }, {
-          "const" : "SUCCESS",
-          "description" : "success just a sample",
-          "example" : "SUCCESS",
-          "title" : "SUCCESS",
-          "x-hope-enum-item-code" : 0,
-          "x-hope-enum-item-des-cn" : "sample"
+          "const" : "WARN",
+          "description" : "Warn",
+          "example" : "WARN",
+          "title" : "WARN",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-des-cn" : "警告,业务错误可重试"
+        }, {
+          "const" : "ERROR",
+          "description" : "Error",
+          "example" : "ERROR",
+          "title" : "ERROR",
+          "x-hope-enum-item-code" : 4,
+          "x-hope-enum-item-des-cn" : "错误,业务无法进行"
+        }, {
+          "const" : "FATAL",
+          "description" : "Fatal",
+          "example" : "FATAL",
+          "title" : "FATAL",
+          "x-hope-enum-item-code" : 8,
+          "x-hope-enum-item-des-cn" : "灾难,数据破坏"
         } ],
-        "title" : "StockStatusEnum",
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.inventory.wire.infra.settings.admin.StockStatusEnum",
-          "protoFrom" : "com/apihug/demo/inventory/proto/infra/settings/admin/constant.proto"
-        },
+        "title" : "ProblemSeverity",
+        "x-hope-java-class" : "hope.common.wire.constant.ProblemSeverity",
         "x-hope-enum-type" : "true"
+      },
+      "StockInRequest" : {
+        "type" : "object",
+        "description" : "Stock in request",
+        "properties" : {
+          "sku" : {
+            "type" : "string",
+            "description" : "sku of this product",
+            "example" : "S1JSF0S0FA",
+            "maxLength" : 32,
+            "x-hope-mock" : {
+              "nature" : "NAME",
+              "name" : "nature"
+            }
+          },
+          "quantity" : {
+            "type" : "number",
+            "format" : "int64",
+            "default" : "1",
+            "description" : "quantity of this load",
+            "example" : "11",
+            "maximum" : 1.0,
+            "minimum" : 9999.0
+          }
+        },
+        "required" : [ "sku" ],
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.inventory.wire.api.admin.StockInRequest",
+          "protoFrom" : "com/apihug/demo/inventory/proto/api/admin/request.proto"
+        }
       },
       "StockInResponse" : {
         "type" : "object",
@@ -514,7 +541,6 @@
             "description" : "sku of this product",
             "example" : "S1JSF0S0FA",
             "maxLength" : 32,
-            "x-hope-validation-blank" : false,
             "x-hope-mock" : {
               "nature" : "NAME",
               "name" : "nature"
@@ -539,9 +565,74 @@
             "minimum" : 9999.0
           }
         },
+        "required" : [ "sku" ],
         "x-hope-rt-meta" : {
           "clz" : "com.apihug.demo.inventory.wire.api.admin.StockInResponse",
           "protoFrom" : "com/apihug/demo/inventory/proto/api/admin/response.proto"
+        }
+      },
+      "StockInResponseResult" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "返回码,零成功,非零失败"
+          },
+          "message" : {
+            "type" : "string",
+            "description" : "返回提示信息"
+          },
+          "errors" : {
+            "type" : "array",
+            "description" : "错误详情列表",
+            "items" : {
+              "$ref" : "#/components/schemas/Error"
+            },
+            "title" : "errors"
+          },
+          "data" : {
+            "$ref" : "#/components/schemas/StockInResponse"
+          }
+        }
+      },
+      "StockOutRequest" : {
+        "type" : "object",
+        "description" : "Stock out request",
+        "properties" : {
+          "sku" : {
+            "type" : "string",
+            "description" : "sku of this product",
+            "example" : "S1JSF0S0FA",
+            "maxLength" : 32,
+            "x-hope-mock" : {
+              "nature" : "NAME",
+              "name" : "nature"
+            }
+          },
+          "quantity" : {
+            "type" : "number",
+            "format" : "int64",
+            "default" : "1",
+            "description" : "quantity of this load",
+            "example" : "11",
+            "maximum" : 1.0,
+            "minimum" : 9999.0
+          },
+          "orderId" : {
+            "type" : "number",
+            "format" : "int64",
+            "default" : "111",
+            "description" : "id of the order",
+            "example" : "1111",
+            "maximum" : 1.0,
+            "minimum" : 7886.0
+          }
+        },
+        "required" : [ "sku" ],
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.inventory.wire.api.admin.StockOutRequest",
+          "protoFrom" : "com/apihug/demo/inventory/proto/api/admin/request.proto"
         }
       },
       "StockOutResponse" : {
@@ -553,7 +644,6 @@
             "description" : "sku of this product",
             "example" : "S1JSF0S0FA",
             "maxLength" : 32,
-            "x-hope-validation-blank" : false,
             "x-hope-mock" : {
               "nature" : "NAME",
               "name" : "nature"
@@ -596,204 +686,10 @@
             "minimum" : 9999.0
           }
         },
+        "required" : [ "sku" ],
         "x-hope-rt-meta" : {
           "clz" : "com.apihug.demo.inventory.wire.api.admin.StockOutResponse",
           "protoFrom" : "com/apihug/demo/inventory/proto/api/admin/response.proto"
-        }
-      },
-      "StockInRequest" : {
-        "type" : "object",
-        "description" : "Stock in request",
-        "properties" : {
-          "sku" : {
-            "type" : "string",
-            "description" : "sku of this product",
-            "example" : "S1JSF0S0FA",
-            "maxLength" : 32,
-            "x-hope-validation-blank" : false,
-            "x-hope-mock" : {
-              "nature" : "NAME",
-              "name" : "nature"
-            }
-          },
-          "quantity" : {
-            "type" : "number",
-            "format" : "int64",
-            "default" : "1",
-            "description" : "quantity of this load",
-            "example" : "11",
-            "maximum" : 1.0,
-            "minimum" : 9999.0
-          }
-        },
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.inventory.wire.api.admin.StockInRequest",
-          "protoFrom" : "com/apihug/demo/inventory/proto/api/admin/request.proto"
-        }
-      },
-      "StockOutRequest" : {
-        "type" : "object",
-        "description" : "Stock out request",
-        "properties" : {
-          "sku" : {
-            "type" : "string",
-            "description" : "sku of this product",
-            "example" : "S1JSF0S0FA",
-            "maxLength" : 32,
-            "x-hope-validation-blank" : false,
-            "x-hope-mock" : {
-              "nature" : "NAME",
-              "name" : "nature"
-            }
-          },
-          "quantity" : {
-            "type" : "number",
-            "format" : "int64",
-            "default" : "1",
-            "description" : "quantity of this load",
-            "example" : "11",
-            "maximum" : 1.0,
-            "minimum" : 9999.0
-          },
-          "orderId" : {
-            "type" : "number",
-            "format" : "int64",
-            "default" : "111",
-            "description" : "id of the order",
-            "example" : "1111",
-            "maximum" : 1.0,
-            "minimum" : 7886.0
-          }
-        },
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.inventory.wire.api.admin.StockOutRequest",
-          "protoFrom" : "com/apihug/demo/inventory/proto/api/admin/request.proto"
-        }
-      },
-      "StorageLocationAddedResponse" : {
-        "type" : "object",
-        "description" : "storage location added",
-        "properties" : {
-          "storageLocationId" : {
-            "type" : "number",
-            "format" : "int64",
-            "description" : "id of this storage location",
-            "example" : "11",
-            "x-hope-validation-blank" : false
-          },
-          "name" : {
-            "type" : "string",
-            "description" : "name of the location",
-            "example" : "A1-112-5B",
-            "maxLength" : 32,
-            "x-hope-validation-blank" : false,
-            "x-hope-mock" : {
-              "nature" : "NAME",
-              "name" : "nature"
-            }
-          },
-          "remark" : {
-            "type" : "string",
-            "description" : "comment of this"
-          }
-        },
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.inventory.wire.api.storage.response.StorageLocationAddedResponse",
-          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/response/response.proto"
-        }
-      },
-      "StorageLocationDeletedResponse" : {
-        "type" : "object",
-        "description" : "Storage location deleted",
-        "properties" : {
-          "storageLocationId" : {
-            "type" : "number",
-            "format" : "int64",
-            "default" : "1",
-            "description" : "id of this storage location",
-            "example" : "11"
-          },
-          "reason" : {
-            "type" : "string",
-            "description" : "reason of delete it",
-            "example" : "no happy"
-          }
-        },
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.inventory.wire.api.storage.response.StorageLocationDeletedResponse",
-          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/response/response.proto"
-        }
-      },
-      "AddStorageLocationRequest" : {
-        "type" : "object",
-        "description" : "Add a new storage location",
-        "properties" : {
-          "name" : {
-            "type" : "string",
-            "description" : "name of the location",
-            "example" : "A1-112-5B",
-            "maxLength" : 32,
-            "x-hope-validation-blank" : false,
-            "x-hope-mock" : {
-              "nature" : "NAME",
-              "name" : "nature"
-            }
-          },
-          "remark" : {
-            "type" : "string",
-            "description" : "comment of this"
-          }
-        },
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.inventory.wire.api.storage.request.AddStorageLocationRequest",
-          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/request/request.proto"
-        }
-      },
-      "DeleteStorageLocationRequest" : {
-        "type" : "object",
-        "description" : "delete a storage location",
-        "properties" : {
-          "storageLocationId" : {
-            "type" : "number",
-            "format" : "int64",
-            "default" : "1",
-            "description" : "id of this storage location",
-            "example" : "11"
-          },
-          "reason" : {
-            "type" : "string",
-            "description" : "reason of delete it",
-            "example" : "no happy"
-          }
-        },
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.demo.inventory.wire.api.storage.request.DeleteStorageLocationRequest",
-          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/request/request.proto"
-        }
-      },
-      "StockInResponseResult" : {
-        "type" : "object",
-        "properties" : {
-          "code" : {
-            "type" : "integer",
-            "format" : "int32",
-            "description" : "返回码,零成功,非零失败"
-          },
-          "message" : {
-            "type" : "string",
-            "description" : "返回提示信息"
-          },
-          "errors" : {
-            "type" : "array",
-            "description" : "错误详情列表",
-            "items" : {
-              "$ref" : "#/components/schemas/Error"
-            },
-            "title" : "errors"
-          },
-          "data" : {
-            "$ref" : "#/components/schemas/StockInResponse"
-          }
         }
       },
       "StockOutResponseResult" : {
@@ -821,6 +717,62 @@
           }
         }
       },
+      "StockStatusEnum" : {
+        "default" : "FAIL",
+        "description" : "enum of the stock operation",
+        "oneOf" : [ {
+          "const" : "FAIL",
+          "description" : "fail of stock operation",
+          "example" : "FAIL",
+          "title" : "FAIL",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-des-cn" : "stock illegal"
+        }, {
+          "const" : "SUCCESS",
+          "description" : "success just a sample",
+          "example" : "SUCCESS",
+          "title" : "SUCCESS",
+          "x-hope-enum-item-code" : 0,
+          "x-hope-enum-item-des-cn" : "sample"
+        } ],
+        "title" : "StockStatusEnum",
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.inventory.wire.infra.settings.admin.StockStatusEnum",
+          "protoFrom" : "com/apihug/demo/inventory/proto/infra/settings/admin/constant.proto"
+        },
+        "x-hope-enum-type" : "true"
+      },
+      "StorageLocationAddedResponse" : {
+        "type" : "object",
+        "description" : "storage location added",
+        "properties" : {
+          "storageLocationId" : {
+            "type" : "number",
+            "format" : "int64",
+            "description" : "id of this storage location",
+            "example" : "11"
+          },
+          "name" : {
+            "type" : "string",
+            "description" : "name of the location",
+            "example" : "A1-112-5B",
+            "maxLength" : 32,
+            "x-hope-mock" : {
+              "nature" : "NAME",
+              "name" : "nature"
+            }
+          },
+          "remark" : {
+            "type" : "string",
+            "description" : "comment of this"
+          }
+        },
+        "required" : [ "name", "storageLocationId" ],
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.inventory.wire.api.storage.response.StorageLocationAddedResponse",
+          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/response/response.proto"
+        }
+      },
       "StorageLocationAddedResponseResult" : {
         "type" : "object",
         "properties" : {
@@ -844,6 +796,28 @@
           "data" : {
             "$ref" : "#/components/schemas/StorageLocationAddedResponse"
           }
+        }
+      },
+      "StorageLocationDeletedResponse" : {
+        "type" : "object",
+        "description" : "Storage location deleted",
+        "properties" : {
+          "storageLocationId" : {
+            "type" : "number",
+            "format" : "int64",
+            "default" : "1",
+            "description" : "id of this storage location",
+            "example" : "11"
+          },
+          "reason" : {
+            "type" : "string",
+            "description" : "reason of delete it",
+            "example" : "no happy"
+          }
+        },
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.inventory.wire.api.storage.response.StorageLocationDeletedResponse",
+          "protoFrom" : "com/apihug/demo/inventory/proto/api/storage/response/response.proto"
         }
       },
       "StorageLocationDeletedResponseResult" : {
@@ -870,6 +844,31 @@
             "$ref" : "#/components/schemas/StorageLocationDeletedResponse"
           }
         }
+      },
+      "StorageStatusEnum" : {
+        "default" : "NORMAL",
+        "description" : "status of a storage location status",
+        "oneOf" : [ {
+          "const" : "NORMAL",
+          "description" : "normal",
+          "example" : "NORMAL",
+          "title" : "NORMAL",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-des-cn" : "this storage is normal"
+        }, {
+          "const" : "BLOCKED",
+          "description" : "blocked",
+          "example" : "BLOCKED",
+          "title" : "BLOCKED",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-des-cn" : "this storage is blocked"
+        } ],
+        "title" : "StorageStatusEnum",
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.inventory.wire.infra.settings.admin.StorageStatusEnum",
+          "protoFrom" : "com/apihug/demo/inventory/proto/infra/settings/admin/constant.proto"
+        },
+        "x-hope-enum-type" : "true"
       }
     },
     "responses" : { },

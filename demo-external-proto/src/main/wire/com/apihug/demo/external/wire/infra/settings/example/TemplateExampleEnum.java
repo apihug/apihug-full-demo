@@ -27,7 +27,7 @@ import javax.annotation.Generated;
 @Generated("H.O.P.E. Infra Team")
 @ProtoFrom(
     value = "com/apihug/demo/external/proto/infra/settings/example/constant.proto",
-    pluginVersion = "0.6.3-RELEASE",
+    pluginVersion = "0.6.5-RELEASE",
     entity = "TemplateExampleEnum",
     kind = Kind.ENUM
 )

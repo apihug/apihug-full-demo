@@ -6,6 +6,7 @@ import io.swagger.v3.oas.annotations.extensions.Extension;
 import io.swagger.v3.oas.annotations.extensions.ExtensionProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import java.lang.Long;
 import java.lang.Override;
@@ -19,15 +20,17 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/user/proto/api/admin/request/request.proto",
-    pluginVersion = "0.6.3-RELEASE",
+    pluginVersion = "0.6.5-RELEASE",
     entity = "ChangePasswordRequest",
     kind = Kind.MESSAGE
 )
 public class ChangePasswordRequest {
   private static final long serialVersionUID = 0L;
 
+  @NotNull
   @Schema(
-      description = "id of this customer"
+      description = "id of this customer",
+      requiredMode = Schema.RequiredMode.REQUIRED
   )
   protected Long customerId;
 
@@ -40,6 +43,7 @@ public class ChangePasswordRequest {
       description = "new password",
       maxLength = 32,
       minLength = 5,
+      requiredMode = Schema.RequiredMode.REQUIRED,
       extensions = @Extension(name = "x-hope-validation", properties = @ExtensionProperty(name = "blank", value = "false"))
   )
   protected String newPassword;

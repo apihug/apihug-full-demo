@@ -253,7 +253,6 @@ public final class ExternalApiCollector implements Collector<OpenAPI, Schema, Ap
         Schema res  = new Schema();
         res.setDescription("This is a template example request,REMOVE IT");
         res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
         return res;
       }
     }.build());
@@ -293,7 +292,6 @@ public final class ExternalApiCollector implements Collector<OpenAPI, Schema, Ap
         res.setDescription("user input email");
         res.setFormat("email");
         res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
         res.setExample("jake@bigger.com");
         res.setTypes(Set.of("string"));
         return res;
@@ -335,7 +333,6 @@ public final class ExternalApiCollector implements Collector<OpenAPI, Schema, Ap
         Schema res  = new Schema();
         res.setDescription("This is a template example response");
         res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
         return res;
       }
     }.build());
@@ -468,7 +465,6 @@ public final class ExternalApiCollector implements Collector<OpenAPI, Schema, Ap
               public Schema build() {
                 Schema res  = new Schema();
                 res.setSpecVersion(SpecVersion.V30);
-                res.setNullable(false);
                 res.setTypes(Set.of("string"));
                 return res;
               }

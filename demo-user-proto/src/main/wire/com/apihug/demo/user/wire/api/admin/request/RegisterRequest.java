@@ -20,7 +20,7 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/user/proto/api/admin/request/request.proto",
-    pluginVersion = "0.6.3-RELEASE",
+    pluginVersion = "0.6.5-RELEASE",
     entity = "RegisterRequest",
     kind = Kind.MESSAGE
 )
@@ -34,7 +34,7 @@ public class RegisterRequest {
   @Schema(
       description = "name of the user",
       maxLength = 32,
-      required = true,
+      requiredMode = Schema.RequiredMode.REQUIRED,
       example = "My Lord"
   )
   protected String name;
@@ -54,6 +54,7 @@ public class RegisterRequest {
       description = "password of this account",
       maxLength = 32,
       minLength = 5,
+      requiredMode = Schema.RequiredMode.REQUIRED,
       extensions = @Extension(name = "x-hope-validation", properties = @ExtensionProperty(name = "blank", value = "false"))
   )
   protected String password;

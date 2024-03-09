@@ -15,7 +15,7 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/external/proto/api/example/response/example.proto",
-    pluginVersion = "0.6.3-RELEASE",
+    pluginVersion = "0.6.5-RELEASE",
     entity = "TemplateExampleResponse",
     kind = Kind.MESSAGE
 )
@@ -24,7 +24,6 @@ public class TemplateExampleResponse {
 
   @Schema(
       description = "user input name",
-      required = false,
       example = "Jake"
   )
   protected String name;
@@ -32,7 +31,7 @@ public class TemplateExampleResponse {
   @NotEmpty
   @Schema(
       description = "response hello",
-      required = true,
+      requiredMode = Schema.RequiredMode.REQUIRED,
       example = "hello Jake"
   )
   protected String hello;

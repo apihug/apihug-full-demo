@@ -20,7 +20,7 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/order/proto/api/admin/request/request.proto",
-    pluginVersion = "0.6.3-RELEASE",
+    pluginVersion = "0.6.5-RELEASE",
     entity = "DeleteOrderRequest",
     kind = Kind.MESSAGE
 )
@@ -45,6 +45,7 @@ public class DeleteOrderRequest {
       description = "reason why delete this order",
       maxLength = 122,
       minLength = 5,
+      requiredMode = Schema.RequiredMode.REQUIRED,
       example = "wrong placed",
       extensions = @Extension(name = "x-hope-validation", properties = @ExtensionProperty(name = "blank", value = "false"))
   )

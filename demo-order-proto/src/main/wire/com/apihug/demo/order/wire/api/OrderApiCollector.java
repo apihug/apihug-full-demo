@@ -193,29 +193,6 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
     clzPathMap.computeIfAbsent(clz, s -> new LinkedHashSet<>()).add(path);
   }
 
-  private final void _build_component_com_apihug_demo_order_wire_infra_settings_admin_OrderStatusEnum(
-      ) {
-    //  Build of the component: OrderStatusEnum proto: com/apihug/demo/order/proto/infra/settings/admin/constant.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum", res);
-    res.setClzName("com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum");
-    res.setEnumClz(true);
-    res.setName("OrderStatusEnum");
-    res.setPayload(new Builder<Schema<OrderStatusEnum>>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("Status of the order");
-        List<OrderStatusEnum> values  = new ArrayList();
-        values.add(OrderStatusEnum.NORMAL);
-        values.add(OrderStatusEnum.DELETED);
-        res.setDefault(OrderStatusEnum.NORMAL);
-        res.setEnum(values);
-        return res;
-      }
-    }.build());
-  }
-
   private final void _build_component_com_apihug_demo_order_wire_infra_settings_OrderAuthorityEnum(
       ) {
     //  Build of the component: OrderAuthorityEnum proto: com/apihug/demo/order/proto/infra/settings/authority.proto
@@ -239,6 +216,29 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
     }.build());
   }
 
+  private final void _build_component_com_apihug_demo_order_wire_infra_settings_admin_OrderStatusEnum(
+      ) {
+    //  Build of the component: OrderStatusEnum proto: com/apihug/demo/order/proto/infra/settings/admin/constant.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum", res);
+    res.setClzName("com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum");
+    res.setEnumClz(true);
+    res.setName("OrderStatusEnum");
+    res.setPayload(new Builder<Schema<OrderStatusEnum>>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("Status of the order");
+        List<OrderStatusEnum> values  = new ArrayList();
+        values.add(OrderStatusEnum.NORMAL);
+        values.add(OrderStatusEnum.DELETED);
+        res.setDefault(OrderStatusEnum.NORMAL);
+        res.setEnum(values);
+        return res;
+      }
+    }.build());
+  }
+
   private final void _build_component_com_apihug_demo_order_wire_api_admin_request_AddOrderRequest(
       ) {
     //  Build of the component: AddOrderRequest proto: com/apihug/demo/order/proto/api/admin/request/request.proto
@@ -255,7 +255,6 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
         Schema res  = new Schema();
         res.setDescription("Add order");
         res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
         return res;
       }
     }.build());
@@ -306,7 +305,6 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
         res.setSpecVersion(SpecVersion.V30);
         res.setMaximum(BigDecimal.valueOf(1L, 1));
         res.setMinimum(BigDecimal.valueOf(122L, 1));
-        res.setNullable(false);
         res.setExample("1");
         return res;
       }
@@ -347,7 +345,6 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
         Schema res  = new Schema();
         res.setDescription("delete the order by ID");
         res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
         return res;
       }
     }.build());
@@ -363,7 +360,6 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
         res.setDescription("id of this order");
         res.setSpecVersion(SpecVersion.V30);
         res.setMaximum(BigDecimal.valueOf(1L, 1));
-        res.setNullable(false);
         res.setExample("111");
         return res;
       }
@@ -433,7 +429,6 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
         Schema res  = new Schema();
         res.setDescription("Order placed already");
         res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
         return res;
       }
     }.build());
@@ -448,7 +443,6 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
         Schema res  = new Schema();
         res.setDescription("id of this order");
         res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
         res.setExample("111");
         return res;
       }
@@ -508,7 +502,6 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
         res.setSpecVersion(SpecVersion.V30);
         res.setMaximum(BigDecimal.valueOf(1L, 1));
         res.setMinimum(BigDecimal.valueOf(122L, 1));
-        res.setNullable(false);
         res.setExample("1");
         return res;
       }
@@ -549,7 +542,6 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
         Schema res  = new Schema();
         res.setDescription("order deleted response");
         res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
         return res;
       }
     }.build());
@@ -564,7 +556,6 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
         Schema res  = new Schema();
         res.setDescription("id of this order");
         res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
         res.setExample("1111");
         return res;
       }
@@ -588,7 +579,6 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
         Schema res  = new Schema();
         res.setDescription("deleted reason");
         res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
         res.setExample("wrong");
         return res;
       }
@@ -769,10 +759,10 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
   }
 
   private void _init() {
-    // Build for Enum :com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum
-    _build_component_com_apihug_demo_order_wire_infra_settings_admin_OrderStatusEnum();
     // Build for Enum :com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum
     _build_component_com_apihug_demo_order_wire_infra_settings_OrderAuthorityEnum();
+    // Build for Enum :com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum
+    _build_component_com_apihug_demo_order_wire_infra_settings_admin_OrderStatusEnum();
     // Build for Component : com.apihug.demo.order.wire.api.admin.request.AddOrderRequest
     _build_component_com_apihug_demo_order_wire_api_admin_request_AddOrderRequest();
     // Build for Component : com.apihug.demo.order.wire.api.admin.request.DeleteOrderRequest

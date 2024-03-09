@@ -19,7 +19,7 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/order/proto/api/admin/request/request.proto",
-    pluginVersion = "0.6.3-RELEASE",
+    pluginVersion = "0.6.5-RELEASE",
     entity = "AddOrderRequest",
     kind = Kind.MESSAGE
 )
@@ -33,7 +33,7 @@ public class AddOrderRequest {
   @Schema(
       description = "SKU of the product",
       maxLength = 32,
-      required = true,
+      requiredMode = Schema.RequiredMode.REQUIRED,
       example = "XSK12MADA"
   )
   protected String skuId;

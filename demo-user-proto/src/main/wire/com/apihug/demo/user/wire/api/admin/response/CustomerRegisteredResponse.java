@@ -21,7 +21,7 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/user/proto/api/admin/response/response.proto",
-    pluginVersion = "0.6.3-RELEASE",
+    pluginVersion = "0.6.5-RELEASE",
     entity = "CustomerRegisteredResponse",
     kind = Kind.MESSAGE
 )
@@ -35,13 +35,14 @@ public class CustomerRegisteredResponse {
   @Schema(
       description = "name of the user",
       maxLength = 32,
-      required = true,
+      requiredMode = Schema.RequiredMode.REQUIRED,
       example = "My Lord"
   )
   protected String name;
 
   @Schema(
       description = "id of this customer",
+      requiredMode = Schema.RequiredMode.REQUIRED,
       example = "1024",
       extensions = @Extension(name = "x-hope-validation", properties = @ExtensionProperty(name = "blank", value = "false"))
   )
