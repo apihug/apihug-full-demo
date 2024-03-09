@@ -1,7 +1,7 @@
 {
   "domain" : "external",
   "version" : "0.1.1-RELEASE",
-  "lastBuildTime" : "2024-03-09 07:53:31",
+  "lastBuildTime" : "2024-03-09 11:48:40",
   "errors" : [ {
     "name" : "TemplateExampleErrorsEnum",
     "javaClass" : "com.apihug.demo.external.wire.infra.settings.example.TemplateExampleErrorsEnum",

@@ -15,7 +15,7 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/inventory/proto/api/storage/response/response.proto",
-    pluginVersion = "0.6.5-RELEASE",
+    pluginVersion = "0.6.6-RELEASE",
     entity = "StorageLocationDeletedResponse",
     kind = Kind.MESSAGE
 )

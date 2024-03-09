@@ -20,7 +20,7 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/user/proto/api/admin/request/request.proto",
-    pluginVersion = "0.6.5-RELEASE",
+    pluginVersion = "0.6.6-RELEASE",
     entity = "ChangePasswordRequest",
     kind = Kind.MESSAGE
 )
@@ -50,8 +50,7 @@ public class ChangePasswordRequest {
 
   @Schema(
       description = "reason of change the password",
-      example = "password stolen",
-      extensions = @Extension(name = "x-hope-validation", properties = @ExtensionProperty(name = "blank", value = "true"))
+      example = "password stolen"
   )
   protected String reason;
 
