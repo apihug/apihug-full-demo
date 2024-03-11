@@ -509,6 +509,34 @@
           "protoFrom" : "com/apihug/demo/user/proto/api/admin/request/request.proto"
         }
       },
+      "RequiredDemoRequest" : {
+        "type" : "object",
+        "description" : "This is an example request",
+        "properties" : {
+          "name" : {
+            "type" : "string",
+            "description" : "name of the user",
+            "example" : "My Lord"
+          },
+          "another" : {
+            "type" : "string",
+            "description" : "another not blank sample",
+            "example" : "another not blank",
+            "x-hope-validation-blank" : false
+          },
+          "anAnother" : {
+            "type" : "string",
+            "description" : "another min length example",
+            "example" : "another min length",
+            "minLength" : 2
+          }
+        },
+        "required" : [ "anAnother", "another", "name" ],
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.user.wire.api.sample.RequiredDemoRequest",
+          "protoFrom" : "com/apihug/demo/user/proto/api/sample/sample.proto"
+        }
+      },
       "UserAuthorityEnum" : {
         "default" : "USER_ADD",
         "description" : "User domain's authorities list",

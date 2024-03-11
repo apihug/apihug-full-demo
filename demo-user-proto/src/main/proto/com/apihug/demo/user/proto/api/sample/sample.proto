@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package com.apihug.demo.user.proto.api.sample;
+
+import "extend/domain.proto";
+import "swagger/annotations.proto";
+
+option (hope.domain.kind) = BEAN;
+
+
+message RequiredDemoRequest {
+    option (hope.swagger.schema) = {
+        json_schema: {
+            description: "This is an example request";
+        };
+    };
+
+    string name = 1 [(hope.swagger.field) = {
+        description: "name of the user";
+        example: "My Lord"
+        empty: FALSE
+    }];
+
+    string another=2 [(hope.swagger.field) = {
+        description: "another not blank sample";
+        example: "another not blank"
+        blank: FALSE
+    }];
+
+    string an_another=3 [(hope.swagger.field) = {
+        description: "another min length example";
+        example: "another min length"
+        min_length:{
+            value: 2
+        }
+    }];
+}
