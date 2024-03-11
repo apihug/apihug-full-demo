@@ -9,6 +9,11 @@
 
 The libs of this project will be published to : <a target="_blank" href="https://search.maven.org/artifact/com.apihug/demo-user-proto"><img src="https://img.shields.io/maven-central/v/com.apihug/demo-user-proto.svg?label=Maven%20Central" /></a>
 
+💝 SDK Version: <a target="_blank" href="https://search.maven.org/artifact/com.apihug/it-bom"><img src="https://img.shields.io/maven-central/v/com.apihug/it-bom.svg?label=Maven%20Central" /></a>， 注意 Apihug 采用整包发行， Gradle plugin + 基础包公用一个版本。
+
+💝 IDEA Plugin: [ApiHug - API design Copilot](https://plugins.jetbrains.com/plugin/23534-apihug--api-design-copilot)  &nbsp;&nbsp; [Plugin Handbook](./docs/IDE/README.md)  &nbsp;&nbsp; [Plugin FAQ](./docs/IDE/999_FAQ.md)  &nbsp;&nbsp;   ![Rating](https://img.shields.io/jetbrains/plugin/r/rating/23534-apihug--api-design-copilot) ![Downloads](https://img.shields.io/jetbrains/plugin/d/23534-apihug--api-design-copilot)
+
+
 😆 Guide：
 
 1. [ApiHug101-Bilibili](https://www.bilibili.com/video/BV1KK421k7J8/)
