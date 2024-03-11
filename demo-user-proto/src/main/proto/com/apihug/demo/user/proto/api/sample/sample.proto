@@ -34,4 +34,10 @@ message RequiredDemoRequest {
             value: 2
         }
     }];
+
+    uint64 hidden_field =4 [(hope.swagger.field) = {
+        description: "do not touch me directly you can not see me";
+        example: "1024"
+        read_only: true
+    }];
 }

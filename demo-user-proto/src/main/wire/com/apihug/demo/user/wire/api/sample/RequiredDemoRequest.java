@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
+import java.lang.Long;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.StringBuilder;
@@ -54,6 +55,13 @@ public class RequiredDemoRequest {
   )
   protected String anAnother;
 
+  @Schema(
+      description = "do not touch me directly you can not see me",
+      accessMode = Schema.AccessMode.READ_ONLY,
+      example = "1024"
+  )
+  protected Long hiddenField;
+
   public String getName() {
     return name;
   }
@@ -81,12 +89,22 @@ public class RequiredDemoRequest {
     return this;
   }
 
+  public Long getHiddenField() {
+    return hiddenField;
+  }
+
+  public RequiredDemoRequest setHiddenField(Long hiddenField) {
+    this.hiddenField = hiddenField;
+    return this;
+  }
+
   @Override
   public String toString() {
     final StringBuilder builder = new StringBuilder("RequiredDemoRequest{");
     builder.append("name=").append(name);
     builder.append(", another=").append(another);
     builder.append(", anAnother=").append(anAnother);
+    builder.append(", hiddenField=").append(hiddenField);
     return builder.append('}').toString();
   }
 }

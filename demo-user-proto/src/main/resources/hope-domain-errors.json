@@ -1,7 +1,7 @@
 {
   "domain" : "user",
   "version" : "0.1.1-RELEASE",
-  "lastBuildTime" : "2024-03-11 08:18:19",
+  "lastBuildTime" : "2024-03-11 08:48:49",
   "errors" : [ {
     "name" : "UserErrorsEnum",
     "javaClass" : "com.apihug.demo.user.wire.infra.settings.admin.UserErrorsEnum",

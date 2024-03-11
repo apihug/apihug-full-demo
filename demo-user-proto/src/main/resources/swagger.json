@@ -529,6 +529,13 @@
             "description" : "another min length example",
             "example" : "another min length",
             "minLength" : 2
+          },
+          "hiddenField" : {
+            "type" : "number",
+            "format" : "int64",
+            "description" : "do not touch me directly you can not see me",
+            "example" : "1024",
+            "readOnly" : true
           }
         },
         "required" : [ "anAnother", "another", "name" ],
