@@ -1,8 +1,60 @@
 {
   "domain" : "user",
   "version" : "0.1.1-RELEASE",
-  "lastBuildTime" : "2024-03-13 17:10:28",
+  "lastBuildTime" : "2024-03-13 20:38:17",
   "errors" : [ {
+    "name" : "ExampleErrorsEnum",
+    "javaClass" : "com.apihug.demo.user.wire.infra.settings.sample.ExampleErrorsEnum",
+    "description" : "An example error",
+    "deprecated" : false,
+    "domain" : "user",
+    "items" : [ {
+      "code" : 1002023,
+      "title" : "EXAMPLE_ERROR_BIG",
+      "description" : "this is big wrong",
+      "descriptionZhCN" : "wrong*3",
+      "deprecated" : false,
+      "tips" : "please contract your admin +3",
+      "phase" : "DOMAIN",
+      "severity" : "FATAL"
+    }, {
+      "code" : 1002024,
+      "title" : "EXAMPLE_ERROR_SMALL",
+      "description" : "this is small wrong",
+      "descriptionZhCN" : "wrong*2",
+      "deprecated" : false,
+      "tips" : "please contract your admin +1",
+      "phase" : "DOMAIN",
+      "severity" : "WARN"
+    } ]
+  }, {
+    "name" : "UserErrorEnum",
+    "javaClass" : "com.apihug.demo.user.wire.infra.settings.sample.UserErrorEnum",
+    "description" : "User status error type",
+    "deprecated" : false,
+    "domain" : "user",
+    "items" : [ {
+      "code" : 1001,
+      "title" : "NOT_EXIST",
+      "description" : "name is bad",
+      "descriptionZhCN" : "not not exist",
+      "deprecated" : false,
+      "tips" : "please correct your name",
+      "phase" : "DOMAIN",
+      "severity" : "WARN",
+      "httpStatus" : "BAD_REQUEST"
+    }, {
+      "code" : 1002,
+      "title" : "STATUS_BLOCKED",
+      "description" : "account may illegal",
+      "descriptionZhCN" : "contact your admin",
+      "deprecated" : false,
+      "tips" : "You are blocked",
+      "phase" : "DOMAIN",
+      "severity" : "FATAL",
+      "httpStatus" : "UNAUTHORIZED"
+    } ]
+  }, {
     "name" : "UserErrorsEnum",
     "javaClass" : "com.apihug.demo.user.wire.infra.settings.admin.UserErrorsEnum",
     "description" : "User account management errors",

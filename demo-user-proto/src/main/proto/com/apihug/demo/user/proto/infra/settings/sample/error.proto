@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package com.apihug.demo.user.proto.infra.settings.sample;
+
+import "extend/constant.proto";
+import "swagger/annotations.proto";
+import "extend/domain.proto";
+
+option (hope.domain.kind) = ERROR;
+
+enum ExampleErrorsEnum {
+
+    option (hope.swagger.enm) = {
+        description: "An example error";
+    };
+
+    EXAMPLE_ERROR_BIG = 0  [
+        (hope.constant.field) = {
+            code: 1002023, message: "this is big wrong", cn_message: "wrong*3",
+            error: {
+                tips: "please contract your admin +3",
+                phase: DOMAIN,
+                severity: FATAL,
+            }}];
+
+    EXAMPLE_ERROR_SMALL = 1  [
+        (hope.constant.field) = {
+            code: 1002024, message: "this is small wrong", cn_message: "wrong*2",
+            error: {
+                tips: "please contract your admin +1",
+                phase: DOMAIN,
+                severity: WARN,
+            }}];
+}
+
+enum  UserErrorEnum {
+
+  option (hope.swagger.enm) = {
+    description: "User status error type",
+    example: "NOT_EXIST|STATUS_BLOCKED"
+  };
+
+  NOT_EXIST = 0 [
+    (hope.constant.field) = {
+      code: 1001, message: "name is bad", cn_message: "not not exist",
+      error: {
+        tips: "please correct your name",
+        phase: DOMAIN,
+        severity: WARN,
+        http_status: BAD_REQUEST
+      }}];
+  STATUS_BLOCKED = 1 [
+    (hope.constant.field) = {
+      code: 1002, message: "account may illegal", cn_message: "contact your admin",
+      error: {
+        tips: "You are blocked",
+        phase: DOMAIN,
+        severity: FATAL,
+        http_status: UNAUTHORIZED
+      }}];
+
+}

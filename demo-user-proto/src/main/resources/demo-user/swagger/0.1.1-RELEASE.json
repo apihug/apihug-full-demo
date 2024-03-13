@@ -408,6 +408,63 @@
         },
         "title" : "Error"
       },
+      "ExampleEnum" : {
+        "default" : "EXAMPLE_ENUM_GOOD",
+        "description" : "Example Enum",
+        "oneOf" : [ {
+          "const" : "EXAMPLE_ENUM_GOOD",
+          "description" : "GOOD",
+          "example" : "EXAMPLE_ENUM_GOOD",
+          "title" : "EXAMPLE_ENUM_GOOD",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-des-cn" : "you are good man"
+        }, {
+          "const" : "EXAMPLE_ENUM_BAD",
+          "description" : "BAD",
+          "example" : "EXAMPLE_ENUM_BAD",
+          "title" : "EXAMPLE_ENUM_BAD",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-des-cn" : "you are bad man"
+        } ],
+        "title" : "ExampleEnum",
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.user.wire.infra.settings.sample.ExampleEnum",
+          "protoFrom" : "com/apihug/demo/user/proto/infra/settings/sample/constant.proto"
+        },
+        "x-hope-enum-type" : "true"
+      },
+      "ExampleHappyLevelEnum" : {
+        "default" : "SAD",
+        "description" : "a happy lavel of a demo",
+        "oneOf" : [ {
+          "const" : "SAD",
+          "description" : "very sad",
+          "example" : "SAD",
+          "title" : "SAD",
+          "x-hope-enum-item-code" : 0,
+          "x-hope-enum-item-des-cn" : "sad is bad"
+        }, {
+          "const" : "HAPPY",
+          "description" : "very happy",
+          "example" : "HAPPY",
+          "title" : "HAPPY",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-des-cn" : "happy is good"
+        }, {
+          "const" : "SUPER_HAPPY",
+          "description" : "happiest",
+          "example" : "SUPER_HAPPY",
+          "title" : "SUPER_HAPPY",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-des-cn" : "happy best"
+        } ],
+        "title" : "ExampleHappyLevelEnum",
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.user.wire.infra.settings.sample.ExampleHappyLevelEnum",
+          "protoFrom" : "com/apihug/demo/user/proto/infra/settings/sample/constant.proto"
+        },
+        "x-hope-enum-type" : "true"
+      },
       "ProblemPhase" : {
         "default" : "CONTROLLER",
         "description" : "错误层次",

@@ -2,6 +2,8 @@ package com.apihug.demo.user.wire.api;
 
 import com.apihug.demo.user.wire.infra.settings.UserAuthorityEnum;
 import com.apihug.demo.user.wire.infra.settings.admin.UserStatusEnum;
+import com.apihug.demo.user.wire.infra.settings.sample.ExampleEnum;
+import com.apihug.demo.user.wire.infra.settings.sample.ExampleHappyLevelEnum;
 import hope.common.Builder;
 import hope.common.service.Collector;
 import hope.common.service.api.Authorization;
@@ -192,28 +194,6 @@ public final class UserApiCollector implements Collector<OpenAPI, Schema, ApiRes
     clzPathMap.computeIfAbsent(clz, s -> new LinkedHashSet<>()).add(path);
   }
 
-  private final void _build_component_com_apihug_demo_user_wire_infra_settings_UserAuthorityEnum() {
-    //  Build of the component: UserAuthorityEnum proto: com/apihug/demo/user/proto/infra/settings/authority.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.user.wire.infra.settings.UserAuthorityEnum", res);
-    res.setClzName("com.apihug.demo.user.wire.infra.settings.UserAuthorityEnum");
-    res.setEnumClz(true);
-    res.setName("UserAuthorityEnum");
-    res.setPayload(new Builder<Schema<UserAuthorityEnum>>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("User domain's authorities list");
-        List<UserAuthorityEnum> values  = new ArrayList();
-        values.add(UserAuthorityEnum.USER_ADD);
-        values.add(UserAuthorityEnum.USER_DELETE);
-        res.setDefault(UserAuthorityEnum.USER_ADD);
-        res.setEnum(values);
-        return res;
-      }
-    }.build());
-  }
-
   private final void _build_component_com_apihug_demo_user_wire_infra_settings_admin_UserStatusEnum(
       ) {
     //  Build of the component: UserStatusEnum proto: com/apihug/demo/user/proto/infra/settings/admin/constant.proto
@@ -231,6 +211,75 @@ public final class UserApiCollector implements Collector<OpenAPI, Schema, ApiRes
         values.add(UserStatusEnum.NORMAL);
         values.add(UserStatusEnum.BLOCKED);
         res.setDefault(UserStatusEnum.NORMAL);
+        res.setEnum(values);
+        return res;
+      }
+    }.build());
+  }
+
+  private final void _build_component_com_apihug_demo_user_wire_infra_settings_sample_ExampleEnum(
+      ) {
+    //  Build of the component: ExampleEnum proto: com/apihug/demo/user/proto/infra/settings/sample/constant.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.user.wire.infra.settings.sample.ExampleEnum", res);
+    res.setClzName("com.apihug.demo.user.wire.infra.settings.sample.ExampleEnum");
+    res.setEnumClz(true);
+    res.setName("ExampleEnum");
+    res.setPayload(new Builder<Schema<ExampleEnum>>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("Example Enum");
+        List<ExampleEnum> values  = new ArrayList();
+        values.add(ExampleEnum.EXAMPLE_ENUM_GOOD);
+        values.add(ExampleEnum.EXAMPLE_ENUM_BAD);
+        res.setDefault(ExampleEnum.EXAMPLE_ENUM_GOOD);
+        res.setEnum(values);
+        return res;
+      }
+    }.build());
+  }
+
+  private final void _build_component_com_apihug_demo_user_wire_infra_settings_sample_ExampleHappyLevelEnum(
+      ) {
+    //  Build of the component: ExampleHappyLevelEnum proto: com/apihug/demo/user/proto/infra/settings/sample/constant.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.user.wire.infra.settings.sample.ExampleHappyLevelEnum", res);
+    res.setClzName("com.apihug.demo.user.wire.infra.settings.sample.ExampleHappyLevelEnum");
+    res.setEnumClz(true);
+    res.setName("ExampleHappyLevelEnum");
+    res.setPayload(new Builder<Schema<ExampleHappyLevelEnum>>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("a happy lavel of a demo");
+        List<ExampleHappyLevelEnum> values  = new ArrayList();
+        values.add(ExampleHappyLevelEnum.SAD);
+        values.add(ExampleHappyLevelEnum.HAPPY);
+        values.add(ExampleHappyLevelEnum.SUPER_HAPPY);
+        res.setDefault(ExampleHappyLevelEnum.SAD);
+        res.setEnum(values);
+        return res;
+      }
+    }.build());
+  }
+
+  private final void _build_component_com_apihug_demo_user_wire_infra_settings_UserAuthorityEnum() {
+    //  Build of the component: UserAuthorityEnum proto: com/apihug/demo/user/proto/infra/settings/authority.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.user.wire.infra.settings.UserAuthorityEnum", res);
+    res.setClzName("com.apihug.demo.user.wire.infra.settings.UserAuthorityEnum");
+    res.setEnumClz(true);
+    res.setName("UserAuthorityEnum");
+    res.setPayload(new Builder<Schema<UserAuthorityEnum>>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("User domain's authorities list");
+        List<UserAuthorityEnum> values  = new ArrayList();
+        values.add(UserAuthorityEnum.USER_ADD);
+        values.add(UserAuthorityEnum.USER_DELETE);
+        res.setDefault(UserAuthorityEnum.USER_ADD);
         res.setEnum(values);
         return res;
       }
@@ -445,125 +494,6 @@ public final class UserApiCollector implements Collector<OpenAPI, Schema, ApiRes
     res.addItem(_1);
   }
 
-  private final void _build_component_com_apihug_demo_user_wire_api_sample_RequiredDemoRequest() {
-    //  Build of the component: RequiredDemoRequest proto: com/apihug/demo/user/proto/api/sample/sample.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.user.wire.api.sample.RequiredDemoRequest", res);
-    res.setClzName("com.apihug.demo.user.wire.api.sample.RequiredDemoRequest");
-    res.setName("RequiredDemoRequest");
-    res.setProtoFrom("com/apihug/demo/user/proto/api/sample/sample.proto");
-    res.setProtoEntity("RequiredDemoRequest");
-    res.setDescription("This is an example request");
-    res.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("This is an example request");
-        res.setSpecVersion(SpecVersion.V30);
-        return res;
-      }
-    }.build());
-    // Add field 0 name
-    ComponentItem<Schema> _0 = new ComponentItem();
-    _0.setClz("java.lang.String");
-    _0.setName("name");
-    _0.setFieldName("name");
-    _0.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("name of the user");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
-        res.setExample("My Lord");
-        return res;
-      }
-    }.build());
-    _0.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_0);
-    // Add field 1 another
-    ComponentItem<Schema> _1 = new ComponentItem();
-    _1.setClz("java.lang.String");
-    _1.setName("another");
-    _1.setFieldName("another");
-    _1.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("another not blank sample");
-        res.setSpecVersion(SpecVersion.V30);
-        Map<String,String> _extensions = new LinkedHashMap();
-        _extensions.put("x-hope-validation-blank", "false");
-        res.setExtensions(_extensions);
-        res.setNullable(false);
-        res.setExample("another not blank");
-        return res;
-      }
-    }.build());
-    _1.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_1);
-    // Add field 2 an_another
-    ComponentItem<Schema> _2 = new ComponentItem();
-    _2.setClz("java.lang.String");
-    _2.setName("an_another");
-    _2.setFieldName("anAnother");
-    _2.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("another min length example");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setMinLength(2);
-        res.setNullable(false);
-        res.setExample("another min length");
-        return res;
-      }
-    }.build());
-    _2.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_2);
-    // Add field 3 hidden_field
-    ComponentItem<Schema> _3 = new ComponentItem();
-    _3.setClz("java.lang.Long");
-    _3.setName("hidden_field");
-    _3.setFieldName("hiddenField");
-    _3.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("do not touch me directly you can not see me");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setExample("1024");
-        return res;
-      }
-    }.build());
-    _3.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_3);
-  }
-
   private final void _build_component_com_apihug_demo_user_wire_api_admin_request_RegisterRequest(
       ) {
     //  Build of the component: RegisterRequest proto: com/apihug/demo/user/proto/api/admin/request/request.proto
@@ -767,6 +697,125 @@ public final class UserApiCollector implements Collector<OpenAPI, Schema, ApiRes
     res.addItem(_2);
   }
 
+  private final void _build_component_com_apihug_demo_user_wire_api_sample_RequiredDemoRequest() {
+    //  Build of the component: RequiredDemoRequest proto: com/apihug/demo/user/proto/api/sample/sample.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.user.wire.api.sample.RequiredDemoRequest", res);
+    res.setClzName("com.apihug.demo.user.wire.api.sample.RequiredDemoRequest");
+    res.setName("RequiredDemoRequest");
+    res.setProtoFrom("com/apihug/demo/user/proto/api/sample/sample.proto");
+    res.setProtoEntity("RequiredDemoRequest");
+    res.setDescription("This is an example request");
+    res.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("This is an example request");
+        res.setSpecVersion(SpecVersion.V30);
+        return res;
+      }
+    }.build());
+    // Add field 0 name
+    ComponentItem<Schema> _0 = new ComponentItem();
+    _0.setClz("java.lang.String");
+    _0.setName("name");
+    _0.setFieldName("name");
+    _0.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("name of the user");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setNullable(false);
+        res.setExample("My Lord");
+        return res;
+      }
+    }.build());
+    _0.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_0);
+    // Add field 1 another
+    ComponentItem<Schema> _1 = new ComponentItem();
+    _1.setClz("java.lang.String");
+    _1.setName("another");
+    _1.setFieldName("another");
+    _1.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("another not blank sample");
+        res.setSpecVersion(SpecVersion.V30);
+        Map<String,String> _extensions = new LinkedHashMap();
+        _extensions.put("x-hope-validation-blank", "false");
+        res.setExtensions(_extensions);
+        res.setNullable(false);
+        res.setExample("another not blank");
+        return res;
+      }
+    }.build());
+    _1.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_1);
+    // Add field 2 an_another
+    ComponentItem<Schema> _2 = new ComponentItem();
+    _2.setClz("java.lang.String");
+    _2.setName("an_another");
+    _2.setFieldName("anAnother");
+    _2.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("another min length example");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setMinLength(2);
+        res.setNullable(false);
+        res.setExample("another min length");
+        return res;
+      }
+    }.build());
+    _2.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_2);
+    // Add field 3 hidden_field
+    ComponentItem<Schema> _3 = new ComponentItem();
+    _3.setClz("java.lang.Long");
+    _3.setName("hidden_field");
+    _3.setFieldName("hiddenField");
+    _3.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("do not touch me directly you can not see me");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setExample("1024");
+        return res;
+      }
+    }.build());
+    _3.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_3);
+  }
+
   private final void _build_service_com_apihug_demo_user_wire_api_admin_UserAdminService() {
     // ----------------------------------------------------
     // START-[Service Context] com.apihug.demo.user.wire.api.admin.UserAdminService
@@ -933,20 +982,24 @@ public final class UserApiCollector implements Collector<OpenAPI, Schema, ApiRes
   }
 
   private void _init() {
-    // Build for Enum :com.apihug.demo.user.wire.infra.settings.UserAuthorityEnum
-    _build_component_com_apihug_demo_user_wire_infra_settings_UserAuthorityEnum();
     // Build for Enum :com.apihug.demo.user.wire.infra.settings.admin.UserStatusEnum
     _build_component_com_apihug_demo_user_wire_infra_settings_admin_UserStatusEnum();
+    // Build for Enum :com.apihug.demo.user.wire.infra.settings.sample.ExampleEnum
+    _build_component_com_apihug_demo_user_wire_infra_settings_sample_ExampleEnum();
+    // Build for Enum :com.apihug.demo.user.wire.infra.settings.sample.ExampleHappyLevelEnum
+    _build_component_com_apihug_demo_user_wire_infra_settings_sample_ExampleHappyLevelEnum();
+    // Build for Enum :com.apihug.demo.user.wire.infra.settings.UserAuthorityEnum
+    _build_component_com_apihug_demo_user_wire_infra_settings_UserAuthorityEnum();
     // Build for Component : com.apihug.demo.user.wire.api.admin.response.CustomerRegisteredResponse
     _build_component_com_apihug_demo_user_wire_api_admin_response_CustomerRegisteredResponse();
     // Build for Component : com.apihug.demo.user.wire.api.admin.response.CustomerPasswordUpdatedResponse
     _build_component_com_apihug_demo_user_wire_api_admin_response_CustomerPasswordUpdatedResponse();
-    // Build for Component : com.apihug.demo.user.wire.api.sample.RequiredDemoRequest
-    _build_component_com_apihug_demo_user_wire_api_sample_RequiredDemoRequest();
     // Build for Component : com.apihug.demo.user.wire.api.admin.request.RegisterRequest
     _build_component_com_apihug_demo_user_wire_api_admin_request_RegisterRequest();
     // Build for Component : com.apihug.demo.user.wire.api.admin.request.ChangePasswordRequest
     _build_component_com_apihug_demo_user_wire_api_admin_request_ChangePasswordRequest();
+    // Build for Component : com.apihug.demo.user.wire.api.sample.RequiredDemoRequest
+    _build_component_com_apihug_demo_user_wire_api_sample_RequiredDemoRequest();
     // Build For Service com.apihug.demo.user.wire.api.admin.UserAdminService
     _build_service_com_apihug_demo_user_wire_api_admin_UserAdminService();
     // Build OpenAPI information

@@ -1,7 +1,7 @@
 {
   "domain" : "user",
   "version" : "0.1.1-RELEASE",
-  "lastBuildTime" : "2024-03-13 17:10:28",
+  "lastBuildTime" : "2024-03-13 20:38:17",
   "dictionaries" : [ {
     "name" : "UserStatusEnum",
     "javaClass" : "com.apihug.demo.user.wire.infra.settings.admin.UserStatusEnum",
@@ -19,6 +19,50 @@
       "title" : "BLOCKED",
       "description" : "blocked",
       "descriptionZhCN" : "user blocked",
+      "deprecated" : false
+    } ]
+  }, {
+    "name" : "ExampleEnum",
+    "javaClass" : "com.apihug.demo.user.wire.infra.settings.sample.ExampleEnum",
+    "description" : "Example Enum",
+    "deprecated" : false,
+    "domain" : "user",
+    "items" : [ {
+      "code" : 1,
+      "title" : "EXAMPLE_ENUM_GOOD",
+      "description" : "GOOD",
+      "descriptionZhCN" : "you are good man",
+      "deprecated" : false
+    }, {
+      "code" : 2,
+      "title" : "EXAMPLE_ENUM_BAD",
+      "description" : "BAD",
+      "descriptionZhCN" : "you are bad man",
+      "deprecated" : false
+    } ]
+  }, {
+    "name" : "ExampleHappyLevelEnum",
+    "javaClass" : "com.apihug.demo.user.wire.infra.settings.sample.ExampleHappyLevelEnum",
+    "description" : "a happy lavel of a demo",
+    "deprecated" : false,
+    "domain" : "user",
+    "items" : [ {
+      "code" : 0,
+      "title" : "SAD",
+      "description" : "very sad",
+      "descriptionZhCN" : "sad is bad",
+      "deprecated" : false
+    }, {
+      "code" : 1,
+      "title" : "HAPPY",
+      "description" : "very happy",
+      "descriptionZhCN" : "happy is good",
+      "deprecated" : false
+    }, {
+      "code" : 2,
+      "title" : "SUPER_HAPPY",
+      "description" : "happiest",
+      "descriptionZhCN" : "happy best",
       "deprecated" : false
     } ]
   } ]
