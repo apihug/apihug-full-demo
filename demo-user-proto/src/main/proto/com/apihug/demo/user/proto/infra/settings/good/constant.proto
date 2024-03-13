@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.apihug.demo.user.proto.infra.settings.good;
+
+import "extend/constant.proto";
+import "swagger/annotations.proto";
+import "extend/domain.proto";
+
+option (hope.domain.kind) = ENUM;
+
+enum  ExampleEnum {
+
+    option (hope.swagger.enm) = {
+        description: "Example Enum",
+        example: "TENANT|PLATFORM"
+    };
+
+    EXAMPLE_ENUM_GOOD = 0 [(hope.constant.field) = {code: 1,message: "GOOD", cn_message: "you are good man"}];
+    EXAMPLE_ENUM_BAD = 1 [(hope.constant.field) = {code: 2,message: "BAD", cn_message: "you are bad man"}];
+
+}

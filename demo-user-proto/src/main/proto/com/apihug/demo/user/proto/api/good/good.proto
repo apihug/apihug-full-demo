@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package com.apihug.demo.user.proto.api.good;
+
+import "extend/domain.proto";
+import "google/protobuf/empty.proto";
+import "swagger/annotations.proto";
+import "com/apihug/demo/user/proto/api/sample/sample.proto";
+
+option (hope.domain.kind) = IDL;
+
+service GoodService {
+    option (hope.swagger.svc) = {
+        path: "/good";
+        description: "Service for good";
+    };
+
+    rpc SayHello (google.protobuf.Empty) returns (google.protobuf.Empty) {
+        option (hope.swagger.operation) = {
+            get: "/hello-world";
+            description: "Say hello to the world";
+            tags: "project";
+            priority: HIGH;
+        };
+    };
+
+
+
+  rpc DoSomthing (com.apihug.demo.user.proto.api.sample.RequiredDemoRequest) returns (google.protobuf.Empty) {
+    option (hope.swagger.operation) = {
+      post: "/do-something";
+      description: "just do something funny";
+      priority: HIGH;
+    };
+  }
+}
