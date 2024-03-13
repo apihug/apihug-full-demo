@@ -8,24 +8,24 @@ import "extend/domain.proto";
 
 option (hope.domain.kind) = ERROR;
 
-enum ExampleErrorsEnum {
+enum GoodErrorsEnum {
 
     option (hope.swagger.enm) = {
         description: "An example error";
     };
 
-    EXAMPLE_ERROR_BIG = 0  [
+    BROKEN_BOX = 0  [
         (hope.constant.field) = {
-            code: 1001023, message: "this is big wrong", cn_message: "wrong*3",
+            code: 1007023, message: "this is big wrong", cn_message: "wrong*3",
             error: {
                 tips: "please contract your admin +3",
                 phase: DOMAIN,
                 severity: FATAL,
             }}];
 
-    EXAMPLE_ERROR_SMALL = 1  [
+    OUT_OF_DATE = 1  [
         (hope.constant.field) = {
-            code: 1001024, message: "this is small wrong", cn_message: "wrong*2",
+            code: 1007024, message: "this is small wrong", cn_message: "wrong*2",
             error: {
                 tips: "please contract your admin +1",
                 phase: DOMAIN,
