@@ -237,6 +237,214 @@ public final class UserApiCollector implements Collector<OpenAPI, Schema, ApiRes
     }.build());
   }
 
+  private final void _build_component_com_apihug_demo_user_wire_api_admin_response_CustomerRegisteredResponse(
+      ) {
+    //  Build of the component: CustomerRegisteredResponse proto: com/apihug/demo/user/proto/api/admin/response/response.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.user.wire.api.admin.response.CustomerRegisteredResponse", res);
+    res.setClzName("com.apihug.demo.user.wire.api.admin.response.CustomerRegisteredResponse");
+    res.setName("CustomerRegisteredResponse");
+    res.setProtoFrom("com/apihug/demo/user/proto/api/admin/response/response.proto");
+    res.setProtoEntity("CustomerRegisteredResponse");
+    res.setDescription("customer registered successfully");
+    res.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("customer registered successfully");
+        res.setSpecVersion(SpecVersion.V30);
+        return res;
+      }
+    }.build());
+    // Add field 0 name
+    ComponentItem<Schema> _0 = new ComponentItem();
+    _0.setClz("java.lang.String");
+    _0.setName("name");
+    _0.setFieldName("name");
+    _0.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("name of the user");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setMaxLength(32);
+        res.setNullable(false);
+        res.setExample("My Lord");
+        return res;
+      }
+    }.build());
+    _0.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    _0.setRule(new Builder<Map>() {
+      @Override
+      public Map build() {
+        Map res = new LinkedHashMap();
+        res.put("nature", "NAME");
+        res.put("name", "nature");
+        return res;
+      }
+    }.build());
+    res.addItem(_0);
+    // Add field 1 customer_id
+    ComponentItem<Schema> _1 = new ComponentItem();
+    _1.setClz("java.lang.Long");
+    _1.setName("customer_id");
+    _1.setFieldName("customerId");
+    _1.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("id of this customer");
+        res.setSpecVersion(SpecVersion.V30);
+        Map<String,String> _extensions = new LinkedHashMap();
+        _extensions.put("x-hope-validation-blank", "false");
+        res.setExtensions(_extensions);
+        res.setNullable(false);
+        res.setExample("1024");
+        return res;
+      }
+    }.build());
+    _1.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_1);
+    // Add field 2 register_date
+    ComponentItem<Schema> _2 = new ComponentItem();
+    _2.setClz("java.time.LocalDateTime");
+    _2.setName("register_date");
+    _2.setFieldName("registerDate");
+    _2.setDateFormat("YYYY_MM_DD_HH_MM_SS");
+    _2.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("date of registered");
+        res.setFormat("date-time");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setTypes(Set.of("string"));
+        return res;
+      }
+    }.build());
+    _2.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    _2.setRule(new Builder<Map>() {
+      @Override
+      public Map build() {
+        Map res = new LinkedHashMap();
+        res.put("timeGap", 2);
+        res.put("dir", "PAST");
+        res.put("timeUnit", "MINUTES");
+        res.put("name", "date");
+        return res;
+      }
+    }.build());
+    res.addItem(_2);
+  }
+
+  private final void _build_component_com_apihug_demo_user_wire_api_admin_response_CustomerPasswordUpdatedResponse(
+      ) {
+    //  Build of the component: CustomerPasswordUpdatedResponse proto: com/apihug/demo/user/proto/api/admin/response/response.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.user.wire.api.admin.response.CustomerPasswordUpdatedResponse", res);
+    res.setClzName("com.apihug.demo.user.wire.api.admin.response.CustomerPasswordUpdatedResponse");
+    res.setName("CustomerPasswordUpdatedResponse");
+    res.setProtoFrom("com/apihug/demo/user/proto/api/admin/response/response.proto");
+    res.setProtoEntity("CustomerPasswordUpdatedResponse");
+    res.setDescription("password updated response");
+    res.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("password updated response");
+        res.setSpecVersion(SpecVersion.V30);
+        return res;
+      }
+    }.build());
+    // Add field 0 customer_id
+    ComponentItem<Schema> _0 = new ComponentItem();
+    _0.setClz("java.lang.Long");
+    _0.setName("customer_id");
+    _0.setFieldName("customerId");
+    _0.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("id of this customer");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setExample("1024");
+        return res;
+      }
+    }.build());
+    _0.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    _0.setRule(new Builder<Map>() {
+      @Override
+      public Map build() {
+        Map res = new LinkedHashMap();
+        res.put("max", 12000l);
+        res.put("min", 12l);
+        res.put("name", "number");
+        return res;
+      }
+    }.build());
+    res.addItem(_0);
+    // Add field 1 updated_date
+    ComponentItem<Schema> _1 = new ComponentItem();
+    _1.setClz("java.time.LocalDateTime");
+    _1.setName("updated_date");
+    _1.setFieldName("updatedDate");
+    _1.setDateFormat("YYYY_MM_DD_HH_MM_SS");
+    _1.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("date of this password updated");
+        res.setFormat("date-time");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setTypes(Set.of("string"));
+        return res;
+      }
+    }.build());
+    _1.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    _1.setRule(new Builder<Map>() {
+      @Override
+      public Map build() {
+        Map res = new LinkedHashMap();
+        res.put("timeGap", 2);
+        res.put("dir", "PAST");
+        res.put("timeUnit", "MINUTES");
+        res.put("name", "date");
+        return res;
+      }
+    }.build());
+    res.addItem(_1);
+  }
+
   private final void _build_component_com_apihug_demo_user_wire_api_sample_RequiredDemoRequest() {
     //  Build of the component: RequiredDemoRequest proto: com/apihug/demo/user/proto/api/sample/sample.proto
     Component<Schema, Schema> res = new Component();
@@ -559,214 +767,6 @@ public final class UserApiCollector implements Collector<OpenAPI, Schema, ApiRes
     res.addItem(_2);
   }
 
-  private final void _build_component_com_apihug_demo_user_wire_api_admin_response_CustomerRegisteredResponse(
-      ) {
-    //  Build of the component: CustomerRegisteredResponse proto: com/apihug/demo/user/proto/api/admin/response/response.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.user.wire.api.admin.response.CustomerRegisteredResponse", res);
-    res.setClzName("com.apihug.demo.user.wire.api.admin.response.CustomerRegisteredResponse");
-    res.setName("CustomerRegisteredResponse");
-    res.setProtoFrom("com/apihug/demo/user/proto/api/admin/response/response.proto");
-    res.setProtoEntity("CustomerRegisteredResponse");
-    res.setDescription("customer registered successfully");
-    res.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("customer registered successfully");
-        res.setSpecVersion(SpecVersion.V30);
-        return res;
-      }
-    }.build());
-    // Add field 0 name
-    ComponentItem<Schema> _0 = new ComponentItem();
-    _0.setClz("java.lang.String");
-    _0.setName("name");
-    _0.setFieldName("name");
-    _0.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("name of the user");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setMaxLength(32);
-        res.setNullable(false);
-        res.setExample("My Lord");
-        return res;
-      }
-    }.build());
-    _0.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    _0.setRule(new Builder<Map>() {
-      @Override
-      public Map build() {
-        Map res = new LinkedHashMap();
-        res.put("nature", "NAME");
-        res.put("name", "nature");
-        return res;
-      }
-    }.build());
-    res.addItem(_0);
-    // Add field 1 customer_id
-    ComponentItem<Schema> _1 = new ComponentItem();
-    _1.setClz("java.lang.Long");
-    _1.setName("customer_id");
-    _1.setFieldName("customerId");
-    _1.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("id of this customer");
-        res.setSpecVersion(SpecVersion.V30);
-        Map<String,String> _extensions = new LinkedHashMap();
-        _extensions.put("x-hope-validation-blank", "false");
-        res.setExtensions(_extensions);
-        res.setNullable(false);
-        res.setExample("1024");
-        return res;
-      }
-    }.build());
-    _1.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_1);
-    // Add field 2 register_date
-    ComponentItem<Schema> _2 = new ComponentItem();
-    _2.setClz("java.time.LocalDateTime");
-    _2.setName("register_date");
-    _2.setFieldName("registerDate");
-    _2.setDateFormat("YYYY_MM_DD_HH_MM_SS");
-    _2.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("date of registered");
-        res.setFormat("date-time");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setTypes(Set.of("string"));
-        return res;
-      }
-    }.build());
-    _2.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    _2.setRule(new Builder<Map>() {
-      @Override
-      public Map build() {
-        Map res = new LinkedHashMap();
-        res.put("timeGap", 2);
-        res.put("dir", "PAST");
-        res.put("timeUnit", "MINUTES");
-        res.put("name", "date");
-        return res;
-      }
-    }.build());
-    res.addItem(_2);
-  }
-
-  private final void _build_component_com_apihug_demo_user_wire_api_admin_response_CustomerPasswordUpdatedResponse(
-      ) {
-    //  Build of the component: CustomerPasswordUpdatedResponse proto: com/apihug/demo/user/proto/api/admin/response/response.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.user.wire.api.admin.response.CustomerPasswordUpdatedResponse", res);
-    res.setClzName("com.apihug.demo.user.wire.api.admin.response.CustomerPasswordUpdatedResponse");
-    res.setName("CustomerPasswordUpdatedResponse");
-    res.setProtoFrom("com/apihug/demo/user/proto/api/admin/response/response.proto");
-    res.setProtoEntity("CustomerPasswordUpdatedResponse");
-    res.setDescription("password updated response");
-    res.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("password updated response");
-        res.setSpecVersion(SpecVersion.V30);
-        return res;
-      }
-    }.build());
-    // Add field 0 customer_id
-    ComponentItem<Schema> _0 = new ComponentItem();
-    _0.setClz("java.lang.Long");
-    _0.setName("customer_id");
-    _0.setFieldName("customerId");
-    _0.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("id of this customer");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setExample("1024");
-        return res;
-      }
-    }.build());
-    _0.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    _0.setRule(new Builder<Map>() {
-      @Override
-      public Map build() {
-        Map res = new LinkedHashMap();
-        res.put("max", 12000l);
-        res.put("min", 12l);
-        res.put("name", "number");
-        return res;
-      }
-    }.build());
-    res.addItem(_0);
-    // Add field 1 updated_date
-    ComponentItem<Schema> _1 = new ComponentItem();
-    _1.setClz("java.time.LocalDateTime");
-    _1.setName("updated_date");
-    _1.setFieldName("updatedDate");
-    _1.setDateFormat("YYYY_MM_DD_HH_MM_SS");
-    _1.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("date of this password updated");
-        res.setFormat("date-time");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setTypes(Set.of("string"));
-        return res;
-      }
-    }.build());
-    _1.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    _1.setRule(new Builder<Map>() {
-      @Override
-      public Map build() {
-        Map res = new LinkedHashMap();
-        res.put("timeGap", 2);
-        res.put("dir", "PAST");
-        res.put("timeUnit", "MINUTES");
-        res.put("name", "date");
-        return res;
-      }
-    }.build());
-    res.addItem(_1);
-  }
-
   private final void _build_service_com_apihug_demo_user_wire_api_admin_UserAdminService() {
     // ----------------------------------------------------
     // START-[Service Context] com.apihug.demo.user.wire.api.admin.UserAdminService
@@ -937,16 +937,16 @@ public final class UserApiCollector implements Collector<OpenAPI, Schema, ApiRes
     _build_component_com_apihug_demo_user_wire_infra_settings_UserAuthorityEnum();
     // Build for Enum :com.apihug.demo.user.wire.infra.settings.admin.UserStatusEnum
     _build_component_com_apihug_demo_user_wire_infra_settings_admin_UserStatusEnum();
+    // Build for Component : com.apihug.demo.user.wire.api.admin.response.CustomerRegisteredResponse
+    _build_component_com_apihug_demo_user_wire_api_admin_response_CustomerRegisteredResponse();
+    // Build for Component : com.apihug.demo.user.wire.api.admin.response.CustomerPasswordUpdatedResponse
+    _build_component_com_apihug_demo_user_wire_api_admin_response_CustomerPasswordUpdatedResponse();
     // Build for Component : com.apihug.demo.user.wire.api.sample.RequiredDemoRequest
     _build_component_com_apihug_demo_user_wire_api_sample_RequiredDemoRequest();
     // Build for Component : com.apihug.demo.user.wire.api.admin.request.RegisterRequest
     _build_component_com_apihug_demo_user_wire_api_admin_request_RegisterRequest();
     // Build for Component : com.apihug.demo.user.wire.api.admin.request.ChangePasswordRequest
     _build_component_com_apihug_demo_user_wire_api_admin_request_ChangePasswordRequest();
-    // Build for Component : com.apihug.demo.user.wire.api.admin.response.CustomerRegisteredResponse
-    _build_component_com_apihug_demo_user_wire_api_admin_response_CustomerRegisteredResponse();
-    // Build for Component : com.apihug.demo.user.wire.api.admin.response.CustomerPasswordUpdatedResponse
-    _build_component_com_apihug_demo_user_wire_api_admin_response_CustomerPasswordUpdatedResponse();
     // Build For Service com.apihug.demo.user.wire.api.admin.UserAdminService
     _build_service_com_apihug_demo_user_wire_api_admin_UserAdminService();
     // Build OpenAPI information

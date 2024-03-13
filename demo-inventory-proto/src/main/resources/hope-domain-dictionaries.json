@@ -1,7 +1,7 @@
 {
   "domain" : "inventory",
   "version" : "0.1.1-RELEASE",
-  "lastBuildTime" : "2024-03-11 08:48:39",
+  "lastBuildTime" : "2024-03-13 17:10:11",
   "dictionaries" : [ {
     "name" : "StorageStatusEnum",
     "javaClass" : "com.apihug.demo.inventory.wire.infra.settings.admin.StorageStatusEnum",
