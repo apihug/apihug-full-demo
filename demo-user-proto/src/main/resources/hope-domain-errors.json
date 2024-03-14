@@ -1,8 +1,33 @@
 {
   "domain" : "user",
   "version" : "0.1.1-RELEASE",
-  "lastBuildTime" : "2024-03-13 20:38:17",
+  "lastBuildTime" : "2024-03-14 16:31:09",
   "errors" : [ {
+    "name" : "GoodErrorsEnum",
+    "javaClass" : "com.apihug.demo.user.wire.infra.settings.good.GoodErrorsEnum",
+    "description" : "An example error",
+    "deprecated" : false,
+    "domain" : "user",
+    "items" : [ {
+      "code" : 1007023,
+      "title" : "BROKEN_BOX",
+      "description" : "this is big wrong",
+      "descriptionZhCN" : "wrong*3",
+      "deprecated" : false,
+      "tips" : "please contract your admin +3",
+      "phase" : "DOMAIN",
+      "severity" : "FATAL"
+    }, {
+      "code" : 1007024,
+      "title" : "OUT_OF_DATE",
+      "description" : "this is small wrong",
+      "descriptionZhCN" : "wrong*2",
+      "deprecated" : false,
+      "tips" : "please contract your admin +1",
+      "phase" : "DOMAIN",
+      "severity" : "WARN"
+    } ]
+  }, {
     "name" : "ExampleErrorsEnum",
     "javaClass" : "com.apihug.demo.user.wire.infra.settings.sample.ExampleErrorsEnum",
     "description" : "An example error",

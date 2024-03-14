@@ -1,6 +1,7 @@
 package com.apihug.demo.external;
 
 import com.apihug.demo.external.wire.api.ExternalApiModule;
+import com.apihug.demo.order.wire.api.OrderApiModule;
 import hope.common.Builder;
 import hope.common.meta.artifact.Artifact;
 import hope.common.meta.cloud.Dependency;
@@ -20,6 +21,7 @@ public class ExternalRuntimeContextInitializer extends RuntimeContextInitializer
     RuntimeContext runTimeCtx = RuntimeContext.INSTANCE;
     runTimeCtx.setDomain("external");
     runTimeCtx.setProto(new ExternalApiModule().project());
+    runTimeCtx.addDependency(new OrderApiModule().project());
     runTimeCtx.setProject(new Builder<Project>() {
       @Override
       public Project build() {
@@ -54,6 +56,6 @@ public class ExternalRuntimeContextInitializer extends RuntimeContextInitializer
         return res;
       }
     }.build());
-    runTimeCtx.setStubBuildTime("2024-02-29 18:00:27");
+    runTimeCtx.setStubBuildTime("2024-03-14 16:20:33");
   }
 }

@@ -1,4 +1,4 @@
-package com.apihug.demo.user.wire.infra.settings.admin;
+package com.apihug.demo.user.wire.infra.settings.good;
 
 import hope.common.enumeration.Enumeration;
 import hope.common.meta.annotation.Kind;
@@ -18,45 +18,45 @@ import javax.annotation.Generated;
     enumAsRef = true,
     nullable = false,
     allowableValues = {
-        "NORMAL",
-        "BLOCKED"
+        "VERY_GOOD",
+        "VERY_BAD"
     },
-    example = "NORMAL",
-    description = "User management status"
+    example = "VERY_GOOD",
+    description = "Example Enum"
 )
 @Generated("H.O.P.E. Infra Team")
 @ProtoFrom(
-    value = "com/apihug/demo/user/proto/infra/settings/admin/constant.proto",
+    value = "com/apihug/demo/user/proto/infra/settings/good/constant.proto",
     pluginVersion = "0.7.0-RELEASE",
-    entity = "UserStatusEnum",
+    entity = "GoodLevelEnum",
     kind = Kind.ENUM
 )
-public enum UserStatusEnum implements Enumeration<UserStatusEnum> {
+public enum GoodLevelEnum implements Enumeration<GoodLevelEnum> {
   NA(-1, "Default Placeholder Should NEVER be used", "默认占位枚举请勿使用"),
 
-  NORMAL(1, "normal", "user normal status"),
+  VERY_GOOD(1, "GOOD", "you are good man"),
 
-  BLOCKED(2, "blocked", "user blocked");
+  VERY_BAD(2, "BAD", "you are bad man");
 
   public static final List<String> VALUES;
 
-  public static final List<UserStatusEnum> ENUMS;
+  public static final List<GoodLevelEnum> ENUMS;
 
   public static final List<Integer> CODES;
 
-  public static final Map<String, UserStatusEnum> NAME_2_ENUM_MAP;
+  public static final Map<String, GoodLevelEnum> NAME_2_ENUM_MAP;
 
-  public static final Map<Integer, UserStatusEnum> CODE_2_ENUM_MAP;
+  public static final Map<Integer, GoodLevelEnum> CODE_2_ENUM_MAP;
 
-  public static final Enumeration.EnumerationsHelper<UserStatusEnum> HELPER;
+  public static final Enumeration.EnumerationsHelper<GoodLevelEnum> HELPER;
 
   static {
     List<String> _VALUES = new ArrayList<>();
-    List<UserStatusEnum> _ENUMS = new ArrayList<>();
+    List<GoodLevelEnum> _ENUMS = new ArrayList<>();
     List<Integer> _CODES = new ArrayList<>();
-    Map<String, UserStatusEnum> _NAME_2_ENUM_MAP = new LinkedHashMap<>();
-    Map<Integer, UserStatusEnum> _CODE_2_ENUM_MAP = new LinkedHashMap<>();
-    for (UserStatusEnum each : UserStatusEnum.values()) {
+    Map<String, GoodLevelEnum> _NAME_2_ENUM_MAP = new LinkedHashMap<>();
+    Map<Integer, GoodLevelEnum> _CODE_2_ENUM_MAP = new LinkedHashMap<>();
+    for (GoodLevelEnum each : GoodLevelEnum.values()) {
     	_VALUES.add(each.title());
     	_ENUMS.add(each);
     	_CODES.add(each.code());
@@ -69,15 +69,15 @@ public enum UserStatusEnum implements Enumeration<UserStatusEnum> {
     NAME_2_ENUM_MAP = Collections.unmodifiableMap(_NAME_2_ENUM_MAP);
     CODE_2_ENUM_MAP = Collections.unmodifiableMap(_CODE_2_ENUM_MAP);
     HELPER =
-    new EnumerationsHelper<UserStatusEnum>() {
+    new EnumerationsHelper<GoodLevelEnum>() {
 
     @Override
-    public UserStatusEnum mapFromCode(int code) {
+    public GoodLevelEnum mapFromCode(int code) {
     	return CODE_2_ENUM_MAP.getOrDefault(code, NA);
     }
 
     @Override
-    public UserStatusEnum mapFromName(String name) {
+    public GoodLevelEnum mapFromName(String name) {
     if (name == null || name.isEmpty()) {
     	return NA;
     }
@@ -85,8 +85,8 @@ public enum UserStatusEnum implements Enumeration<UserStatusEnum> {
     }
 
     @Override
-    public Class<UserStatusEnum> supportClz() {
-    	return UserStatusEnum.class;
+    public Class<GoodLevelEnum> supportClz() {
+    	return GoodLevelEnum.class;
     }
 
     @Override
@@ -95,7 +95,7 @@ public enum UserStatusEnum implements Enumeration<UserStatusEnum> {
     }
 
     @Override
-    public List<UserStatusEnum> supportEnumerations() {
+    public List<GoodLevelEnum> supportEnumerations() {
     return ENUMS;
     }
 
@@ -115,14 +115,14 @@ public enum UserStatusEnum implements Enumeration<UserStatusEnum> {
 
   public final boolean deprecated;
 
-  UserStatusEnum(int code, String description, String descriptionZhCN, boolean deprecated) {
+  GoodLevelEnum(int code, String description, String descriptionZhCN, boolean deprecated) {
     this.code = code;
     this.description = description;
     this.descriptionZhCN = descriptionZhCN;
     this.deprecated = deprecated;
   }
 
-  UserStatusEnum(int code, String description, String descriptionZhCN) {
+  GoodLevelEnum(int code, String description, String descriptionZhCN) {
     this(code, description, descriptionZhCN, false);
   }
 
@@ -152,7 +152,7 @@ public enum UserStatusEnum implements Enumeration<UserStatusEnum> {
   }
 
   @Override
-  public List<UserStatusEnum> supportEnumerations() {
+  public List<GoodLevelEnum> supportEnumerations() {
     return ENUMS;
   }
 
@@ -167,7 +167,7 @@ public enum UserStatusEnum implements Enumeration<UserStatusEnum> {
   }
 
   @Override
-  public UserStatusEnum mapFromCode(int code) {
+  public GoodLevelEnum mapFromCode(int code) {
     if (this.code == code) {
       return this;
     }
@@ -176,7 +176,7 @@ public enum UserStatusEnum implements Enumeration<UserStatusEnum> {
   }
 
   @Override
-  public UserStatusEnum mapFromName(String name) {
+  public GoodLevelEnum mapFromName(String name) {
     if (name == null || name.isEmpty()) {
       return NA;
     }

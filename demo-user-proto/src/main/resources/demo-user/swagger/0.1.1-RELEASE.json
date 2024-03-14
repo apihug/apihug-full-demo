@@ -19,6 +19,130 @@
     "description" : "Sample Tag"
   } ],
   "paths" : {
+    "/good/do-something" : {
+      "post" : {
+        "tags" : [ ],
+        "summary" : "",
+        "description" : "just do something funny",
+        "operationId" : "GoodService#DoSomthing",
+        "parameters" : [ ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "$ref" : "#/components/schemas/RequiredDemoRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "just do something funny",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "description" : "返回码,零成功,非零失败"
+                    },
+                    "message" : {
+                      "type" : "string",
+                      "description" : "返回提示信息"
+                    },
+                    "errors" : {
+                      "type" : "array",
+                      "description" : "错误详情列表",
+                      "items" : {
+                        "$ref" : "#/components/schemas/Error"
+                      },
+                      "title" : "errors"
+                    },
+                    "data" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false,
+        "security" : [ ],
+        "x-hope-operation" : {
+          "deprecated" : false,
+          "wrapper" : true,
+          "inputPlural" : false,
+          "outputPlural" : false,
+          "pageable" : false,
+          "protoFrom" : "com/apihug/demo/user/proto/api/good/good.proto",
+          "empty" : false,
+          "serviceClz" : "com.apihug.demo.user.wire.api.good.GoodService",
+          "priority" : "HIGH",
+          "group" : "CUSTOMER"
+        }
+      }
+    },
+    "/good/hello-world" : {
+      "get" : {
+        "tags" : [ "project" ],
+        "summary" : "",
+        "description" : "Say hello to the world",
+        "operationId" : "GoodService#SayHello",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Say hello to the world",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "description" : "返回码,零成功,非零失败"
+                    },
+                    "message" : {
+                      "type" : "string",
+                      "description" : "返回提示信息"
+                    },
+                    "errors" : {
+                      "type" : "array",
+                      "description" : "错误详情列表",
+                      "items" : {
+                        "$ref" : "#/components/schemas/Error"
+                      },
+                      "title" : "errors"
+                    },
+                    "data" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false,
+        "security" : [ ],
+        "x-hope-operation" : {
+          "deprecated" : false,
+          "wrapper" : true,
+          "inputPlural" : false,
+          "outputPlural" : false,
+          "pageable" : false,
+          "protoFrom" : "com/apihug/demo/user/proto/api/good/good.proto",
+          "empty" : false,
+          "serviceClz" : "com.apihug.demo.user.wire.api.good.GoodService",
+          "priority" : "HIGH",
+          "group" : "CUSTOMER"
+        }
+      }
+    },
     "/user/admin/change-password" : {
       "post" : {
         "tags" : [ ],
@@ -462,6 +586,31 @@
         "x-hope-rt-meta" : {
           "clz" : "com.apihug.demo.user.wire.infra.settings.sample.ExampleHappyLevelEnum",
           "protoFrom" : "com/apihug/demo/user/proto/infra/settings/sample/constant.proto"
+        },
+        "x-hope-enum-type" : "true"
+      },
+      "GoodLevelEnum" : {
+        "default" : "VERY_GOOD",
+        "description" : "Example Enum",
+        "oneOf" : [ {
+          "const" : "VERY_GOOD",
+          "description" : "GOOD",
+          "example" : "VERY_GOOD",
+          "title" : "VERY_GOOD",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-des-cn" : "you are good man"
+        }, {
+          "const" : "VERY_BAD",
+          "description" : "BAD",
+          "example" : "VERY_BAD",
+          "title" : "VERY_BAD",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-des-cn" : "you are bad man"
+        } ],
+        "title" : "GoodLevelEnum",
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.user.wire.infra.settings.good.GoodLevelEnum",
+          "protoFrom" : "com/apihug/demo/user/proto/infra/settings/good/constant.proto"
         },
         "x-hope-enum-type" : "true"
       },

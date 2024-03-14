@@ -37,6 +37,7 @@ dependencies {
 
     //Hope START
     implementation project(':demo-external-proto')
+    //We depend on it but not use it as service dependency
     implementation project(':demo-user-proto')
 
     //By external lib
@@ -74,6 +75,18 @@ dependencies {
     testRuntimeOnly(libs.archunitEngine)
     testRuntimeOnly(libs.assertjCore)
 
+}
+
+
+task printRuntimeClasspath {
+    doLast {
+        Configuration runtimeConfiguration = configurations.getByName('runtimeClasspath')
+        Set<File> dependencies = runtimeConfiguration.resolve()
+
+        dependencies.each { File dependency ->
+            println "Dependency: ${dependency.name}, ${dependency.toPath().toAbsolutePath()}"
+        }
+    }
 }
 
 dependencyManagement {

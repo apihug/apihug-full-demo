@@ -1,24 +1,24 @@
 {
   "domain" : "user",
   "version" : "0.1.1-RELEASE",
-  "lastBuildTime" : "2024-03-13 20:38:17",
+  "lastBuildTime" : "2024-03-14 16:31:09",
   "dictionaries" : [ {
-    "name" : "UserStatusEnum",
-    "javaClass" : "com.apihug.demo.user.wire.infra.settings.admin.UserStatusEnum",
-    "description" : "User management status",
+    "name" : "GoodLevelEnum",
+    "javaClass" : "com.apihug.demo.user.wire.infra.settings.good.GoodLevelEnum",
+    "description" : "Example Enum",
     "deprecated" : false,
     "domain" : "user",
     "items" : [ {
       "code" : 1,
-      "title" : "NORMAL",
-      "description" : "normal",
-      "descriptionZhCN" : "user normal status",
+      "title" : "VERY_GOOD",
+      "description" : "GOOD",
+      "descriptionZhCN" : "you are good man",
       "deprecated" : false
     }, {
       "code" : 2,
-      "title" : "BLOCKED",
-      "description" : "blocked",
-      "descriptionZhCN" : "user blocked",
+      "title" : "VERY_BAD",
+      "description" : "BAD",
+      "descriptionZhCN" : "you are bad man",
       "deprecated" : false
     } ]
   }, {
@@ -63,6 +63,25 @@
       "title" : "SUPER_HAPPY",
       "description" : "happiest",
       "descriptionZhCN" : "happy best",
+      "deprecated" : false
+    } ]
+  }, {
+    "name" : "UserStatusEnum",
+    "javaClass" : "com.apihug.demo.user.wire.infra.settings.admin.UserStatusEnum",
+    "description" : "User management status",
+    "deprecated" : false,
+    "domain" : "user",
+    "items" : [ {
+      "code" : 1,
+      "title" : "NORMAL",
+      "description" : "normal",
+      "descriptionZhCN" : "user normal status",
+      "deprecated" : false
+    }, {
+      "code" : 2,
+      "title" : "BLOCKED",
+      "description" : "blocked",
+      "descriptionZhCN" : "user blocked",
       "deprecated" : false
     } ]
   } ]

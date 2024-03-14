@@ -1,7 +1,7 @@
 {
   "domain" : "inventory",
   "version" : "0.1.1-RELEASE",
-  "lastBuildTime" : "2024-03-13 20:38:02",
+  "lastBuildTime" : "2024-03-14 16:30:58",
   "errors" : [ {
     "name" : "InventoryErrorsEnum",
     "javaClass" : "com.apihug.demo.inventory.wire.infra.settings.admin.InventoryErrorsEnum",
