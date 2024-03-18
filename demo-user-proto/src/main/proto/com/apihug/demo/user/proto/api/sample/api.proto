@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package com.apihug.demo.user.proto.api.sample;
+
+import "extend/domain.proto";
+import "google/protobuf/empty.proto";
+import "swagger/annotations.proto";
+import "com/apihug/demo/user/proto/api/sample/sample.proto";
+
+option (hope.domain.kind) = IDL;
+
+service SampleDemoService {
+  option (hope.swagger.svc) = {
+    path: "/example-demo";
+    description: "api hug online demo project";
+  };
+
+  rpc PageQuery (google.protobuf.Empty) returns (com.apihug.demo.user.proto.api.sample.QueryResultDemoResponse) {
+    option (hope.swagger.operation) = {
+      get: "/page-a-sample";
+      description: "Demo how to query a page result";
+      priority: HIGH;
+      pageable:true;
+    };
+  }
+
+
+
+  rpc ListQuery (google.protobuf.Empty) returns (com.apihug.demo.user.proto.api.sample.QueryResultDemoResponse) {
+    option (hope.swagger.operation) = {
+      get: "/list-a-sample";
+      description: "query return a list";
+      priority: LOW;
+      out_plural: true;
+    };
+  }
+
+}

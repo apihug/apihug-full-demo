@@ -20,7 +20,7 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/user/proto/api/sample/sample.proto",
-    pluginVersion = "0.7.2-RELEASE",
+    pluginVersion = "0.7.3-RELEASE",
     entity = "RequiredDemoRequest",
     kind = Kind.MESSAGE
 )
@@ -62,6 +62,14 @@ public class RequiredDemoRequest {
   )
   protected Long hiddenField;
 
+  @NotBlank
+  @Schema(
+      description = "name of my son",
+      requiredMode = Schema.RequiredMode.REQUIRED,
+      extensions = @Extension(name = "x-hope-validation", properties = @ExtensionProperty(name = "blank", value = "false"))
+  )
+  protected String mySonName;
+
   public String getName() {
     return name;
   }
@@ -98,6 +106,15 @@ public class RequiredDemoRequest {
     return this;
   }
 
+  public String getMySonName() {
+    return mySonName;
+  }
+
+  public RequiredDemoRequest setMySonName(String mySonName) {
+    this.mySonName = mySonName;
+    return this;
+  }
+
   @Override
   public String toString() {
     final StringBuilder builder = new StringBuilder("RequiredDemoRequest{");
@@ -105,6 +122,7 @@ public class RequiredDemoRequest {
     builder.append(", another=").append(another);
     builder.append(", anAnother=").append(anAnother);
     builder.append(", hiddenField=").append(hiddenField);
+    builder.append(", mySonName=").append(mySonName);
     return builder.append('}').toString();
   }
 }

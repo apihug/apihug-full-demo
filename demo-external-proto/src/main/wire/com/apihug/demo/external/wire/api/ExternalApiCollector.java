@@ -191,29 +191,6 @@ public final class ExternalApiCollector implements Collector<OpenAPI, Schema, Ap
     clzPathMap.computeIfAbsent(clz, s -> new LinkedHashSet<>()).add(path);
   }
 
-  private final void _build_component_com_apihug_demo_external_wire_infra_settings_example_TemplateExampleEnum(
-      ) {
-    //  Build of the component: TemplateExampleEnum proto: com/apihug/demo/external/proto/infra/settings/example/constant.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.external.wire.infra.settings.example.TemplateExampleEnum", res);
-    res.setClzName("com.apihug.demo.external.wire.infra.settings.example.TemplateExampleEnum");
-    res.setEnumClz(true);
-    res.setName("TemplateExampleEnum");
-    res.setPayload(new Builder<Schema<TemplateExampleEnum>>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("Remember to remove this enum this is example from template");
-        List<TemplateExampleEnum> values  = new ArrayList();
-        values.add(TemplateExampleEnum.REMOVE_ME);
-        values.add(TemplateExampleEnum.RIGHT_NOW);
-        res.setDefault(TemplateExampleEnum.REMOVE_ME);
-        res.setEnum(values);
-        return res;
-      }
-    }.build());
-  }
-
   private final void _build_component_com_apihug_demo_external_wire_infra_settings_ExternalAuthorityEnum(
       ) {
     //  Build of the component: ExternalAuthorityEnum proto: com/apihug/demo/external/proto/infra/settings/authority.proto
@@ -237,72 +214,27 @@ public final class ExternalApiCollector implements Collector<OpenAPI, Schema, Ap
     }.build());
   }
 
-  private final void _build_component_com_apihug_demo_external_wire_api_example_response_TemplateExampleResponse(
+  private final void _build_component_com_apihug_demo_external_wire_infra_settings_example_TemplateExampleEnum(
       ) {
-    //  Build of the component: TemplateExampleResponse proto: com/apihug/demo/external/proto/api/example/response/example.proto
+    //  Build of the component: TemplateExampleEnum proto: com/apihug/demo/external/proto/infra/settings/example/constant.proto
     Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.external.wire.api.example.response.TemplateExampleResponse", res);
-    res.setClzName("com.apihug.demo.external.wire.api.example.response.TemplateExampleResponse");
-    res.setName("TemplateExampleResponse");
-    res.setProtoFrom("com/apihug/demo/external/proto/api/example/response/example.proto");
-    res.setProtoEntity("TemplateExampleResponse");
-    res.setDescription("This is a template example response");
-    res.setPayload(new Builder<Schema>() {
+    componentMap.put("com.apihug.demo.external.wire.infra.settings.example.TemplateExampleEnum", res);
+    res.setClzName("com.apihug.demo.external.wire.infra.settings.example.TemplateExampleEnum");
+    res.setEnumClz(true);
+    res.setName("TemplateExampleEnum");
+    res.setPayload(new Builder<Schema<TemplateExampleEnum>>() {
       @Override
       public Schema build() {
         Schema res  = new Schema();
-        res.setDescription("This is a template example response");
-        res.setSpecVersion(SpecVersion.V30);
+        res.setDescription("Remember to remove this enum this is example from template");
+        List<TemplateExampleEnum> values  = new ArrayList();
+        values.add(TemplateExampleEnum.REMOVE_ME);
+        values.add(TemplateExampleEnum.RIGHT_NOW);
+        res.setDefault(TemplateExampleEnum.REMOVE_ME);
+        res.setEnum(values);
         return res;
       }
     }.build());
-    // Add field 0 name
-    ComponentItem<Schema> _0 = new ComponentItem();
-    _0.setClz("java.lang.String");
-    _0.setName("name");
-    _0.setFieldName("name");
-    _0.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("user input name");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setExample("Jake");
-        return res;
-      }
-    }.build());
-    _0.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_0);
-    // Add field 1 hello
-    ComponentItem<Schema> _1 = new ComponentItem();
-    _1.setClz("java.lang.String");
-    _1.setName("hello");
-    _1.setFieldName("hello");
-    _1.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("response hello");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
-        res.setExample("hello Jake");
-        return res;
-      }
-    }.build());
-    _1.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_1);
   }
 
   private final void _build_component_com_apihug_demo_external_wire_api_example_request_TemplateExampleRequest(
@@ -379,6 +311,74 @@ public final class ExternalApiCollector implements Collector<OpenAPI, Schema, Ap
         Map res = new LinkedHashMap();
         res.put("nature", "EMAIL");
         res.put("name", "nature");
+        return res;
+      }
+    }.build());
+    res.addItem(_1);
+  }
+
+  private final void _build_component_com_apihug_demo_external_wire_api_example_response_TemplateExampleResponse(
+      ) {
+    //  Build of the component: TemplateExampleResponse proto: com/apihug/demo/external/proto/api/example/response/example.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.external.wire.api.example.response.TemplateExampleResponse", res);
+    res.setClzName("com.apihug.demo.external.wire.api.example.response.TemplateExampleResponse");
+    res.setName("TemplateExampleResponse");
+    res.setProtoFrom("com/apihug/demo/external/proto/api/example/response/example.proto");
+    res.setProtoEntity("TemplateExampleResponse");
+    res.setDescription("This is a template example response");
+    res.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("This is a template example response");
+        res.setSpecVersion(SpecVersion.V30);
+        return res;
+      }
+    }.build());
+    // Add field 0 name
+    ComponentItem<Schema> _0 = new ComponentItem();
+    _0.setClz("java.lang.String");
+    _0.setName("name");
+    _0.setFieldName("name");
+    _0.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("user input name");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setExample("Jake");
+        return res;
+      }
+    }.build());
+    _0.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_0);
+    // Add field 1 hello
+    ComponentItem<Schema> _1 = new ComponentItem();
+    _1.setClz("java.lang.String");
+    _1.setName("hello");
+    _1.setFieldName("hello");
+    _1.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("response hello");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setNullable(false);
+        res.setExample("hello Jake");
+        return res;
+      }
+    }.build());
+    _1.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
         return res;
       }
     }.build());
@@ -527,14 +527,14 @@ public final class ExternalApiCollector implements Collector<OpenAPI, Schema, Ap
   }
 
   private void _init() {
-    // Build for Enum :com.apihug.demo.external.wire.infra.settings.example.TemplateExampleEnum
-    _build_component_com_apihug_demo_external_wire_infra_settings_example_TemplateExampleEnum();
     // Build for Enum :com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum
     _build_component_com_apihug_demo_external_wire_infra_settings_ExternalAuthorityEnum();
-    // Build for Component : com.apihug.demo.external.wire.api.example.response.TemplateExampleResponse
-    _build_component_com_apihug_demo_external_wire_api_example_response_TemplateExampleResponse();
+    // Build for Enum :com.apihug.demo.external.wire.infra.settings.example.TemplateExampleEnum
+    _build_component_com_apihug_demo_external_wire_infra_settings_example_TemplateExampleEnum();
     // Build for Component : com.apihug.demo.external.wire.api.example.request.TemplateExampleRequest
     _build_component_com_apihug_demo_external_wire_api_example_request_TemplateExampleRequest();
+    // Build for Component : com.apihug.demo.external.wire.api.example.response.TemplateExampleResponse
+    _build_component_com_apihug_demo_external_wire_api_example_response_TemplateExampleResponse();
     // Build For Service com.apihug.demo.external.wire.api.example.TemplateExampleService
     _build_service_com_apihug_demo_external_wire_api_example_TemplateExampleService();
     // Build OpenAPI information

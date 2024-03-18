@@ -1,7 +1,7 @@
 {
   "domain" : "inventory",
   "version" : "0.1.2-RELEASE",
-  "lastBuildTime" : "2024-03-18 18:14:13",
+  "lastBuildTime" : "2024-03-18 20:16:37",
   "codeOffset" : 0,
   "name" : "InventoryAuthorityEnum",
   "javaClass" : "com.apihug.demo.inventory.wire.infra.settings.InventoryAuthorityEnum",

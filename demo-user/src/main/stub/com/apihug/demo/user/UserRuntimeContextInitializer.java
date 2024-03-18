@@ -33,7 +33,7 @@ public class UserRuntimeContextInitializer extends RuntimeContextInitializer {
             Artifact res  = new Artifact();
             res.setGroupId("com.apihug");
             res.setArtifactId("demo-user");
-            res.setVersion("0.1.1-RELEASE");
+            res.setVersion("0.1.2-RELEASE");
             return res;
           }
         }.build());
@@ -54,6 +54,6 @@ public class UserRuntimeContextInitializer extends RuntimeContextInitializer {
         return res;
       }
     }.build());
-    runTimeCtx.setStubBuildTime("2024-03-18 11:23:22");
+    runTimeCtx.setStubBuildTime("2024-03-18 20:16:24");
   }
 }

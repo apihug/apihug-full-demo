@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package com.apihug.demo.user.proto.api.sample;
+
+import "extend/domain.proto";
+import "swagger/annotations.proto";
+
+option (hope.domain.kind) = BEAN;
+
+
+message MockDemoRequest {
+  option (hope.swagger.schema) = {
+    json_schema: {
+      description: "This is an example request";
+    };
+  };
+
+  string name = 1 [(hope.swagger.field) = {
+    description: "name of the user";
+    example: "My Lord"
+    empty: FALSE;
+    mock: {
+      nature: NAME
+    }
+    max_length: {
+      value: 32
+    }
+  }];
+
+  string chinese_name = 2 [(hope.swagger.field) = {
+    description: "name for chinese people";
+    blank: FALSE;
+    mock:{
+      chinese_name_rule:{
+        type: NAME
+      }
+    }
+  }];
+
+  string china_address = 3 [(hope.swagger.field) = {
+    description: "address of china";
+    blank: FALSE;
+    mock:{
+      china_address_rule:{
+        type: ADDRESS;
+        with_prefix: TRUE;
+      }
+    }
+  }];
+
+
+}

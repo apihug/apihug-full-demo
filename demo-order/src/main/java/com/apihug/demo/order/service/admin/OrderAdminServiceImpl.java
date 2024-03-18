@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 @Version(
     version = "0.1.1-SNAPSHOT",
     type = Type.ADD,
-    timestamp = "2024-02-29 17:40:21"
+    timestamp = "2024-03-18 18:53:16"
 )
 @ProtoFrom(
     value = "com/apihug/demo/order/proto/api/admin/api.proto",

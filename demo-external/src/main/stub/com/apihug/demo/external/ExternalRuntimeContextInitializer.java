@@ -35,7 +35,7 @@ public class ExternalRuntimeContextInitializer extends RuntimeContextInitializer
             Artifact res  = new Artifact();
             res.setGroupId("com.apihug");
             res.setArtifactId("demo-external");
-            res.setVersion("0.1.1-RELEASE");
+            res.setVersion("0.1.2-RELEASE");
             return res;
           }
         }.build());
@@ -56,6 +56,6 @@ public class ExternalRuntimeContextInitializer extends RuntimeContextInitializer
         return res;
       }
     }.build());
-    runTimeCtx.setStubBuildTime("2024-03-18 11:23:12");
+    runTimeCtx.setStubBuildTime("2024-03-18 20:16:09");
   }
 }

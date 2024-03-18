@@ -19,7 +19,7 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/inventory/proto/api/admin/response.proto",
-    pluginVersion = "0.7.2-RELEASE",
+    pluginVersion = "0.7.3-RELEASE",
     entity = "StockOutResponse",
     kind = Kind.MESSAGE
 )
