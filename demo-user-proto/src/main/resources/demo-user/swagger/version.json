@@ -1,10 +1,14 @@
 {
   "current" : {
-    "version" : "0.1.1-RELEASE",
-    "createdTimestamp" : "2024-02-29 16:31:47",
-    "updateTimestamp" : "2024-03-14 16:31:09"
+    "version" : "0.1.2-RELEASE",
+    "createdTimestamp" : "2024-03-18 18:14:26",
+    "updateTimestamp" : "2024-03-18 18:14:26"
   },
   "previous" : [ {
+    "version" : "0.1.1-RELEASE",
+    "createdTimestamp" : "2024-02-29 16:31:47",
+    "updateTimestamp" : "2024-03-18 18:04:14"
+  }, {
     "version" : "0.1.1-SNAPSHOT",
     "createdTimestamp" : "2024-02-29 13:56:45",
     "updateTimestamp" : "2024-02-29 15:23:28"

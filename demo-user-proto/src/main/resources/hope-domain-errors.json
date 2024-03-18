@@ -1,29 +1,29 @@
 {
   "domain" : "user",
-  "version" : "0.1.1-RELEASE",
-  "lastBuildTime" : "2024-03-14 16:31:09",
+  "version" : "0.1.2-RELEASE",
+  "lastBuildTime" : "2024-03-18 18:14:26",
   "errors" : [ {
-    "name" : "GoodErrorsEnum",
-    "javaClass" : "com.apihug.demo.user.wire.infra.settings.good.GoodErrorsEnum",
-    "description" : "An example error",
+    "name" : "UserErrorsEnum",
+    "javaClass" : "com.apihug.demo.user.wire.infra.settings.admin.UserErrorsEnum",
+    "description" : "User account management errors",
     "deprecated" : false,
     "domain" : "user",
     "items" : [ {
-      "code" : 1007023,
-      "title" : "BROKEN_BOX",
-      "description" : "this is big wrong",
-      "descriptionZhCN" : "wrong*3",
+      "code" : 1001023,
+      "title" : "USER_EXIST",
+      "description" : "customer already exist",
+      "descriptionZhCN" : "用户存在",
       "deprecated" : false,
-      "tips" : "please contract your admin +3",
+      "tips" : "contact your admin",
       "phase" : "DOMAIN",
       "severity" : "FATAL"
     }, {
-      "code" : 1007024,
-      "title" : "OUT_OF_DATE",
-      "description" : "this is small wrong",
-      "descriptionZhCN" : "wrong*2",
+      "code" : 1001024,
+      "title" : "USER_BLOCKED",
+      "description" : "customer is blocked",
+      "descriptionZhCN" : "用户失效",
       "deprecated" : false,
-      "tips" : "please contract your admin +1",
+      "tips" : "possible you do something bad, contact the admin",
       "phase" : "DOMAIN",
       "severity" : "WARN"
     } ]
@@ -80,27 +80,27 @@
       "httpStatus" : "UNAUTHORIZED"
     } ]
   }, {
-    "name" : "UserErrorsEnum",
-    "javaClass" : "com.apihug.demo.user.wire.infra.settings.admin.UserErrorsEnum",
-    "description" : "User account management errors",
+    "name" : "GoodErrorsEnum",
+    "javaClass" : "com.apihug.demo.user.wire.infra.settings.good.GoodErrorsEnum",
+    "description" : "An example error",
     "deprecated" : false,
     "domain" : "user",
     "items" : [ {
-      "code" : 1001023,
-      "title" : "USER_EXIST",
-      "description" : "customer already exist",
-      "descriptionZhCN" : "用户存在",
+      "code" : 1007023,
+      "title" : "BROKEN_BOX",
+      "description" : "this is big wrong",
+      "descriptionZhCN" : "wrong*3",
       "deprecated" : false,
-      "tips" : "contact your admin",
+      "tips" : "please contract your admin +3",
       "phase" : "DOMAIN",
       "severity" : "FATAL"
     }, {
-      "code" : 1001024,
-      "title" : "USER_BLOCKED",
-      "description" : "customer is blocked",
-      "descriptionZhCN" : "用户失效",
+      "code" : 1007024,
+      "title" : "OUT_OF_DATE",
+      "description" : "this is small wrong",
+      "descriptionZhCN" : "wrong*2",
       "deprecated" : false,
-      "tips" : "possible you do something bad, contact the admin",
+      "tips" : "please contract your admin +1",
       "phase" : "DOMAIN",
       "severity" : "WARN"
     } ]

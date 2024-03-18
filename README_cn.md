@@ -88,7 +88,7 @@ Application 'demo-order' is running! Access URLs:
 
 更多内容敬请参考:
 
-1. [Apihug.com Git官方](https://github.com/apihug/apihug.com/)
+1. [Apihug.com GitHub](https://github.com/apihug/apihug.com/)
 2. [Apihug Wire 插件](https://github.com/apihug/apihug.com/blob/master/docs/handbook/004_dsl_implement_wire.md)
 3. [Apihug Stub 插件](https://github.com/apihug/apihug.com/blob/master/docs/handbook/005_dsl_implement_stub.md)
 4. [Apihug 其他](https://github.com/apihug/apihug.com/blob/master/docs/handbook/099_trivial.md)

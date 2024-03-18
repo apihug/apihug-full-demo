@@ -69,6 +69,8 @@ dependencies {
 
     //Spring starter END
 
+    testImplementation(libs.apihugSpringMock)
+
     //Extra Test Helper Libs
     testImplementation(libs.awaitility)
     testImplementation(libs.archunitApi)

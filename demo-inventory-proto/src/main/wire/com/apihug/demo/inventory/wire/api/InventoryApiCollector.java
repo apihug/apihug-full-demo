@@ -194,31 +194,6 @@ public final class InventoryApiCollector implements Collector<OpenAPI, Schema, A
     clzPathMap.computeIfAbsent(clz, s -> new LinkedHashSet<>()).add(path);
   }
 
-  private final void _build_component_com_apihug_demo_inventory_wire_infra_settings_InventoryAuthorityEnum(
-      ) {
-    //  Build of the component: InventoryAuthorityEnum proto: com/apihug/demo/inventory/proto/infra/settings/authority.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.inventory.wire.infra.settings.InventoryAuthorityEnum", res);
-    res.setClzName("com.apihug.demo.inventory.wire.infra.settings.InventoryAuthorityEnum");
-    res.setEnumClz(true);
-    res.setName("InventoryAuthorityEnum");
-    res.setPayload(new Builder<Schema<InventoryAuthorityEnum>>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("Inventory authorities list");
-        List<InventoryAuthorityEnum> values  = new ArrayList();
-        values.add(InventoryAuthorityEnum.STOCK_IN);
-        values.add(InventoryAuthorityEnum.STOCK_OUT);
-        values.add(InventoryAuthorityEnum.ADD_STORAGE_LOCATION);
-        values.add(InventoryAuthorityEnum.DELETE_STORAGE_LOCATION);
-        res.setDefault(InventoryAuthorityEnum.STOCK_IN);
-        res.setEnum(values);
-        return res;
-      }
-    }.build());
-  }
-
   private final void _build_component_com_apihug_demo_inventory_wire_infra_settings_admin_StorageStatusEnum(
       ) {
     //  Build of the component: StorageStatusEnum proto: com/apihug/demo/inventory/proto/infra/settings/admin/constant.proto
@@ -259,6 +234,31 @@ public final class InventoryApiCollector implements Collector<OpenAPI, Schema, A
         values.add(StockStatusEnum.FAIL);
         values.add(StockStatusEnum.SUCCESS);
         res.setDefault(StockStatusEnum.FAIL);
+        res.setEnum(values);
+        return res;
+      }
+    }.build());
+  }
+
+  private final void _build_component_com_apihug_demo_inventory_wire_infra_settings_InventoryAuthorityEnum(
+      ) {
+    //  Build of the component: InventoryAuthorityEnum proto: com/apihug/demo/inventory/proto/infra/settings/authority.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.inventory.wire.infra.settings.InventoryAuthorityEnum", res);
+    res.setClzName("com.apihug.demo.inventory.wire.infra.settings.InventoryAuthorityEnum");
+    res.setEnumClz(true);
+    res.setName("InventoryAuthorityEnum");
+    res.setPayload(new Builder<Schema<InventoryAuthorityEnum>>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("Inventory authorities list");
+        List<InventoryAuthorityEnum> values  = new ArrayList();
+        values.add(InventoryAuthorityEnum.STOCK_IN);
+        values.add(InventoryAuthorityEnum.STOCK_OUT);
+        values.add(InventoryAuthorityEnum.ADD_STORAGE_LOCATION);
+        values.add(InventoryAuthorityEnum.DELETE_STORAGE_LOCATION);
+        res.setDefault(InventoryAuthorityEnum.STOCK_IN);
         res.setEnum(values);
         return res;
       }
@@ -446,174 +446,6 @@ public final class InventoryApiCollector implements Collector<OpenAPI, Schema, A
       }
     }.build());
     res.addItem(_2);
-  }
-
-  private final void _build_component_com_apihug_demo_inventory_wire_api_storage_response_StorageLocationAddedResponse(
-      ) {
-    //  Build of the component: StorageLocationAddedResponse proto: com/apihug/demo/inventory/proto/api/storage/response/response.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.inventory.wire.api.storage.response.StorageLocationAddedResponse", res);
-    res.setClzName("com.apihug.demo.inventory.wire.api.storage.response.StorageLocationAddedResponse");
-    res.setName("StorageLocationAddedResponse");
-    res.setProtoFrom("com/apihug/demo/inventory/proto/api/storage/response/response.proto");
-    res.setProtoEntity("StorageLocationAddedResponse");
-    res.setDescription("storage location added");
-    res.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("storage location added");
-        res.setSpecVersion(SpecVersion.V30);
-        return res;
-      }
-    }.build());
-    // Add field 0 storage_location_id
-    ComponentItem<Schema> _0 = new ComponentItem();
-    _0.setClz("java.lang.Long");
-    _0.setName("storage_location_id");
-    _0.setFieldName("storageLocationId");
-    _0.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("id of this storage location");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setNullable(false);
-        res.setExample("11");
-        return res;
-      }
-    }.build());
-    _0.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_0);
-    // Add field 1 name
-    ComponentItem<Schema> _1 = new ComponentItem();
-    _1.setClz("java.lang.String");
-    _1.setName("name");
-    _1.setFieldName("name");
-    _1.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("name of the location");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setMaxLength(32);
-        res.setNullable(false);
-        res.setExample("A1-112-5B");
-        return res;
-      }
-    }.build());
-    _1.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    _1.setRule(new Builder<Map>() {
-      @Override
-      public Map build() {
-        Map res = new LinkedHashMap();
-        res.put("nature", "NAME");
-        res.put("name", "nature");
-        return res;
-      }
-    }.build());
-    res.addItem(_1);
-    // Add field 2 remark
-    ComponentItem<Schema> _2 = new ComponentItem();
-    _2.setClz("java.lang.String");
-    _2.setName("remark");
-    _2.setFieldName("remark");
-    _2.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("comment of this");
-        res.setSpecVersion(SpecVersion.V30);
-        return res;
-      }
-    }.build());
-    _2.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_2);
-  }
-
-  private final void _build_component_com_apihug_demo_inventory_wire_api_storage_response_StorageLocationDeletedResponse(
-      ) {
-    //  Build of the component: StorageLocationDeletedResponse proto: com/apihug/demo/inventory/proto/api/storage/response/response.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.inventory.wire.api.storage.response.StorageLocationDeletedResponse", res);
-    res.setClzName("com.apihug.demo.inventory.wire.api.storage.response.StorageLocationDeletedResponse");
-    res.setName("StorageLocationDeletedResponse");
-    res.setProtoFrom("com/apihug/demo/inventory/proto/api/storage/response/response.proto");
-    res.setProtoEntity("StorageLocationDeletedResponse");
-    res.setDescription("Storage location deleted");
-    res.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("Storage location deleted");
-        res.setSpecVersion(SpecVersion.V30);
-        return res;
-      }
-    }.build());
-    // Add field 0 storage_location_id
-    ComponentItem<Schema> _0 = new ComponentItem();
-    _0.setClz("java.lang.Long");
-    _0.setName("storage_location_id");
-    _0.setFieldName("storageLocationId");
-    _0.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("id of this storage location");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setExample("11");
-        return res;
-      }
-    }.build());
-    _0.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_0);
-    // Add field 1 reason
-    ComponentItem<Schema> _1 = new ComponentItem();
-    _1.setClz("java.lang.String");
-    _1.setName("reason");
-    _1.setFieldName("reason");
-    _1.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("reason of delete it");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setExample("no happy");
-        return res;
-      }
-    }.build());
-    _1.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_1);
   }
 
   private final void _build_component_com_apihug_demo_inventory_wire_api_admin_StockInResponse() {
@@ -872,6 +704,174 @@ public final class InventoryApiCollector implements Collector<OpenAPI, Schema, A
       }
     }.build());
     res.addItem(_4);
+  }
+
+  private final void _build_component_com_apihug_demo_inventory_wire_api_storage_response_StorageLocationAddedResponse(
+      ) {
+    //  Build of the component: StorageLocationAddedResponse proto: com/apihug/demo/inventory/proto/api/storage/response/response.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.inventory.wire.api.storage.response.StorageLocationAddedResponse", res);
+    res.setClzName("com.apihug.demo.inventory.wire.api.storage.response.StorageLocationAddedResponse");
+    res.setName("StorageLocationAddedResponse");
+    res.setProtoFrom("com/apihug/demo/inventory/proto/api/storage/response/response.proto");
+    res.setProtoEntity("StorageLocationAddedResponse");
+    res.setDescription("storage location added");
+    res.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("storage location added");
+        res.setSpecVersion(SpecVersion.V30);
+        return res;
+      }
+    }.build());
+    // Add field 0 storage_location_id
+    ComponentItem<Schema> _0 = new ComponentItem();
+    _0.setClz("java.lang.Long");
+    _0.setName("storage_location_id");
+    _0.setFieldName("storageLocationId");
+    _0.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("id of this storage location");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setNullable(false);
+        res.setExample("11");
+        return res;
+      }
+    }.build());
+    _0.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_0);
+    // Add field 1 name
+    ComponentItem<Schema> _1 = new ComponentItem();
+    _1.setClz("java.lang.String");
+    _1.setName("name");
+    _1.setFieldName("name");
+    _1.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("name of the location");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setMaxLength(32);
+        res.setNullable(false);
+        res.setExample("A1-112-5B");
+        return res;
+      }
+    }.build());
+    _1.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    _1.setRule(new Builder<Map>() {
+      @Override
+      public Map build() {
+        Map res = new LinkedHashMap();
+        res.put("nature", "NAME");
+        res.put("name", "nature");
+        return res;
+      }
+    }.build());
+    res.addItem(_1);
+    // Add field 2 remark
+    ComponentItem<Schema> _2 = new ComponentItem();
+    _2.setClz("java.lang.String");
+    _2.setName("remark");
+    _2.setFieldName("remark");
+    _2.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("comment of this");
+        res.setSpecVersion(SpecVersion.V30);
+        return res;
+      }
+    }.build());
+    _2.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_2);
+  }
+
+  private final void _build_component_com_apihug_demo_inventory_wire_api_storage_response_StorageLocationDeletedResponse(
+      ) {
+    //  Build of the component: StorageLocationDeletedResponse proto: com/apihug/demo/inventory/proto/api/storage/response/response.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.inventory.wire.api.storage.response.StorageLocationDeletedResponse", res);
+    res.setClzName("com.apihug.demo.inventory.wire.api.storage.response.StorageLocationDeletedResponse");
+    res.setName("StorageLocationDeletedResponse");
+    res.setProtoFrom("com/apihug/demo/inventory/proto/api/storage/response/response.proto");
+    res.setProtoEntity("StorageLocationDeletedResponse");
+    res.setDescription("Storage location deleted");
+    res.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("Storage location deleted");
+        res.setSpecVersion(SpecVersion.V30);
+        return res;
+      }
+    }.build());
+    // Add field 0 storage_location_id
+    ComponentItem<Schema> _0 = new ComponentItem();
+    _0.setClz("java.lang.Long");
+    _0.setName("storage_location_id");
+    _0.setFieldName("storageLocationId");
+    _0.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("id of this storage location");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setExample("11");
+        return res;
+      }
+    }.build());
+    _0.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_0);
+    // Add field 1 reason
+    ComponentItem<Schema> _1 = new ComponentItem();
+    _1.setClz("java.lang.String");
+    _1.setName("reason");
+    _1.setFieldName("reason");
+    _1.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("reason of delete it");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setExample("no happy");
+        return res;
+      }
+    }.build());
+    _1.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_1);
   }
 
   private final void _build_component_com_apihug_demo_inventory_wire_api_storage_request_AddStorageLocationRequest(
@@ -1248,7 +1248,7 @@ public final class InventoryApiCollector implements Collector<OpenAPI, Schema, A
       public String build() {
         _info.setTitle("demo-inventory-proto");
         _info.setDescription("proto lib of  inventory control module");
-        _info.setVersion("0.1.1-RELEASE");
+        _info.setVersion("0.1.2-RELEASE");
         _contact.setName("developer@apihug.com");
         _contact.setUrl("https://github.com/apihug/");
         _contact.setEmail("developer@apihug.com");
@@ -1269,24 +1269,24 @@ public final class InventoryApiCollector implements Collector<OpenAPI, Schema, A
   }
 
   private void _init() {
-    // Build for Enum :com.apihug.demo.inventory.wire.infra.settings.InventoryAuthorityEnum
-    _build_component_com_apihug_demo_inventory_wire_infra_settings_InventoryAuthorityEnum();
     // Build for Enum :com.apihug.demo.inventory.wire.infra.settings.admin.StorageStatusEnum
     _build_component_com_apihug_demo_inventory_wire_infra_settings_admin_StorageStatusEnum();
     // Build for Enum :com.apihug.demo.inventory.wire.infra.settings.admin.StockStatusEnum
     _build_component_com_apihug_demo_inventory_wire_infra_settings_admin_StockStatusEnum();
+    // Build for Enum :com.apihug.demo.inventory.wire.infra.settings.InventoryAuthorityEnum
+    _build_component_com_apihug_demo_inventory_wire_infra_settings_InventoryAuthorityEnum();
     // Build for Component : com.apihug.demo.inventory.wire.api.admin.StockInRequest
     _build_component_com_apihug_demo_inventory_wire_api_admin_StockInRequest();
     // Build for Component : com.apihug.demo.inventory.wire.api.admin.StockOutRequest
     _build_component_com_apihug_demo_inventory_wire_api_admin_StockOutRequest();
-    // Build for Component : com.apihug.demo.inventory.wire.api.storage.response.StorageLocationAddedResponse
-    _build_component_com_apihug_demo_inventory_wire_api_storage_response_StorageLocationAddedResponse();
-    // Build for Component : com.apihug.demo.inventory.wire.api.storage.response.StorageLocationDeletedResponse
-    _build_component_com_apihug_demo_inventory_wire_api_storage_response_StorageLocationDeletedResponse();
     // Build for Component : com.apihug.demo.inventory.wire.api.admin.StockInResponse
     _build_component_com_apihug_demo_inventory_wire_api_admin_StockInResponse();
     // Build for Component : com.apihug.demo.inventory.wire.api.admin.StockOutResponse
     _build_component_com_apihug_demo_inventory_wire_api_admin_StockOutResponse();
+    // Build for Component : com.apihug.demo.inventory.wire.api.storage.response.StorageLocationAddedResponse
+    _build_component_com_apihug_demo_inventory_wire_api_storage_response_StorageLocationAddedResponse();
+    // Build for Component : com.apihug.demo.inventory.wire.api.storage.response.StorageLocationDeletedResponse
+    _build_component_com_apihug_demo_inventory_wire_api_storage_response_StorageLocationDeletedResponse();
     // Build for Component : com.apihug.demo.inventory.wire.api.storage.request.AddStorageLocationRequest
     _build_component_com_apihug_demo_inventory_wire_api_storage_request_AddStorageLocationRequest();
     // Build for Component : com.apihug.demo.inventory.wire.api.storage.request.DeleteStorageLocationRequest

@@ -2,6 +2,8 @@ package com.apihug.demo.order.wire.api;
 
 import hope.common.meta.artifact.Artifact;
 import hope.common.meta.project.Project;
+import hope.common.meta.project.ProjectAuthority;
+import hope.common.meta.project.ProjectPersistence;
 import hope.common.meta.project.ProjectStatus;
 import hope.common.service.Module;
 import java.lang.Override;
@@ -27,11 +29,19 @@ public class OrderApiModule implements Module<OrderApiCollector> {
     project.setArtifact(artifact);
     artifact.setArtifactId("demo-order-proto");
     artifact.setGroupId("com.apihug");
-    artifact.setVersion("0.1.1-RELEASE");
+    artifact.setVersion("0.1.2-RELEASE");
     ProjectStatus status = new ProjectStatus();
     project.setStatus(status);
     status.setCreatedTimestamp("2024-02-29");
     status.setCreatedBy("dell");
+    ProjectAuthority authority = new ProjectAuthority();
+    project.setAuthority(authority);
+    authority.setEnumClass("com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum");
+    authority.setCodePrefix(10240000L);
+    ProjectPersistence persistence = new ProjectPersistence();
+    project.setPersistence(persistence);
+    persistence.setIdentifyType(ProjectPersistence.Type.LONG);
+    persistence.setTenantType(ProjectPersistence.Type.LONG);
   }
 
   @Override
@@ -46,6 +56,6 @@ public class OrderApiModule implements Module<OrderApiCollector> {
 
   @Override
   public String version() {
-    return "0.1.1-RELEASE";
+    return "0.1.2-RELEASE";
   }
 }

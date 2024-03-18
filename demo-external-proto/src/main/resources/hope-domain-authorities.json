@@ -1,7 +1,7 @@
 {
   "domain" : "external",
-  "version" : "0.1.1-RELEASE",
-  "lastBuildTime" : "2024-03-14 16:30:51",
+  "version" : "0.1.2-RELEASE",
+  "lastBuildTime" : "2024-03-18 18:14:05",
   "codeOffset" : 0,
   "name" : "ExternalAuthorityEnum",
   "javaClass" : "com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum",

@@ -12,14 +12,18 @@ logger.quiet "Current dir: $rootDir"
 
 logger.quiet "All Modules: $subprojects"
 
-//TODO publish go here
+//FIXME this is very risky. should be replaced by env arguments
+project.ext['signing.secretKeyRingFile'] = "${rootDir}/private/secring.gpg"
+//Remove those two before commit
+project.ext['gradle.publish.key'] = "xxx"
+project.ext['gradle.publish.secret'] = "xxx"
 
 
 configure(subprojects) {
 
     // Change this carefully
     group = 'com.apihug'
-    version = '0.1.1-RELEASE'
+    version = '0.1.2-RELEASE'
 
     repositories {
         mavenLocal()

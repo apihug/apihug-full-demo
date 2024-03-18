@@ -2,7 +2,7 @@
   "artifact" : {
     "groupId" : "com.apihug",
     "artifactId" : "demo-external-proto",
-    "version" : "0.1.1-RELEASE"
+    "version" : "0.1.2-RELEASE"
   },
   "name" : "demo-external-proto",
   "description" : "proto lib of  how to wire all the stuff together",
@@ -15,7 +15,7 @@
   "status" : {
     "deprecated" : false,
     "createdTimestamp" : "2024-02-29",
-    "lastBuildTimestamp" : "2024-03-14 16:30:51",
+    "lastBuildTimestamp" : "2024-03-18 18:14:05",
     "createdBy" : "dell"
   },
   "persistence" : {

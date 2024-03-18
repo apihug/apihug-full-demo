@@ -88,7 +88,7 @@ Application 'demo-order' is running! Access URLs:
 
 For further reference, please consider the following sections:
 
-1. [Apihug.com Git](https://github.com/apihug/apihug.com/)
+1. [Apihug.com Github](https://github.com/apihug/apihug.com/)
 2. [Apihug Wire Plugin](https://github.com/apihug/apihug.com/blob/master/docs/handbook/004_dsl_implement_wire.md)
 3. [Apihug Stub Plugin](https://github.com/apihug/apihug.com/blob/master/docs/handbook/005_dsl_implement_stub.md)
 4. [Apihug Trivial](https://github.com/apihug/apihug.com/blob/master/docs/handbook/099_trivial.md)
