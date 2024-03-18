@@ -15,7 +15,7 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/order/proto/api/admin/response/response.proto",
-    pluginVersion = "0.6.9-RELEASE",
+    pluginVersion = "0.7.0-RELEASE",
     entity = "OrderDeletedResponse",
     kind = Kind.MESSAGE
 )

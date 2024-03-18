@@ -16,7 +16,7 @@ import java.util.Map;
 
 @ProtoFrom(
     value = "com/apihug/demo/user/proto/infra/settings/good/error.proto",
-    pluginVersion = "0.6.9-RELEASE",
+    pluginVersion = "0.7.0-RELEASE",
     entity = "GoodErrorsEnum",
     kind = Kind.ENUM
 )

@@ -1,6 +1,6 @@
-package com.apihug.demo.inventory;
+package com.apihug.demo.user;
 
-import com.apihug.demo.inventory.wire.api.InventoryApiModule;
+import com.apihug.demo.user.wire.api.UserApiModule;
 import hope.common.Builder;
 import hope.common.meta.artifact.Artifact;
 import hope.common.meta.cloud.Dependency;
@@ -14,25 +14,25 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Generated("H.O.P.E. Infra Team")
-public class InventoryRuntimeContextInitializer extends RuntimeContextInitializer {
+public class UserRuntimeContextInitializer extends RuntimeContextInitializer {
   @Override
   protected void init() {
     RuntimeContext runTimeCtx = RuntimeContext.INSTANCE;
-    runTimeCtx.setDomain("inventory");
-    runTimeCtx.setProto(new InventoryApiModule().project());
+    runTimeCtx.setDomain("user");
+    runTimeCtx.setProto(new UserApiModule().project());
     runTimeCtx.setProject(new Builder<Project>() {
       @Override
       public Project build() {
         Project res  = new Project();
-        res.setName("demo-inventory");
-        res.setDescription("inventory control module");
-        res.setPackageName("com.apihug.demo.inventory");
+        res.setName("demo-user");
+        res.setDescription("user management module");
+        res.setPackageName("com.apihug.demo.user");
         res.setArtifact(new Builder<Artifact>() {
           @Override
           public Artifact build() {
             Artifact res  = new Artifact();
             res.setGroupId("com.apihug");
-            res.setArtifactId("demo-inventory");
+            res.setArtifactId("demo-user");
             res.setVersion("0.1.1-RELEASE");
             return res;
           }
@@ -45,7 +45,7 @@ public class InventoryRuntimeContextInitializer extends RuntimeContextInitialize
           public Artifact build() {
             Artifact res  = new Artifact();
             res.setGroupId("com.apihug");
-            res.setArtifactId("demo-inventory-proto");
+            res.setArtifactId("demo-user-proto");
             res.setVersion("0.1.1-SNAPSHOT");
             return res;
           }
@@ -54,6 +54,6 @@ public class InventoryRuntimeContextInitializer extends RuntimeContextInitialize
         return res;
       }
     }.build());
-    runTimeCtx.setStubBuildTime("2024-03-14 16:20:36");
+    runTimeCtx.setStubBuildTime("2024-03-14 16:20:42");
   }
 }
