@@ -265,189 +265,6 @@ public final class InventoryApiCollector implements Collector<OpenAPI, Schema, A
     }.build());
   }
 
-  private final void _build_component_com_apihug_demo_inventory_wire_api_admin_StockInRequest() {
-    //  Build of the component: StockInRequest proto: com/apihug/demo/inventory/proto/api/admin/request.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.inventory.wire.api.admin.StockInRequest", res);
-    res.setClzName("com.apihug.demo.inventory.wire.api.admin.StockInRequest");
-    res.setName("StockInRequest");
-    res.setProtoFrom("com/apihug/demo/inventory/proto/api/admin/request.proto");
-    res.setProtoEntity("StockInRequest");
-    res.setDescription("Stock in request");
-    res.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("Stock in request");
-        res.setSpecVersion(SpecVersion.V30);
-        return res;
-      }
-    }.build());
-    // Add field 0 sku
-    ComponentItem<Schema> _0 = new ComponentItem();
-    _0.setClz("java.lang.String");
-    _0.setName("sku");
-    _0.setFieldName("sku");
-    _0.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("sku of this product");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setMaxLength(32);
-        res.setNullable(false);
-        res.setExample("S1JSF0S0FA");
-        return res;
-      }
-    }.build());
-    _0.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    _0.setRule(new Builder<Map>() {
-      @Override
-      public Map build() {
-        Map res = new LinkedHashMap();
-        res.put("nature", "NAME");
-        res.put("name", "nature");
-        return res;
-      }
-    }.build());
-    res.addItem(_0);
-    // Add field 1 quantity
-    ComponentItem<Schema> _1 = new ComponentItem();
-    _1.setClz("java.lang.Long");
-    _1.setName("quantity");
-    _1.setFieldName("quantity");
-    _1.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("quantity of this load");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setMaximum(BigDecimal.valueOf(1L, 1));
-        res.setMinimum(BigDecimal.valueOf(9999L, 1));
-        res.setExample("11");
-        return res;
-      }
-    }.build());
-    _1.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_1);
-  }
-
-  private final void _build_component_com_apihug_demo_inventory_wire_api_admin_StockOutRequest() {
-    //  Build of the component: StockOutRequest proto: com/apihug/demo/inventory/proto/api/admin/request.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.inventory.wire.api.admin.StockOutRequest", res);
-    res.setClzName("com.apihug.demo.inventory.wire.api.admin.StockOutRequest");
-    res.setName("StockOutRequest");
-    res.setProtoFrom("com/apihug/demo/inventory/proto/api/admin/request.proto");
-    res.setProtoEntity("StockOutRequest");
-    res.setDescription("Stock out request");
-    res.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("Stock out request");
-        res.setSpecVersion(SpecVersion.V30);
-        return res;
-      }
-    }.build());
-    // Add field 0 sku
-    ComponentItem<Schema> _0 = new ComponentItem();
-    _0.setClz("java.lang.String");
-    _0.setName("sku");
-    _0.setFieldName("sku");
-    _0.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("sku of this product");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setMaxLength(32);
-        res.setNullable(false);
-        res.setExample("S1JSF0S0FA");
-        return res;
-      }
-    }.build());
-    _0.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    _0.setRule(new Builder<Map>() {
-      @Override
-      public Map build() {
-        Map res = new LinkedHashMap();
-        res.put("nature", "NAME");
-        res.put("name", "nature");
-        return res;
-      }
-    }.build());
-    res.addItem(_0);
-    // Add field 1 quantity
-    ComponentItem<Schema> _1 = new ComponentItem();
-    _1.setClz("java.lang.Long");
-    _1.setName("quantity");
-    _1.setFieldName("quantity");
-    _1.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("quantity of this load");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setMaximum(BigDecimal.valueOf(1L, 1));
-        res.setMinimum(BigDecimal.valueOf(9999L, 1));
-        res.setExample("11");
-        return res;
-      }
-    }.build());
-    _1.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_1);
-    // Add field 2 order_id
-    ComponentItem<Schema> _2 = new ComponentItem();
-    _2.setClz("java.lang.Long");
-    _2.setName("order_id");
-    _2.setFieldName("orderId");
-    _2.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("id of the order");
-        res.setSpecVersion(SpecVersion.V30);
-        res.setMaximum(BigDecimal.valueOf(1L, 1));
-        res.setMinimum(BigDecimal.valueOf(7886L, 1));
-        res.setExample("1111");
-        return res;
-      }
-    }.build());
-    _2.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_2);
-  }
-
   private final void _build_component_com_apihug_demo_inventory_wire_api_storage_request_AddStorageLocationRequest(
       ) {
     //  Build of the component: AddStorageLocationRequest proto: com/apihug/demo/inventory/proto/api/storage/request/request.proto
@@ -1018,6 +835,189 @@ public final class InventoryApiCollector implements Collector<OpenAPI, Schema, A
     res.addItem(_4);
   }
 
+  private final void _build_component_com_apihug_demo_inventory_wire_api_admin_StockInRequest() {
+    //  Build of the component: StockInRequest proto: com/apihug/demo/inventory/proto/api/admin/request.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.inventory.wire.api.admin.StockInRequest", res);
+    res.setClzName("com.apihug.demo.inventory.wire.api.admin.StockInRequest");
+    res.setName("StockInRequest");
+    res.setProtoFrom("com/apihug/demo/inventory/proto/api/admin/request.proto");
+    res.setProtoEntity("StockInRequest");
+    res.setDescription("Stock in request");
+    res.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("Stock in request");
+        res.setSpecVersion(SpecVersion.V30);
+        return res;
+      }
+    }.build());
+    // Add field 0 sku
+    ComponentItem<Schema> _0 = new ComponentItem();
+    _0.setClz("java.lang.String");
+    _0.setName("sku");
+    _0.setFieldName("sku");
+    _0.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("sku of this product");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setMaxLength(32);
+        res.setNullable(false);
+        res.setExample("S1JSF0S0FA");
+        return res;
+      }
+    }.build());
+    _0.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    _0.setRule(new Builder<Map>() {
+      @Override
+      public Map build() {
+        Map res = new LinkedHashMap();
+        res.put("nature", "NAME");
+        res.put("name", "nature");
+        return res;
+      }
+    }.build());
+    res.addItem(_0);
+    // Add field 1 quantity
+    ComponentItem<Schema> _1 = new ComponentItem();
+    _1.setClz("java.lang.Long");
+    _1.setName("quantity");
+    _1.setFieldName("quantity");
+    _1.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("quantity of this load");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setMaximum(BigDecimal.valueOf(1L, 1));
+        res.setMinimum(BigDecimal.valueOf(9999L, 1));
+        res.setExample("11");
+        return res;
+      }
+    }.build());
+    _1.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_1);
+  }
+
+  private final void _build_component_com_apihug_demo_inventory_wire_api_admin_StockOutRequest() {
+    //  Build of the component: StockOutRequest proto: com/apihug/demo/inventory/proto/api/admin/request.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.inventory.wire.api.admin.StockOutRequest", res);
+    res.setClzName("com.apihug.demo.inventory.wire.api.admin.StockOutRequest");
+    res.setName("StockOutRequest");
+    res.setProtoFrom("com/apihug/demo/inventory/proto/api/admin/request.proto");
+    res.setProtoEntity("StockOutRequest");
+    res.setDescription("Stock out request");
+    res.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("Stock out request");
+        res.setSpecVersion(SpecVersion.V30);
+        return res;
+      }
+    }.build());
+    // Add field 0 sku
+    ComponentItem<Schema> _0 = new ComponentItem();
+    _0.setClz("java.lang.String");
+    _0.setName("sku");
+    _0.setFieldName("sku");
+    _0.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("sku of this product");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setMaxLength(32);
+        res.setNullable(false);
+        res.setExample("S1JSF0S0FA");
+        return res;
+      }
+    }.build());
+    _0.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    _0.setRule(new Builder<Map>() {
+      @Override
+      public Map build() {
+        Map res = new LinkedHashMap();
+        res.put("nature", "NAME");
+        res.put("name", "nature");
+        return res;
+      }
+    }.build());
+    res.addItem(_0);
+    // Add field 1 quantity
+    ComponentItem<Schema> _1 = new ComponentItem();
+    _1.setClz("java.lang.Long");
+    _1.setName("quantity");
+    _1.setFieldName("quantity");
+    _1.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("quantity of this load");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setMaximum(BigDecimal.valueOf(1L, 1));
+        res.setMinimum(BigDecimal.valueOf(9999L, 1));
+        res.setExample("11");
+        return res;
+      }
+    }.build());
+    _1.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_1);
+    // Add field 2 order_id
+    ComponentItem<Schema> _2 = new ComponentItem();
+    _2.setClz("java.lang.Long");
+    _2.setName("order_id");
+    _2.setFieldName("orderId");
+    _2.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("id of the order");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setMaximum(BigDecimal.valueOf(1L, 1));
+        res.setMinimum(BigDecimal.valueOf(7886L, 1));
+        res.setExample("1111");
+        return res;
+      }
+    }.build());
+    _2.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_2);
+  }
+
   private final void _build_service_com_apihug_demo_inventory_wire_api_storage_InventoryStorageService(
       ) {
     // ----------------------------------------------------
@@ -1275,10 +1275,6 @@ public final class InventoryApiCollector implements Collector<OpenAPI, Schema, A
     _build_component_com_apihug_demo_inventory_wire_infra_settings_admin_StockStatusEnum();
     // Build for Enum :com.apihug.demo.inventory.wire.infra.settings.InventoryAuthorityEnum
     _build_component_com_apihug_demo_inventory_wire_infra_settings_InventoryAuthorityEnum();
-    // Build for Component : com.apihug.demo.inventory.wire.api.admin.StockInRequest
-    _build_component_com_apihug_demo_inventory_wire_api_admin_StockInRequest();
-    // Build for Component : com.apihug.demo.inventory.wire.api.admin.StockOutRequest
-    _build_component_com_apihug_demo_inventory_wire_api_admin_StockOutRequest();
     // Build for Component : com.apihug.demo.inventory.wire.api.storage.request.AddStorageLocationRequest
     _build_component_com_apihug_demo_inventory_wire_api_storage_request_AddStorageLocationRequest();
     // Build for Component : com.apihug.demo.inventory.wire.api.storage.request.DeleteStorageLocationRequest
@@ -1291,6 +1287,10 @@ public final class InventoryApiCollector implements Collector<OpenAPI, Schema, A
     _build_component_com_apihug_demo_inventory_wire_api_admin_StockInResponse();
     // Build for Component : com.apihug.demo.inventory.wire.api.admin.StockOutResponse
     _build_component_com_apihug_demo_inventory_wire_api_admin_StockOutResponse();
+    // Build for Component : com.apihug.demo.inventory.wire.api.admin.StockInRequest
+    _build_component_com_apihug_demo_inventory_wire_api_admin_StockInRequest();
+    // Build for Component : com.apihug.demo.inventory.wire.api.admin.StockOutRequest
+    _build_component_com_apihug_demo_inventory_wire_api_admin_StockOutRequest();
     // Build For Service com.apihug.demo.inventory.wire.api.storage.InventoryStorageService
     _build_service_com_apihug_demo_inventory_wire_api_storage_InventoryStorageService();
     // Build For Service com.apihug.demo.inventory.wire.api.admin.InventoryAdminService

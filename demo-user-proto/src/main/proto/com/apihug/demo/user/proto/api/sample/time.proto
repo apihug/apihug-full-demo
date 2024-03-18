@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package com.apihug.demo.user.proto.api.sample;
+
+import "extend/domain.proto";
+import "swagger/annotations.proto";
+
+option (hope.domain.kind) = BEAN;
+
+message TimeDemoRequest {
+  option (hope.swagger.schema) = {
+    json_schema: {
+      description: "demo to show how use the time";
+    };
+  };
+
+  string name = 1 [(hope.swagger.field) = {
+    description: "name of the user";
+    example: "My Lord"
+    empty: FALSE;
+    mock: {
+      nature: NAME
+    }
+    max_length: {
+      value: 32
+    }
+  }];
+
+  string first_date_time = 2 [(hope.swagger.field) = {
+    description: "first demo field for date time";
+    format: DATE_TIME;
+    time_constraint_type: FUTURE;
+    date_format: YYYY_MM_DD_HH_MM_SS;
+  }];
+
+  string second_date = 3 [(hope.swagger.field) = {
+    description: "second demo example for date";
+    format: DATE;
+    time_constraint_type: PAST;
+    customized_date_format: "yyyy-MM-dd";
+  }];
+
+
+
+
+}

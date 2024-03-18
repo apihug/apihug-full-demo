@@ -19,6 +19,204 @@
     "description" : "Sample Tag"
   } ],
   "paths" : {
+    "/example-demo/list-a-sample" : {
+      "get" : {
+        "tags" : [ ],
+        "summary" : "",
+        "description" : "query return a list",
+        "operationId" : "SampleDemoService#ListQuery",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "query return a list",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/QueryResultDemoResponseListResult"
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false,
+        "security" : [ ],
+        "x-hope-operation" : {
+          "deprecated" : false,
+          "wrapper" : true,
+          "inputPlural" : false,
+          "outputPlural" : true,
+          "pageable" : false,
+          "protoFrom" : "com/apihug/demo/user/proto/api/sample/api.proto",
+          "empty" : false,
+          "serviceClz" : "com.apihug.demo.user.wire.api.sample.SampleDemoService",
+          "priority" : "LOW",
+          "group" : "CUSTOMER"
+        }
+      }
+    },
+    "/example-demo/page-a-sample" : {
+      "get" : {
+        "tags" : [ ],
+        "summary" : "",
+        "description" : "Demo how to query a page result",
+        "operationId" : "SampleDemoService#PageQuery",
+        "parameters" : [ {
+          "name" : "pageRequest",
+          "in" : "query",
+          "$ref" : "#/components/parameters/PageRequest"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Demo how to query a page result",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/QueryResultDemoResponsePageableResult"
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false,
+        "security" : [ ],
+        "x-hope-operation" : {
+          "deprecated" : false,
+          "wrapper" : true,
+          "inputPlural" : false,
+          "outputPlural" : false,
+          "pageable" : true,
+          "protoFrom" : "com/apihug/demo/user/proto/api/sample/api.proto",
+          "empty" : false,
+          "serviceClz" : "com.apihug.demo.user.wire.api.sample.SampleDemoService",
+          "priority" : "HIGH",
+          "group" : "CUSTOMER"
+        }
+      }
+    },
+    "/good/do-something" : {
+      "post" : {
+        "tags" : [ ],
+        "summary" : "",
+        "description" : "just do something funny",
+        "operationId" : "GoodService#DoSomthing",
+        "parameters" : [ ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "$ref" : "#/components/schemas/RequiredDemoRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "just do something funny",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "description" : "返回码,零成功,非零失败"
+                    },
+                    "message" : {
+                      "type" : "string",
+                      "description" : "返回提示信息"
+                    },
+                    "errors" : {
+                      "type" : "array",
+                      "description" : "错误详情列表",
+                      "items" : {
+                        "$ref" : "#/components/schemas/Error"
+                      },
+                      "title" : "errors"
+                    },
+                    "data" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false,
+        "security" : [ ],
+        "x-hope-operation" : {
+          "deprecated" : false,
+          "wrapper" : true,
+          "inputPlural" : false,
+          "outputPlural" : false,
+          "pageable" : false,
+          "protoFrom" : "com/apihug/demo/user/proto/api/good/good.proto",
+          "empty" : false,
+          "serviceClz" : "com.apihug.demo.user.wire.api.good.GoodService",
+          "priority" : "HIGH",
+          "group" : "CUSTOMER"
+        }
+      }
+    },
+    "/good/hello-world" : {
+      "get" : {
+        "tags" : [ "project" ],
+        "summary" : "",
+        "description" : "Say hello to the world",
+        "operationId" : "GoodService#SayHello",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Say hello to the world",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "description" : "返回码,零成功,非零失败"
+                    },
+                    "message" : {
+                      "type" : "string",
+                      "description" : "返回提示信息"
+                    },
+                    "errors" : {
+                      "type" : "array",
+                      "description" : "错误详情列表",
+                      "items" : {
+                        "$ref" : "#/components/schemas/Error"
+                      },
+                      "title" : "errors"
+                    },
+                    "data" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false,
+        "security" : [ ],
+        "x-hope-operation" : {
+          "deprecated" : false,
+          "wrapper" : true,
+          "inputPlural" : false,
+          "outputPlural" : false,
+          "pageable" : false,
+          "protoFrom" : "com/apihug/demo/user/proto/api/good/good.proto",
+          "empty" : false,
+          "serviceClz" : "com.apihug.demo.user.wire.api.good.GoodService",
+          "priority" : "HIGH",
+          "group" : "CUSTOMER"
+        }
+      }
+    },
     "/user/admin/change-password" : {
       "post" : {
         "tags" : [ ],
@@ -465,6 +663,71 @@
         },
         "x-hope-enum-type" : "true"
       },
+      "GoodLevelEnum" : {
+        "default" : "VERY_GOOD",
+        "description" : "Example Enum",
+        "oneOf" : [ {
+          "const" : "VERY_GOOD",
+          "description" : "GOOD",
+          "example" : "VERY_GOOD",
+          "title" : "VERY_GOOD",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-des-cn" : "you are good man"
+        }, {
+          "const" : "VERY_BAD",
+          "description" : "BAD",
+          "example" : "VERY_BAD",
+          "title" : "VERY_BAD",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-des-cn" : "you are bad man"
+        } ],
+        "title" : "GoodLevelEnum",
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.user.wire.infra.settings.good.GoodLevelEnum",
+          "protoFrom" : "com/apihug/demo/user/proto/infra/settings/good/constant.proto"
+        },
+        "x-hope-enum-type" : "true"
+      },
+      "MockDemoRequest" : {
+        "type" : "object",
+        "description" : "This is an example request",
+        "properties" : {
+          "name" : {
+            "type" : "string",
+            "description" : "name of the user",
+            "example" : "My Lord",
+            "maxLength" : 32,
+            "x-hope-mock" : {
+              "nature" : "NAME",
+              "name" : "nature"
+            }
+          },
+          "chineseName" : {
+            "type" : "string",
+            "description" : "name for chinese people",
+            "x-hope-validation-blank" : false,
+            "x-hope-mock" : {
+              "type" : "NAME",
+              "name" : "cname"
+            }
+          },
+          "chinaAddress" : {
+            "type" : "string",
+            "description" : "address of china",
+            "x-hope-validation-blank" : false,
+            "x-hope-mock" : {
+              "type" : "ADDRESS",
+              "withPrefix" : true,
+              "name" : "caddress"
+            }
+          }
+        },
+        "required" : [ "chinaAddress", "chineseName", "name" ],
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.user.wire.api.sample.MockDemoRequest",
+          "protoFrom" : "com/apihug/demo/user/proto/api/sample/mock.proto"
+        }
+      },
       "ProblemPhase" : {
         "default" : "CONTROLLER",
         "description" : "错误层次",
@@ -530,6 +793,114 @@
         "x-hope-java-class" : "hope.common.wire.constant.ProblemSeverity",
         "x-hope-enum-type" : "true"
       },
+      "QueryResultDemoResponse" : {
+        "type" : "object",
+        "description" : "demo for return query result",
+        "properties" : {
+          "name" : {
+            "type" : "string",
+            "description" : "name of god"
+          },
+          "remark" : {
+            "type" : "string",
+            "description" : "remark of the name"
+          }
+        },
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.user.wire.api.sample.QueryResultDemoResponse",
+          "protoFrom" : "com/apihug/demo/user/proto/api/sample/sample.proto"
+        }
+      },
+      "QueryResultDemoResponseListResult" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "返回码,零成功,非零失败"
+          },
+          "message" : {
+            "type" : "string",
+            "description" : "返回提示信息"
+          },
+          "errors" : {
+            "type" : "array",
+            "description" : "错误详情列表",
+            "items" : {
+              "$ref" : "#/components/schemas/Error"
+            },
+            "title" : "errors"
+          },
+          "data" : {
+            "type" : "array",
+            "description" : "信息载体",
+            "items" : {
+              "$ref" : "#/components/schemas/QueryResultDemoResponse"
+            }
+          }
+        }
+      },
+      "QueryResultDemoResponsePageable" : {
+        "type" : "object",
+        "properties" : {
+          "pageIndex" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "当前页码",
+            "minimum" : 1
+          },
+          "pageSize" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "单页数量",
+            "minimum" : 0
+          },
+          "totalCount" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "总数",
+            "minimum" : 0
+          },
+          "totalPage" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "总页数",
+            "minimum" : 0
+          },
+          "data" : {
+            "type" : "array",
+            "description" : "信息载体",
+            "items" : {
+              "$ref" : "#/components/schemas/QueryResultDemoResponse"
+            }
+          }
+        }
+      },
+      "QueryResultDemoResponsePageableResult" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "返回码,零成功,非零失败"
+          },
+          "message" : {
+            "type" : "string",
+            "description" : "返回提示信息"
+          },
+          "errors" : {
+            "type" : "array",
+            "description" : "错误详情列表",
+            "items" : {
+              "$ref" : "#/components/schemas/Error"
+            },
+            "title" : "errors"
+          },
+          "data" : {
+            "$ref" : "#/components/schemas/QueryResultDemoResponsePageable"
+          }
+        }
+      },
       "RegisterRequest" : {
         "type" : "object",
         "description" : "Register a user",
@@ -593,12 +964,65 @@
             "description" : "do not touch me directly you can not see me",
             "example" : "1024",
             "readOnly" : true
+          },
+          "mySonName" : {
+            "type" : "string",
+            "description" : "name of my son",
+            "x-hope-validation-blank" : false,
+            "x-hope-mock" : {
+              "type" : "NAME",
+              "name" : "cname"
+            }
           }
         },
-        "required" : [ "anAnother", "another", "name" ],
+        "required" : [ "anAnother", "another", "mySonName", "name" ],
         "x-hope-rt-meta" : {
           "clz" : "com.apihug.demo.user.wire.api.sample.RequiredDemoRequest",
           "protoFrom" : "com/apihug/demo/user/proto/api/sample/sample.proto"
+        }
+      },
+      "TimeDemoRequest" : {
+        "type" : "object",
+        "description" : "demo to show how use the time",
+        "properties" : {
+          "name" : {
+            "type" : "string",
+            "description" : "name of the user",
+            "example" : "My Lord",
+            "maxLength" : 32,
+            "x-hope-mock" : {
+              "nature" : "NAME",
+              "name" : "nature"
+            }
+          },
+          "firstDateTime" : {
+            "type" : "string",
+            "format" : "date-time",
+            "description" : "first demo field for date time",
+            "x-hope-field-alias" : {
+              "predefinedDateFormat" : "YYYY_MM_DD_HH_MM_SS"
+            },
+            "x-hope-validation" : {
+              "timeConstraint" : "FUTURE"
+            }
+          },
+          "secondDate" : {
+            "type" : "string",
+            "format" : "date",
+            "description" : "second demo example for date",
+            "x-hope-field-alias" : {
+              "customizedDateFormat" : "yyyy-MM-dd"
+            },
+            "x-hope-validation" : {
+              "customizedDateFormat" : "yyyy-MM-dd",
+              "timeConstraintType" : "PAST"
+            }
+          }
+        },
+        "required" : [ "name" ],
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.demo.user.wire.api.sample.TimeDemoRequest",
+          "protoFrom" : "com/apihug/demo/user/proto/api/sample/time.proto"
         }
       },
       "UserAuthorityEnum" : {
