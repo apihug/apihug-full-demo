@@ -11,7 +11,7 @@ import javax.annotation.Generated;
  * {@code @Bean } definition for the pieces that make up the client, for instance</br>
  * {@link feign.codec.Decoder}, {@link feign.codec.Encoder}, {@link feign.Contract}.</br>
  * <p>
- * You does not need to be annotated with {@code @Configuration}.</br>
+ * This class DOES NOT need to be annotated with {@code @Configuration}.</br>
  * However, if it is,then take care to exclude it from any {@code @ComponentScan} that</br>
  * would otherwise include this configuration as it will become the default source for {@link feign.codec.Decoder}, {@link feign.codec.Encoder}, {@link feign.Contract}, etc.,</br>
  * <p>

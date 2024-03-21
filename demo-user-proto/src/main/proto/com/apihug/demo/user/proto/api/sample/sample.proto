@@ -70,4 +70,22 @@ message QueryResultDemoResponse {
     description: "remark of the name";
   }];
 
+  string jake_name = 7 [(hope.swagger.field) = {
+    description: "name of the user";
+    example: "aaron";
+    blank: FALSE;
+    max_length:{
+      value:32;
+    }
+    min_length:{
+      value:2;
+    }
+    mock:{
+      chinese_name_rule:{
+        type: NAME
+      }
+    }
+  }];
+
+
 }
