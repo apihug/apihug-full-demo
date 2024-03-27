@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package com.apihug.demo.user.proto.domain;
+
+import "extend/domain.proto";
+import "domain/annotations.proto";
+
+option (hope.domain.kind) = ENTITY;
+
+message AccountEntity {
+
+
+  string name = 1 [(hope.persistence.column) = {
+    name: "NAME",
+    description: "name of the account",
+    nullable: FALSE,
+    updatable: FALSE,
+    length: {
+      value: 32
+    },
+    type: VARCHAR
+  }];
+
+  string email = 2 [(hope.persistence.column) = {
+    name: "EMAIL",
+    description: "email of the account",
+    updatable: FALSE,
+    unique: TRUE,
+    length: {
+      value: 64
+    },
+    type: VARCHAR
+  }];
+
+  string null = 3 [(hope.persistence.column) = {
+    name: "null",
+    description: "name of the user",
+    type: VARCHAR
+    length:{
+      value: 32
+    }
+    nullable: TRUE;
+  }];
+
+
+
+  option (hope.persistence.table) = {
+    name: "DEMO_USER_ACCOUNT",
+    description: "Account sample table",
+
+    indexes: {
+      name: "IDX_DEMO_USER_ACCOUNT_NAME",
+      column_list: ["name"]
+    },
+    indexes: {
+      name: "IDX_DEMO_USER_ACCOUNT_EMAIL",
+      column_list: ["email"]
+    },
+    wires: [ALL]
+  };
+}
