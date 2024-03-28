@@ -1,0 +1,81 @@
+{
+  "tables" : {
+    "AccountEntity" : {
+      "deprecated" : false,
+      "clz" : "com.apihug.demo.user.wire.domain.AccountEntity",
+      "name" : "DEMO_USER_ACCOUNT",
+      "description" : "Account sample table",
+      "indexes" : [ {
+        "name" : "IDX_DEMO_USER_ACCOUNT_NAME",
+        "columnList" : [ "NAME" ],
+        "unique" : false
+      }, {
+        "name" : "IDX_DEMO_USER_ACCOUNT_EMAIL",
+        "columnList" : [ "EMAIL" ],
+        "unique" : false
+      } ],
+      "protoFrom" : "com/apihug/demo/user/proto/domain/account.proto",
+      "protoEntity" : "AccountEntity",
+      "wires" : [ "ALL" ],
+      "columns" : {
+        "name" : {
+          "deprecated" : false,
+          "fieldName" : "name",
+          "name" : "NAME",
+          "clz" : "java.lang.String",
+          "description" : "name of the account",
+          "unique" : false,
+          "nullable" : false,
+          "insertable" : true,
+          "updatable" : false,
+          "searchable" : false,
+          "sortable" : false,
+          "length" : 32,
+          "enumType" : "DEFAULT",
+          "type" : "VARCHAR",
+          "plural" : false,
+          "enumColumn" : false,
+          "id" : false
+        },
+        "email" : {
+          "deprecated" : false,
+          "fieldName" : "email",
+          "name" : "EMAIL",
+          "clz" : "java.lang.String",
+          "description" : "email of the account",
+          "unique" : true,
+          "nullable" : true,
+          "insertable" : true,
+          "updatable" : false,
+          "searchable" : false,
+          "sortable" : false,
+          "length" : 64,
+          "enumType" : "DEFAULT",
+          "type" : "VARCHAR",
+          "plural" : false,
+          "enumColumn" : false,
+          "id" : false
+        },
+        "null" : {
+          "deprecated" : false,
+          "fieldName" : "null",
+          "name" : "null",
+          "clz" : "java.lang.String",
+          "description" : "name of the user",
+          "unique" : false,
+          "nullable" : true,
+          "insertable" : true,
+          "updatable" : true,
+          "searchable" : false,
+          "sortable" : false,
+          "length" : 32,
+          "enumType" : "DEFAULT",
+          "type" : "VARCHAR",
+          "plural" : false,
+          "enumColumn" : false,
+          "id" : false
+        }
+      }
+    }
+  }
+}

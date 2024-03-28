@@ -804,8 +804,39 @@
           "remark" : {
             "type" : "string",
             "description" : "remark of the name"
+          },
+          "jakeName" : {
+            "type" : "string",
+            "description" : "name of the user",
+            "example" : "aaron",
+            "maxLength" : 32,
+            "minLength" : 2,
+            "x-hope-validation-blank" : false,
+            "x-hope-mock" : {
+              "type" : "NAME",
+              "name" : "cname"
+            }
+          },
+          "blue" : {
+            "type" : "string",
+            "description" : "blue is good",
+            "x-hope-validation-blank" : false,
+            "x-hope-mock" : {
+              "nature" : "COLOR",
+              "name" : "nature"
+            }
+          },
+          "catName" : {
+            "type" : "string",
+            "description" : "cat is bad",
+            "x-hope-validation-blank" : false,
+            "x-hope-mock" : {
+              "nature" : "CAT",
+              "name" : "nature"
+            }
           }
         },
+        "required" : [ "blue", "catName", "jakeName" ],
         "x-hope-rt-meta" : {
           "clz" : "com.apihug.demo.user.wire.api.sample.QueryResultDemoResponse",
           "protoFrom" : "com/apihug/demo/user/proto/api/sample/sample.proto"

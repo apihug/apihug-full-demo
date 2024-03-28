@@ -1,6 +1,6 @@
 [versions]
 # libraries
-apihug = "0.7.3-RELEASE"
+apihug = "0.7.4-RELEASE"
 
 # test
 archUnit = "1.1.0"

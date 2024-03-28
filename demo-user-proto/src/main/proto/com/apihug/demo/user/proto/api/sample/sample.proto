@@ -4,6 +4,8 @@ package com.apihug.demo.user.proto.api.sample;
 
 import "extend/domain.proto";
 import "swagger/annotations.proto";
+import "com/apihug/demo/user/proto/infra/settings/admin/constant.proto";
+import "com/apihug/demo/user/proto/infra/settings/sample/constant.proto";
 
 option (hope.domain.kind) = BEAN;
 
@@ -70,7 +72,7 @@ message QueryResultDemoResponse {
     description: "remark of the name";
   }];
 
-  string jake_name = 7 [(hope.swagger.field) = {
+  string jake_name = 3 [(hope.swagger.field) = {
     description: "name of the user";
     example: "aaron";
     blank: FALSE;
@@ -87,5 +89,22 @@ message QueryResultDemoResponse {
     }
   }];
 
+  string blue = 4 [(hope.swagger.field) = {
+    description: "blue is good";
+    blank: FALSE;
+    empty: FALSE;
+    mock:{
+      nature: COLOR;
+    }
+  }];
 
+  string cat_name = 5 [(hope.swagger.field) = {
+    description: "cat is bad";
+    blank: FALSE;
+    empty: FALSE;
+    mock:{
+      nature: CAT;
+    }
+  }];
+  
 }
