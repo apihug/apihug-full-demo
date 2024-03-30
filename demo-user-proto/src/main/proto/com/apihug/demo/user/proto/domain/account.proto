@@ -32,16 +32,21 @@ message AccountEntity {
     type: VARCHAR
   }];
 
-  string null = 3 [(hope.persistence.column) = {
-    name: "null",
-    description: "name of the user",
+  string frontend_color = 3 [(hope.persistence.column) = {
+    name: "FRONTEND_COLOR",
+    description: "color of the frontend",
     type: VARCHAR
     length:{
-      value: 32
+      value: 111
     }
     nullable: TRUE;
   }];
 
+  string long_time = 4 [(hope.persistence.column) = {
+    name: "LONG_TIME",
+    description: "long time ago",
+    type: TIMESTAMP
+  }];
 
 
   option (hope.persistence.table) = {
