@@ -32,34 +32,21 @@ message AccountEntity {
     type: VARCHAR
   }];
 
-  string jimi = 3 [(hope.persistence.column) = {
-    name: "jimi",
-    description: "name of the user",
+  string frontend_color = 3 [(hope.persistence.column) = {
+    name: "FRONTEND_COLOR",
+    description: "color of the frontend",
     type: VARCHAR
     length:{
-      value: 32
+      value: 111
     }
     nullable: TRUE;
   }];
 
-  string da_mei = 4 [(hope.persistence.column) = {
-    name: "DA_MEI",
-    description: "da mei is good",
-    type: VARCHAR
-    length:{
-      value: 12
-    }
-    nullable: TRUE;
+  string long_time = 4 [(hope.persistence.column) = {
+    name: "LONG_TIME",
+    description: "long time ago",
+    type: TIMESTAMP
   }];
-
-  int32 da_wang = 5 [(hope.persistence.column) = {
-    name: "DA_WANG",
-    description: "big king",
-    type: INTEGER
-    insertable: TRUE;
-    updatable: TRUE;
-  }];
-
 
 
   option (hope.persistence.table) = {
