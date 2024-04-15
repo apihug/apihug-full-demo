@@ -17,20 +17,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.stereotype.Service;
 
-/**
- * Service for good
- */
+/** Service for good */
 @Service
-@Version(
-    version = "0.1.1-SNAPSHOT",
-    type = Type.ADD,
-    timestamp = "2024-03-14 16:20:42"
-)
+@Version(version = "0.1.1-SNAPSHOT", type = Type.ADD, timestamp = "2024-03-14 16:20:42")
 @ProtoFrom(
     value = "com/apihug/demo/user/proto/api/good/good.proto",
     entity = "GoodService",
-    kind = Kind.RPC
-)
+    kind = Kind.RPC)
 public class GoodServiceImpl implements GoodService {
   protected final Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -40,27 +33,18 @@ public class GoodServiceImpl implements GoodService {
     this._supplier = _supplier.getIfAvailable(() -> AuditContextSupplier.EMPTY);
   }
 
-  /**
-   * {@inheritDoc}
-   *
-   */
+  /** {@inheritDoc} */
   @Override
   public void sayHello(final SimpleResultBuilder<String> builder) {
 
     builder.notImplemented();
-
   }
 
-  /**
-   * {@inheritDoc}
-   *
-   */
+  /** {@inheritDoc} */
   @Override
-  public void doSomthing(final SimpleResultBuilder<String> builder,
-      final RequiredDemoRequest requiredDemoRequest) {
-
-    builder.notImplemented();
-
+  public void doSomething(
+      SimpleResultBuilder<String> builder, RequiredDemoRequest requiredDemoRequest) {
+    GoodService.super.doSomething(builder, requiredDemoRequest);
   }
 
   protected AuditContext<Long, Long> auditContext() {
