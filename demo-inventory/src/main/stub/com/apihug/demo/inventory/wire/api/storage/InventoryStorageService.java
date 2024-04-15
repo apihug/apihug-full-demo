@@ -14,7 +14,6 @@ public interface InventoryStorageService {
    * Authorization:
    *
    * <ul>
-   * 	<li>Combinator: AND</li>
    * 	<li>Authorities: [ADD_STORAGE_LOCATION]</li>
    * </ul>
    * @apiNote
@@ -31,7 +30,6 @@ public interface InventoryStorageService {
    * Authorization:
    *
    * <ul>
-   * 	<li>Combinator: AND</li>
    * 	<li>Authorities: [DELETE_STORAGE_LOCATION]</li>
    * </ul>
    * @apiNote

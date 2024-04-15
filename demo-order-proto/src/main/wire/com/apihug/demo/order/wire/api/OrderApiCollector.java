@@ -193,50 +193,125 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
     clzPathMap.computeIfAbsent(clz, s -> new LinkedHashSet<>()).add(path);
   }
 
-  private final void _build_component_com_apihug_demo_order_wire_infra_settings_OrderAuthorityEnum(
-      ) {
-    //  Build of the component: OrderAuthorityEnum proto: com/apihug/demo/order/proto/infra/settings/authority.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum", res);
-    res.setClzName("com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum");
-    res.setEnumClz(true);
-    res.setName("OrderAuthorityEnum");
-    res.setPayload(new Builder<Schema<OrderAuthorityEnum>>() {
+  private final void _build_service_com_apihug_demo_order_wire_api_admin_OrderAdminService() {
+    // ----------------------------------------------------
+    // START-[Service Context] com.apihug.demo.order.wire.api.admin.OrderAdminService
+    Map sc = servicesContext.computeIfAbsent("com.apihug.demo.order.wire.api.admin.OrderAdminService", s-> new LinkedHashMap());
+    sc.put("description", "Admin to control order");
+    sc.put("protoFrom", "com/apihug/demo/order/proto/api/admin/api.proto");
+    sc.put("protoEntity", "OrderAdminService");
+    sc.put("basePath", "/order/admin");
+    List<String> sc_paths = new ArrayList();
+    sc.put("paths", sc_paths);
+    // --------------------------
+    // Register Path of this Service: [1] "/order/admin/hello-world"
+    sc_paths.add("/order/admin/hello-world");
+    Map _sc_paths_item_1 = pathsContext.computeIfAbsent("/order/admin/hello-world", s-> new LinkedHashMap());
+    _sc_paths_item_1.put("action", "GET");
+    _sc_paths_item_1.put("method", "SayHello");
+    _sc_paths_item_1.put("wrapper", true);
+    _sc_paths_item_1.put("pageable", false);
+    _sc_paths_item_1.put("request", false);
+    _sc_paths_item_1.put("response", false);
+    _sc_paths_item_1.put("session", false);
+    _sc_paths_item_1.put("inputPlural", false);
+    _sc_paths_item_1.put("outputPlural", false);
+    _sc_paths_item_1.put("priority", "HIGH");
+    _sc_paths_item_1.put("requestRef", "hope.common.adaptor.Empty");
+    _sc_paths_item_1.put("responseRef", "hope.common.adaptor.Empty");
+    _sc_paths_item_1.put("operation", new Builder<Operation>() {
       @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("Example Authority Enum for the project, MODIFY IT");
-        List<OrderAuthorityEnum> values  = new ArrayList();
-        values.add(OrderAuthorityEnum.ORDER_ADD);
-        values.add(OrderAuthorityEnum.ORDER_DELETE);
-        res.setDefault(OrderAuthorityEnum.ORDER_ADD);
-        res.setEnum(values);
+      public Operation build() {
+        final Operation operation =  new Operation();
+        List<String> _tags = new ArrayList();
+        _tags.add("project");
+        operation.setTags(_tags);
+        operation.setDescription("hello from the admin server");
+        return operation;
+      }
+    }.build());
+    _sc_paths_item_1.put("authorization", new Builder<Authorization>() {
+      @Override
+      public Authorization build() {
+        Authorization res = Authorization.ANONYMOUS;
         return res;
       }
     }.build());
-  }
-
-  private final void _build_component_com_apihug_demo_order_wire_infra_settings_admin_OrderStatusEnum(
-      ) {
-    //  Build of the component: OrderStatusEnum proto: com/apihug/demo/order/proto/infra/settings/admin/constant.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum", res);
-    res.setClzName("com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum");
-    res.setEnumClz(true);
-    res.setName("OrderStatusEnum");
-    res.setPayload(new Builder<Schema<OrderStatusEnum>>() {
+    _sc_paths_item_1.put("group", "CUSTOMER");
+    _sc_paths_item_1.put("empty", false);
+    // --------------------------
+    // Register Path of this Service: [2] "/order/admin/add-order"
+    sc_paths.add("/order/admin/add-order");
+    Map _sc_paths_item_2 = pathsContext.computeIfAbsent("/order/admin/add-order", s-> new LinkedHashMap());
+    _sc_paths_item_2.put("action", "POST");
+    _sc_paths_item_2.put("method", "AddOrder");
+    _sc_paths_item_2.put("wrapper", true);
+    _sc_paths_item_2.put("pageable", false);
+    _sc_paths_item_2.put("request", false);
+    _sc_paths_item_2.put("response", false);
+    _sc_paths_item_2.put("session", false);
+    _sc_paths_item_2.put("inputPlural", false);
+    _sc_paths_item_2.put("outputPlural", false);
+    _sc_paths_item_2.put("priority", "FATAL");
+    _sc_paths_item_2.put("requestRef", "com.apihug.demo.order.wire.api.admin.request.AddOrderRequest");
+    _sc_paths_item_2.put("responseRef", "com.apihug.demo.order.wire.api.admin.response.OrderAddedResponse");
+    _sc_paths_item_2.put("operation", new Builder<Operation>() {
       @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("Status of the order");
-        List<OrderStatusEnum> values  = new ArrayList();
-        values.add(OrderStatusEnum.NORMAL);
-        values.add(OrderStatusEnum.DELETED);
-        res.setDefault(OrderStatusEnum.NORMAL);
-        res.setEnum(values);
+      public Operation build() {
+        final Operation operation =  new Operation();
+        operation.setDescription("add order");
+        return operation;
+      }
+    }.build());
+    _sc_paths_item_2.put("authorization", new Builder<Authorization>() {
+      @Override
+      public Authorization build() {
+        Authorization res = new Authorization();
+        res.addAuthority(OrderAuthorityEnum.ORDER_ADD);
+        res.setCombinator(Authorization.Combinator.AND);
         return res;
       }
     }.build());
+    _sc_paths_item_2.put("group", "CUSTOMER");
+    _sc_paths_item_2.put("empty", false);
+    // --------------------------
+    // Register Path of this Service: [3] "/order/admin/delete-order"
+    sc_paths.add("/order/admin/delete-order");
+    Map _sc_paths_item_3 = pathsContext.computeIfAbsent("/order/admin/delete-order", s-> new LinkedHashMap());
+    _sc_paths_item_3.put("action", "POST");
+    _sc_paths_item_3.put("method", "DeleteOrder");
+    _sc_paths_item_3.put("wrapper", true);
+    _sc_paths_item_3.put("pageable", false);
+    _sc_paths_item_3.put("request", false);
+    _sc_paths_item_3.put("response", false);
+    _sc_paths_item_3.put("session", false);
+    _sc_paths_item_3.put("inputPlural", false);
+    _sc_paths_item_3.put("outputPlural", false);
+    _sc_paths_item_3.put("priority", "MIDDLE");
+    _sc_paths_item_3.put("requestRef", "com.apihug.demo.order.wire.api.admin.request.DeleteOrderRequest");
+    _sc_paths_item_3.put("responseRef", "com.apihug.demo.order.wire.api.admin.response.OrderDeletedResponse");
+    _sc_paths_item_3.put("operation", new Builder<Operation>() {
+      @Override
+      public Operation build() {
+        final Operation operation =  new Operation();
+        operation.setDescription("delete order ");
+        return operation;
+      }
+    }.build());
+    _sc_paths_item_3.put("authorization", new Builder<Authorization>() {
+      @Override
+      public Authorization build() {
+        Authorization res = new Authorization();
+        res.addAuthority(OrderAuthorityEnum.ORDER_ADD);
+        res.addAuthority(OrderAuthorityEnum.ORDER_DELETE);
+        res.setCombinator(Authorization.Combinator.AND);
+        return res;
+      }
+    }.build());
+    _sc_paths_item_3.put("group", "CUSTOMER");
+    _sc_paths_item_3.put("empty", false);
+    // END-[Service Context] com.apihug.demo.order.wire.api.admin.OrderAdminService
+    // ----------------------------------------------------
   }
 
   private final void _build_component_com_apihug_demo_order_wire_api_admin_request_AddOrderRequest(
@@ -593,125 +668,50 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
     res.addItem(_1);
   }
 
-  private final void _build_service_com_apihug_demo_order_wire_api_admin_OrderAdminService() {
-    // ----------------------------------------------------
-    // START-[Service Context] com.apihug.demo.order.wire.api.admin.OrderAdminService
-    Map sc = servicesContext.computeIfAbsent("com.apihug.demo.order.wire.api.admin.OrderAdminService", s-> new LinkedHashMap());
-    sc.put("description", "Admin to control order");
-    sc.put("protoFrom", "com/apihug/demo/order/proto/api/admin/api.proto");
-    sc.put("protoEntity", "OrderAdminService");
-    sc.put("basePath", "/order/admin");
-    List<String> sc_paths = new ArrayList();
-    sc.put("paths", sc_paths);
-    // --------------------------
-    // Register Path of this Service: [1] "/order/admin/hello-world"
-    sc_paths.add("/order/admin/hello-world");
-    Map _sc_paths_item_1 = pathsContext.computeIfAbsent("/order/admin/hello-world", s-> new LinkedHashMap());
-    _sc_paths_item_1.put("action", "GET");
-    _sc_paths_item_1.put("method", "SayHello");
-    _sc_paths_item_1.put("wrapper", true);
-    _sc_paths_item_1.put("pageable", false);
-    _sc_paths_item_1.put("request", false);
-    _sc_paths_item_1.put("response", false);
-    _sc_paths_item_1.put("session", false);
-    _sc_paths_item_1.put("inputPlural", false);
-    _sc_paths_item_1.put("outputPlural", false);
-    _sc_paths_item_1.put("priority", "HIGH");
-    _sc_paths_item_1.put("requestRef", "hope.common.adaptor.Empty");
-    _sc_paths_item_1.put("responseRef", "hope.common.adaptor.Empty");
-    _sc_paths_item_1.put("operation", new Builder<Operation>() {
+  private final void _build_component_com_apihug_demo_order_wire_infra_settings_admin_OrderStatusEnum(
+      ) {
+    //  Build of the component: OrderStatusEnum proto: com/apihug/demo/order/proto/infra/settings/admin/constant.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum", res);
+    res.setClzName("com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum");
+    res.setEnumClz(true);
+    res.setName("OrderStatusEnum");
+    res.setPayload(new Builder<Schema<OrderStatusEnum>>() {
       @Override
-      public Operation build() {
-        final Operation operation =  new Operation();
-        List<String> _tags = new ArrayList();
-        _tags.add("project");
-        operation.setTags(_tags);
-        operation.setDescription("hello from the admin server");
-        return operation;
-      }
-    }.build());
-    _sc_paths_item_1.put("authorization", new Builder<Authorization>() {
-      @Override
-      public Authorization build() {
-        Authorization res = Authorization.ANONYMOUS;
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("Status of the order");
+        List<OrderStatusEnum> values  = new ArrayList();
+        values.add(OrderStatusEnum.NORMAL);
+        values.add(OrderStatusEnum.DELETED);
+        res.setDefault(OrderStatusEnum.NORMAL);
+        res.setEnum(values);
         return res;
       }
     }.build());
-    _sc_paths_item_1.put("group", "CUSTOMER");
-    _sc_paths_item_1.put("empty", false);
-    // --------------------------
-    // Register Path of this Service: [2] "/order/admin/add-order"
-    sc_paths.add("/order/admin/add-order");
-    Map _sc_paths_item_2 = pathsContext.computeIfAbsent("/order/admin/add-order", s-> new LinkedHashMap());
-    _sc_paths_item_2.put("action", "POST");
-    _sc_paths_item_2.put("method", "AddOrder");
-    _sc_paths_item_2.put("wrapper", true);
-    _sc_paths_item_2.put("pageable", false);
-    _sc_paths_item_2.put("request", false);
-    _sc_paths_item_2.put("response", false);
-    _sc_paths_item_2.put("session", false);
-    _sc_paths_item_2.put("inputPlural", false);
-    _sc_paths_item_2.put("outputPlural", false);
-    _sc_paths_item_2.put("priority", "FATAL");
-    _sc_paths_item_2.put("requestRef", "com.apihug.demo.order.wire.api.admin.request.AddOrderRequest");
-    _sc_paths_item_2.put("responseRef", "com.apihug.demo.order.wire.api.admin.response.OrderAddedResponse");
-    _sc_paths_item_2.put("operation", new Builder<Operation>() {
+  }
+
+  private final void _build_component_com_apihug_demo_order_wire_infra_settings_OrderAuthorityEnum(
+      ) {
+    //  Build of the component: OrderAuthorityEnum proto: com/apihug/demo/order/proto/infra/settings/authority.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum", res);
+    res.setClzName("com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum");
+    res.setEnumClz(true);
+    res.setName("OrderAuthorityEnum");
+    res.setPayload(new Builder<Schema<OrderAuthorityEnum>>() {
       @Override
-      public Operation build() {
-        final Operation operation =  new Operation();
-        operation.setDescription("add order");
-        return operation;
-      }
-    }.build());
-    _sc_paths_item_2.put("authorization", new Builder<Authorization>() {
-      @Override
-      public Authorization build() {
-        Authorization res = new Authorization();
-        res.addAuthority(OrderAuthorityEnum.ORDER_ADD);
-        res.setCombinator(Authorization.Combinator.AND);
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("Example Authority Enum for the project, MODIFY IT");
+        List<OrderAuthorityEnum> values  = new ArrayList();
+        values.add(OrderAuthorityEnum.ORDER_ADD);
+        values.add(OrderAuthorityEnum.ORDER_DELETE);
+        res.setDefault(OrderAuthorityEnum.ORDER_ADD);
+        res.setEnum(values);
         return res;
       }
     }.build());
-    _sc_paths_item_2.put("group", "CUSTOMER");
-    _sc_paths_item_2.put("empty", false);
-    // --------------------------
-    // Register Path of this Service: [3] "/order/admin/delete-order"
-    sc_paths.add("/order/admin/delete-order");
-    Map _sc_paths_item_3 = pathsContext.computeIfAbsent("/order/admin/delete-order", s-> new LinkedHashMap());
-    _sc_paths_item_3.put("action", "POST");
-    _sc_paths_item_3.put("method", "DeleteOrder");
-    _sc_paths_item_3.put("wrapper", true);
-    _sc_paths_item_3.put("pageable", false);
-    _sc_paths_item_3.put("request", false);
-    _sc_paths_item_3.put("response", false);
-    _sc_paths_item_3.put("session", false);
-    _sc_paths_item_3.put("inputPlural", false);
-    _sc_paths_item_3.put("outputPlural", false);
-    _sc_paths_item_3.put("priority", "MIDDLE");
-    _sc_paths_item_3.put("requestRef", "com.apihug.demo.order.wire.api.admin.request.DeleteOrderRequest");
-    _sc_paths_item_3.put("responseRef", "com.apihug.demo.order.wire.api.admin.response.OrderDeletedResponse");
-    _sc_paths_item_3.put("operation", new Builder<Operation>() {
-      @Override
-      public Operation build() {
-        final Operation operation =  new Operation();
-        operation.setDescription("delete order ");
-        return operation;
-      }
-    }.build());
-    _sc_paths_item_3.put("authorization", new Builder<Authorization>() {
-      @Override
-      public Authorization build() {
-        Authorization res = new Authorization();
-        res.addAuthority(OrderAuthorityEnum.ORDER_ADD);
-        res.addAuthority(OrderAuthorityEnum.ORDER_DELETE);
-        res.setCombinator(Authorization.Combinator.AND);
-        return res;
-      }
-    }.build());
-    _sc_paths_item_3.put("group", "CUSTOMER");
-    _sc_paths_item_3.put("empty", false);
-    // END-[Service Context] com.apihug.demo.order.wire.api.admin.OrderAdminService
-    // ----------------------------------------------------
   }
 
   private final void _merger_api() {
@@ -759,10 +759,8 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
   }
 
   private void _init() {
-    // Build for Enum :com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum
-    _build_component_com_apihug_demo_order_wire_infra_settings_OrderAuthorityEnum();
-    // Build for Enum :com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum
-    _build_component_com_apihug_demo_order_wire_infra_settings_admin_OrderStatusEnum();
+    // Build For Service com.apihug.demo.order.wire.api.admin.OrderAdminService
+    _build_service_com_apihug_demo_order_wire_api_admin_OrderAdminService();
     // Build for Component : com.apihug.demo.order.wire.api.admin.request.AddOrderRequest
     _build_component_com_apihug_demo_order_wire_api_admin_request_AddOrderRequest();
     // Build for Component : com.apihug.demo.order.wire.api.admin.request.DeleteOrderRequest
@@ -771,8 +769,10 @@ public final class OrderApiCollector implements Collector<OpenAPI, Schema, ApiRe
     _build_component_com_apihug_demo_order_wire_api_admin_response_OrderAddedResponse();
     // Build for Component : com.apihug.demo.order.wire.api.admin.response.OrderDeletedResponse
     _build_component_com_apihug_demo_order_wire_api_admin_response_OrderDeletedResponse();
-    // Build For Service com.apihug.demo.order.wire.api.admin.OrderAdminService
-    _build_service_com_apihug_demo_order_wire_api_admin_OrderAdminService();
+    // Build for Enum :com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum
+    _build_component_com_apihug_demo_order_wire_infra_settings_admin_OrderStatusEnum();
+    // Build for Enum :com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum
+    _build_component_com_apihug_demo_order_wire_infra_settings_OrderAuthorityEnum();
     // Build OpenAPI information
     _merger_api();
     api.tags(new ArrayList<>(tags.values()));

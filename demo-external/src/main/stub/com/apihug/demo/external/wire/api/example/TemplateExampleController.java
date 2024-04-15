@@ -5,7 +5,6 @@ import com.apihug.demo.external.wire.api.example.request.TemplateExampleRequest;
 import com.apihug.demo.external.wire.api.example.response.TemplateExampleResponse;
 import hope.common.api.Result;
 import hope.common.service.annotation.Group;
-import hope.common.service.api.Authorization;
 import hope.common.spring.SimpleResultBuilder;
 import hope.common.spring.aspect.AspectManager;
 import io.swagger.v3.oas.annotations.Operation;
@@ -33,9 +32,7 @@ public class TemplateExampleController {
   }
 
   @PostMapping("/demo-all-external/post-test")
-  @ExternalAuthorization(
-      combinator = Authorization.Combinator.AND
-  )
+  @ExternalAuthorization
   @Group(
       group = hope.common.service.api.Group.CUSTOMER
   )
@@ -61,16 +58,15 @@ public class TemplateExampleController {
   }
 
   @PostMapping("/demo-all-external/ping")
-  @ExternalAuthorization(
-      combinator = Authorization.Combinator.AND
-  )
+  @ExternalAuthorization
   @Group(
       group = hope.common.service.api.Group.CUSTOMER
   )
   @Operation(
       description = "ping you like /ping?name=jake"
   )
-  public ResponseEntity<Result<String>> ping(@RequestParam(name = "name") final String name) {
+  public ResponseEntity<Result<String>> ping(
+      @RequestParam(name = "name", required = false) final String name) {
     final SimpleResultBuilder<String> builder = new SimpleResultBuilder<String>();
 
     try {

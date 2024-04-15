@@ -23,7 +23,6 @@ public interface OrderAdminService {
    *
    * <ul>
    * 	<li>Anonymous: true</li>
-   * 	<li>Combinator: AND</li>
    * </ul>
    * @apiNote
    * 	<p>{@code /order/admin/hello-world}
@@ -36,7 +35,6 @@ public interface OrderAdminService {
    * Authorization:
    *
    * <ul>
-   * 	<li>Combinator: AND</li>
    * 	<li>Authorities: [ORDER_ADD]</li>
    * </ul>
    * @apiNote

@@ -19,7 +19,6 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/user/proto/api/sample/mock.proto",
-    pluginVersion = "0.7.4-RELEASE",
     entity = "MockDemoRequest",
     kind = Kind.MESSAGE
 )

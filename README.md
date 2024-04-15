@@ -50,7 +50,7 @@ Everytime you update application's dependence proto libraries, please run this c
 
 ```shell - windows
 #windows
-./gradlew.bat clean stub build -x test -x stubTest -Dlite=true
+./gradlew.bat clean stub build -x test -x stubTest
 ```
 
 ```shell - others

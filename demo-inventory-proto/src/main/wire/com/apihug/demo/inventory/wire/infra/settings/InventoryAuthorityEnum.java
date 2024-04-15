@@ -29,7 +29,6 @@ import javax.annotation.Generated;
 @Generated("H.O.P.E. Infra Team")
 @ProtoFrom(
     value = "com/apihug/demo/inventory/proto/infra/settings/authority.proto",
-    pluginVersion = "0.7.4-RELEASE",
     entity = "InventoryAuthorityEnum",
     kind = Kind.ENUM
 )

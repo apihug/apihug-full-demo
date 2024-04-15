@@ -12,7 +12,6 @@ public interface GoodService {
    * Authorization:
    *
    * <ul>
-   * 	<li>Combinator: AND</li>
    * </ul>
    * @apiNote
    * 	<p>{@code /good/hello-world}
@@ -27,13 +26,12 @@ public interface GoodService {
    * Authorization:
    *
    * <ul>
-   * 	<li>Combinator: AND</li>
    * </ul>
    * @apiNote
    * 	<p>{@code /good/do-something}
    * 	<p>{@code just do something funny}
    */
-  default void doSomthing(SimpleResultBuilder<String> builder,
+  default void doSomething(SimpleResultBuilder<String> builder,
       RequiredDemoRequest requiredDemoRequest) {
     builder.notImplemented();
   }

@@ -13,7 +13,6 @@ public interface TemplateExampleService {
    * Authorization:
    *
    * <ul>
-   * 	<li>Combinator: AND</li>
    * </ul>
    * @apiNote
    * 	<p>{@code /demo-all-external/post-test}
@@ -29,7 +28,6 @@ public interface TemplateExampleService {
    * Authorization:
    *
    * <ul>
-   * 	<li>Combinator: AND</li>
    * </ul>
    * @apiNote
    * 	<p>{@code /demo-all-external/ping}

@@ -19,7 +19,6 @@ import javax.annotation.Generated;
 )
 @ProtoFrom(
     value = "com/apihug/demo/order/proto/api/admin/request/request.proto",
-    pluginVersion = "0.7.4-RELEASE",
     entity = "AddOrderRequest",
     kind = Kind.MESSAGE
 )

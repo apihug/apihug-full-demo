@@ -13,7 +13,6 @@ public interface SampleDemoService {
    * Authorization:
    *
    * <ul>
-   * 	<li>Combinator: AND</li>
    * </ul>
    * @apiNote
    * 	<p>{@code /example-demo/page-a-sample}
@@ -29,7 +28,6 @@ public interface SampleDemoService {
    * Authorization:
    *
    * <ul>
-   * 	<li>Combinator: AND</li>
    * </ul>
    * @apiNote
    * 	<p>{@code /example-demo/list-a-sample}

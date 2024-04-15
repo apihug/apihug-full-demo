@@ -98,7 +98,7 @@
         "tags" : [ ],
         "summary" : "",
         "description" : "just do something funny",
-        "operationId" : "GoodService#DoSomthing",
+        "operationId" : "GoodService#DoSomething",
         "parameters" : [ ],
         "requestBody" : {
           "content" : {
@@ -398,6 +398,11 @@
             "type" : "string",
             "description" : "reason of change the password",
             "example" : "password stolen"
+          },
+          "goodLevel" : {
+            "type" : "object",
+            "$ref" : "#/components/schemas/GoodLevelEnum",
+            "description" : "a enum sample for the good level enum"
           }
         },
         "required" : [ "customerId", "newPassword" ],

@@ -4,7 +4,6 @@ import com.apihug.demo.user.UserAuthorization;
 import com.apihug.demo.user.wire.api.sample.RequiredDemoRequest;
 import hope.common.api.Result;
 import hope.common.service.annotation.Group;
-import hope.common.service.api.Authorization;
 import hope.common.spring.SimpleResultBuilder;
 import hope.common.spring.aspect.AspectManager;
 import io.swagger.v3.oas.annotations.Operation;
@@ -32,9 +31,7 @@ public class GoodController {
   }
 
   @GetMapping("/good/hello-world")
-  @UserAuthorization(
-      combinator = Authorization.Combinator.AND
-  )
+  @UserAuthorization
   @Group(
       group = hope.common.service.api.Group.CUSTOMER
   )
@@ -59,28 +56,26 @@ public class GoodController {
   }
 
   @PostMapping("/good/do-something")
-  @UserAuthorization(
-      combinator = Authorization.Combinator.AND
-  )
+  @UserAuthorization
   @Group(
       group = hope.common.service.api.Group.CUSTOMER
   )
   @Operation(
       description = "just do something funny"
   )
-  public ResponseEntity<Result<String>> doSomthing(
+  public ResponseEntity<Result<String>> doSomething(
       @RequestBody @Valid RequiredDemoRequest requiredDemoRequest) {
     final SimpleResultBuilder<String> builder = new SimpleResultBuilder<String>();
     requiredDemoRequest = requiredDemoRequest == null ? new RequiredDemoRequest(): requiredDemoRequest;
 
     try {
     	aspect().before("/good/do-something","requiredDemoRequest",requiredDemoRequest );
-    	_service.doSomthing(builder,requiredDemoRequest);
+    	_service.doSomething(builder,requiredDemoRequest);
     	ResponseEntity<Result<String>> res = builder.done();
     	aspect().after("/good/do-something", res ,"requiredDemoRequest",requiredDemoRequest );
     	return res;
     } catch (Throwable exception ) { 
-    	logger.error("FAIL_ACTION METHOD:[doSomthing] PATH:[/good/do-something]",exception);
+    	logger.error("FAIL_ACTION METHOD:[doSomething] PATH:[/good/do-something]",exception);
     	aspect().exception("/good/do-something", exception ,"requiredDemoRequest",requiredDemoRequest );
     	throw exception;
     }

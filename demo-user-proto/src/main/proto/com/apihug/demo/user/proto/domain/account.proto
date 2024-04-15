@@ -48,6 +48,24 @@ message AccountEntity {
     type: TIMESTAMP
   }];
 
+  string address = 5 [(hope.persistence.column) = {
+    name: "ADDRESS",
+    description: "address of my house",
+    type: VARCHAR
+    length:{
+      value: 123
+    }
+    nullable: TRUE;
+  }];
+
+  int64 age = 6 [(hope.persistence.column) = {
+    name: "AGE",
+    description: "age of my dog",
+    type: BIGINT
+    nullable: TRUE;
+  }];
+
+
 
   option (hope.persistence.table) = {
     name: "DEMO_USER_ACCOUNT",

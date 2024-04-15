@@ -4,6 +4,7 @@ package com.apihug.demo.user.proto.api.admin.request;
 
 import "extend/domain.proto";
 import "swagger/annotations.proto";
+import "com/apihug/demo/user/proto/infra/settings/good/constant.proto";
 
 option (hope.domain.kind) = BEAN;
 
@@ -74,5 +75,10 @@ message ChangePasswordRequest {
     example: "password stolen";
     blank: TRUE
   }];
+
+  com.apihug.demo.user.proto.infra.settings.good.GoodLevelEnum good_level = 4 [(hope.swagger.field) = {
+    description: "a enum sample for the good level enum";
+  }];
+
 
 }

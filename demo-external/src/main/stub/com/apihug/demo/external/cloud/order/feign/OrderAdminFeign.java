@@ -34,7 +34,6 @@ public interface OrderAdminFeign {
    *
    * <ul>
    * 	<li>Anonymous: true</li>
-   * 	<li>Combinator: AND</li>
    * </ul>
    * @apiNote
    * 	<p>{@code /order/admin/hello-world}
@@ -48,7 +47,6 @@ public interface OrderAdminFeign {
    * Authorization:
    *
    * <ul>
-   * 	<li>Combinator: AND</li>
    * 	<li>Authorities: [ORDER_ADD]</li>
    * </ul>
    * @apiNote

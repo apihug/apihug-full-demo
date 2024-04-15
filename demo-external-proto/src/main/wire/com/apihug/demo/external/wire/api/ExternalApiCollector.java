@@ -191,50 +191,101 @@ public final class ExternalApiCollector implements Collector<OpenAPI, Schema, Ap
     clzPathMap.computeIfAbsent(clz, s -> new LinkedHashSet<>()).add(path);
   }
 
-  private final void _build_component_com_apihug_demo_external_wire_infra_settings_example_TemplateExampleEnum(
+  private final void _build_service_com_apihug_demo_external_wire_api_example_TemplateExampleService(
       ) {
-    //  Build of the component: TemplateExampleEnum proto: com/apihug/demo/external/proto/infra/settings/example/constant.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.external.wire.infra.settings.example.TemplateExampleEnum", res);
-    res.setClzName("com.apihug.demo.external.wire.infra.settings.example.TemplateExampleEnum");
-    res.setEnumClz(true);
-    res.setName("TemplateExampleEnum");
-    res.setPayload(new Builder<Schema<TemplateExampleEnum>>() {
+    // ----------------------------------------------------
+    // START-[Service Context] com.apihug.demo.external.wire.api.example.TemplateExampleService
+    Map sc = servicesContext.computeIfAbsent("com.apihug.demo.external.wire.api.example.TemplateExampleService", s-> new LinkedHashMap());
+    sc.put("description", "This is a example service remember to remove it");
+    sc.put("protoFrom", "com/apihug/demo/external/proto/api/example/api.proto");
+    sc.put("protoEntity", "TemplateExampleService");
+    sc.put("basePath", "/demo-all-external");
+    List<String> sc_paths = new ArrayList();
+    sc.put("paths", sc_paths);
+    // --------------------------
+    // Register Path of this Service: [1] "/demo-all-external/post-test"
+    sc_paths.add("/demo-all-external/post-test");
+    Map _sc_paths_item_1 = pathsContext.computeIfAbsent("/demo-all-external/post-test", s-> new LinkedHashMap());
+    _sc_paths_item_1.put("action", "POST");
+    _sc_paths_item_1.put("method", "ExamplePost");
+    _sc_paths_item_1.put("wrapper", true);
+    _sc_paths_item_1.put("pageable", false);
+    _sc_paths_item_1.put("request", false);
+    _sc_paths_item_1.put("response", false);
+    _sc_paths_item_1.put("session", false);
+    _sc_paths_item_1.put("inputPlural", false);
+    _sc_paths_item_1.put("outputPlural", false);
+    _sc_paths_item_1.put("priority", "HIGH");
+    _sc_paths_item_1.put("requestRef", "com.apihug.demo.external.wire.api.example.request.TemplateExampleRequest");
+    _sc_paths_item_1.put("responseRef", "com.apihug.demo.external.wire.api.example.response.TemplateExampleResponse");
+    _sc_paths_item_1.put("operation", new Builder<Operation>() {
       @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("Remember to remove this enum this is example from template");
-        List<TemplateExampleEnum> values  = new ArrayList();
-        values.add(TemplateExampleEnum.REMOVE_ME);
-        values.add(TemplateExampleEnum.RIGHT_NOW);
-        res.setDefault(TemplateExampleEnum.REMOVE_ME);
-        res.setEnum(values);
+      public Operation build() {
+        final Operation operation =  new Operation();
+        operation.setDescription("post test example");
+        return operation;
+      }
+    }.build());
+    _sc_paths_item_1.put("group", "CUSTOMER");
+    _sc_paths_item_1.put("empty", false);
+    // --------------------------
+    // Register Path of this Service: [2] "/demo-all-external/ping"
+    sc_paths.add("/demo-all-external/ping");
+    Map _sc_paths_item_2 = pathsContext.computeIfAbsent("/demo-all-external/ping", s-> new LinkedHashMap());
+    _sc_paths_item_2.put("action", "POST");
+    _sc_paths_item_2.put("method", "Ping");
+    _sc_paths_item_2.put("wrapper", true);
+    _sc_paths_item_2.put("pageable", false);
+    _sc_paths_item_2.put("request", false);
+    _sc_paths_item_2.put("response", false);
+    _sc_paths_item_2.put("session", false);
+    _sc_paths_item_2.put("inputPlural", false);
+    _sc_paths_item_2.put("outputPlural", false);
+    _sc_paths_item_2.put("priority", "HIGH");
+    _sc_paths_item_2.put("requestRef", "hope.common.adaptor.Empty");
+    _sc_paths_item_2.put("responseRef", "hope.common.adaptor.Empty");
+    _sc_paths_item_2.put("operation", new Builder<Operation>() {
+      @Override
+      public Operation build() {
+        final Operation operation =  new Operation();
+        operation.setDescription("ping you like /ping?name=jake");
+        return operation;
+      }
+    }.build());
+    _sc_paths_item_2.put("parameters", new Builder<List<hope.common.service.api.Parameter>>() {
+      @Override
+      public List<hope.common.service.api.Parameter> build() {
+        List<hope.common.service.api.Parameter> res = new ArrayList();
+        hope.common.service.api.Parameter<Parameter> _1 = new hope.common.service.api.Parameter();
+        _1.setName("name");
+        _1.setPlural(false);
+        _1.setIn(hope.common.service.api.Parameter.Type.QUERY);
+        _1.setDelegator(new Builder<Parameter>() {
+          @Override
+          public Parameter build() {
+            Parameter res  = new Parameter();
+            res.setName("name");
+            res.setIn("query");
+            res.setSchema(new Builder<Schema>() {
+              @Override
+              public Schema build() {
+                Schema res  = new Schema();
+                res.setSpecVersion(SpecVersion.V30);
+                res.setTypes(Set.of("string"));
+                return res;
+              }
+            }.build());
+            return res;
+          }
+        }.build());
+        res.add(_1);
         return res;
       }
     }.build());
-  }
-
-  private final void _build_component_com_apihug_demo_external_wire_infra_settings_ExternalAuthorityEnum(
-      ) {
-    //  Build of the component: ExternalAuthorityEnum proto: com/apihug/demo/external/proto/infra/settings/authority.proto
-    Component<Schema, Schema> res = new Component();
-    componentMap.put("com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum", res);
-    res.setClzName("com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum");
-    res.setEnumClz(true);
-    res.setName("ExternalAuthorityEnum");
-    res.setPayload(new Builder<Schema<ExternalAuthorityEnum>>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("Example Authority Enum for the project, MODIFY IT");
-        List<ExternalAuthorityEnum> values  = new ArrayList();
-        values.add(ExternalAuthorityEnum.USER_ADD);
-        values.add(ExternalAuthorityEnum.USER_DELETE);
-        res.setDefault(ExternalAuthorityEnum.USER_ADD);
-        res.setEnum(values);
-        return res;
-      }
-    }.build());
+    _sc_paths_item_2.put("group", "CUSTOMER");
+    _sc_paths_item_2.put("empty", false);
+    // END-[Service Context] com.apihug.demo.external.wire.api.example.TemplateExampleService
+    // ----------------------------------------------------
   }
 
   private final void _build_component_com_apihug_demo_external_wire_api_example_request_TemplateExampleRequest(
@@ -385,101 +436,50 @@ public final class ExternalApiCollector implements Collector<OpenAPI, Schema, Ap
     res.addItem(_1);
   }
 
-  private final void _build_service_com_apihug_demo_external_wire_api_example_TemplateExampleService(
+  private final void _build_component_com_apihug_demo_external_wire_infra_settings_ExternalAuthorityEnum(
       ) {
-    // ----------------------------------------------------
-    // START-[Service Context] com.apihug.demo.external.wire.api.example.TemplateExampleService
-    Map sc = servicesContext.computeIfAbsent("com.apihug.demo.external.wire.api.example.TemplateExampleService", s-> new LinkedHashMap());
-    sc.put("description", "This is a example service remember to remove it");
-    sc.put("protoFrom", "com/apihug/demo/external/proto/api/example/api.proto");
-    sc.put("protoEntity", "TemplateExampleService");
-    sc.put("basePath", "/demo-all-external");
-    List<String> sc_paths = new ArrayList();
-    sc.put("paths", sc_paths);
-    // --------------------------
-    // Register Path of this Service: [1] "/demo-all-external/post-test"
-    sc_paths.add("/demo-all-external/post-test");
-    Map _sc_paths_item_1 = pathsContext.computeIfAbsent("/demo-all-external/post-test", s-> new LinkedHashMap());
-    _sc_paths_item_1.put("action", "POST");
-    _sc_paths_item_1.put("method", "ExamplePost");
-    _sc_paths_item_1.put("wrapper", true);
-    _sc_paths_item_1.put("pageable", false);
-    _sc_paths_item_1.put("request", false);
-    _sc_paths_item_1.put("response", false);
-    _sc_paths_item_1.put("session", false);
-    _sc_paths_item_1.put("inputPlural", false);
-    _sc_paths_item_1.put("outputPlural", false);
-    _sc_paths_item_1.put("priority", "HIGH");
-    _sc_paths_item_1.put("requestRef", "com.apihug.demo.external.wire.api.example.request.TemplateExampleRequest");
-    _sc_paths_item_1.put("responseRef", "com.apihug.demo.external.wire.api.example.response.TemplateExampleResponse");
-    _sc_paths_item_1.put("operation", new Builder<Operation>() {
+    //  Build of the component: ExternalAuthorityEnum proto: com/apihug/demo/external/proto/infra/settings/authority.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum", res);
+    res.setClzName("com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum");
+    res.setEnumClz(true);
+    res.setName("ExternalAuthorityEnum");
+    res.setPayload(new Builder<Schema<ExternalAuthorityEnum>>() {
       @Override
-      public Operation build() {
-        final Operation operation =  new Operation();
-        operation.setDescription("post test example");
-        return operation;
-      }
-    }.build());
-    _sc_paths_item_1.put("group", "CUSTOMER");
-    _sc_paths_item_1.put("empty", false);
-    // --------------------------
-    // Register Path of this Service: [2] "/demo-all-external/ping"
-    sc_paths.add("/demo-all-external/ping");
-    Map _sc_paths_item_2 = pathsContext.computeIfAbsent("/demo-all-external/ping", s-> new LinkedHashMap());
-    _sc_paths_item_2.put("action", "POST");
-    _sc_paths_item_2.put("method", "Ping");
-    _sc_paths_item_2.put("wrapper", true);
-    _sc_paths_item_2.put("pageable", false);
-    _sc_paths_item_2.put("request", false);
-    _sc_paths_item_2.put("response", false);
-    _sc_paths_item_2.put("session", false);
-    _sc_paths_item_2.put("inputPlural", false);
-    _sc_paths_item_2.put("outputPlural", false);
-    _sc_paths_item_2.put("priority", "HIGH");
-    _sc_paths_item_2.put("requestRef", "hope.common.adaptor.Empty");
-    _sc_paths_item_2.put("responseRef", "hope.common.adaptor.Empty");
-    _sc_paths_item_2.put("operation", new Builder<Operation>() {
-      @Override
-      public Operation build() {
-        final Operation operation =  new Operation();
-        operation.setDescription("ping you like /ping?name=jake");
-        return operation;
-      }
-    }.build());
-    _sc_paths_item_2.put("parameters", new Builder<List<hope.common.service.api.Parameter>>() {
-      @Override
-      public List<hope.common.service.api.Parameter> build() {
-        List<hope.common.service.api.Parameter> res = new ArrayList();
-        hope.common.service.api.Parameter<Parameter> _1 = new hope.common.service.api.Parameter();
-        _1.setName("name");
-        _1.setPlural(false);
-        _1.setIn(hope.common.service.api.Parameter.Type.QUERY);
-        _1.setDelegator(new Builder<Parameter>() {
-          @Override
-          public Parameter build() {
-            Parameter res  = new Parameter();
-            res.setName("name");
-            res.setIn("query");
-            res.setSchema(new Builder<Schema>() {
-              @Override
-              public Schema build() {
-                Schema res  = new Schema();
-                res.setSpecVersion(SpecVersion.V30);
-                res.setTypes(Set.of("string"));
-                return res;
-              }
-            }.build());
-            return res;
-          }
-        }.build());
-        res.add(_1);
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("Example Authority Enum for the project, MODIFY IT");
+        List<ExternalAuthorityEnum> values  = new ArrayList();
+        values.add(ExternalAuthorityEnum.USER_ADD);
+        values.add(ExternalAuthorityEnum.USER_DELETE);
+        res.setDefault(ExternalAuthorityEnum.USER_ADD);
+        res.setEnum(values);
         return res;
       }
     }.build());
-    _sc_paths_item_2.put("group", "CUSTOMER");
-    _sc_paths_item_2.put("empty", false);
-    // END-[Service Context] com.apihug.demo.external.wire.api.example.TemplateExampleService
-    // ----------------------------------------------------
+  }
+
+  private final void _build_component_com_apihug_demo_external_wire_infra_settings_example_TemplateExampleEnum(
+      ) {
+    //  Build of the component: TemplateExampleEnum proto: com/apihug/demo/external/proto/infra/settings/example/constant.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.demo.external.wire.infra.settings.example.TemplateExampleEnum", res);
+    res.setClzName("com.apihug.demo.external.wire.infra.settings.example.TemplateExampleEnum");
+    res.setEnumClz(true);
+    res.setName("TemplateExampleEnum");
+    res.setPayload(new Builder<Schema<TemplateExampleEnum>>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("Remember to remove this enum this is example from template");
+        List<TemplateExampleEnum> values  = new ArrayList();
+        values.add(TemplateExampleEnum.REMOVE_ME);
+        values.add(TemplateExampleEnum.RIGHT_NOW);
+        res.setDefault(TemplateExampleEnum.REMOVE_ME);
+        res.setEnum(values);
+        return res;
+      }
+    }.build());
   }
 
   private final void _merger_api() {
@@ -527,16 +527,16 @@ public final class ExternalApiCollector implements Collector<OpenAPI, Schema, Ap
   }
 
   private void _init() {
-    // Build for Enum :com.apihug.demo.external.wire.infra.settings.example.TemplateExampleEnum
-    _build_component_com_apihug_demo_external_wire_infra_settings_example_TemplateExampleEnum();
-    // Build for Enum :com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum
-    _build_component_com_apihug_demo_external_wire_infra_settings_ExternalAuthorityEnum();
+    // Build For Service com.apihug.demo.external.wire.api.example.TemplateExampleService
+    _build_service_com_apihug_demo_external_wire_api_example_TemplateExampleService();
     // Build for Component : com.apihug.demo.external.wire.api.example.request.TemplateExampleRequest
     _build_component_com_apihug_demo_external_wire_api_example_request_TemplateExampleRequest();
     // Build for Component : com.apihug.demo.external.wire.api.example.response.TemplateExampleResponse
     _build_component_com_apihug_demo_external_wire_api_example_response_TemplateExampleResponse();
-    // Build For Service com.apihug.demo.external.wire.api.example.TemplateExampleService
-    _build_service_com_apihug_demo_external_wire_api_example_TemplateExampleService();
+    // Build for Enum :com.apihug.demo.external.wire.infra.settings.ExternalAuthorityEnum
+    _build_component_com_apihug_demo_external_wire_infra_settings_ExternalAuthorityEnum();
+    // Build for Enum :com.apihug.demo.external.wire.infra.settings.example.TemplateExampleEnum
+    _build_component_com_apihug_demo_external_wire_infra_settings_example_TemplateExampleEnum();
     // Build OpenAPI information
     _merger_api();
     api.tags(new ArrayList<>(tags.values()));

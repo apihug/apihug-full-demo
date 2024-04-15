@@ -12,7 +12,6 @@ public interface InventoryAdminService {
    *
    * <ul>
    * 	<li>Anonymous: true</li>
-   * 	<li>Combinator: AND</li>
    * </ul>
    * @apiNote
    * 	<p>{@code /inventory/admin/hello-world}
@@ -27,7 +26,6 @@ public interface InventoryAdminService {
    * Authorization:
    *
    * <ul>
-   * 	<li>Combinator: AND</li>
    * 	<li>Authorities: [STOCK_IN]</li>
    * </ul>
    * @apiNote
@@ -44,7 +42,6 @@ public interface InventoryAdminService {
    * Authorization:
    *
    * <ul>
-   * 	<li>Combinator: AND</li>
    * 	<li>Authorities: [STOCK_OUT]</li>
    * </ul>
    * @apiNote

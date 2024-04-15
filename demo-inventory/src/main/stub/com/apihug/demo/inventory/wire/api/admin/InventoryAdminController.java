@@ -4,7 +4,6 @@ import com.apihug.demo.inventory.InventoryAuthorization;
 import com.apihug.demo.inventory.wire.infra.settings.InventoryAuthorityEnum;
 import hope.common.api.Result;
 import hope.common.service.annotation.Group;
-import hope.common.service.api.Authorization;
 import hope.common.spring.SimpleResultBuilder;
 import hope.common.spring.aspect.AspectManager;
 import io.swagger.v3.oas.annotations.Operation;
@@ -33,8 +32,7 @@ public class InventoryAdminController {
 
   @GetMapping("/inventory/admin/hello-world")
   @InventoryAuthorization(
-      anonymous = true,
-      combinator = Authorization.Combinator.AND
+      anonymous = true
   )
   @Group(
       group = hope.common.service.api.Group.CUSTOMER
@@ -61,7 +59,6 @@ public class InventoryAdminController {
 
   @PostMapping("/inventory/admin/stock-in")
   @InventoryAuthorization(
-      combinator = Authorization.Combinator.AND,
       authorities = InventoryAuthorityEnum.STOCK_IN
   )
   @Group(
@@ -90,7 +87,6 @@ public class InventoryAdminController {
 
   @PostMapping("/inventory/admin/stock-out")
   @InventoryAuthorization(
-      combinator = Authorization.Combinator.AND,
       authorities = InventoryAuthorityEnum.STOCK_OUT
   )
   @Group(

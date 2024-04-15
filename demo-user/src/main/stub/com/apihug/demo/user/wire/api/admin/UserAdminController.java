@@ -8,7 +8,6 @@ import com.apihug.demo.user.wire.api.admin.response.CustomerRegisteredResponse;
 import com.apihug.demo.user.wire.infra.settings.UserAuthorityEnum;
 import hope.common.api.Result;
 import hope.common.service.annotation.Group;
-import hope.common.service.api.Authorization;
 import hope.common.spring.SimpleResultBuilder;
 import hope.common.spring.aspect.AspectManager;
 import io.swagger.v3.oas.annotations.Operation;
@@ -37,8 +36,7 @@ public class UserAdminController {
 
   @GetMapping("/user/admin/say-hello")
   @UserAuthorization(
-      anonymous = true,
-      combinator = Authorization.Combinator.AND
+      anonymous = true
   )
   @Group(
       group = hope.common.service.api.Group.CUSTOMER
@@ -65,7 +63,6 @@ public class UserAdminController {
 
   @PostMapping("/user/admin/register")
   @UserAuthorization(
-      combinator = Authorization.Combinator.AND,
       authorities = UserAuthorityEnum.USER_ADD
   )
   @Group(
@@ -94,7 +91,6 @@ public class UserAdminController {
 
   @PostMapping("/user/admin/change-password")
   @UserAuthorization(
-      combinator = Authorization.Combinator.AND,
       authorities = {
           UserAuthorityEnum.USER_ADD,
           UserAuthorityEnum.USER_DELETE

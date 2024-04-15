@@ -8,7 +8,6 @@ import com.apihug.demo.order.wire.api.admin.response.OrderDeletedResponse;
 import com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum;
 import hope.common.api.Result;
 import hope.common.service.annotation.Group;
-import hope.common.service.api.Authorization;
 import hope.common.spring.SimpleResultBuilder;
 import hope.common.spring.aspect.AspectManager;
 import io.swagger.v3.oas.annotations.Operation;
@@ -37,8 +36,7 @@ public class OrderAdminController {
 
   @GetMapping("/order/admin/hello-world")
   @OrderAuthorization(
-      anonymous = true,
-      combinator = Authorization.Combinator.AND
+      anonymous = true
   )
   @Group(
       group = hope.common.service.api.Group.CUSTOMER
@@ -65,7 +63,6 @@ public class OrderAdminController {
 
   @PostMapping("/order/admin/add-order")
   @OrderAuthorization(
-      combinator = Authorization.Combinator.AND,
       authorities = OrderAuthorityEnum.ORDER_ADD
   )
   @Group(
@@ -94,7 +91,6 @@ public class OrderAdminController {
 
   @PostMapping("/order/admin/delete-order")
   @OrderAuthorization(
-      combinator = Authorization.Combinator.AND,
       authorities = {
           OrderAuthorityEnum.ORDER_ADD,
           OrderAuthorityEnum.ORDER_DELETE

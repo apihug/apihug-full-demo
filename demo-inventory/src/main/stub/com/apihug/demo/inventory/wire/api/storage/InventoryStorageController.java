@@ -8,7 +8,6 @@ import com.apihug.demo.inventory.wire.api.storage.response.StorageLocationDelete
 import com.apihug.demo.inventory.wire.infra.settings.InventoryAuthorityEnum;
 import hope.common.api.Result;
 import hope.common.service.annotation.Group;
-import hope.common.service.api.Authorization;
 import hope.common.spring.SimpleResultBuilder;
 import hope.common.spring.aspect.AspectManager;
 import io.swagger.v3.oas.annotations.Operation;
@@ -35,7 +34,6 @@ public class InventoryStorageController {
 
   @PostMapping("/inventory/storage/admin/add-location")
   @InventoryAuthorization(
-      combinator = Authorization.Combinator.AND,
       authorities = InventoryAuthorityEnum.ADD_STORAGE_LOCATION
   )
   @Group(
@@ -64,7 +62,6 @@ public class InventoryStorageController {
 
   @PostMapping("/inventory/storage/admin/delete-location")
   @InventoryAuthorization(
-      combinator = Authorization.Combinator.AND,
       authorities = InventoryAuthorityEnum.DELETE_STORAGE_LOCATION
   )
   @Group(

@@ -6,7 +6,6 @@ import hope.common.api.Pageable;
 import hope.common.api.Result;
 import hope.common.api.annotation.ParameterObject;
 import hope.common.service.annotation.Group;
-import hope.common.service.api.Authorization;
 import hope.common.spring.PageableResultBuilder;
 import hope.common.spring.SimpleResultBuilder;
 import hope.common.spring.aspect.AspectManager;
@@ -33,9 +32,7 @@ public class SampleDemoController {
   }
 
   @GetMapping("/example-demo/page-a-sample")
-  @UserAuthorization(
-      combinator = Authorization.Combinator.AND
-  )
+  @UserAuthorization
   @Group(
       group = hope.common.service.api.Group.CUSTOMER
   )
@@ -61,9 +58,7 @@ public class SampleDemoController {
   }
 
   @GetMapping("/example-demo/list-a-sample")
-  @UserAuthorization(
-      combinator = Authorization.Combinator.AND
-  )
+  @UserAuthorization
   @Group(
       group = hope.common.service.api.Group.CUSTOMER
   )

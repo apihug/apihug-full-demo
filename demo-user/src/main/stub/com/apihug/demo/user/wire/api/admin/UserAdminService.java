@@ -16,7 +16,6 @@ public interface UserAdminService {
    *
    * <ul>
    * 	<li>Anonymous: true</li>
-   * 	<li>Combinator: AND</li>
    * </ul>
    * @apiNote
    * 	<p>{@code /user/admin/say-hello}
@@ -31,7 +30,6 @@ public interface UserAdminService {
    * Authorization:
    *
    * <ul>
-   * 	<li>Combinator: AND</li>
    * 	<li>Authorities: [USER_ADD]</li>
    * </ul>
    * @apiNote
@@ -48,7 +46,6 @@ public interface UserAdminService {
    * Authorization:
    *
    * <ul>
-   * 	<li>Combinator: AND</li>
    * 	<li>Authorities: [USER_ADD, USER_DELETE]</li>
    * </ul>
    * @apiNote

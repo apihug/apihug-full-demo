@@ -26,7 +26,7 @@ service GoodService {
 
 
 
-  rpc DoSomthing (com.apihug.demo.user.proto.api.sample.RequiredDemoRequest) returns (google.protobuf.Empty) {
+  rpc DoSomething (com.apihug.demo.user.proto.api.sample.RequiredDemoRequest) returns (google.protobuf.Empty) {
     option (hope.swagger.operation) = {
       post: "/do-something";
       description: "just do something funny";
