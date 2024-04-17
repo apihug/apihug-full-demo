@@ -76,9 +76,4 @@ message ChangePasswordRequest {
     blank: TRUE
   }];
 
-  com.apihug.demo.user.proto.infra.settings.good.GoodLevelEnum good_level = 4 [(hope.swagger.field) = {
-    description: "a enum sample for the good level enum";
-  }];
-
-
 }
