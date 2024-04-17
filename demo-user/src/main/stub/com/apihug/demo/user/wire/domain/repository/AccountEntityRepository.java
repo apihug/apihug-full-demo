@@ -23,10 +23,21 @@ import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.data.repository.ListCrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+//TRAIT-import
 
 @Repository
 @SuppressWarnings("Duplicates")
 public interface AccountEntityRepository extends HopeJdbc<AccountEntity>, UserJdbcSupport, AccountEntityDSL, ListCrudRepository<AccountEntity, Long> {
+
+  //==========TRAIT-BEGIN==========
+  /**
+   * Please put your customized SQL here,  any SQL other place will be dropped after merger!
+   */
+  interface _DerivedSQL {
+  }
+
+  //==========TRAIT-END==========
+
   Logger __AccountEntityLogger = LoggerFactory.getLogger(AccountEntity.class);
 
   @Override
