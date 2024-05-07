@@ -1,7 +1,7 @@
 package com.apihug.demo.user.wire.domain;
 
+import com.apihug.demo.user.wire.domain.bootstrap.customizer.Domain;
 import hope.common.persistence.annotations.Description;
-import hope.common.spring.data.persistence.Domain;
 import jakarta.persistence.Index;
 import jakarta.persistence.Table;
 import java.lang.Long;
@@ -13,26 +13,26 @@ import org.springframework.data.relational.core.mapping.Column;
 @Table(
     name = "DEMO_USER_ACCOUNT",
     indexes = {
-        @Index(name = "IDX_DEMO_USER_ACCOUNT_NAME", columnList = "NAME"),
-        @Index(name = "IDX_DEMO_USER_ACCOUNT_EMAIL", columnList = "EMAIL")
+        @Index(name = "IDX_DEMO_USER_ACCOUNT_NAME", columnList = "name"),
+        @Index(name = "IDX_DEMO_USER_ACCOUNT_EMAIL", columnList = "email")
     }
 )
 @org.springframework.data.relational.core.mapping.Table("DEMO_USER_ACCOUNT")
 @Generated("H.O.P.E. Infra Team")
-public final class AccountEntity extends Domain<AccountEntity, Long, Long> {
-  @Column("NAME")
+public final class AccountEntity extends Domain<AccountEntity, Long, String> {
+  @Column("name")
   @Description("name of the account")
   @jakarta.persistence.Column(
-      name = "NAME",
+      name = "name",
       insertable = true,
       length = 32
   )
   protected String name;
 
-  @Column("EMAIL")
+  @Column("email")
   @Description("email of the account")
   @jakarta.persistence.Column(
-      name = "EMAIL",
+      name = "email",
       nullable = true,
       unique = true,
       insertable = true,
@@ -51,10 +51,10 @@ public final class AccountEntity extends Domain<AccountEntity, Long, Long> {
   )
   protected String frontendColor;
 
-  @Column("LONG_TIME")
+  @Column("longTime")
   @Description("long time ago")
   @jakarta.persistence.Column(
-      name = "LONG_TIME",
+      name = "longTime",
       nullable = true,
       insertable = true,
       updatable = true,

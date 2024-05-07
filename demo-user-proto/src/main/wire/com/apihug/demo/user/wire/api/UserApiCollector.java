@@ -409,28 +409,6 @@ public final class UserApiCollector implements Collector<OpenAPI, Schema, ApiRes
       }
     }.build());
     res.addItem(_2);
-    // Add field 3 good_level
-    ComponentItem<Schema> _3 = new ComponentItem();
-    _3.setClz("com.apihug.demo.user.wire.infra.settings.good.GoodLevelEnum");
-    _3.setName("good_level");
-    _3.setFieldName("goodLevel");
-    _3.setPayload(new Builder<Schema>() {
-      @Override
-      public Schema build() {
-        Schema res  = new Schema();
-        res.setDescription("a enum sample for the good level enum");
-        res.setSpecVersion(SpecVersion.V30);
-        return res;
-      }
-    }.build());
-    _3.setValidation(new Builder<Validation>() {
-      @Override
-      public Validation build() {
-        Validation res = new Validation();
-        return res;
-      }
-    }.build());
-    res.addItem(_3);
   }
 
   private final void _build_component_com_apihug_demo_user_wire_api_admin_request_RegisterRequest(

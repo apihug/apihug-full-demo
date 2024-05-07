@@ -610,12 +610,14 @@
     "status" : {
       "deprecated" : false,
       "createdTimestamp" : "2024-02-29",
-      "updatedTimestamp" : "2024-04-27 08:00:32",
+      "updatedTimestamp" : "2024-05-07 11:43:21",
       "createdBy" : "dell"
     },
     "persistence" : {
       "identifyType" : "LONG",
-      "tenantType" : "LONG"
+      "tenantType" : "LONG",
+      "format" : "DEFAULT",
+      "upper" : "DEFAULT"
     },
     "authority" : {
       "enumClass" : "com.apihug.demo.order.wire.infra.settings.OrderAuthorityEnum",

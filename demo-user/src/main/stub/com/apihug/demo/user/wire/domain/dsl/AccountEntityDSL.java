@@ -118,7 +118,7 @@ public interface AccountEntityDSL extends DSL<AccountEntity> {
   interface _Identifiable_ {
     ColumnMix ID = ColumnMix.of(table, 
     	new Column()
-    		.setName("ID")
+    		.setName("id")
     		.setFieldName("id")
     		.setClz("java.lang.Long")
     		.setUnique(true)
@@ -133,7 +133,7 @@ public interface AccountEntityDSL extends DSL<AccountEntity> {
 
     ColumnMix CREATED_AT = ColumnMix.of(table, 
     	new Column()
-    		.setName("CREATED_AT")
+    		.setName("createdAt")
     		.setFieldName("createdAt")
     		.setClz("java.time.LocalDateTime")
     		.setType(Types.TIMESTAMP)
@@ -143,7 +143,7 @@ public interface AccountEntityDSL extends DSL<AccountEntity> {
 
     ColumnMix CREATED_BY = ColumnMix.of(table, 
     	new Column()
-    		.setName("CREATED_BY")
+    		.setName("createdBy")
     		.setFieldName("createdBy")
     		.setClz("java.lang.Long")
     		.setType(Types.INTEGER)
@@ -151,7 +151,7 @@ public interface AccountEntityDSL extends DSL<AccountEntity> {
 
     ColumnMix UPDATED_AT = ColumnMix.of(table, 
     	new Column()
-    		.setName("UPDATED_AT")
+    		.setName("updatedAt")
     		.setFieldName("updatedAt")
     		.setClz("java.time.LocalDateTime")
     		.setType(Types.TIMESTAMP)
@@ -160,7 +160,7 @@ public interface AccountEntityDSL extends DSL<AccountEntity> {
 
     ColumnMix UPDATED_BY = ColumnMix.of(table, 
     	new Column()
-    		.setName("UPDATED_BY")
+    		.setName("updatedBy")
     		.setFieldName("updatedBy")
     		.setClz("java.lang.Long")
     		.setType(Types.INTEGER)
@@ -233,7 +233,7 @@ public interface AccountEntityDSL extends DSL<AccountEntity> {
   interface _Versionable_ {
     ColumnMix VERSION = ColumnMix.of(table, 
     	new Column()
-    		.setName("VERSION")
+    		.setName("version")
     		.setFieldName("version")
     		.setClz("java.lang.Long")
     		.setSortable(true)
@@ -243,11 +243,11 @@ public interface AccountEntityDSL extends DSL<AccountEntity> {
   interface _Tenantable_ {
     ColumnMix TENANT_ID = ColumnMix.of(table, 
     	new Column()
-    		.setName("TENANT_ID")
+    		.setName("tenantId")
     		.setFieldName("tenantId")
-    		.setClz("java.lang.Long")
+    		.setClz("java.lang.String")
     		.setUpdatable(false)
-    		.setType(Types.INTEGER));
+    		.setType(Types.VARCHAR));
   }
 
   interface ColumnsMap {
@@ -280,7 +280,7 @@ public interface AccountEntityDSL extends DSL<AccountEntity> {
   interface Domain {
     ColumnMix Name = ColumnMix.of(table, 
     	new Column().setFieldName("name")
-    		.setName("NAME")
+    		.setName("name")
     		.setClz("java.lang.String")
     		.setType(Types.VARCHAR)
     		.setDescription("name of the account")
@@ -289,7 +289,7 @@ public interface AccountEntityDSL extends DSL<AccountEntity> {
 
     ColumnMix Email = ColumnMix.of(table, 
     	new Column().setFieldName("email")
-    		.setName("EMAIL")
+    		.setName("email")
     		.setClz("java.lang.String")
     		.setType(Types.VARCHAR)
     		.setDescription("email of the account")
@@ -311,7 +311,7 @@ public interface AccountEntityDSL extends DSL<AccountEntity> {
 
     ColumnMix LongTime = ColumnMix.of(table, 
     	new Column().setFieldName("longTime")
-    		.setName("LONG_TIME")
+    		.setName("longTime")
     		.setClz("java.time.LocalDateTime")
     		.setType(Types.TIMESTAMP)
     		.setDescription("long time ago")
@@ -412,7 +412,7 @@ public interface AccountEntityDSL extends DSL<AccountEntity> {
         }
         entity.setDeletedBy(rs.getLong(14));
         entity.setVersion(rs.getLong(15));
-        entity.setTenantId(rs.getLong(16));
+        entity.setTenantId(rs.getString(16));
         return entity;
       }
     };

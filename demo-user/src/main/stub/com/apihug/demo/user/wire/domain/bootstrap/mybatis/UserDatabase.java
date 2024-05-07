@@ -54,7 +54,7 @@ public interface UserDatabase {
 
     public final SqlColumn<Long> Version = AnalystHelper.mapper(AccountEntityDSL.Domain.Version, this);
 
-    public final SqlColumn<Long> TenantId = AnalystHelper.mapper(AccountEntityDSL.Domain.TenantId, this);
+    public final SqlColumn<String> TenantId = AnalystHelper.mapper(AccountEntityDSL.Domain.TenantId, this);
 
     public AccountEntity() {
       super("DEMO_USER_ACCOUNT");

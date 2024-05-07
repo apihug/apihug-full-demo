@@ -116,28 +116,28 @@ public interface AccountEntityRepository extends HopeJdbc<AccountEntity>, UserJd
     _deleteAllById(ids);
   }
 
-  Optional<AccountEntity> findByIdAndTenantId(Long id, Long tenantId);
+  Optional<AccountEntity> findByIdAndTenantId(Long id, String tenantId);
 
   default Optional<AccountEntity> findByIdAndCurrentTenant(Long id) {
-    return findByIdAndTenantId(id, (Long) auditContext().getTenant());
+    return findByIdAndTenantId(id, (String) auditContext().getTenant());
   }
 
-  boolean existsByIdAndTenantId(Long id, Long tenantId);
+  boolean existsByIdAndTenantId(Long id, String tenantId);
 
   default boolean existsByIdAndCurrentTenantId(Long id) {
-    return existsByIdAndTenantId(id, (Long) auditContext().getTenant());
+    return existsByIdAndTenantId(id, (String) auditContext().getTenant());
   }
 
-  List<AccountEntity> findAllByIdInAndTenantId(List<Long> ids, Long tenantId);
+  List<AccountEntity> findAllByIdInAndTenantId(List<Long> ids, String tenantId);
 
   default List<AccountEntity> findAllByIdInAndCurrentTenantId(List<Long> ids) {
-    return findAllByIdInAndTenantId(ids, (Long) auditContext().getTenant());
+    return findAllByIdInAndTenantId(ids, (String) auditContext().getTenant());
   }
 
-  List<AccountEntity> findAllByTenantId(Long tenantId);
+  List<AccountEntity> findAllByTenantId(String tenantId);
 
   default List<AccountEntity> findAllByCurrentTenantId() {
-    return findAllByTenantId((Long) auditContext().getTenant());
+    return findAllByTenantId((String) auditContext().getTenant());
   }
 
   default int update(final AccountEntity updated) {

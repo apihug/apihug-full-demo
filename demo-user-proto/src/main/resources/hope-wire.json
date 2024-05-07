@@ -5,7 +5,9 @@
   "domain": "user",
   "persistence" : {
     "identifyType" : "LONG",
-    "tenantType" : "LONG"
+    "tenantType" : "STRING",
+    "format": "CAMEL",
+    "upper": "DEFAULT"
   },
   "authority" : {
     "enumClass" : "com.apihug.demo.user.proto.infra.settings.UserAuthorityEnum",

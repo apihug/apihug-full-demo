@@ -398,11 +398,6 @@
             "type" : "string",
             "description" : "reason of change the password",
             "example" : "password stolen"
-          },
-          "goodLevel" : {
-            "type" : "object",
-            "$ref" : "#/components/schemas/GoodLevelEnum",
-            "description" : "a enum sample for the good level enum"
           }
         },
         "required" : [ "customerId", "newPassword" ],
@@ -1174,12 +1169,14 @@
     "status" : {
       "deprecated" : false,
       "createdTimestamp" : "2024-02-29",
-      "updatedTimestamp" : "2024-04-27 08:00:42",
+      "updatedTimestamp" : "2024-05-07 11:43:24",
       "createdBy" : "dell"
     },
     "persistence" : {
       "identifyType" : "LONG",
-      "tenantType" : "LONG"
+      "tenantType" : "STRING",
+      "format" : "CAMEL",
+      "upper" : "DEFAULT"
     },
     "authority" : {
       "enumClass" : "com.apihug.demo.user.wire.infra.settings.UserAuthorityEnum",

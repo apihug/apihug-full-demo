@@ -31,8 +31,8 @@ public class UserAuditContextSupplier implements AuditContextSupplier {
     // Persistent context Identify type is java.lang.Long
     builder.identifier(NumberUtils.toLong(userId));
 
-    // Persistent context Tenant type is java.lang.Long
-    builder.tenant(NumberUtils.toLong(tenantId));
+    // Persistent context Tenant type is java.lang.String
+    builder.tenant(String.valueOf(tenantId));
 
     auditContext = builder.build();
   }

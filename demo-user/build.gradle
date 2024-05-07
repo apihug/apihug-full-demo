@@ -18,7 +18,8 @@ hopeStub {
     // please refer to the doc for details usage:
     // https://github.com/apihug/apihug.com/blob/master/docs/handbook/005_dsl_implement_stub.md#gradle
 
-    debug = false
+    //debug = false
+    verbose = true;
 }
 
 description("user management module")

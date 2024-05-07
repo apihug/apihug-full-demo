@@ -4,7 +4,7 @@ import hope.common.spring.data.config.HopeDataProperties;
 import hope.common.spring.data.persistence.context.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class UserPersistenceContext implements PersistenceContext<Long, Long> {
+public class UserPersistenceContext implements PersistenceContext<Long, String> {
 
   @Autowired(required = false)
   protected HopeDataProperties properties;
@@ -15,8 +15,8 @@ public class UserPersistenceContext implements PersistenceContext<Long, Long> {
   }
 
   @Override
-  public Long defaultTenant() {
-    return properties != null ? properties.getDefaultTenantId() : 0L;
+  public String defaultTenant() {
+    return properties != null ? properties.setDefaultTenantString() : "0";
   }
 
   @Override
@@ -26,7 +26,7 @@ public class UserPersistenceContext implements PersistenceContext<Long, Long> {
 
   @Override
   public Class tenantClass() {
-    return Long.class;
+    return String.class;
   }
 
   @Override

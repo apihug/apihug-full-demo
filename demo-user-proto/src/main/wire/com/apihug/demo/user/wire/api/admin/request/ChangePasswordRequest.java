@@ -1,6 +1,5 @@
 package com.apihug.demo.user.wire.api.admin.request;
 
-import com.apihug.demo.user.wire.infra.settings.good.GoodLevelEnum;
 import hope.common.meta.annotation.Kind;
 import hope.common.meta.annotation.ProtoFrom;
 import io.swagger.v3.oas.annotations.extensions.Extension;
@@ -54,13 +53,6 @@ public class ChangePasswordRequest {
   )
   protected String reason;
 
-  @Schema(
-      description = "a enum sample for the good level enum",
-      ref = "#/components/schemas/GoodLevelEnum",
-      implementation = com.apihug.demo.user.wire.infra.settings.good.GoodLevelEnum.class
-  )
-  protected GoodLevelEnum goodLevel;
-
   public Long getCustomerId() {
     return customerId;
   }
@@ -88,22 +80,12 @@ public class ChangePasswordRequest {
     return this;
   }
 
-  public GoodLevelEnum getGoodLevel() {
-    return goodLevel;
-  }
-
-  public ChangePasswordRequest setGoodLevel(GoodLevelEnum goodLevel) {
-    this.goodLevel = goodLevel;
-    return this;
-  }
-
   @Override
   public String toString() {
     final StringBuilder builder = new StringBuilder("ChangePasswordRequest{");
     builder.append("customerId=").append(customerId);
     builder.append(", newPassword=").append(newPassword);
     builder.append(", reason=").append(reason);
-    builder.append(", goodLevel=").append(goodLevel);
     return builder.append('}').toString();
   }
 }

@@ -1,7 +1,7 @@
 {
   "domain" : "order",
   "version" : "0.1.2-RELEASE",
-  "lastBuildTime" : "2024-04-27 08:00:32",
+  "lastBuildTime" : "2024-05-07 11:43:21",
   "dictionaries" : [ {
     "name" : "OrderStatusEnum",
     "javaClass" : "com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum",

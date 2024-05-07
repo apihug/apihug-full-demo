@@ -6,36 +6,36 @@
 
   <changeSet id="0.1.2-RELEASE-1000000000" author="hope" context="auto" labels="0.1.2-RELEASE">
     <createTable remarks="Account sample table" tableName="DEMO_USER_ACCOUNT">
-      <column name="ID" type="BIGINT" autoIncrement="true" remarks="Record ID, Primary Key, Auto Increment">
+      <column name="id" type="BIGINT" autoIncrement="true" remarks="Record ID, Primary Key, Auto Increment">
         <constraints nullable="false" primaryKey="true" unique="true"></constraints>
       </column>
-      <column name="NAME" type="VARCHAR(32)" remarks="name of the account">
+      <column name="name" type="VARCHAR(32)" remarks="name of the account">
         <constraints nullable="false"></constraints>
       </column>
-      <column name="EMAIL" type="VARCHAR(64)" remarks="email of the account">
+      <column name="email" type="VARCHAR(64)" remarks="email of the account">
         <constraints unique="true"></constraints>
       </column>
       <column name="FRONTEND_COLOR" type="VARCHAR(111)" remarks="color of the frontend"></column>
-      <column name="LONG_TIME" type="DATETIME" remarks="long time ago"></column>
+      <column name="longTime" type="DATETIME" remarks="long time ago"></column>
       <column name="ADDRESS" type="VARCHAR(123)" remarks="address of my house"></column>
       <column name="AGE" type="BIGINT" remarks="age of my dog"></column>
-      <column name="VERSION" type="BIGINT" defaultValueNumeric="0" remarks="Record version, optimistic lock">
+      <column name="version" type="BIGINT" defaultValueNumeric="0" remarks="Record version, optimistic lock">
         <constraints nullable="false"></constraints>
       </column>
-      <column name="CREATED_AT" type="TIMESTAMP" remarks="Record created at timestamp"></column>
-      <column name="CREATED_BY" type="BIGINT" remarks="Record created by user ID"></column>
-      <column name="UPDATED_AT" type="TIMESTAMP" remarks="Record updated at timestamp"></column>
-      <column name="UPDATED_BY" type="BIGINT" remarks="Record updated by user ID"></column>
-      <column name="DELETED" type="BOOLEAN" defaultValueBoolean="false" remarks="Record deleted flag, soft delete"></column>
-      <column name="DELETED_AT" type="TIMESTAMP" remarks="Record deleted at"></column>
-      <column name="DELETED_BY" type="BIGINT" defaultValue="0" remarks="Record deleted by"></column>
-      <column name="TENANT_ID" type="BIGINT" defaultValue="0" remarks="Record tenant ID"></column>
+      <column name="createdAt" type="TIMESTAMP" remarks="Record created at timestamp"></column>
+      <column name="createdBy" type="BIGINT" remarks="Record created by user ID"></column>
+      <column name="updatedAt" type="TIMESTAMP" remarks="Record updated at timestamp"></column>
+      <column name="updatedBy" type="BIGINT" remarks="Record updated by user ID"></column>
+      <column name="deleted" type="BOOLEAN" defaultValueBoolean="false" remarks="Record deleted flag, soft delete"></column>
+      <column name="deletedAt" type="TIMESTAMP" remarks="Record deleted at"></column>
+      <column name="deletedBy" type="BIGINT" defaultValue="0" remarks="Record deleted by"></column>
+      <column name="tenantId" type="VARCHAR(32)" defaultValue="0" remarks="Record tenant ID"></column>
     </createTable>
     <createIndex tableName="DEMO_USER_ACCOUNT" indexName="IDX_DEMO_USER_ACCOUNT_NAME">
-      <column name="NAME"></column>
+      <column name="name"></column>
     </createIndex>
     <createIndex tableName="DEMO_USER_ACCOUNT" indexName="IDX_DEMO_USER_ACCOUNT_EMAIL">
-      <column name="EMAIL"></column>
+      <column name="email"></column>
     </createIndex>
   </changeSet>
 </databaseChangeLog>

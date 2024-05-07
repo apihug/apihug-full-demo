@@ -41,7 +41,7 @@ public class UserApiModule implements Module<UserApiCollector> {
     ProjectPersistence persistence = new ProjectPersistence();
     project.setPersistence(persistence);
     persistence.setIdentifyType(ProjectPersistence.Type.LONG);
-    persistence.setTenantType(ProjectPersistence.Type.LONG);
+    persistence.setTenantType(ProjectPersistence.Type.STRING);
   }
 
   @Override
