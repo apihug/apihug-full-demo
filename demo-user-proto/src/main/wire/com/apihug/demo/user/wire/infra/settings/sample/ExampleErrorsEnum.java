@@ -37,7 +37,7 @@ public enum ExampleErrorsEnum implements Errors {
     EXAMPLE_ERROR_BIG.setDomain("user");
     EXAMPLE_ERROR_BIG.setCode(1002023);
     EXAMPLE_ERROR_BIG.setDescription("this is big wrong");
-    EXAMPLE_ERROR_BIG.setDescriptionZhCN("wrong*3");
+    EXAMPLE_ERROR_BIG.setDescription2("wrong*3");
     EXAMPLE_ERROR_BIG.setTitle("EXAMPLE_ERROR_BIG");
     EXAMPLE_ERROR_BIG.setTips("please contract your admin +3");
     EXAMPLE_ERROR_BIG.setPhase(Phase.DOMAIN);
@@ -47,7 +47,7 @@ public enum ExampleErrorsEnum implements Errors {
     EXAMPLE_ERROR_SMALL.setDomain("user");
     EXAMPLE_ERROR_SMALL.setCode(1002024);
     EXAMPLE_ERROR_SMALL.setDescription("this is small wrong");
-    EXAMPLE_ERROR_SMALL.setDescriptionZhCN("wrong*2");
+    EXAMPLE_ERROR_SMALL.setDescription2("wrong*2");
     EXAMPLE_ERROR_SMALL.setTitle("EXAMPLE_ERROR_SMALL");
     EXAMPLE_ERROR_SMALL.setTips("please contract your admin +1");
     EXAMPLE_ERROR_SMALL.setPhase(Phase.DOMAIN);

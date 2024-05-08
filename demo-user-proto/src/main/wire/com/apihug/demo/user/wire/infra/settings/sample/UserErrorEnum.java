@@ -38,7 +38,7 @@ public enum UserErrorEnum implements Errors {
     NOT_EXIST.setDomain("user");
     NOT_EXIST.setCode(1001);
     NOT_EXIST.setDescription("name is bad");
-    NOT_EXIST.setDescriptionZhCN("not not exist");
+    NOT_EXIST.setDescription2("not not exist");
     NOT_EXIST.setTitle("NOT_EXIST");
     NOT_EXIST.setTips("please correct your name");
     NOT_EXIST.setPhase(Phase.DOMAIN);
@@ -49,7 +49,7 @@ public enum UserErrorEnum implements Errors {
     STATUS_BLOCKED.setDomain("user");
     STATUS_BLOCKED.setCode(1002);
     STATUS_BLOCKED.setDescription("account may illegal");
-    STATUS_BLOCKED.setDescriptionZhCN("contact your admin");
+    STATUS_BLOCKED.setDescription2("contact your admin");
     STATUS_BLOCKED.setTitle("STATUS_BLOCKED");
     STATUS_BLOCKED.setTips("You are blocked");
     STATUS_BLOCKED.setPhase(Phase.DOMAIN);

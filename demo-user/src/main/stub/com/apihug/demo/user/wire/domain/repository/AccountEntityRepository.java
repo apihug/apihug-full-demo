@@ -46,7 +46,7 @@ public interface AccountEntityRepository extends HopeJdbc<AccountEntity>, UserJd
   }
 
   default void _save(AccountEntity entity) {
-    final AuditContext<Long, Long> ctx = auditContext();
+    final AuditContext<Long, String> ctx = auditContext();
     if (entity.getId() == null) {
       entity.setCreatedBy(ctx.getIdentifier());
       entity.setCreatedAt(LocalDateTime.now());
@@ -60,7 +60,7 @@ public interface AccountEntityRepository extends HopeJdbc<AccountEntity>, UserJd
   }
 
   default void _saveAll(Iterable<? extends AccountEntity> entities) {
-    final AuditContext<Long, Long> ctx = auditContext();
+    final AuditContext<Long, String> ctx = auditContext();
     final LocalDateTime now = LocalDateTime.now();
     final Long version = persistenceContext().versionFrom();
     entities.forEach(entity -> {
@@ -150,7 +150,7 @@ public interface AccountEntityRepository extends HopeJdbc<AccountEntity>, UserJd
   }
 
   default int merge(final AccountEntity exist, final AccountEntity updated) {
-    final AuditContext ctx = auditContext();
+    final AuditContext<Long, String> ctx = auditContext();
     final LocalDateTime now = LocalDateTime.now();
     final Map<String, Object> args = new HashMap<>();
     args.put("id", exist.getId());

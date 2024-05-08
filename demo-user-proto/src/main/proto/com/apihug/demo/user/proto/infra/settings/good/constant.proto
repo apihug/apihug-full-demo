@@ -15,7 +15,7 @@ enum  GoodLevelEnum {
         example: "TENANT|PLATFORM"
     };
 
-    VERY_GOOD = 0 [(hope.constant.field) = {code: 1,message: "GOOD", cn_message: "you are good man"}];
-    VERY_BAD = 1 [(hope.constant.field) = {code: 2,message: "BAD", cn_message: "you are bad man"}];
+    VERY_GOOD = 0 [(hope.constant.field) = {code: 1,message: "GOOD", message2: "you are good man"}];
+    VERY_BAD = 1 [(hope.constant.field) = {code: 2,message: "BAD", message2: "you are bad man"}];
 
 }

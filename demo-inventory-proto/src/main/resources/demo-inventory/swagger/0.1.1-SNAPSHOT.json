@@ -298,7 +298,7 @@
             "description" : "错误描述",
             "example" : "user name should not be empty"
           },
-          "descriptionZhCN" : {
+          "description2" : {
             "type" : "string",
             "description" : "错误描述(中)",
             "example" : "用户名不可以为空"

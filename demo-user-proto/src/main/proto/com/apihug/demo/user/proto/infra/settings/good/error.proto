@@ -16,7 +16,7 @@ enum GoodErrorsEnum {
 
     BROKEN_BOX = 0  [
         (hope.constant.field) = {
-            code: 1007023, message: "this is big wrong", cn_message: "wrong*3",
+            code: 1007023, message: "this is big wrong", message2: "wrong*3",
             error: {
                 tips: "please contract your admin +3",
                 phase: DOMAIN,
@@ -25,7 +25,7 @@ enum GoodErrorsEnum {
 
     OUT_OF_DATE = 1  [
         (hope.constant.field) = {
-            code: 1007024, message: "this is small wrong", cn_message: "wrong*2",
+            code: 1007024, message: "this is small wrong", message2: "wrong*2",
             error: {
                 tips: "please contract your admin +1",
                 phase: DOMAIN,

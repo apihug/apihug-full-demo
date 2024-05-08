@@ -16,7 +16,7 @@ public class UserPersistenceContext implements PersistenceContext<Long, String> 
 
   @Override
   public String defaultTenant() {
-    return properties != null ? properties.setDefaultTenantString() : "0";
+    return properties != null ? properties.getDefaultTenantString() : "0";
   }
 
   @Override

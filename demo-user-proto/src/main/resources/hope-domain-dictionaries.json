@@ -1,7 +1,7 @@
 {
   "domain" : "user",
   "version" : "0.1.2-RELEASE",
-  "lastBuildTime" : "2024-05-07 11:43:24",
+  "lastBuildTime" : "2024-05-08 21:48:01",
   "dictionaries" : [ {
     "name" : "ExampleEnum",
     "javaClass" : "com.apihug.demo.user.wire.infra.settings.sample.ExampleEnum",
@@ -12,13 +12,13 @@
       "code" : 1,
       "title" : "EXAMPLE_ENUM_GOOD",
       "description" : "GOOD",
-      "descriptionZhCN" : "you are good man",
+      "description2" : "you are good man",
       "deprecated" : false
     }, {
       "code" : 2,
       "title" : "EXAMPLE_ENUM_BAD",
       "description" : "BAD",
-      "descriptionZhCN" : "you are bad man",
+      "description2" : "you are bad man",
       "deprecated" : false
     } ]
   }, {
@@ -31,19 +31,19 @@
       "code" : 0,
       "title" : "SAD",
       "description" : "very sad",
-      "descriptionZhCN" : "sad is bad",
+      "description2" : "sad is bad",
       "deprecated" : false
     }, {
       "code" : 1,
       "title" : "HAPPY",
       "description" : "very happy",
-      "descriptionZhCN" : "happy is good",
+      "description2" : "happy is good",
       "deprecated" : false
     }, {
       "code" : 2,
       "title" : "SUPER_HAPPY",
       "description" : "happiest",
-      "descriptionZhCN" : "happy best",
+      "description2" : "happy best",
       "deprecated" : false
     } ]
   }, {
@@ -56,13 +56,13 @@
       "code" : 1,
       "title" : "VERY_GOOD",
       "description" : "GOOD",
-      "descriptionZhCN" : "you are good man",
+      "description2" : "you are good man",
       "deprecated" : false
     }, {
       "code" : 2,
       "title" : "VERY_BAD",
       "description" : "BAD",
-      "descriptionZhCN" : "you are bad man",
+      "description2" : "you are bad man",
       "deprecated" : false
     } ]
   }, {
@@ -75,13 +75,13 @@
       "code" : 1,
       "title" : "NORMAL",
       "description" : "normal",
-      "descriptionZhCN" : "user normal status",
+      "description2" : "user normal status",
       "deprecated" : false
     }, {
       "code" : 2,
       "title" : "BLOCKED",
       "description" : "blocked",
-      "descriptionZhCN" : "user blocked",
+      "description2" : "user blocked",
       "deprecated" : false
     } ]
   } ]

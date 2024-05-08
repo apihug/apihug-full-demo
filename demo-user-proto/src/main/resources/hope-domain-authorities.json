@@ -1,7 +1,7 @@
 {
   "domain" : "user",
   "version" : "0.1.2-RELEASE",
-  "lastBuildTime" : "2024-05-07 11:43:24",
+  "lastBuildTime" : "2024-05-08 21:48:01",
   "codeOffset" : 0,
   "name" : "UserAuthorityEnum",
   "javaClass" : "com.apihug.demo.user.wire.infra.settings.UserAuthorityEnum",

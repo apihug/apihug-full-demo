@@ -42,6 +42,8 @@ public class UserApiModule implements Module<UserApiCollector> {
     project.setPersistence(persistence);
     persistence.setIdentifyType(ProjectPersistence.Type.LONG);
     persistence.setTenantType(ProjectPersistence.Type.STRING);
+    persistence.setFormat(ProjectPersistence.Format.CAMEL);
+    persistence.setUpper(ProjectPersistence.Upper.DEFAULT);
   }
 
   @Override

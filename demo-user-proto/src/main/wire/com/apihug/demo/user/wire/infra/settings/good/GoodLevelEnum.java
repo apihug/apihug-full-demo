@@ -110,19 +110,19 @@ public enum GoodLevelEnum implements Enumeration<GoodLevelEnum> {
 
   public final String description;
 
-  public final String descriptionZhCN;
+  public final String description2;
 
   public final boolean deprecated;
 
-  GoodLevelEnum(int code, String description, String descriptionZhCN, boolean deprecated) {
+  GoodLevelEnum(int code, String description, String description2, boolean deprecated) {
     this.code = code;
     this.description = description;
-    this.descriptionZhCN = descriptionZhCN;
+    this.description2 = description2;
     this.deprecated = deprecated;
   }
 
-  GoodLevelEnum(int code, String description, String descriptionZhCN) {
-    this(code, description, descriptionZhCN, false);
+  GoodLevelEnum(int code, String description, String description2) {
+    this(code, description, description2, false);
   }
 
   @Override
@@ -141,8 +141,8 @@ public enum GoodLevelEnum implements Enumeration<GoodLevelEnum> {
   }
 
   @Override
-  public String descriptionZhCN() {
-    return descriptionZhCN != null ? descriptionZhCN : description();
+  public String description2() {
+    return description2 != null ? description2 : description();
   }
 
   @Override

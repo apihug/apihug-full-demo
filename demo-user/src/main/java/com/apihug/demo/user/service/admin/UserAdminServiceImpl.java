@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 @Version(
     version = "0.1.1-SNAPSHOT",
     type = Type.ADD,
-    timestamp = "2024-02-29 17:40:23"
+    timestamp = "2024-05-08 20:33:12"
 )
 @ProtoFrom(
     value = "com/apihug/demo/user/proto/api/admin/api.proto",
@@ -78,7 +78,7 @@ public class UserAdminServiceImpl implements UserAdminService {
 
   }
 
-  protected AuditContext<Long, Long> auditContext() {
+  protected AuditContext<Long, String> auditContext() {
     return _supplier.get();
   }
 }

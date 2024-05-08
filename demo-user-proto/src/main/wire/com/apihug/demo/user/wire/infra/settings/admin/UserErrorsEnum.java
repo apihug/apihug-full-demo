@@ -37,7 +37,7 @@ public enum UserErrorsEnum implements Errors {
     USER_EXIST.setDomain("user");
     USER_EXIST.setCode(1001023);
     USER_EXIST.setDescription("customer already exist");
-    USER_EXIST.setDescriptionZhCN("用户存在");
+    USER_EXIST.setDescription2("用户存在");
     USER_EXIST.setTitle("USER_EXIST");
     USER_EXIST.setTips("contact your admin");
     USER_EXIST.setPhase(Phase.DOMAIN);
@@ -47,7 +47,7 @@ public enum UserErrorsEnum implements Errors {
     USER_BLOCKED.setDomain("user");
     USER_BLOCKED.setCode(1001024);
     USER_BLOCKED.setDescription("customer is blocked");
-    USER_BLOCKED.setDescriptionZhCN("用户失效");
+    USER_BLOCKED.setDescription2("用户失效");
     USER_BLOCKED.setTitle("USER_BLOCKED");
     USER_BLOCKED.setTips("possible you do something bad, contact the admin");
     USER_BLOCKED.setPhase(Phase.DOMAIN);

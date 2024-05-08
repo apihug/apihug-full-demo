@@ -16,7 +16,7 @@ enum ExampleErrorsEnum {
 
     EXAMPLE_ERROR_BIG = 0  [
         (hope.constant.field) = {
-            code: 1002023, message: "this is big wrong", cn_message: "wrong*3",
+            code: 1002023, message: "this is big wrong", message2: "wrong*3",
             error: {
                 tips: "please contract your admin +3",
                 phase: DOMAIN,
@@ -25,7 +25,7 @@ enum ExampleErrorsEnum {
 
     EXAMPLE_ERROR_SMALL = 1  [
         (hope.constant.field) = {
-            code: 1002024, message: "this is small wrong", cn_message: "wrong*2",
+            code: 1002024, message: "this is small wrong", message2: "wrong*2",
             error: {
                 tips: "please contract your admin +1",
                 phase: DOMAIN,
@@ -42,7 +42,7 @@ enum  UserErrorEnum {
 
   NOT_EXIST = 0 [
     (hope.constant.field) = {
-      code: 1001, message: "name is bad", cn_message: "not not exist",
+      code: 1001, message: "name is bad", message2: "not not exist",
       error: {
         tips: "please correct your name",
         phase: DOMAIN,
@@ -51,7 +51,7 @@ enum  UserErrorEnum {
       }}];
   STATUS_BLOCKED = 1 [
     (hope.constant.field) = {
-      code: 1002, message: "account may illegal", cn_message: "contact your admin",
+      code: 1002, message: "account may illegal", message2: "contact your admin",
       error: {
         tips: "You are blocked",
         phase: DOMAIN,

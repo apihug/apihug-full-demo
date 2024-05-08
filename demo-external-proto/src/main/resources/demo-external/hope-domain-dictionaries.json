@@ -1,7 +1,7 @@
 {
   "domain" : "external",
   "version" : "0.1.2-RELEASE",
-  "lastBuildTime" : "2024-05-07 11:43:16",
+  "lastBuildTime" : "2024-05-08 21:47:52",
   "dictionaries" : [ {
     "name" : "TemplateExampleEnum",
     "javaClass" : "com.apihug.demo.external.wire.infra.settings.example.TemplateExampleEnum",
@@ -12,13 +12,13 @@
       "code" : 1,
       "title" : "REMOVE_ME",
       "description" : "remove me",
-      "descriptionZhCN" : "Please remove this example",
+      "description2" : "Please remove this example",
       "deprecated" : false
     }, {
       "code" : 2,
       "title" : "RIGHT_NOW",
       "description" : "right now",
-      "descriptionZhCN" : "Remove it right now",
+      "description2" : "Remove it right now",
       "deprecated" : false
     } ]
   } ]

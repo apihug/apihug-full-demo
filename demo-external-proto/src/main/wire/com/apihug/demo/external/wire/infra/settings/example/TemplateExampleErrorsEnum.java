@@ -37,7 +37,7 @@ public enum TemplateExampleErrorsEnum implements Errors {
     THIS_IS_WRONG.setDomain("external");
     THIS_IS_WRONG.setCode(1024);
     THIS_IS_WRONG.setDescription("this is wrong example");
-    THIS_IS_WRONG.setDescriptionZhCN("示范错误");
+    THIS_IS_WRONG.setDescription2("示范错误");
     THIS_IS_WRONG.setTitle("THIS_IS_WRONG");
     THIS_IS_WRONG.setTips("This always happen when you not remove this template sample");
     THIS_IS_WRONG.setPhase(Phase.DOMAIN);
@@ -47,7 +47,7 @@ public enum TemplateExampleErrorsEnum implements Errors {
     THIS_IS_BAD.setDomain("external");
     THIS_IS_BAD.setCode(1025);
     THIS_IS_BAD.setDescription("this is bad");
-    THIS_IS_BAD.setDescriptionZhCN("还没有移除呢");
+    THIS_IS_BAD.setDescription2("还没有移除呢");
     THIS_IS_BAD.setTitle("THIS_IS_BAD");
     THIS_IS_BAD.setTips("If you see this, meaning you copy the template code here");
     THIS_IS_BAD.setPhase(Phase.CONTROLLER);

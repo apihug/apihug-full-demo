@@ -15,8 +15,8 @@ enum  ExampleEnum {
         example: "TENANT|PLATFORM"
     };
 
-    EXAMPLE_ENUM_GOOD = 0 [(hope.constant.field) = {code: 1,message: "GOOD", cn_message: "you are good man"}];
-    EXAMPLE_ENUM_BAD = 1 [(hope.constant.field) = {code: 2,message: "BAD", cn_message: "you are bad man"}];
+    EXAMPLE_ENUM_GOOD = 0 [(hope.constant.field) = {code: 1,message: "GOOD", message2: "you are good man"}];
+    EXAMPLE_ENUM_BAD = 1 [(hope.constant.field) = {code: 2,message: "BAD", message2: "you are bad man"}];
 
 }
 enum  ExampleHappyLevelEnum {
@@ -26,8 +26,8 @@ enum  ExampleHappyLevelEnum {
     example: "SAD|HAPPY|SUPER_HAPPY"
   };
 
-  SAD = 0 [(hope.constant.field) = {code: 0,message: "very sad", cn_message: "sad is bad"}];
-  HAPPY = 1 [(hope.constant.field) = {code: 1,message: "very happy", cn_message: "happy is good"}];
-  SUPER_HAPPY = 2 [(hope.constant.field) = {code: 2,message: "happiest", cn_message: "happy best"}];
+  SAD = 0 [(hope.constant.field) = {code: 0,message: "very sad", message2: "sad is bad"}];
+  HAPPY = 1 [(hope.constant.field) = {code: 1,message: "very happy", message2: "happy is good"}];
+  SUPER_HAPPY = 2 [(hope.constant.field) = {code: 2,message: "happiest", message2: "happy best"}];
 
 }

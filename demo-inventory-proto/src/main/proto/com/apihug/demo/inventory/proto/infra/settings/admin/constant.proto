@@ -14,8 +14,8 @@ enum  StorageStatusEnum {
     description: "status of a storage location status",
   };
 
-  NORMAL = 0 [(hope.constant.field) = {code: 1,message: "normal", cn_message: "this storage is normal"}];
-  BLOCKED = 1 [(hope.constant.field) = {code: 2,message: "blocked", cn_message: "this storage is blocked"}];
+  NORMAL = 0 [(hope.constant.field) = {code: 1,message: "normal", message2: "this storage is normal"}];
+  BLOCKED = 1 [(hope.constant.field) = {code: 2,message: "blocked", message2: "this storage is blocked"}];
 
 }
 
@@ -26,7 +26,7 @@ enum  StockStatusEnum {
     example: "FAIL|SUCCESS"
   };
 
-  FAIL = 0 [(hope.constant.field) = {code: 1,message: "fail of stock operation", cn_message: "stock illegal"}];
-  SUCCESS = 1 [(hope.constant.field) = {code: 0,message: "success just a sample", cn_message: "sample"}];
+  FAIL = 0 [(hope.constant.field) = {code: 1,message: "fail of stock operation", message2: "stock illegal"}];
+  SUCCESS = 1 [(hope.constant.field) = {code: 0,message: "success just a sample", message2: "sample"}];
 
 }

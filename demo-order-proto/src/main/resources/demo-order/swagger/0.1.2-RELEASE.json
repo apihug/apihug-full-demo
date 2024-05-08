@@ -267,7 +267,7 @@
             "description" : "错误描述",
             "example" : "user name should not be empty"
           },
-          "descriptionZhCN" : {
+          "description2" : {
             "type" : "string",
             "description" : "错误描述(中)",
             "example" : "用户名不可以为空"
@@ -395,14 +395,14 @@
           "example" : "ORDER_ADD",
           "title" : "ORDER_ADD",
           "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "Authority to add order by admin"
+          "x-hope-enum-item-desc2" : "Authority to add order by admin"
         }, {
           "const" : "ORDER_DELETE",
           "description" : "order:remove",
           "example" : "ORDER_DELETE",
           "title" : "ORDER_DELETE",
           "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "Authority to delete order by admin"
+          "x-hope-enum-item-desc2" : "Authority to delete order by admin"
         } ],
         "title" : "OrderAuthorityEnum",
         "x-hope-rt-meta" : {
@@ -466,14 +466,14 @@
           "example" : "NORMAL",
           "title" : "NORMAL",
           "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "order is ok"
+          "x-hope-enum-item-desc2" : "order is ok"
         }, {
           "const" : "DELETED",
           "description" : "deleted status",
           "example" : "DELETED",
           "title" : "DELETED",
           "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "order is gone"
+          "x-hope-enum-item-desc2" : "order is gone"
         } ],
         "title" : "OrderStatusEnum",
         "x-hope-rt-meta" : {
@@ -491,21 +491,21 @@
           "example" : "CONTROLLER",
           "title" : "CONTROLLER",
           "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "表单层"
+          "x-hope-enum-item-desc2" : "表单层"
         }, {
           "const" : "SERVICE",
           "description" : "Service",
           "example" : "SERVICE",
           "title" : "SERVICE",
           "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "服务层"
+          "x-hope-enum-item-desc2" : "服务层"
         }, {
           "const" : "DOMAIN",
           "description" : "Domain",
           "example" : "DOMAIN",
           "title" : "DOMAIN",
           "x-hope-enum-item-code" : 4,
-          "x-hope-enum-item-des-cn" : "领域层"
+          "x-hope-enum-item-desc2" : "领域层"
         } ],
         "title" : "ProblemPhase",
         "x-hope-java-class" : "hope.common.wire.constant.ProblemPhase",
@@ -520,28 +520,28 @@
           "example" : "LOW",
           "title" : "LOW",
           "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "低,无影响"
+          "x-hope-enum-item-desc2" : "低,无影响"
         }, {
           "const" : "WARN",
           "description" : "Warn",
           "example" : "WARN",
           "title" : "WARN",
           "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "警告,业务错误可重试"
+          "x-hope-enum-item-desc2" : "警告,业务错误可重试"
         }, {
           "const" : "ERROR",
           "description" : "Error",
           "example" : "ERROR",
           "title" : "ERROR",
           "x-hope-enum-item-code" : 4,
-          "x-hope-enum-item-des-cn" : "错误,业务无法进行"
+          "x-hope-enum-item-desc2" : "错误,业务无法进行"
         }, {
           "const" : "FATAL",
           "description" : "Fatal",
           "example" : "FATAL",
           "title" : "FATAL",
           "x-hope-enum-item-code" : 8,
-          "x-hope-enum-item-des-cn" : "灾难,数据破坏"
+          "x-hope-enum-item-desc2" : "灾难,数据破坏"
         } ],
         "title" : "ProblemSeverity",
         "x-hope-java-class" : "hope.common.wire.constant.ProblemSeverity",
@@ -610,7 +610,7 @@
     "status" : {
       "deprecated" : false,
       "createdTimestamp" : "2024-02-29",
-      "updatedTimestamp" : "2024-05-07 11:43:21",
+      "updatedTimestamp" : "2024-05-08 21:47:56",
       "createdBy" : "dell"
     },
     "persistence" : {

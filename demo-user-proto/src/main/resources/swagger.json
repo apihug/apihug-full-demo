@@ -553,7 +553,7 @@
             "description" : "错误描述",
             "example" : "user name should not be empty"
           },
-          "descriptionZhCN" : {
+          "description2" : {
             "type" : "string",
             "description" : "错误描述(中)",
             "example" : "用户名不可以为空"
@@ -615,14 +615,14 @@
           "example" : "EXAMPLE_ENUM_GOOD",
           "title" : "EXAMPLE_ENUM_GOOD",
           "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "you are good man"
+          "x-hope-enum-item-desc2" : "you are good man"
         }, {
           "const" : "EXAMPLE_ENUM_BAD",
           "description" : "BAD",
           "example" : "EXAMPLE_ENUM_BAD",
           "title" : "EXAMPLE_ENUM_BAD",
           "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "you are bad man"
+          "x-hope-enum-item-desc2" : "you are bad man"
         } ],
         "title" : "ExampleEnum",
         "x-hope-rt-meta" : {
@@ -640,21 +640,21 @@
           "example" : "SAD",
           "title" : "SAD",
           "x-hope-enum-item-code" : 0,
-          "x-hope-enum-item-des-cn" : "sad is bad"
+          "x-hope-enum-item-desc2" : "sad is bad"
         }, {
           "const" : "HAPPY",
           "description" : "very happy",
           "example" : "HAPPY",
           "title" : "HAPPY",
           "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "happy is good"
+          "x-hope-enum-item-desc2" : "happy is good"
         }, {
           "const" : "SUPER_HAPPY",
           "description" : "happiest",
           "example" : "SUPER_HAPPY",
           "title" : "SUPER_HAPPY",
           "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "happy best"
+          "x-hope-enum-item-desc2" : "happy best"
         } ],
         "title" : "ExampleHappyLevelEnum",
         "x-hope-rt-meta" : {
@@ -672,14 +672,14 @@
           "example" : "VERY_GOOD",
           "title" : "VERY_GOOD",
           "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "you are good man"
+          "x-hope-enum-item-desc2" : "you are good man"
         }, {
           "const" : "VERY_BAD",
           "description" : "BAD",
           "example" : "VERY_BAD",
           "title" : "VERY_BAD",
           "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "you are bad man"
+          "x-hope-enum-item-desc2" : "you are bad man"
         } ],
         "title" : "GoodLevelEnum",
         "x-hope-rt-meta" : {
@@ -737,21 +737,21 @@
           "example" : "CONTROLLER",
           "title" : "CONTROLLER",
           "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "表单层"
+          "x-hope-enum-item-desc2" : "表单层"
         }, {
           "const" : "SERVICE",
           "description" : "Service",
           "example" : "SERVICE",
           "title" : "SERVICE",
           "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "服务层"
+          "x-hope-enum-item-desc2" : "服务层"
         }, {
           "const" : "DOMAIN",
           "description" : "Domain",
           "example" : "DOMAIN",
           "title" : "DOMAIN",
           "x-hope-enum-item-code" : 4,
-          "x-hope-enum-item-des-cn" : "领域层"
+          "x-hope-enum-item-desc2" : "领域层"
         } ],
         "title" : "ProblemPhase",
         "x-hope-java-class" : "hope.common.wire.constant.ProblemPhase",
@@ -766,28 +766,28 @@
           "example" : "LOW",
           "title" : "LOW",
           "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "低,无影响"
+          "x-hope-enum-item-desc2" : "低,无影响"
         }, {
           "const" : "WARN",
           "description" : "Warn",
           "example" : "WARN",
           "title" : "WARN",
           "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "警告,业务错误可重试"
+          "x-hope-enum-item-desc2" : "警告,业务错误可重试"
         }, {
           "const" : "ERROR",
           "description" : "Error",
           "example" : "ERROR",
           "title" : "ERROR",
           "x-hope-enum-item-code" : 4,
-          "x-hope-enum-item-des-cn" : "错误,业务无法进行"
+          "x-hope-enum-item-desc2" : "错误,业务无法进行"
         }, {
           "const" : "FATAL",
           "description" : "Fatal",
           "example" : "FATAL",
           "title" : "FATAL",
           "x-hope-enum-item-code" : 8,
-          "x-hope-enum-item-des-cn" : "灾难,数据破坏"
+          "x-hope-enum-item-desc2" : "灾难,数据破坏"
         } ],
         "title" : "ProblemSeverity",
         "x-hope-java-class" : "hope.common.wire.constant.ProblemSeverity",
@@ -1065,14 +1065,14 @@
           "example" : "USER_ADD",
           "title" : "USER_ADD",
           "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "Authority to remove user"
+          "x-hope-enum-item-desc2" : "Authority to remove user"
         }, {
           "const" : "USER_DELETE",
           "description" : "user:remove",
           "example" : "USER_DELETE",
           "title" : "USER_DELETE",
           "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "Authority to delete user"
+          "x-hope-enum-item-desc2" : "Authority to delete user"
         } ],
         "title" : "UserAuthorityEnum",
         "x-hope-rt-meta" : {
@@ -1090,14 +1090,14 @@
           "example" : "NORMAL",
           "title" : "NORMAL",
           "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "user normal status"
+          "x-hope-enum-item-desc2" : "user normal status"
         }, {
           "const" : "BLOCKED",
           "description" : "blocked",
           "example" : "BLOCKED",
           "title" : "BLOCKED",
           "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "user blocked"
+          "x-hope-enum-item-desc2" : "user blocked"
         } ],
         "title" : "UserStatusEnum",
         "x-hope-rt-meta" : {
@@ -1169,7 +1169,7 @@
     "status" : {
       "deprecated" : false,
       "createdTimestamp" : "2024-02-29",
-      "updatedTimestamp" : "2024-05-07 11:43:24",
+      "updatedTimestamp" : "2024-05-08 21:48:01",
       "createdBy" : "dell"
     },
     "persistence" : {

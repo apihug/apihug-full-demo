@@ -16,7 +16,7 @@ enum UserErrorsEnum {
 
   USER_EXIST = 0  [
     (hope.constant.field) = {
-      code: 1001023, message: "customer already exist", cn_message: "用户存在",
+      code: 1001023, message: "customer already exist", message2: "用户存在",
       error: {
         tips: "contact your admin",
         phase: DOMAIN,
@@ -25,7 +25,7 @@ enum UserErrorsEnum {
 
   USER_BLOCKED = 1  [
     (hope.constant.field) = {
-      code: 1001024, message: "customer is blocked", cn_message: "用户失效",
+      code: 1001024, message: "customer is blocked", message2: "用户失效",
       error: {
         tips: "possible you do something bad, contact the admin",
         phase: DOMAIN,

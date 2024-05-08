@@ -14,7 +14,7 @@ enum  TemplateExampleEnum {
         example: "REMOVE_ME|RIGHT_NOW"
     };
 
-    REMOVE_ME = 0 [(hope.constant.field) = {code: 1,message: "remove me", cn_message: "Please remove this example"}];
-    RIGHT_NOW = 1 [(hope.constant.field) = {code: 2,message: "right now", cn_message: "Remove it right now"}];
+    REMOVE_ME = 0 [(hope.constant.field) = {code: 1,message: "remove me", message2: "Please remove this example"}];
+    RIGHT_NOW = 1 [(hope.constant.field) = {code: 2,message: "right now", message2: "Remove it right now"}];
 
 }

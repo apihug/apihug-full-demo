@@ -1,7 +1,7 @@
 {
   "domain" : "external",
   "version" : "0.1.2-RELEASE",
-  "lastBuildTime" : "2024-05-07 11:43:16",
+  "lastBuildTime" : "2024-05-08 21:47:52",
   "errors" : [ {
     "name" : "TemplateExampleErrorsEnum",
     "javaClass" : "com.apihug.demo.external.wire.infra.settings.example.TemplateExampleErrorsEnum",
@@ -12,7 +12,7 @@
       "code" : 1024,
       "title" : "THIS_IS_WRONG",
       "description" : "this is wrong example",
-      "descriptionZhCN" : "示范错误",
+      "description2" : "示范错误",
       "deprecated" : false,
       "tips" : "This always happen when you not remove this template sample",
       "phase" : "DOMAIN",
@@ -21,7 +21,7 @@
       "code" : 1025,
       "title" : "THIS_IS_BAD",
       "description" : "this is bad",
-      "descriptionZhCN" : "还没有移除呢",
+      "description2" : "还没有移除呢",
       "deprecated" : false,
       "tips" : "If you see this, meaning you copy the template code here",
       "phase" : "CONTROLLER",

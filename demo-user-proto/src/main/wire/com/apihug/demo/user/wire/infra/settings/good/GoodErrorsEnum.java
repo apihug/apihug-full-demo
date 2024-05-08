@@ -37,7 +37,7 @@ public enum GoodErrorsEnum implements Errors {
     BROKEN_BOX.setDomain("user");
     BROKEN_BOX.setCode(1007023);
     BROKEN_BOX.setDescription("this is big wrong");
-    BROKEN_BOX.setDescriptionZhCN("wrong*3");
+    BROKEN_BOX.setDescription2("wrong*3");
     BROKEN_BOX.setTitle("BROKEN_BOX");
     BROKEN_BOX.setTips("please contract your admin +3");
     BROKEN_BOX.setPhase(Phase.DOMAIN);
@@ -47,7 +47,7 @@ public enum GoodErrorsEnum implements Errors {
     OUT_OF_DATE.setDomain("user");
     OUT_OF_DATE.setCode(1007024);
     OUT_OF_DATE.setDescription("this is small wrong");
-    OUT_OF_DATE.setDescriptionZhCN("wrong*2");
+    OUT_OF_DATE.setDescription2("wrong*2");
     OUT_OF_DATE.setTitle("OUT_OF_DATE");
     OUT_OF_DATE.setTips("please contract your admin +1");
     OUT_OF_DATE.setPhase(Phase.DOMAIN);

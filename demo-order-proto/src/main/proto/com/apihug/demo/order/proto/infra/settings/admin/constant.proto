@@ -14,7 +14,7 @@ enum  OrderStatusEnum {
         description: "Status of the order",
     };
 
-    NORMAL = 0 [(hope.constant.field) = {code: 1,message: "normal status", cn_message: "order is ok"}];
-    DELETED = 1 [(hope.constant.field) = {code: 2,message: "deleted status", cn_message: "order is gone"}];
+    NORMAL = 0 [(hope.constant.field) = {code: 1,message: "normal status", message2: "order is ok"}];
+    DELETED = 1 [(hope.constant.field) = {code: 2,message: "deleted status", message2: "order is gone"}];
 
 }

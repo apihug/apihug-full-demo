@@ -345,7 +345,7 @@
             "description" : "错误描述",
             "example" : "user name should not be empty"
           },
-          "descriptionZhCN" : {
+          "description2" : {
             "type" : "string",
             "description" : "错误描述(中)",
             "example" : "用户名不可以为空"
@@ -407,28 +407,28 @@
           "example" : "STOCK_IN",
           "title" : "STOCK_IN",
           "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "Authority to stock in product"
+          "x-hope-enum-item-desc2" : "Authority to stock in product"
         }, {
           "const" : "STOCK_OUT",
           "description" : "stock:out",
           "example" : "STOCK_OUT",
           "title" : "STOCK_OUT",
           "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "Authority to stock out product"
+          "x-hope-enum-item-desc2" : "Authority to stock out product"
         }, {
           "const" : "ADD_STORAGE_LOCATION",
           "description" : "stock:storage:add",
           "example" : "ADD_STORAGE_LOCATION",
           "title" : "ADD_STORAGE_LOCATION",
           "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "Authority to add a new storage location"
+          "x-hope-enum-item-desc2" : "Authority to add a new storage location"
         }, {
           "const" : "DELETE_STORAGE_LOCATION",
           "description" : "stock:storage:delete",
           "example" : "DELETE_STORAGE_LOCATION",
           "title" : "DELETE_STORAGE_LOCATION",
           "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "Authority to delete a storage location"
+          "x-hope-enum-item-desc2" : "Authority to delete a storage location"
         } ],
         "title" : "InventoryAuthorityEnum",
         "x-hope-rt-meta" : {
@@ -446,21 +446,21 @@
           "example" : "CONTROLLER",
           "title" : "CONTROLLER",
           "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "表单层"
+          "x-hope-enum-item-desc2" : "表单层"
         }, {
           "const" : "SERVICE",
           "description" : "Service",
           "example" : "SERVICE",
           "title" : "SERVICE",
           "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "服务层"
+          "x-hope-enum-item-desc2" : "服务层"
         }, {
           "const" : "DOMAIN",
           "description" : "Domain",
           "example" : "DOMAIN",
           "title" : "DOMAIN",
           "x-hope-enum-item-code" : 4,
-          "x-hope-enum-item-des-cn" : "领域层"
+          "x-hope-enum-item-desc2" : "领域层"
         } ],
         "title" : "ProblemPhase",
         "x-hope-java-class" : "hope.common.wire.constant.ProblemPhase",
@@ -475,28 +475,28 @@
           "example" : "LOW",
           "title" : "LOW",
           "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "低,无影响"
+          "x-hope-enum-item-desc2" : "低,无影响"
         }, {
           "const" : "WARN",
           "description" : "Warn",
           "example" : "WARN",
           "title" : "WARN",
           "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "警告,业务错误可重试"
+          "x-hope-enum-item-desc2" : "警告,业务错误可重试"
         }, {
           "const" : "ERROR",
           "description" : "Error",
           "example" : "ERROR",
           "title" : "ERROR",
           "x-hope-enum-item-code" : 4,
-          "x-hope-enum-item-des-cn" : "错误,业务无法进行"
+          "x-hope-enum-item-desc2" : "错误,业务无法进行"
         }, {
           "const" : "FATAL",
           "description" : "Fatal",
           "example" : "FATAL",
           "title" : "FATAL",
           "x-hope-enum-item-code" : 8,
-          "x-hope-enum-item-des-cn" : "灾难,数据破坏"
+          "x-hope-enum-item-desc2" : "灾难,数据破坏"
         } ],
         "title" : "ProblemSeverity",
         "x-hope-java-class" : "hope.common.wire.constant.ProblemSeverity",
@@ -726,14 +726,14 @@
           "example" : "FAIL",
           "title" : "FAIL",
           "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "stock illegal"
+          "x-hope-enum-item-desc2" : "stock illegal"
         }, {
           "const" : "SUCCESS",
           "description" : "success just a sample",
           "example" : "SUCCESS",
           "title" : "SUCCESS",
           "x-hope-enum-item-code" : 0,
-          "x-hope-enum-item-des-cn" : "sample"
+          "x-hope-enum-item-desc2" : "sample"
         } ],
         "title" : "StockStatusEnum",
         "x-hope-rt-meta" : {
@@ -854,14 +854,14 @@
           "example" : "NORMAL",
           "title" : "NORMAL",
           "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-des-cn" : "this storage is normal"
+          "x-hope-enum-item-desc2" : "this storage is normal"
         }, {
           "const" : "BLOCKED",
           "description" : "blocked",
           "example" : "BLOCKED",
           "title" : "BLOCKED",
           "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-des-cn" : "this storage is blocked"
+          "x-hope-enum-item-desc2" : "this storage is blocked"
         } ],
         "title" : "StorageStatusEnum",
         "x-hope-rt-meta" : {
@@ -933,7 +933,7 @@
     "status" : {
       "deprecated" : false,
       "createdTimestamp" : "2024-02-29",
-      "updatedTimestamp" : "2024-05-07 11:43:19",
+      "updatedTimestamp" : "2024-05-08 21:47:54",
       "createdBy" : "dell"
     },
     "persistence" : {

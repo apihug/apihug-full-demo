@@ -37,7 +37,7 @@ public enum OrderErrorsEnum implements Errors {
     NOT_EXIST.setDomain("order");
     NOT_EXIST.setCode(1001023);
     NOT_EXIST.setDescription("order gone");
-    NOT_EXIST.setDescriptionZhCN("just gone");
+    NOT_EXIST.setDescription2("just gone");
     NOT_EXIST.setTitle("NOT_EXIST");
     NOT_EXIST.setTips("please contract your admin");
     NOT_EXIST.setPhase(Phase.CONTROLLER);
@@ -47,7 +47,7 @@ public enum OrderErrorsEnum implements Errors {
     CAN_NOT_DELETE.setDomain("order");
     CAN_NOT_DELETE.setCode(1001024);
     CAN_NOT_DELETE.setDescription("order is stub can's delete");
-    CAN_NOT_DELETE.setDescriptionZhCN("i do not know");
+    CAN_NOT_DELETE.setDescription2("i do not know");
     CAN_NOT_DELETE.setTitle("CAN_NOT_DELETE");
     CAN_NOT_DELETE.setTips("please contract your admin, and kill it");
     CAN_NOT_DELETE.setPhase(Phase.DOMAIN);

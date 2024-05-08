@@ -1,7 +1,7 @@
 {
   "domain" : "order",
   "version" : "0.1.2-RELEASE",
-  "lastBuildTime" : "2024-05-07 11:43:21",
+  "lastBuildTime" : "2024-05-08 21:47:56",
   "dictionaries" : [ {
     "name" : "OrderStatusEnum",
     "javaClass" : "com.apihug.demo.order.wire.infra.settings.admin.OrderStatusEnum",
@@ -12,13 +12,13 @@
       "code" : 1,
       "title" : "NORMAL",
       "description" : "normal status",
-      "descriptionZhCN" : "order is ok",
+      "description2" : "order is ok",
       "deprecated" : false
     }, {
       "code" : 2,
       "title" : "DELETED",
       "description" : "deleted status",
-      "descriptionZhCN" : "order is gone",
+      "description2" : "order is gone",
       "deprecated" : false
     } ]
   } ]

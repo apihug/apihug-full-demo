@@ -40,7 +40,7 @@ public enum InventoryErrorsEnum implements Errors {
     STOCK_IN_FULL.setDomain("inventory");
     STOCK_IN_FULL.setCode(1001023);
     STOCK_IN_FULL.setDescription("stock in fail as the storage is full");
-    STOCK_IN_FULL.setDescriptionZhCN("full of goods");
+    STOCK_IN_FULL.setDescription2("full of goods");
     STOCK_IN_FULL.setTitle("STOCK_IN_FULL");
     STOCK_IN_FULL.setTips("please contract your admin ");
     STOCK_IN_FULL.setPhase(Phase.DOMAIN);
@@ -50,7 +50,7 @@ public enum InventoryErrorsEnum implements Errors {
     STOCK_OUT_EMPTY.setDomain("inventory");
     STOCK_OUT_EMPTY.setCode(1001024);
     STOCK_OUT_EMPTY.setDescription("stock out fail as the storage is empty");
-    STOCK_OUT_EMPTY.setDescriptionZhCN("empty of goods");
+    STOCK_OUT_EMPTY.setDescription2("empty of goods");
     STOCK_OUT_EMPTY.setTitle("STOCK_OUT_EMPTY");
     STOCK_OUT_EMPTY.setTips("please contract your admin");
     STOCK_OUT_EMPTY.setPhase(Phase.DOMAIN);
@@ -60,7 +60,7 @@ public enum InventoryErrorsEnum implements Errors {
     STORAGE_CAN_NOT_DELETE.setDomain("inventory");
     STORAGE_CAN_NOT_DELETE.setCode(2);
     STORAGE_CAN_NOT_DELETE.setDescription("Storage still using maybe");
-    STORAGE_CAN_NOT_DELETE.setDescriptionZhCN("can not delete it just");
+    STORAGE_CAN_NOT_DELETE.setDescription2("can not delete it just");
     STORAGE_CAN_NOT_DELETE.setTitle("STORAGE_CAN_NOT_DELETE");
     STORAGE_CAN_NOT_DELETE.setTips("please ask your boss");
     STORAGE_CAN_NOT_DELETE.setPhase(Phase.DOMAIN);

@@ -42,6 +42,8 @@ public class InventoryApiModule implements Module<InventoryApiCollector> {
     project.setPersistence(persistence);
     persistence.setIdentifyType(ProjectPersistence.Type.LONG);
     persistence.setTenantType(ProjectPersistence.Type.LONG);
+    persistence.setFormat(ProjectPersistence.Format.DEFAULT);
+    persistence.setUpper(ProjectPersistence.Upper.DEFAULT);
   }
 
   @Override
