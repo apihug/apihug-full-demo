@@ -30,8 +30,21 @@ service SampleDemoService {
     option (hope.swagger.operation) = {
       get: "/list-a-sample";
       description: "query return a list";
-      priority: LOW;
+      priority: LOW
       out_plural: true;
+      parameters:{
+        parameter:{
+          name: "hello"
+          schema:{
+            ref:  "com.apihug.demo.user.proto.api.sample.RequiredDemoRequest"
+          }
+        }
+      }
+      authorization:{
+        rbac:{
+          authorities: ["USER_ADD"];
+        }
+      }
     };
   }
 

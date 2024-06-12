@@ -1,7 +1,7 @@
 {
   "domain" : "external",
   "version" : "0.1.2-RELEASE",
-  "lastBuildTime" : "2024-05-08 21:47:52",
+  "lastBuildTime" : "2024-06-12 09:10:53",
   "dictionaries" : [ {
     "name" : "TemplateExampleEnum",
     "javaClass" : "com.apihug.demo.external.wire.infra.settings.example.TemplateExampleEnum",

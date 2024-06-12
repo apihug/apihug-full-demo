@@ -1,7 +1,7 @@
 {
   "domain" : "order",
   "version" : "0.1.2-RELEASE",
-  "lastBuildTime" : "2024-05-08 21:47:56",
+  "lastBuildTime" : "2024-06-12 09:11:04",
   "errors" : [ {
     "name" : "OrderErrorsEnum",
     "javaClass" : "com.apihug.demo.order.wire.infra.settings.admin.OrderErrorsEnum",

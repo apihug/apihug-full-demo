@@ -25,7 +25,13 @@
         "summary" : "",
         "description" : "query return a list",
         "operationId" : "SampleDemoService#ListQuery",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "hello",
+          "in" : "query",
+          "schema" : {
+            "$ref" : "#/components/schemas/RequiredDemoRequest"
+          }
+        } ],
         "responses" : {
           "200" : {
             "description" : "query return a list",
@@ -50,7 +56,11 @@
           "empty" : false,
           "serviceClz" : "com.apihug.demo.user.wire.api.sample.SampleDemoService",
           "priority" : "LOW",
-          "group" : "CUSTOMER"
+          "group" : "CUSTOMER",
+          "security" : {
+            "authorities" : [ "USER_ADD" ],
+            "combinator" : "AND"
+          }
         }
       }
     },
@@ -1169,7 +1179,7 @@
     "status" : {
       "deprecated" : false,
       "createdTimestamp" : "2024-02-29",
-      "updatedTimestamp" : "2024-05-08 21:48:01",
+      "updatedTimestamp" : "2024-06-12 09:11:08",
       "createdBy" : "dell"
     },
     "persistence" : {

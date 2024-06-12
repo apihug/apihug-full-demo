@@ -1,7 +1,7 @@
 {
   "domain" : "user",
   "version" : "0.1.2-RELEASE",
-  "lastBuildTime" : "2024-05-08 21:48:01",
+  "lastBuildTime" : "2024-06-12 09:11:08",
   "dictionaries" : [ {
     "name" : "ExampleEnum",
     "javaClass" : "com.apihug.demo.user.wire.infra.settings.sample.ExampleEnum",

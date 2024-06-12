@@ -856,6 +856,46 @@ public final class UserApiCollector implements Collector<OpenAPI, Schema, ApiRes
         return operation;
       }
     }.build());
+    _sc_paths_item_2.put("parameters", new Builder<List<hope.common.service.api.Parameter>>() {
+      @Override
+      public List<hope.common.service.api.Parameter> build() {
+        List<hope.common.service.api.Parameter> res = new ArrayList();
+        hope.common.service.api.Parameter<Parameter> _1 = new hope.common.service.api.Parameter();
+        _1.setName("hello");
+        _1.setPlural(false);
+        _1.setIn(hope.common.service.api.Parameter.Type.QUERY);
+        _1.setRefClz("com.apihug.demo.user.wire.api.sample.RequiredDemoRequest");
+        _1.setDelegator(new Builder<Parameter>() {
+          @Override
+          public Parameter build() {
+            Parameter res  = new Parameter();
+            res.setName("hello");
+            res.setIn("query");
+            res.setSchema(new Builder<Schema>() {
+              @Override
+              public Schema build() {
+                Schema res  = new Schema();
+                res.set$ref("com.apihug.demo.user.wire.api.sample.RequiredDemoRequest");
+                res.setSpecVersion(SpecVersion.V30);
+                return res;
+              }
+            }.build());
+            return res;
+          }
+        }.build());
+        res.add(_1);
+        return res;
+      }
+    }.build());
+    _sc_paths_item_2.put("authorization", new Builder<Authorization>() {
+      @Override
+      public Authorization build() {
+        Authorization res = new Authorization();
+        res.addAuthority(UserAuthorityEnum.USER_ADD);
+        res.setCombinator(Authorization.Combinator.AND);
+        return res;
+      }
+    }.build());
     _sc_paths_item_2.put("group", "CUSTOMER");
     _sc_paths_item_2.put("empty", false);
     // END-[Service Context] com.apihug.demo.user.wire.api.sample.SampleDemoService
